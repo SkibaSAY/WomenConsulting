@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WomenConsulting.Interfaces;
 
 namespace WomenConsulting
 {
@@ -20,9 +21,19 @@ namespace WomenConsulting
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<ITrimestr> trimestrs;
         public MainWindow()
         {
             InitializeComponent();
+            InitPages();
+        }
+
+        private void InitPages()
+        {
+            trimestrs = new List<ITrimestr>()
+            {
+
+            };
         }
     }
 }

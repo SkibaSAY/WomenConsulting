@@ -6,7 +6,38 @@
         xmlns:local="clr-namespace:WomenConsulting"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="Aquamarine">
-        
+    <Grid Background="#FFAEB1FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="329*"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="BaseMenu" Margin="0,9">
+            <MenuItem Header="File">
+                <MenuItem Header="New Project" ></MenuItem>
+                <MenuItem Header="Open Project" >
+                    <MenuItem Header="WinForms"></MenuItem>
+                    <MenuItem Header="WPF" ></MenuItem>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Exit" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit" ></MenuItem>
+            <MenuItem Header="View" ></MenuItem>
+        </Menu>
+        <TabControl Grid.Row="2">
+            <TabItem Header="1й триместр" Width="100">
+                <Grid Background="#FFD9DAFF" Margin="15"/>
+            </TabItem>
+            <TabItem Header="2й триместр"  Width="100" Height="30">
+                <Grid Background="#FFD7DEDB" Margin="15"/>
+            </TabItem>
+            <TabItem Header="3й триместр" Width="100" Height="30">
+                <Grid Background="#FFECE9D2" Margin="15">
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>

@@ -25,7 +25,7 @@ namespace WomenConsulting
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<TrimestrBase> trimestrs;
+        private List<Trimestr> trimestrs;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace WomenConsulting
         private void InitPages()
         {
             Test();
-            trimestrs = new List<TrimestrBase>()
+            trimestrs = new List<Trimestr>()
             {
 
             };
@@ -47,16 +47,9 @@ namespace WomenConsulting
             var outPath = "MalenkiySrokFinalOut.docx";
 
             var doc = new Document(path);
-            var builder = new DocumentBuilder(doc);
-
             //для полей со списком искать в dropDownitems
             var a = doc.Range.FormFields.Where(x => x.Name.Contains("ПолеСоСписком14")).FirstOrDefault();
             a.Result = "(ректальное)";
-
-            var sf = SaveOptions.CreateSaveOptions(SaveFormat.Docx);
-            sf.ExportGeneratorName = false;
-            doc.Save(outPath, sf);
-
         }
     }
 }

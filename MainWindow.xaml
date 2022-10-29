@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:WomenConsulting"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FFAEB1FF">
+    <Grid  x:Name="GeneralData">
         <Grid.RowDefinitions>
-            <RowDefinition Height="42*"/>
-            <RowDefinition Height="48*"/>
-            <RowDefinition Height="329*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="115*"/>
+            <RowDefinition Height="286*"/>
         </Grid.RowDefinitions>
-        <Menu x:Name="BaseMenu" Margin="0,9">
+        <Menu x:Name="BaseMenu" Background="#FF6B71FF" Foreground="#FFF7F7F7" Margin="0,0,-0.4,0.2">
             <MenuItem Header="File">
                 <MenuItem Header="New Project" ></MenuItem>
                 <MenuItem Header="Open Project" >
@@ -25,19 +25,39 @@
             <MenuItem Header="Edit" ></MenuItem>
             <MenuItem Header="View" ></MenuItem>
         </Menu>
-        <TabControl Grid.Row="2">
-            <TabItem Header="1й триместр" Width="100">
-                <Grid Background="#FFD9DAFF" Margin="15"/>
+        <Grid Grid.Row="1" >
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="86,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="86,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="CollapseExpandBtn" Content="-" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="#FFAEB1FF" Foreground="Black" FontSize="14" Width="25" Height="25" BorderBrush="{x:Null}"/>
+        </Grid>
+        <TabControl Grid.Row="2" Margin="0,5.6,-0.4,-2" BorderBrush="#FFAEB1FF">
+            <TabItem Header="1й триместр" Width="100" BorderBrush="#FFAEB1FF">
+                <ScrollViewer>
+                    <Frame Source="/WomenConsulting;component/Trimestr1.xaml" NavigationUIVisibility="Hidden">
+                        <Frame.DataContext>
+                            <local:Page1/>
+                        </Frame.DataContext>
+                    </Frame>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="2й триместр"  Width="100" Height="30">
-                <Grid Background="#FFD7DEDB" Margin="15"/>
+                <ScrollViewer>
+                    <Frame Source="/WomenConsulting;component/Trimestr2.xaml" NavigationUIVisibility="Hidden">
+                        <Frame.DataContext>
+                            <local:Page1/>
+                        </Frame.DataContext>
+                    </Frame>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="3й триместр" Width="100" Height="30">
-                <Grid Background="#FFECE9D2" Margin="15">
-
-                </Grid>
+                <ScrollViewer>
+                    <Frame Source="/WomenConsulting;component/Trimestr3.xaml" NavigationUIVisibility="Hidden">
+                        <Frame.DataContext>
+                            <local:Page1/>
+                        </Frame.DataContext>
+                    </Frame>
+                </ScrollViewer>
             </TabItem>
         </TabControl>
-
     </Grid>
 </Window>

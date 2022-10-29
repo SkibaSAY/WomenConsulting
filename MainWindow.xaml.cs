@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WomenConsulting.Interfaces;
+using WomenConsulting.Class;
 using Xceed.Words.NET;
 
 namespace WomenConsulting
@@ -25,7 +25,7 @@ namespace WomenConsulting
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<ITrimestr> trimestrs;
+        private List<TrimestrBase> trimestrs;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace WomenConsulting
         private void InitPages()
         {
             Test();
-            trimestrs = new List<ITrimestr>()
+            trimestrs = new List<TrimestrBase>()
             {
 
             };

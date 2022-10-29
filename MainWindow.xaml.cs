@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GemBox.Document;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,9 @@ namespace WomenConsulting
 
         private void InitPages()
         {
+            //инициализация бесплатной версии GemBox
+            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
             trimestrs = new List<ITrimestr>()
             {
 

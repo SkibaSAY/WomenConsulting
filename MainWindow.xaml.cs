@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aspose.Words;
+using Aspose.Words.Saving;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -42,11 +44,19 @@ namespace WomenConsulting
         private void Test()
         {
             var path = "MalenkiySrokFinal.docx";
+            var outPath = "MalenkiySrokFinalOut.docx";
 
-            using (var fs = new FileStream(path,FileMode.Open))
-            {
-                var doc = DocX.Load(fs);
-            }
+            var doc = new Document(path);
+            var builder = new DocumentBuilder(doc);
+
+            //для полей со списком искать в dropDownitems
+            var a = doc.Range.FormFields.Where(x => x.Name.Contains("ПолеСоСписком14")).FirstOrDefault();
+            a.Result = "(ректальное)";
+
+            var sf = SaveOptions.CreateSaveOptions(SaveFormat.Docx);
+            sf.ExportGeneratorName = false;
+            doc.Save(outPath, sf);
+
         }
     }
 }

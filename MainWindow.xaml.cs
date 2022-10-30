@@ -16,7 +16,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WomenConsulting.Class;
-using Xceed.Words.NET;
 
 namespace WomenConsulting
 {

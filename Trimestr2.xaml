@@ -9,7 +9,7 @@
       Title="Trimestr2" Margin="0">
 
     <StackPanel Background="#FFD9DAFF" Margin="0">
-        <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Header="Общие параметры" VerticalAlignment="Top" Margin="0,0,0,10">
+        <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Header="Общие параметры" VerticalAlignment="Top" Margin="0,0,0,10" IsExpanded="True">
             <Grid Background="#FFAEB1FF" Margin="0" Height="114">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -78,7 +78,7 @@
             </Grid>
         </Expander>
 
-        <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Header="Фетометрия" Padding="0,0,0,5">
+        <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Header="Фетометрия" Padding="0,0,0,5" IsExpanded="True">
             <Grid Background="#FFAEB1FF">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50*"></RowDefinition>
@@ -124,7 +124,7 @@
             </Grid>
         </Expander>
 
-        <Expander  Header="Расширенный осмотр">
+        <Expander  Header="Расширенный осмотр" IsExpanded="True">
             <StackPanel Margin="35,0,0,0">
 
                 <Expander  Header="ЦНС.Лицо.Шея">
@@ -637,11 +637,11 @@
                 <TextBox></TextBox>
             </GroupBox>
 
-            <GroupBox Grid.Row="2" Grid.Column="0"  Header="Дата обследования"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+            <GroupBox Grid.Row="2" Grid.Column="0"  Header="Дата обследования"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
                 <DatePicker />
             </GroupBox>
 
-            <GroupBox Grid.Row="2" Grid.Column="1"  Header="Врач"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+            <GroupBox Grid.Row="2" Grid.Column="1"  Header="Врач"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
                 <ComboBox>
                     <ComboBoxItem Content="Перечислить врачей из настроек"/>
                 </ComboBox>

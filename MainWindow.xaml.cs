@@ -50,5 +50,6 @@ namespace WomenConsulting
             var a = doc.Range.FormFields.Where(x => x.Name.Contains("ПолеСоСписком14")).FirstOrDefault();
             a.Result = "(ректальное)";
         }
+
     }
 }

@@ -6,10 +6,646 @@
       xmlns:local="clr-namespace:WomenConsulting"
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="800"
-      Title="Trimestr2">
+      Title="Trimestr2" Margin="0">
 
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="182,42,0,0" TextWrapping="Wrap" Text="Trimestr 2" VerticalAlignment="Top" Width="120"/>
+    <StackPanel Background="#FFD9DAFF" Margin="0">
+        <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Header="Общие параметры" VerticalAlignment="Top" Margin="0,0,0,10" IsExpanded="True">
+            <Grid Background="#FFAEB1FF" Margin="0" Height="114">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
 
-    </Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <GroupBox Grid.Row="0" Header="Плод"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                    <ComboBox>
+                        <ComboBoxItem Content="Один"/>
+                        <ComboBoxItem Content="Два"/>
+                        <ComboBoxItem Content="Три"/>
+                    </ComboBox>
+                </GroupBox>
+
+                <GroupBox Grid.Column="1" Grid.Row="0" Header="Положение" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                    <ComboBox>
+                        <ComboBoxItem Content="Продольное"/>
+                        <ComboBoxItem Content="Поперечное"/>
+                        <ComboBoxItem Content="Косое"/>
+                    </ComboBox>
+                </GroupBox>
+                <GroupBox Grid.Column="2" Grid.Row="0" Header="Прилежание" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                    <ComboBox>
+                        <ComboBoxItem Content="Головное"/>
+                        <ComboBoxItem Content="Тазовое"/>
+                        <ComboBoxItem Content="."/>
+                    </ComboBox>
+                </GroupBox>
+
+                <GroupBox Grid.Row="1" Header="ЧСС"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                    <TextBox Height="23" TextWrapping="Wrap" HorizontalContentAlignment="Stretch"/>
+                </GroupBox>
+
+                <GroupBox Grid.Column="1" Grid.Row="1" Header="Ритм"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                    <ComboBox>
+                        <ComboBoxItem Content="Синусовый"/>
+                        <ComboBoxItem Content="Брадикардия"/>
+                        <ComboBoxItem Content="Тахикардия"/>
+                        <ComboBoxItem Content="Экрасистолия"/>
+                        <ComboBoxItem Content="Пароксизмальная Тахикардия"/>
+                        <ComboBoxItem Content="Нарушение Ритма(бигемения)"/>
+                    </ComboBox>
+                </GroupBox>
+
+                <GroupBox Grid.Column="2" Grid.Row="1" Header="Движение"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                    <ComboBox>
+                        <ComboBoxItem Content="Есть"/>
+                        <ComboBoxItem Content="Нет"/>
+                    </ComboBox>
+                </GroupBox>
+
+                <GroupBox Grid.Column="3" Grid.Row="1" Header="Дыхательное Движение" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                    <ComboBox>
+                        <ComboBoxItem Content="Есть"/>
+                        <ComboBoxItem Content="Нет"/>
+                    </ComboBox>
+                </GroupBox>
+
+            </Grid>
+        </Expander>
+
+        <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Header="Фетометрия" Padding="0,0,0,5" IsExpanded="True">
+            <Grid Background="#FFAEB1FF">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <WrapPanel Margin="5">
+                    <Label Content="Бипариетарный размер" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="мм" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="нед" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
+                </WrapPanel>
+
+                <WrapPanel Grid.Row="1" Margin="5">
+                    <Label Content="Длина бедренной кости" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="мм" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="нед" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
+                </WrapPanel>
+
+                <WrapPanel Grid.Row="2" Margin="5">
+                    <Label Content="Окружность живота" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="мм" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="нед" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
+                </WrapPanel>
+
+                <WrapPanel Grid.Row="3" Margin="5">
+                    <Label Content="Масса" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="г" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="27"/>
+                    <TextBox HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="нед" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
+                </WrapPanel>
+
+
+
+            </Grid>
+        </Expander>
+
+        <Expander  Header="Расширенный осмотр" IsExpanded="True">
+            <StackPanel Margin="35,0,0,0">
+
+                <Expander  Header="ЦНС.Лицо.Шея">
+                    <Grid Background="#FFAEB1FF" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="191*"></ColumnDefinition>
+                            <ColumnDefinition Width="223*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="190*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <GroupBox Grid.Row="0" Header="Лицо"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Визуализируется"/>
+                                <ComboBoxItem Content="Нет"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Grid.Row="0" Header="Носогубный треугольник" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" Header="Глазницы" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="1" Header="Профиль лица"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Grid.Row="1" Header="Боковые желудочки"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Header="Полость прозрачной перегородки"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+
+                        <GroupBox Grid.Column="0" Grid.Row="2" Header="III желудочек"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Grid.Row="2" Header="IV желудочек"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="2" Header="Мозжечок"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="3" Grid.Row="2" Header="Большая цистерна"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                    </Grid>
+                </Expander>
+
+                <Expander  Header="Сердце и крупные сосуды">
+                    <Grid Background="#FFAEB1FF" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="191*"></ColumnDefinition>
+                            <ColumnDefinition Width="223*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="190*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <GroupBox Grid.Row="0" Header="4x камерный срез"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Да"/>
+                                <ComboBoxItem Content="Нет"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Grid.Row="0" Header="Камеры сердца" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
+                            <ComboBox>
+                                <ComboBoxItem Content="Не увеличены"/>
+                                <ComboBoxItem Content="Увеличены"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="0"  Header="МПП" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Без особенностей"/>
+                                <ComboBoxItem Content="С особенностями"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="0" Grid.Column="3" Header="МЖП"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Без особенностей"/>
+                                <ComboBoxItem Content="С особенностями"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="0" Grid.Row="1" Header="Магистральные артерии"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Нормальное положение"/>
+                                <ComboBoxItem Content="Ненормальное положение"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Grid.Row="1" Header="Аорта"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="-непонятно, что писать-"/>
+                                <ComboBoxItem Content="-непонятно, что писать-"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="1" Header="Лёгочный ствол"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="-непонятно, что писать-"/>
+                                <ComboBoxItem Content="-непонятно, что писать-"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="3" Grid.Row="1" Header="ВПВ"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="В правом предсердии"/>
+                                <ComboBoxItem Content="В левом предсердии"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="0" Grid.Row="2" Header="НПВ"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="В правом предсердии"/>
+                                <ComboBoxItem Content="В левом предсердии"/>
+                            </ComboBox>
+                        </GroupBox>
+
+
+                        <GroupBox Grid.Column="1" Grid.Row="2" Header="Лёгочные вены"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="В правом предсердии"/>
+                                <ComboBoxItem Content="В левом предсердии"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="2" Header="Гидрооперикард"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Нет"/>
+                                <ComboBoxItem Content="Да"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="3" Grid.Row="2" Header="Кардиоторакарное отношение"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <TextBox></TextBox>
+                        </GroupBox>
+                    </Grid>
+                </Expander>
+
+                <Expander  Header="Грудная полость">
+                    <Grid Background="#FFAEB1FF" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="191*"></ColumnDefinition>
+                            <ColumnDefinition Width="223*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="190*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <GroupBox Grid.Row="0" Header="Расположение сердца"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Правильное"/>
+                                <ComboBoxItem Content="Неправильное"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Grid.Row="0" Header="Эхоструктура лёгких" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
+                            <ComboBox>
+                                <ComboBoxItem Content="Обычная"/>
+                                <ComboBoxItem Content="Необычная"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="0"  Header="Обьёмные образования" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Нет"/>
+                                <ComboBoxItem Content="Да"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="0" Grid.Column="3" Header="Гидроторакс"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Нет"/>
+                                <ComboBoxItem Content="Да"/>
+                            </ComboBox>
+                        </GroupBox>
+                    </Grid>
+                </Expander>
+
+                <Expander  Header="Брюшная полость">
+                    <Grid Background="#FFAEB1FF" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="191*"></ColumnDefinition>
+                            <ColumnDefinition Width="223*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="190*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <GroupBox Grid.Row="0" Header="Передняя брюшная стенка"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Без дефектов"/>
+                                <ComboBoxItem Content="С дефектами"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Grid.Row="0" Header="Пупочное кольцо" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
+                            <ComboBox>
+                                <ComboBoxItem Content="Не расширено"/>
+                                <ComboBoxItem Content="Расширено"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="0"  Header="Печень" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Без особенностей"/>
+                                <ComboBoxItem Content="С особенностями"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="0" Grid.Column="3" Header="Селезёнка"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Без особенностей"/>
+                                <ComboBoxItem Content="С особенностями"/>
+                            </ComboBox>
+                        </GroupBox>
+
+
+                        <GroupBox Grid.Row="1" Grid.Column="0" Header="Желудок"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Визуализируется"/>
+                                <ComboBoxItem Content="Нет"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="1" Grid.Column="1" Header="Кишечник" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
+                            <ComboBox>
+                                <ComboBoxItem Content="Без особенностей"/>
+                                <ComboBoxItem Content="С особенностями"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="1"  Header="Почки" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Без особенностей,ЧЛК не разрешён"/>
+                                <ComboBoxItem Content="Без особенностей,ЧЛК разрешён"/>
+                                <ComboBoxItem Content="С особенностями,ЧЛК не разрешён"/>
+                                <ComboBoxItem Content="С особенностями,ЧЛК разрешён"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="1" Grid.Column="3" Header="Мочевой пузырь"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Без особенностей"/>
+                                <ComboBoxItem Content="С особенностями"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="2" Grid.Column="0" Header="Обьёмные образования"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Нет"/>
+                                <ComboBoxItem Content="Да"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="3" Grid.Column="1" Header="Ацистит" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
+                            <ComboBox>
+                                <ComboBoxItem Content="Нет"/>
+                                <ComboBoxItem Content="Да"/>
+                            </ComboBox>
+                        </GroupBox>
+                    </Grid>
+                </Expander>
+
+                <Expander  Header="Скелет">
+                    <Grid Background="#FFAEB1FF" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="191*"></ColumnDefinition>
+                            <ColumnDefinition Width="223*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="190*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <GroupBox Grid.Row="0" Header="Позвоночник"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Без дефектов"/>
+                                <ComboBoxItem Content="С дефектами"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Grid.Row="0" Header="Большеберцовые кости" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="0"  Header="Малоберцовые кости" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="0" Grid.Column="3" Header="Локтевые кости"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+
+                        <GroupBox Grid.Row="1" Grid.Column="0" Header="Лучевые кости"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="1" Grid.Column="1" Header="Кисти" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="1"  Header="Стопы" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Норма"/>
+                                <ComboBoxItem Content="Ненорма"/>
+                            </ComboBox>
+                        </GroupBox>
+                    </Grid>
+                </Expander>
+
+                <Expander  Header="Пуповина">
+                    <Grid Background="#FFAEB1FF" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="191*"></ColumnDefinition>
+                            <ColumnDefinition Width="223*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="190*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <GroupBox Grid.Row="0" Header="Пупочные артерии"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Две"/>
+                                <ComboBoxItem Content="Одна"/>
+                                <ComboBoxItem Content="Три"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="1" Grid.Row="0" Header="Сосуды пуповины" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
+                            <ComboBox>
+                                <ComboBoxItem Content="Три"/>
+                                <ComboBoxItem Content="Две"/>
+                                <ComboBoxItem Content="Одна"/>
+                            </ComboBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Column="2" Grid.Row="0"  Header="Прикрепление" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Центральное"/>
+                                <ComboBoxItem Content="Боковое"/>
+                                <ComboBoxItem Content="Краевое"/>
+                                <ComboBoxItem Content="Оболочное"/>
+                            </ComboBox>
+                        </GroupBox>
+                    </Grid>
+                </Expander>
+
+                <Expander  Header="Плацента">
+                    <Grid Background="#FFAEB1FF" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="191*"></ColumnDefinition>
+                            <ColumnDefinition Width="223*"></ColumnDefinition>
+                            <ColumnDefinition Width="157*"></ColumnDefinition>
+                            <ColumnDefinition Width="190*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <GroupBox Grid.Row="0" Header="Плацента"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="На передней стенке матки"/>
+                                <ComboBoxItem Content="На задней стенки матки"/>
+                                <ComboBoxItem Content="На дне матки"/>
+                                <ComboBoxItem Content="Справа"/>
+                                <ComboBoxItem Content="Слева"/>
+                                <ComboBoxItem Content="Не доходит до внутреннего зева"/>
+                                <ComboBoxItem Content="Перекрывает внутренний зев"/>
+                            </ComboBox>
+                        </GroupBox>
+                        <GroupBox Grid.Row="0" Grid.Column="1" Header="Степень зрелости"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <TextBox></TextBox>
+                        </GroupBox>
+
+                        <GroupBox Grid.Row="0" Grid.Column="2" Header="Количество вод"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <ComboBox>
+                                <ComboBoxItem Content="Нормально"/>
+                                <ComboBoxItem Content="Увеличено"/>
+                                <ComboBoxItem Content="Снижено"/>
+                            </ComboBox>
+                        </GroupBox>
+                        <GroupBox Grid.Row="0" Grid.Column="3" Header="ИАЖ"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="85*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0" HorizontalContentAlignment="Stretch" />
+                                <Label Content="мм" Grid.Column="1"  />
+                            </Grid>
+                            
+                        </GroupBox>
+                        
+
+                    </Grid>
+                </Expander>
+
+
+            </StackPanel>
+        </Expander>
+
+        <Grid Background="#FFAEB1FF" Margin="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Grid.Row="0" Grid.ColumnSpan="2" Header="Заключение"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <ComboBox>
+                    <ComboBoxItem Content="Удовлетворительное развитие плода"/>
+                    <ComboBoxItem Content="Антенатальная смерть плода"/>
+                    <ComboBoxItem Content="Врождённый порог развития плода"/>
+                    <ComboBoxItem Content="Гипотрофия плода"/>
+                    <ComboBoxItem Content="Снижение темпов развития плода"/>
+                </ComboBox>
+            </GroupBox>
+
+            <GroupBox Grid.Row="1" Grid.ColumnSpan="2" Header="Дополнительные данные"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <TextBox></TextBox>
+            </GroupBox>
+
+            <GroupBox Grid.Row="2" Grid.Column="0"  Header="Дата обследования"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
+                <DatePicker />
+            </GroupBox>
+
+            <GroupBox Grid.Row="2" Grid.Column="1"  Header="Врач"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
+                <ComboBox>
+                    <ComboBoxItem Content="Перечислить врачей из настроек"/>
+                </ComboBox>
+            </GroupBox>
+        </Grid>
+    </StackPanel>
 </Page>

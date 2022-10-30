@@ -9,8 +9,8 @@
     <Grid  x:Name="GeneralData">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="30*"/>
             <RowDefinition Height="70*"/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Menu x:Name="BaseMenu" Background="#FF6B71FF" Foreground="#FFF7F7F7" Padding="10,5,0,5" FontSize="14">

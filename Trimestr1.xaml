@@ -5,13 +5,155 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WomenConsulting"
       mc:Ignorable="d" 
-      d:DesignHeight="1000" d:DesignWidth="800"
+      d:DesignHeight="1100" d:DesignWidth="800"
       Title="Page1" VerticalAlignment="Center">
 
-    <Grid Margin="0,0,0,0">
-        <Label Content="Label" HorizontalAlignment="Left" Margin="268,221,0,0" VerticalAlignment="Top" Background="#FFC02424"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="352,221,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="306,949,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
-    </Grid>
+    <StackPanel>
+        <Grid Background="#FFAEB1FF" >
+            <Label Content="Плод:" VerticalAlignment="Center" FontSize="16" Margin="10,0,0,0"/>
+            <ComboBox x:Name="fetusList" VerticalAlignment="Center" Width="120" HorizontalAlignment="Left" Margin="65,0,0,0">
+                <ListBoxItem Content="один"/>
+            </ComboBox>
+            <Label Content="ЧСС:" VerticalAlignment="Center" FontSize="16" Margin="185,0,0,0" />
+            <TextBox x:Name="pulseText" VerticalAlignment="Center" Width="120" Margin="230,0,0,0" HorizontalAlignment="Left"/>
+            <Label Content="Ритм:" VerticalAlignment="Center" FontSize="16" HorizontalAlignment="Left" Margin="350,0,0,0"/>
+            <ComboBox x:Name="rhythmList" VerticalAlignment="Center" Width="120" Margin="408,15,0,14.8" HorizontalAlignment="Left">
+                <ListBoxItem Content="один"/>
+            </ComboBox>
+            <Label Content="Движения:" VerticalAlignment="Center" FontSize="16" Margin="535,0,0,0"/>
+            <ComboBox x:Name="movementList" VerticalAlignment="Center" Width="120" Margin="625,0,0,0" HorizontalAlignment="Left">
+                <ListBoxItem Content="один"/>
+            </ComboBox>
+        </Grid>
+        <Expander Foreground="Black" Header ="Фетометрия" Background="#FFD9DAFF" FontSize="18" FontWeight="Bold" IsExpanded="True">
+            <StackPanel Background="#D9DAFF" Margin="0" >
+                <WrapPanel>
+                    <Label Content="Бипариетальный размер:"  FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
+                    <TextBox x:Name="biparietalDiameterMM" Width="80" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <Label Content="мм" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="biparietalDiameterWeek" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <Label Content="нед" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                </WrapPanel>
+                <WrapPanel>
+                    <Label Content="Длина бедренной кости:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
+                    <TextBox x:Name="femurLenghtMM" VerticalAlignment="Top" Width="80" Margin="26,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <Label Content="мм" HorizontalAlignment="Left" FontSize="16"  Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="femurLenghtWeek" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <Label Content="нед" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                </WrapPanel>
+                <WrapPanel >
+                    <Label Content="Окружность живота:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
+                    <TextBox x:Name="abdominalCircumferenceMM" VerticalAlignment="Top" Width="80" Margin="55,5,0,0" HorizontalAlignment="Left" FontWeight="Regular" />
+                    <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
+                    <TextBox x:Name="abdominalCircumferenceWeek" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
+                </WrapPanel>
+                <WrapPanel>
+                    <Label Content="Копчико-теменной размер:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
+                    <TextBox x:Name="coccyxParitelSizeMM" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
+                    <TextBox x:Name="coccyxParitelSizeWeek" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
+                    <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,15" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
+                </WrapPanel>
+            </StackPanel>
+        </Expander>
+        <Expander Foreground="Black" Header ="Расширенный осмотр" Background="#FFAEB1FF" FontSize="18" FontWeight="Bold" IsExpanded="True">
+            <StackPanel Background="#FFAEB1FF">
+            <WrapPanel Margin="11,5">
+                <Label Content="ЦНС. Лицо. Шея." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <Label Content="Лицо" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="face" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Глазницы" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="eyeSocketsList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="100"/>
+                <Label Content="Носовая кость" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="nasalBoneList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="100"/>
+                <Label Content="Хориоидные сплетения" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="choroidPlexusesList" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="100"/>
+                <Label Content="Лимфангиэктазия" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="limphangiectasiaList" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="150"/>
+            </WrapPanel>
+            <WrapPanel Margin="11,5">
+                <Label Content="Сердце и крупные сосуды." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <Label Content="Сердце" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="heartList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="4х камерный срез" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="chamber4SliceList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Камеры сердца" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="heartChamberList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+            </WrapPanel>
+            <WrapPanel Margin="11,5">
+                <Label Content="Грудная полость." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <Label Content="Расположение сердца" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="locationOfHeartList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Объемные образования" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="volumetricFormationsList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+            </WrapPanel>
+            <WrapPanel Margin="11,5">
+                <Label Content="Брюшная полость." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <Label Content="Передняя брюшная стенка" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="anteriorAbdominalWallList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Пупочное кольцо" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="umbilicalRingList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Желудок" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="stomachList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Мочевой пузырь" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="bladderList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Объемные образования" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="volumetricFormationsBellyList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+            </WrapPanel>
+            <WrapPanel Margin="11,5">
+                <Label Content="Скелет." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <Label Content="Позвоночник" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="spineList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Конечности" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="limbsList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Кисти и стопы" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <ComboBox x:Name="handsAndFeetList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+            </WrapPanel>
+            <WrapPanel Margin="11,5">
+                <Label Content="Маркеры ХА." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <Label Content="Толщина воротникового пространства" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <TextBox x:Name="colarMMText" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="мм. НК " HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <TextBox x:Name="NKText" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <Label Content="мм." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+            </WrapPanel>
+            <WrapPanel Margin="11,5,11,15">
+                <Label Content="Другие:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="anotherText" HorizontalAlignment="Left" Margin="5,7,0,0" VerticalAlignment="Top" Width="800"/>
+            </WrapPanel>
+        </StackPanel>
+        </Expander>
+        <StackPanel Background="#D9DAFF">
+            <WrapPanel Margin="11,5">
+                    <Label Content="Плацента" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <ComboBox x:Name="placentaWallList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="250"/>
+                    <TextBox x:Name="maturityFirstText" HorizontalAlignment="Left" Margin="5,7,0,0" VerticalAlignment="Top" Width="50"/>
+                    <TextBox x:Name="maturitySecondText" HorizontalAlignment="Left" Margin="5,7,0,0" VerticalAlignment="Top" Width="20"/>
+                    <Label Content="степени зрелости" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                </WrapPanel>
+            <WrapPanel Margin="11,5,11,15">
+                    <Label Content="Количество вод" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <ComboBox x:Name="amountWaterList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="250"/>
+                    <Label Content="Визуализация" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <TextBox x:Name="visualizationText" HorizontalAlignment="Left" Margin="5,7,0,0" VerticalAlignment="Top" Width="150"/>
+                </WrapPanel>
+        </StackPanel>
+        <StackPanel Background="#FFAEB1FF">
+            <WrapPanel Margin="11,5">
+                <Label Content="Заключение: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <ComboBox x:Name="conclusionList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+            </WrapPanel>
+            <WrapPanel Margin="11,5">
+                <Label Content="Дополнительные данные: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="additionalDataText" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="800"/>
+            </WrapPanel>
+            <Grid Margin="11,5,11,15">
+                <Label Content="Дата обследования: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="dateText" HorizontalAlignment="Left" Margin="185,7,0,0" VerticalAlignment="Top" Width="100"/>
+                <Label Content="Врач: " HorizontalAlignment="Right" Margin="0,0,210,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="doctorList" HorizontalAlignment="Right" Margin="5,5,0,0" VerticalAlignment="Top" Width="200"/>
+            </Grid>
+        </StackPanel>
+    </StackPanel>
 </Page>

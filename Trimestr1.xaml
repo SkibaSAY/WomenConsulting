@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WomenConsulting"
       mc:Ignorable="d" 
       d:DesignHeight="1100" d:DesignWidth="800"
-      Title="Page1" VerticalAlignment="Center">
+      Title="Page1" VerticalAlignment="Top">
 
     <StackPanel>
         <Grid Background="#FFAEB1FF" >

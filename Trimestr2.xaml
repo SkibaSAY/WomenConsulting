@@ -9,7 +9,7 @@
       Title="Trimestr2" Margin="0">
 
     <StackPanel Background="#FFD9DAFF" Margin="0">
-        <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Header="Общие параметры" VerticalAlignment="Top" Margin="0,0,0,10" IsExpanded="True">
+        <Expander HorizontalContentAlignment="Stretch" Background="#FFAEB1FF" VerticalContentAlignment="Stretch" Header="Общие параметры" VerticalAlignment="Top" Margin="0,0,0,10" IsExpanded="True">
             <Grid Background="#FFAEB1FF" Margin="0" Height="114">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -78,8 +78,8 @@
             </Grid>
         </Expander>
 
-        <Expander HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Header="Фетометрия" Padding="0,0,0,5" IsExpanded="True">
-            <Grid Background="#FFAEB1FF">
+        <Expander HorizontalContentAlignment="Stretch" Background="#FFD9DAFF" VerticalContentAlignment="Stretch" Header="Фетометрия" Padding="0,0,0,5" IsExpanded="True">
+            <Grid Background="#FFD9DAFF">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50*"></RowDefinition>
                     <RowDefinition Height="50*"></RowDefinition>
@@ -124,7 +124,7 @@
             </Grid>
         </Expander>
 
-        <Expander  Header="Расширенный осмотр" IsExpanded="True">
+        <Expander  Header="Расширенный осмотр" IsExpanded="True" Background="#FFAEB1FF">
             <StackPanel Margin="35,0,0,0">
 
                 <Expander  Header="ЦНС.Лицо.Шея">
@@ -611,7 +611,7 @@
             </StackPanel>
         </Expander>
 
-        <Grid Background="#FFAEB1FF" Margin="0" >
+        <Grid Background="#FFD9DAFF" Margin="0" >
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>

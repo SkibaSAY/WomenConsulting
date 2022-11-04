@@ -51,5 +51,14 @@ namespace WomenConsulting
             a.Result = "(ректальное)";
         }
 
+        private void Expander_Expanded(object sender, RoutedEventArgs e)
+        {
+            mainGrid.RowDefinitions[1].Height = new GridLength(200);
+        }
+
+        private void generalData_Collapsed(object sender, RoutedEventArgs e)
+        {
+            mainGrid.RowDefinitions[1].Height = new GridLength(50);
+        }
     }
 }

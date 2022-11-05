@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace WomenConsulting.Class
 {
@@ -16,7 +17,7 @@ namespace WomenConsulting.Class
         /// Адресс уже сохранённого ранее триместра
         /// </summary>
         public string Path { get; }
-
+        public Page TrimestrPage { get; }
 
         /// <summary>
         /// Класс для работы с Word версией триместра
@@ -26,39 +27,30 @@ namespace WomenConsulting.Class
         #endregion
 
         #region Constructors
-        /// <summary>
-        /// Используется, когда по пути лежит уже редактированный файл, а не шаблон
-        /// </summary>
-        /// <param name="path"></param>
-        public Trimestr(string path)
-        {
-            if (File.Exists(path))
-            {
-                Document = new Document(path);
-                Path = path;
-            }
-            else
-            {
-                throw new ArgumentException($"Файл {path} не существует");
-            }
-        }
 
         /// <summary>
         /// В случае, когда обьект создаётся с использованием шаблона
         /// </summary>
         /// <param name="samplePath">Шаблон документа</param>
         /// <param name="path">Путь к новому документу</param>
-        public Trimestr(string samplePath,string path)
+        public Trimestr(string path, string samplePath,Page page)
         {
-            if (File.Exists(samplePath))
+            if (File.Exists(path))
+            {
+                Document = new Document(path);
+            }
+            else if (File.Exists(samplePath))
             {
                 Document = new Document(samplePath);
-                Path = path;
             }
             else
             {
                 throw new ArgumentException($"Файл {samplePath} не существует");
             }
+            Path = path;
+            TrimestrPage = page;
+
+            UpdatePage();
         }
 
         #endregion
@@ -77,6 +69,42 @@ namespace WomenConsulting.Class
             var field = Document.Range.FormFields.Where(x => x.Name.Equals(fieldName)).FirstOrDefault();
             //возможно, стоит добавить обработку исключения, но пока не торопимся, тк это ошибка программиста
             field.Result = result;
+        }
+
+        public void UpdatePage()
+        {
+            var fields = Document.Range.FormFields;
+            foreach (var field in fields)
+            {
+                var pageControl = TrimestrPage.FindName(field.Name);
+                if(pageControl == null) continue;
+
+                if (pageControl is ComboBox)
+                {
+                    var comboBox = (pageControl as ComboBox);
+
+                    foreach (var item in field.DropDownItems)
+                    {
+                        var comboBoxItem = new ComboBoxItem();
+                        comboBoxItem.Content = item;
+                        comboBox.Items.Add(comboBoxItem);
+                    }
+
+                    comboBox.SelectedIndex = field.DropDownSelectedIndex;
+                }
+                else if (pageControl is TextBox)
+                {
+                    (pageControl as TextBox).Text = field.Result;
+                }
+                else if (pageControl is DatePicker)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
         }
 
         /// <summary>

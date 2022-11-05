@@ -18,13 +18,11 @@ namespace WomenConsulting
     /// <summary>
     /// Логика взаимодействия для Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Trimestr1 : Page
     {
-        public Page1()
+        public Trimestr1()
         {
             InitializeComponent();
         }
-
-
     }
 }

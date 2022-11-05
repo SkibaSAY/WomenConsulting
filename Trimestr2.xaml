@@ -89,7 +89,7 @@
 
                 <WrapPanel Margin="5">
                     <Label Content="Бипариетарный размер" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="biparietalSize_mm" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="мм" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
                     <TextBox HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="нед" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>

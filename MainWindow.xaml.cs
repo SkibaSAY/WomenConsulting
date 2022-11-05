@@ -2,6 +2,7 @@
 using Aspose.Words.Saving;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,10 +26,10 @@ namespace WomenConsulting
     public partial class MainWindow : Window
     {
         private List<Trimestr> trimestrs;
+
         public MainWindow()
         {
             InitializeComponent();
-            InitPages();
         }
 
         private void InitPages()
@@ -36,7 +37,9 @@ namespace WomenConsulting
             //Test();
             trimestrs = new List<Trimestr>()
             {
-
+                new Trimestr("1.docx","1_trimestr.docx",new Trimestr1()),
+                //new Trimestr("2.docx","2_trimestr.docx",new Trimestr2()),
+                //new Trimestr("3.txt","Шаблон3")
             };
         }
 

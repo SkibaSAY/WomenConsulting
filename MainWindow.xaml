@@ -56,7 +56,7 @@
                 <ScrollViewer Background="#FFAEB1FF">
                     <Frame Source="/WomenConsulting;component/Trimestr1.xaml" NavigationUIVisibility="Hidden">
                         <Frame.DataContext>
-                            <local:Page1/>
+                            <local:Trimestr1/>
                         </Frame.DataContext>
                     </Frame>
                 </ScrollViewer>
@@ -65,7 +65,7 @@
                 <ScrollViewer Background="#FFAEB1FF">
                     <Frame Source="/WomenConsulting;component/Trimestr2.xaml" NavigationUIVisibility="Hidden">
                         <Frame.DataContext>
-                            <local:Page1/>
+                            <local:Trimestr1/>
                         </Frame.DataContext>
                     </Frame>
                 </ScrollViewer>
@@ -74,7 +74,7 @@
                 <ScrollViewer Background="#FFAEB1FF">
                     <Frame Source="/WomenConsulting;component/Trimestr3.xaml" NavigationUIVisibility="Hidden">
                         <Frame.DataContext>
-                            <local:Page1/>
+                            <local:Trimestr1/>
                         </Frame.DataContext>
                     </Frame>
                 </ScrollViewer>

@@ -140,6 +140,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Шаблоны\1_trimestr.docx" />
+    <None Include="Шаблоны\2_trimestr.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

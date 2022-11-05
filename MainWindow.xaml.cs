@@ -37,7 +37,7 @@ namespace WomenConsulting
             //Test();
             trimestrs = new List<Trimestr>()
             {
-                new Trimestr("1.docx","1_trimestr.docx",Frame_Trimestr1.Content as Trimestr1),
+                new Trimestr("1.docx",@"Шаблоны\1_trimestr.docx",Frame_Trimestr1.Content as Trimestr1),
                 //new Trimestr("2.docx","2_trimestr.docx",Frame_Trimestr2.Content as Trimestr2),
                 //new Trimestr("3.txt","Шаблон3",Frame_Trimestr3.Content as Trimestr3)
             };

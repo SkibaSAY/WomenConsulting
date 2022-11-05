@@ -100,10 +100,6 @@ namespace WomenConsulting.Class
                 {
 
                 }
-                else
-                {
-
-                }
             }
         }
 
@@ -114,6 +110,23 @@ namespace WomenConsulting.Class
         {
             var sf = SaveOptions.CreateSaveOptions(SaveFormat.Docx);
             sf.ExportGeneratorName = false;
+
+            //нашли все поля, которые нужно заполнить с формы
+            var documentFields = Document.Range.FormFields;
+
+            //заполняем документ значениями полей с формы 
+            foreach (var docField in documentFields)
+            {
+                var pageControl = TrimestrPage.FindName(docField.Name);
+                
+                //если на форме нет контрола с названием, как в документе - пропускаем
+                if(pageControl == null) continue;
+
+                if (pageControl is ComboBox) docField.Result = (pageControl as ComboBox).Text;
+                else if (pageControl is TextBox) docField.Result = (pageControl as TextBox).Text;
+                else if (pageControl is DatePicker) docField.Result = (pageControl as DatePicker).Text;
+            }
+
             Document.Save(Path, sf);
         }
         #endregion

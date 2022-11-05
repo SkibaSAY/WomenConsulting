@@ -15,8 +15,8 @@
 
         <Menu x:Name="BaseMenu" Background="#FF6B71FF" Foreground="#FFF7F7F7" Padding="10,5,0,5" FontSize="14">
             <MenuItem Header="Файл">
-                <MenuItem Header="Новый протокол" ></MenuItem>
-                <MenuItem Header="Открыть" >
+                <MenuItem Header="Новый протокол" Click="MenuItem_Click_1" ></MenuItem>
+                <MenuItem Header="Открыть">
                     <MenuItem Header="Открыть протокол"></MenuItem>
                     <MenuItem Header="Открыть папку" ></MenuItem>
                 </MenuItem>
@@ -52,27 +52,27 @@
             </StackPanel>
         </Expander>
         <TabControl Margin="0,5.6,-0.4,-2" BorderBrush="#FFAEB1FF" Grid.Row="2">
-            <TabItem Header="1й триместр" Width="100" BorderBrush="#FFAEB1FF">
+            <TabItem x:Name="TabItemSem1" Header="1й триместр" Width="100" BorderBrush="#FFAEB1FF">
                 <ScrollViewer Background="#FFAEB1FF">
-                    <Frame Source="/WomenConsulting;component/Trimestr1.xaml" NavigationUIVisibility="Hidden">
+                    <Frame x:Name="Frame_Trimestr1" Source="/WomenConsulting;component/Trimestr1.xaml" NavigationUIVisibility="Hidden">
                         <Frame.DataContext>
                             <local:Trimestr1/>
                         </Frame.DataContext>
                     </Frame>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="2й триместр"  Width="100" Height="30">
+            <TabItem x:Name="TabItemSem2" Header="2й триместр"  Width="100" Height="30">
                 <ScrollViewer Background="#FFAEB1FF">
-                    <Frame Source="/WomenConsulting;component/Trimestr2.xaml" NavigationUIVisibility="Hidden">
+                    <Frame x:Name="Frame_Trimestr2" Source="/WomenConsulting;component/Trimestr2.xaml" NavigationUIVisibility="Hidden">
                         <Frame.DataContext>
                             <local:Trimestr1/>
                         </Frame.DataContext>
                     </Frame>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="3й триместр" Width="100" Height="30">
+            <TabItem x:Name="TabItemSem3" Header="3й триместр" Width="100" Height="30">
                 <ScrollViewer Background="#FFAEB1FF">
-                    <Frame Source="/WomenConsulting;component/Trimestr3.xaml" NavigationUIVisibility="Hidden">
+                    <Frame x:Name="Frame_Trimestr3" Source="/WomenConsulting;component/Trimestr3.xaml" NavigationUIVisibility="Hidden">
                         <Frame.DataContext>
                             <local:Trimestr1/>
                         </Frame.DataContext>

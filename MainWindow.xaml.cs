@@ -37,9 +37,9 @@ namespace WomenConsulting
             //Test();
             trimestrs = new List<Trimestr>()
             {
-                new Trimestr("1.docx","1_trimestr.docx",new Trimestr1()),
-                //new Trimestr("2.docx","2_trimestr.docx",new Trimestr2()),
-                //new Trimestr("3.txt","Шаблон3")
+                new Trimestr("1.docx","1_trimestr.docx",Frame_Trimestr1.Content as Trimestr1),
+                //new Trimestr("2.docx","2_trimestr.docx",Frame_Trimestr2.Content as Trimestr2),
+                //new Trimestr("3.txt","Шаблон3",Frame_Trimestr3.Content as Trimestr3)
             };
         }
 
@@ -62,6 +62,11 @@ namespace WomenConsulting
         private void generalData_Collapsed(object sender, RoutedEventArgs e)
         {
             mainGrid.RowDefinitions[1].Height = new GridLength(50);
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            InitPages();
         }
     }
 }

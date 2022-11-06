@@ -24,7 +24,7 @@
                 </Grid.ColumnDefinitions>
 
                 <GroupBox Grid.Row="0" Header="Плод"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="fetus">
                         <ComboBoxItem Content="Один"/>
                         <ComboBoxItem Content="Два"/>
                         <ComboBoxItem Content="Три"/>
@@ -32,14 +32,14 @@
                 </GroupBox>
 
                 <GroupBox Grid.Column="1" Grid.Row="0" Header="Положение" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="fetusLocation">
                         <ComboBoxItem Content="Продольное"/>
                         <ComboBoxItem Content="Поперечное"/>
                         <ComboBoxItem Content="Косое"/>
                     </ComboBox>
                 </GroupBox>
                 <GroupBox Grid.Column="2" Grid.Row="0" Header="Прилежание" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="fetusPresentation">
                         <ComboBoxItem Content="Головное"/>
                         <ComboBoxItem Content="Тазовое"/>
                         <ComboBoxItem Content="."/>
@@ -47,11 +47,11 @@
                 </GroupBox>
 
                 <GroupBox Grid.Row="1" Header="ЧСС"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <TextBox Height="23" TextWrapping="Wrap" HorizontalContentAlignment="Stretch"/>
+                    <TextBox x:Name="fetusChSS" Height="23" TextWrapping="Wrap" HorizontalContentAlignment="Stretch"/>
                 </GroupBox>
 
                 <GroupBox Grid.Column="1" Grid.Row="1" Header="Ритм"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="tempo">
                         <ComboBoxItem Content="Синусовый"/>
                         <ComboBoxItem Content="Брадикардия"/>
                         <ComboBoxItem Content="Тахикардия"/>
@@ -62,14 +62,14 @@
                 </GroupBox>
 
                 <GroupBox Grid.Column="2" Grid.Row="1" Header="Движение"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="fetusMotion">
                         <ComboBoxItem Content="Есть"/>
                         <ComboBoxItem Content="Нет"/>
                     </ComboBox>
                 </GroupBox>
 
                 <GroupBox Grid.Column="3" Grid.Row="1" Header="Дыхательное Движение" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="fetusRespiration">
                         <ComboBoxItem Content="Есть"/>
                         <ComboBoxItem Content="Нет"/>
                     </ComboBox>
@@ -91,31 +91,31 @@
                     <Label Content="Бипариетарный размер" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
                     <TextBox x:Name="biparietalSize_mm" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="мм" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="biparietalSize_week" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="нед" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="1" Margin="5">
                     <Label Content="Длина бедренной кости" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="hipLen_mm" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="мм" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="hipLen_week" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="нед" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="2" Margin="5">
                     <Label Content="Окружность живота" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="bellyCircle_mm" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="мм" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="bellyCircle_week" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="нед" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="3" Margin="5">
                     <Label Content="Масса" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="mass_g" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="г" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="27"/>
-                    <TextBox HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="mass_week" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="нед" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
 
@@ -545,7 +545,7 @@
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="0"  Header="Прикрепление" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
+                            <ComboBox x:Name="attachment">
                                 <ComboBoxItem Content="Центральное"/>
                                 <ComboBoxItem Content="Боковое"/>
                                 <ComboBoxItem Content="Краевое"/>
@@ -570,7 +570,7 @@
                         </Grid.ColumnDefinitions>
 
                         <GroupBox Grid.Row="0" Header="Плацента"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
+                            <ComboBox x:Name="placenta">
                                 <ComboBoxItem Content="На передней стенке матки"/>
                                 <ComboBoxItem Content="На задней стенки матки"/>
                                 <ComboBoxItem Content="На дне матки"/>
@@ -581,11 +581,11 @@
                             </ComboBox>
                         </GroupBox>
                         <GroupBox Grid.Row="0" Grid.Column="1" Header="Степень зрелости"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <TextBox></TextBox>
+                            <TextBox x:Name="degree_of_maturity"></TextBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="0" Grid.Column="2" Header="Количество вод"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
+                            <ComboBox x:Name="watterCount">
                                 <ComboBoxItem Content="Нормально"/>
                                 <ComboBoxItem Content="Увеличено"/>
                                 <ComboBoxItem Content="Снижено"/>
@@ -597,7 +597,7 @@
                                     <ColumnDefinition Width="85*"></ColumnDefinition>
                                     <ColumnDefinition Width="15*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <TextBox Grid.Column="0" HorizontalContentAlignment="Stretch" />
+                                <TextBox x:Name="IAG" Grid.Column="0" HorizontalContentAlignment="Stretch" />
                                 <Label Content="мм" Grid.Column="1"  />
                             </Grid>
                             
@@ -624,7 +624,7 @@
             </Grid.ColumnDefinitions>
 
             <GroupBox Grid.Row="0" Grid.ColumnSpan="2" Header="Заключение"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
-                <ComboBox>
+                <ComboBox x:Name="conclusion">
                     <ComboBoxItem Content="Удовлетворительное развитие плода"/>
                     <ComboBoxItem Content="Антенатальная смерть плода"/>
                     <ComboBoxItem Content="Врождённый порог развития плода"/>
@@ -634,15 +634,15 @@
             </GroupBox>
 
             <GroupBox Grid.Row="1" Grid.ColumnSpan="2" Header="Дополнительные данные"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
-                <TextBox></TextBox>
+                <TextBox x:Name="addData"></TextBox>
             </GroupBox>
 
             <GroupBox Grid.Row="2" Grid.Column="0"  Header="Дата обследования"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
-                <DatePicker />
+                <DatePicker x:Name="dateOfSurvey" />
             </GroupBox>
 
             <GroupBox Grid.Row="2" Grid.Column="1"  Header="Врач"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
-                <ComboBox>
+                <ComboBox x:Name="doctor">
                     <ComboBoxItem Content="Перечислить врачей из настроек"/>
                 </ComboBox>
             </GroupBox>

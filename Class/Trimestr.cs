@@ -98,7 +98,7 @@ namespace WomenConsulting.Class
                 }
                 else if (pageControl is DatePicker)
                 {
-
+                    (pageControl as DatePicker).Text = field.Result;
                 }
             }
         }

@@ -16,7 +16,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 using WomenConsulting.Class;
+using System.Windows.Forms;
+using Path = System.IO.Path;
 
 namespace WomenConsulting
 {
@@ -26,6 +29,24 @@ namespace WomenConsulting
     public partial class MainWindow : Window
     {
         private List<Trimestr> trimestrs;
+
+        private string currentDirectory;
+        private string CurrentDirectory
+        {
+            get
+            {
+                return currentDirectory;
+            }
+            set
+            {
+                if (!Directory.Exists(value))
+                {
+                    throw new ArgumentException("Смотрите, что записываете в переменную с директорией");
+                }
+                currentDirectory = value;
+                InitPages();
+            }
+        }
 
         public MainWindow()
         {
@@ -37,9 +58,9 @@ namespace WomenConsulting
             //Test();
             trimestrs = new List<Trimestr>()
             {
-                new Trimestr("1.docx",@"..\..\Шаблоны\1_trimestr.docx",Frame_Trimestr1.Content as Trimestr1),
-                new Trimestr("2.docx",@"..\..\Шаблоны\2_trimestr.docx",Frame_Trimestr2.Content as Trimestr2),
-                new Trimestr("3.docx",@"..\..\Шаблоны\3-iy_trimestr.docx",Frame_Trimestr3.Content as Trimestr3)
+                new Trimestr(Path.Combine(CurrentDirectory,"1.docx"),@"..\..\Шаблоны\1_trimestr.docx",Frame_Trimestr1.Content as Trimestr1),
+                new Trimestr(Path.Combine(CurrentDirectory,"2.docx"),@"..\..\Шаблоны\2_trimestr.docx",Frame_Trimestr2.Content as Trimestr2),
+                new Trimestr(Path.Combine(CurrentDirectory,"3.docx"),@"..\..\Шаблоны\3-iy_trimestr.docx",Frame_Trimestr3.Content as Trimestr3)
             };
         }
 
@@ -67,6 +88,19 @@ namespace WomenConsulting
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             InitPages();
+        }
+
+        private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)
+        {
+            FolderBrowserDialog folderDlg = new FolderBrowserDialog();
+            folderDlg.ShowNewFolderButton = true;
+
+            // Show the FolderBrowserDialog.  
+            DialogResult result = folderDlg.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                CurrentDirectory = folderDlg.SelectedPath;
+            }
         }
     }
 }

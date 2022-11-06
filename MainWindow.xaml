@@ -17,8 +17,8 @@
             <MenuItem Header="Файл">
                 <MenuItem Header="Новый протокол" Click="MenuItem_Click_1" ></MenuItem>
                 <MenuItem Header="Открыть">
-                    <MenuItem Header="Открыть протокол"></MenuItem>
-                    <MenuItem Header="Открыть папку" ></MenuItem>
+                    <MenuItem x:Name="OpenDirectoryDialog" Header="Открыть папку" Click="OpenDirectoryDialog_Click" ></MenuItem>
+                   
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="Выход" ></MenuItem>

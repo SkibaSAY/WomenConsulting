@@ -88,6 +88,7 @@ namespace WomenConsulting.Class
                 {
                     var comboBox = (pageControl as ComboBox);
 
+                    comboBox.Items.Clear();
                     foreach (var item in field.DropDownItems)
                     {
                         var comboBoxItem = new ComboBoxItem();

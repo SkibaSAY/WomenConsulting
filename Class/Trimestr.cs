@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WomenConsulting.Class
@@ -77,6 +78,10 @@ namespace WomenConsulting.Class
             foreach (var field in fields)
             {
                 var pageControl = TrimestrPage.FindName(field.Name);
+                if (pageControl == null)
+                {
+                    pageControl = App.Current.MainWindow.FindName(field.Name);
+                }
                 if(pageControl == null) continue;
 
                 if (pageControl is ComboBox)

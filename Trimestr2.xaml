@@ -24,7 +24,7 @@
                 </Grid.ColumnDefinitions>
 
                 <GroupBox Grid.Row="0" Header="Плод"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="fetus">
                         <ComboBoxItem Content="Один"/>
                         <ComboBoxItem Content="Два"/>
                         <ComboBoxItem Content="Три"/>
@@ -32,14 +32,14 @@
                 </GroupBox>
 
                 <GroupBox Grid.Column="1" Grid.Row="0" Header="Положение" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="fetusLocation">
                         <ComboBoxItem Content="Продольное"/>
                         <ComboBoxItem Content="Поперечное"/>
                         <ComboBoxItem Content="Косое"/>
                     </ComboBox>
                 </GroupBox>
                 <GroupBox Grid.Column="2" Grid.Row="0" Header="Прилежание" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="fetusPresentation">
                         <ComboBoxItem Content="Головное"/>
                         <ComboBoxItem Content="Тазовое"/>
                         <ComboBoxItem Content="."/>
@@ -47,11 +47,11 @@
                 </GroupBox>
 
                 <GroupBox Grid.Row="1" Header="ЧСС"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <TextBox Height="23" TextWrapping="Wrap" HorizontalContentAlignment="Stretch"/>
+                    <TextBox x:Name="fetusChSS" Height="23" TextWrapping="Wrap" HorizontalContentAlignment="Stretch"/>
                 </GroupBox>
 
                 <GroupBox Grid.Column="1" Grid.Row="1" Header="Ритм"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="tempo">
                         <ComboBoxItem Content="Синусовый"/>
                         <ComboBoxItem Content="Брадикардия"/>
                         <ComboBoxItem Content="Тахикардия"/>
@@ -62,14 +62,14 @@
                 </GroupBox>
 
                 <GroupBox Grid.Column="2" Grid.Row="1" Header="Движение"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="fetusMotion">
                         <ComboBoxItem Content="Есть"/>
                         <ComboBoxItem Content="Нет"/>
                     </ComboBox>
                 </GroupBox>
 
                 <GroupBox Grid.Column="3" Grid.Row="1" Header="Дыхательное Движение" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
-                    <ComboBox>
+                    <ComboBox x:Name="fetusRespiration">
                         <ComboBoxItem Content="Есть"/>
                         <ComboBoxItem Content="Нет"/>
                     </ComboBox>

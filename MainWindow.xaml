@@ -9,7 +9,6 @@
     <Grid x:Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="200"/>
             <RowDefinition Height="70*"/>
         </Grid.RowDefinitions>
 
@@ -25,33 +24,7 @@
             </MenuItem>
             <MenuItem Header="Настройки" ></MenuItem>
         </Menu>
-        <Expander x:Name="generalData" IsExpanded="True" Header="Общие данные" FontSize="18" FontWeight="Bold" Margin="0,10,0,0" Grid.Row="1" Expanded="Expander_Expanded" Collapsed="generalData_Collapsed">
-            <StackPanel Margin="0,10,0,0">
-               <Grid Margin="21,0,0,0">
-                   <Label Content="ФИО" FontWeight="Normal" FontSize="16" HorizontalAlignment="Left"/>
-                   <TextBox x:Name="surnameName" Margin="50,5,140,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="16" FontWeight="Normal" MinWidth="350"/>
-                    <Label Content=", " FontWeight="Normal"  FontSize="16" Margin="5,5,120,0" HorizontalAlignment="Right"/>
-                   <TextBox x:Name="age" HorizontalAlignment="Right" Margin="5,5,60,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="16" FontWeight="Normal"/>
-                    <Label Content="лет" FontWeight="Normal" Margin="5,5,21,0"  FontSize="16" HorizontalAlignment="Right"/>
-                </Grid>
-                <Grid Margin="21,0,0,0">
-                    <Label Content="Адрес" FontWeight="Normal" FontSize="16"/>
-                    <TextBox x:Name="address" Margin="65,5,21,0" TextWrapping="Wrap"  VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="16" FontWeight="Normal" MinWidth="600"/>
-                </Grid>
-                <WrapPanel Margin="21,0,0,0">
-                    <Label Content="Дата последней менструации" FontWeight="Normal" FontSize="16"/>
-                    <DatePicker x:Name="dateOfLastMen" HorizontalAlignment="Left" Margin="5,5,0,0"  VerticalAlignment="Top" Width="150" FontSize="16" FontWeight="Normal" Text="Выберите дату" Foreground="#FF635E5E"/>
-                </WrapPanel>
-                <WrapPanel Margin="21,0,0,20">
-                    <Label Content="Срок беременности" FontWeight="Normal" FontSize="16"/>
-                    <TextBox x:Name="gestationalTime_week" HorizontalAlignment="Left" Margin="5,5,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150" FontSize="16" FontWeight="Normal"/>
-                    <Label Content="недель" FontWeight="Normal" FontSize="16"/>
-                    <TextBox x:Name="gestationalTime_day" HorizontalAlignment="Left" Margin="5,5,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150" FontSize="16" FontWeight="Normal"/>
-                    <Label Content="дней" FontWeight="Normal" FontSize="16"/>
-                </WrapPanel>
-            </StackPanel>
-        </Expander>
-        <TabControl Margin="0,5.6,-0.4,-2" BorderBrush="#FFAEB1FF" Grid.Row="2">
+        <TabControl Margin="0,5.6,-0.4,-2" BorderBrush="#FFAEB1FF" Grid.Row="1">
             <TabItem x:Name="TabItemSem1" Header="1й триместр" Width="100" BorderBrush="#FFAEB1FF">
                 <ScrollViewer Background="#FFAEB1FF">
                     <Frame x:Name="Frame_Trimestr1" Source="/WomenConsulting;component/Trimestr1.xaml" NavigationUIVisibility="Hidden">

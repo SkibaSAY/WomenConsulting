@@ -72,7 +72,7 @@
                         <ListBoxItem Content="норма" FontWeight="Normal" FontSize="12"/>
                     </ComboBox>
                 <Label Content="Лимфангиэктазия" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" FontSize="16"/>
-                <ComboBox x:Name="limphangiectasiaList" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="150"/>
+                <ComboBox x:Name="limphangiectasiaList" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="150" FontSize="12" FontWeight="Normal"/>
             </WrapPanel>
             <WrapPanel Margin="11,5">
                 <Label Content="Сердце и крупные сосуды." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
@@ -81,7 +81,7 @@
                         <ListBoxItem Content="визуализируется" FontWeight="Normal" FontSize="12"/>
                     </ComboBox>
                 <Label Content="4х камерный срез" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                <ComboBox x:Name="chamber4SliceList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120"/>
+                <ComboBox x:Name="chamber4SliceList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120" FontSize="12" FontWeight="Normal"/>
                 <Label Content="Камеры сердца" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
                 <ComboBox x:Name="heartChamberList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="12" FontWeight="Normal">
                         <ListBoxItem Content="не увеличены" FontWeight="Normal" FontSize="12"/>

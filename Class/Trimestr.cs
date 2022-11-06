@@ -78,10 +78,6 @@ namespace WomenConsulting.Class
             foreach (var field in fields)
             {
                 var pageControl = TrimestrPage.FindName(field.Name);
-                if (pageControl == null)
-                {
-                    pageControl = App.Current.MainWindow.FindName(field.Name);
-                }
                 if(pageControl == null) continue;
 
                 if (pageControl is ComboBox)

@@ -15,10 +15,8 @@
         <Menu x:Name="BaseMenu" Background="#FF6B71FF" Foreground="#FFF7F7F7" Padding="10,5,0,5" FontSize="14">
             <MenuItem Header="Файл">
                 <MenuItem Header="Новый протокол" Click="MenuItem_Click_1" ></MenuItem>
-                <MenuItem Header="Открыть">
-                    <MenuItem x:Name="OpenDirectoryDialog" Header="Открыть папку" Click="OpenDirectoryDialog_Click" ></MenuItem>
-                   
-                </MenuItem>
+                <MenuItem x:Name="OpenDirectoryDialog" Header="Открыть папку" Click="OpenDirectoryDialog_Click" ></MenuItem>
+                <MenuItem x:Name="Save" Header="Сохранить" Click="Save_Click" ></MenuItem>
                 <Separator />
                 <MenuItem Header="Выход" ></MenuItem>
             </MenuItem>

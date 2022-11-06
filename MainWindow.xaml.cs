@@ -30,7 +30,7 @@ namespace WomenConsulting
     {
         private List<Trimestr> trimestrs;
 
-        private string currentDirectory;
+        private string currentDirectory = @"C:/Desktop";
         private string CurrentDirectory
         {
             get
@@ -75,16 +75,6 @@ namespace WomenConsulting
             a.Result = "(ректальное)";
         }
 
-        private void Expander_Expanded(object sender, RoutedEventArgs e)
-        {
-            mainGrid.RowDefinitions[1].Height = new GridLength(200);
-        }
-
-        private void generalData_Collapsed(object sender, RoutedEventArgs e)
-        {
-            mainGrid.RowDefinitions[1].Height = new GridLength(50);
-        }
-
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             InitPages();
@@ -100,6 +90,14 @@ namespace WomenConsulting
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 CurrentDirectory = folderDlg.SelectedPath;
+            }
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var trimestr in trimestrs)
+            {
+                trimestr.SaveTrimestr();
             }
         }
     }

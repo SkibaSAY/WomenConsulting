@@ -14,11 +14,8 @@ namespace WomenConsulting.Class
     class Trimestr
     {
         #region Fields
-        /// <summary>
-        /// Адресс уже сохранённого ранее триместра
-        /// </summary>
-        public string Path { get; }
         public Page TrimestrPage { get; }
+        public string SamplePath { get; }
 
         /// <summary>
         /// Класс для работы с Word версией триместра
@@ -48,9 +45,8 @@ namespace WomenConsulting.Class
             {
                 throw new ArgumentException($"Файл {samplePath} не существует");
             }
-            Path = path;
             TrimestrPage = page;
-
+            SamplePath = samplePath;
             UpdatePage();
         }
 
@@ -108,7 +104,7 @@ namespace WomenConsulting.Class
         /// <summary>
         /// Сохранение результата
         /// </summary>
-        public void SaveTrimestr()
+        public void SaveTrimestr(string dirPath)
         {
             var sf = SaveOptions.CreateSaveOptions(SaveFormat.Docx);
             sf.ExportGeneratorName = false;
@@ -128,8 +124,9 @@ namespace WomenConsulting.Class
                 else if (pageControl is TextBox) docField.Result = (pageControl as TextBox).Text;
                 else if (pageControl is DatePicker) docField.Result = (pageControl as DatePicker).Text;
             }
+            var fileName = new FileInfo(SamplePath).Name;
 
-            Document.Save(Path, sf);
+            Document.Save(Path.Combine(dirPath,fileName), sf);
         }
         #endregion
     }

@@ -12,13 +12,13 @@
             <RowDefinition Height="70*"/>
         </Grid.RowDefinitions>
 
-        <Menu x:Name="BaseMenu" Background="#FF6B71FF" Foreground="#FFF7F7F7" Padding="10,5,0,5" FontSize="14">
-            <MenuItem Header="Файл">
-                <MenuItem Header="Новый протокол" Click="MenuItem_Click_1" ></MenuItem>
-                <MenuItem x:Name="OpenDirectoryDialog" Header="Открыть папку" Click="OpenDirectoryDialog_Click" ></MenuItem>
-                <MenuItem x:Name="Save" Header="Сохранить" Click="Save_Click" ></MenuItem>
-                <Separator />
-                <MenuItem Header="Выход" ></MenuItem>
+        <Menu x:Name="BaseMenu" Background="#FF6B71FF" Foreground="White" Padding="10,5,0,5" FontSize="14">
+            <MenuItem Header="Файл" Foreground="White" Background="#FF6B71FF">
+                <MenuItem x:Name="NewProtocol" Header="Новый протокол" Click="NewProtocol_Click_1" Background="#FF6B71FF" ></MenuItem>
+                <MenuItem x:Name="OpenDirectoryDialog" Header="Открыть папку" Click="OpenDirectoryDialog_Click" Background="#FF6B71FF" ></MenuItem>
+                <MenuItem x:Name="Save" Header="Сохранить" Click="Save_Click" Background="#FF6B71FF" IsEnabled="False" ></MenuItem>
+                <MenuItem x:Name="SaveAs" Header="Сохранить как" Background="#FF6B71FF" Click="SaveAs_Click" ></MenuItem>
+                <MenuItem Header="Выход" Background="#FF6B71FF" ></MenuItem>
             </MenuItem>
             <MenuItem Header="Настройки" ></MenuItem>
         </Menu>

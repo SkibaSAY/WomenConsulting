@@ -30,22 +30,33 @@ namespace WomenConsulting
     {
         private List<Trimestr> trimestrs;
 
-        private string currentDirectory = @"C:/Desktop";
+        private string currentDirectory = "";
         private string CurrentDirectory
         {
             get
             {
                 return currentDirectory;
             }
+            /*
+             Пустое значение при создании нового протокола => нужно отключить кнопку простого сохранения
+             Если значение непустое, то значение должно быть корректным путём, тогда кнопка сохранения будет 
+             активна
+             */
             set
             {
-                if (!Directory.Exists(value))
+                var valueIsEmpty = String.IsNullOrEmpty(value);
+                if (!valueIsEmpty && !Directory.Exists(value))
                 {
                     throw new ArgumentException("Смотрите, что записываете в переменную с директорией");
                 }
+                //отключение/включение кнопки сохранения
+                Save.IsEnabled = !valueIsEmpty;
                 currentDirectory = value;
-                InitPages();
             }
+        }
+        private void ResetCurrentDirectory()
+        {
+            CurrentDirectory = "";
         }
 
         public MainWindow()
@@ -75,12 +86,12 @@ namespace WomenConsulting
             a.Result = "(ректальное)";
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            InitPages();
-        }
-
         private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)
+        {
+            if(SelectDirectoryPath())
+                InitPages();
+        }
+        private bool SelectDirectoryPath()
         {
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
             folderDlg.ShowNewFolderButton = true;
@@ -90,15 +101,29 @@ namespace WomenConsulting
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 CurrentDirectory = folderDlg.SelectedPath;
+                return true;
             }
+            return false;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             foreach (var trimestr in trimestrs)
             {
-                trimestr.SaveTrimestr();
+                trimestr.SaveTrimestr(CurrentDirectory);
             }
+        }
+
+        private void SaveAs_Click(object sender, RoutedEventArgs e)
+        {
+            if(SelectDirectoryPath()) 
+                Save_Click(sender, e);
+        }
+
+        private void NewProtocol_Click_1(object sender, RoutedEventArgs e)
+        {
+            ResetCurrentDirectory();
+            InitPages();
         }
     }
 }

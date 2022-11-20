@@ -15,7 +15,7 @@ namespace WomenConsulting.Class
         public List<string> Doctors { get; set; } = new List<string>();
 
         [JsonIgnore]
-        private static Settings settings;
+        private static Settings settings = new Settings();
 
         public string _lastOpenDirectory = "";
         public static string LastOpenDirectory

@@ -24,7 +24,7 @@
                 </Grid>
                 <WrapPanel Margin="21,0,0,0">
                     <Label Content="Дата последней менструации" FontWeight="Normal" FontSize="16"/>
-                    <DatePicker x:Name="dateOfLastMen" HorizontalAlignment="Left" Margin="5,5,0,0"  VerticalAlignment="Top" Width="150" FontSize="16" FontWeight="Normal" Text="Выберите дату" Foreground="#FF635E5E"/>
+                    <DatePicker x:Name="dateOfLastMen" HorizontalAlignment="Left" Margin="5,5,0,0"  VerticalAlignment="Top" Width="150" FontSize="16" FontWeight="Normal" Text="Выберите дату" Foreground="#FF635E5E" LostFocus="dateOfLastMen_LostFocus"/>
                 </WrapPanel>
                 <WrapPanel Margin="21,0,0,20">
                     <Label Content="Срок беременности" FontWeight="Normal" FontSize="16"/>

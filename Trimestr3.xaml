@@ -206,7 +206,7 @@
                 <Label Content="Дата обследования: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <TextBox x:Name="DateField" HorizontalAlignment="Left" Margin="185,7,0,0" VerticalAlignment="Top" Width="100"/>
                 <Label Content="Врач: " HorizontalAlignment="Right" Margin="0,0,210,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                <TextBox x:Name="DoctorField" HorizontalAlignment="Right" Margin="5,5,0,0" VerticalAlignment="Top" Width="200"/>
+                <ComboBox x:Name="doctorList" HorizontalAlignment="Right" Margin="5,5,0,0" VerticalAlignment="Top" Width="200"/>
             </Grid>
         </StackPanel>
     </StackPanel>

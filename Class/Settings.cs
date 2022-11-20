@@ -1,51 +1,64 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace WomenConsulting.Class
 {
-    [Serializable]
-    class Settings
+    public class Settings
     {
-        public List<string> Doctors { get; set; }
-        public string LastOpenDirectory { get; set; }
-        public Settings()
-        {
+        [JsonIgnore]
+        public static readonly string Path = "settings.json";
+        public List<string> Doctors { get; set; } = new List<string>();
 
-        }
-        public void AddDoctor(string NewDoctor)
+        [JsonIgnore]
+        private static Settings settings;
+
+        private string _lastOpenDirectory = "";
+        public static string LastOpenDirectory
         {
-            Doctors.Add(NewDoctor);
+            get
+            {
+                return settings._lastOpenDirectory;
+            }
+            set
+            {
+                settings._lastOpenDirectory = value;
+            }
         }
 
-        //убрать по индексу
-        //public void RemoveDoctor(int Position)
-        //{
-        //    Doctors.RemoveAt(Position);
-        //}
+        public static void Load()
+        {
+            if (File.Exists(Path))
+            {
+                var content = File.ReadAllText(Path);
+                settings = JsonConvert.DeserializeObject<Settings>(content);
+            }
+        }
+        public static void Save()
+        {
+            var content = JsonConvert.SerializeObject(settings);
+            File.WriteAllText(Path, content);
+        }
+
+
+        public static void AddDoctor(string NewDoctor)
+        {
+            settings.Doctors.Add(NewDoctor);
+        }
         
         //убрать по имени
-        public void RemoveDoctor(string RemovedDoctor)
+        public static void RemoveDoctor(string RemovedDoctor)
         {
-            Doctors.Remove(RemovedDoctor);
+            settings.Doctors.Remove(RemovedDoctor);
         }
 
-        public List<string> GetDoctors()
+        public static List<string> GetDoctors()
         {
-            return Doctors;
-        }
-
-        public void UpdateLastOpened(string NewPath)
-        {
-            LastOpenDirectory = NewPath;
-        }
-
-        public string GetLastOpened()
-        {
-            return LastOpenDirectory;
+            return settings.Doctors;
         }
     }
 }

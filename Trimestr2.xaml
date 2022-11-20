@@ -641,7 +641,7 @@
             </GroupBox>
 
             <GroupBox Grid.Row="2" Grid.Column="1"  Header="Врач"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
-                <ComboBox x:Name="doctor">
+                <ComboBox x:Name="doctorList">
 
                 </ComboBox>
             </GroupBox>

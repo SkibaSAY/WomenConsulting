@@ -79,7 +79,7 @@ namespace WomenConsulting.Class
                 if (pageControl is ComboBox)
                 {
                     var comboBox = (pageControl as ComboBox);
-
+                    
                     comboBox.Items.Clear();
                     foreach (var item in field.DropDownItems)
                     {
@@ -99,6 +99,22 @@ namespace WomenConsulting.Class
                     (pageControl as DatePicker).Text = field.Result;
                 }
             }
+            //заполнение списка врачей с учётом настроек
+            var doctorList = TrimestrPage.FindName("doctorList") as ComboBox;
+            var selectedDoctor = doctorList.SelectedItem;
+
+            doctorList.Items.Clear();
+
+            var doctorsInSettings = Settings.GetDoctors();
+            doctorList.ItemsSource = doctorsInSettings;
+            if (selectedDoctor != null)
+            {
+                var doctorName = (selectedDoctor as ComboBoxItem).Content.ToString();
+                doctorsInSettings.Add(doctorName);
+                doctorList.SelectedIndex = doctorList.Items.Count - 1;
+            }
+            
+
         }
 
         /// <summary>

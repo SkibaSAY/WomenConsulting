@@ -30,8 +30,9 @@ namespace WomenConsulting
     {
         private List<Trimestr> trimestrs;
 
-        private string currentDirectory = "";
-        private string CurrentDirectory
+        private string currentDirectory;
+
+        public string CurrentDirectory
         {
             get
             {
@@ -54,6 +55,7 @@ namespace WomenConsulting
                 currentDirectory = value;
             }
         }
+
         private void ResetCurrentDirectory()
         {
             CurrentDirectory = "";
@@ -63,7 +65,11 @@ namespace WomenConsulting
         {
             InitializeComponent();
         }
-
+        private void InitSettings()
+        {
+            Settings.Load();
+            CurrentDirectory = Settings.LastOpenDirectory;
+        }
         private void InitPages()
         {
             //Test();
@@ -73,17 +79,6 @@ namespace WomenConsulting
                 new Trimestr(Path.Combine(CurrentDirectory,"2.docx"),@"..\..\Шаблоны\2_trimestr.docx",Frame_Trimestr2.Content as Trimestr2),
                 new Trimestr(Path.Combine(CurrentDirectory,"3.docx"),@"..\..\Шаблоны\3-iy_trimestr.docx",Frame_Trimestr3.Content as Trimestr3)
             };
-        }
-
-        private void Test()
-        {
-            var path = "MalenkiySrokFinal.docx";
-            var outPath = "MalenkiySrokFinalOut.docx";
-
-            var doc = new Document(path);
-            //для полей со списком искать в dropDownitems
-            var a = doc.Range.FormFields.Where(x => x.Name.Contains("ПолеСоСписком14")).FirstOrDefault();
-            a.Result = "(ректальное)";
         }
 
         private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)
@@ -123,6 +118,18 @@ namespace WomenConsulting
         private void NewProtocol_Click_1(object sender, RoutedEventArgs e)
         {
             ResetCurrentDirectory();
+            InitPages();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Settings.LastOpenDirectory = CurrentDirectory;
+            Settings.Save();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            InitSettings();
             InitPages();
         }
     }

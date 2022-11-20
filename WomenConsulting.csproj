@@ -86,6 +86,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Class\Settings.cs" />
     <Compile Include="Class\Trimestr.cs" />
     <Compile Include="Trimestr2.xaml.cs">
       <DependentUpon>Trimestr2.xaml</DependentUpon>

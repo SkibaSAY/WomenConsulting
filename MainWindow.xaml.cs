@@ -72,12 +72,11 @@ namespace WomenConsulting
         }
         private void InitPages()
         {
-            //Test();
             trimestrs = new List<Trimestr>()
             {
-                new Trimestr(Path.Combine(CurrentDirectory,"1.docx"),@"..\..\Шаблоны\1_trimestr.docx",Frame_Trimestr1.Content as Trimestr1),
-                new Trimestr(Path.Combine(CurrentDirectory,"2.docx"),@"..\..\Шаблоны\2_trimestr.docx",Frame_Trimestr2.Content as Trimestr2),
-                new Trimestr(Path.Combine(CurrentDirectory,"3.docx"),@"..\..\Шаблоны\3-iy_trimestr.docx",Frame_Trimestr3.Content as Trimestr3)
+                new Trimestr(Path.Combine(CurrentDirectory,"1_trimestr.docx"),@"..\..\Шаблоны\1_trimestr.docx",Frame_Trimestr1.Content as Trimestr1),
+                new Trimestr(Path.Combine(CurrentDirectory,"2_trimestr.docx"),@"..\..\Шаблоны\2_trimestr.docx",Frame_Trimestr2.Content as Trimestr2),
+                new Trimestr(Path.Combine(CurrentDirectory,"3_trimestr.docx"),@"..\..\Шаблоны\3_trimestr.docx",Frame_Trimestr3.Content as Trimestr3)
             };
         }
 

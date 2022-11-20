@@ -79,7 +79,8 @@ namespace WomenConsulting.Class
                 if (pageControl is ComboBox)
                 {
                     var comboBox = (pageControl as ComboBox);
-                    
+
+                    comboBox.ItemsSource = null;
                     comboBox.Items.Clear();
                     foreach (var item in field.DropDownItems)
                     {
@@ -103,6 +104,7 @@ namespace WomenConsulting.Class
             var doctorList = TrimestrPage.FindName("doctorList") as ComboBox;
             var selectedDoctor = doctorList.SelectedItem;
 
+            doctorList.ItemsSource = null;
             doctorList.Items.Clear();
 
             var doctorsInSettings = Settings.GetDoctors();
@@ -110,10 +112,14 @@ namespace WomenConsulting.Class
             if (selectedDoctor != null)
             {
                 var doctorName = (selectedDoctor as ComboBoxItem).Content.ToString();
-                doctorsInSettings.Add(doctorName);
-                doctorList.SelectedIndex = doctorList.Items.Count - 1;
-            }
-            
+                var selectedIndex = doctorsInSettings.FindIndex(x=>x.Equals(doctorName));
+                if(selectedIndex == -1)
+                {
+                    doctorsInSettings.Add(doctorName);
+                    selectedIndex = doctorList.Items.Count - 1;
+                }
+                doctorList.SelectedIndex = selectedIndex;
+            }       
 
         }
 

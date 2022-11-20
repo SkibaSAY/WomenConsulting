@@ -17,7 +17,7 @@ namespace WomenConsulting.Class
         [JsonIgnore]
         private static Settings settings;
 
-        private string _lastOpenDirectory = "";
+        public string _lastOpenDirectory = "";
         public static string LastOpenDirectory
         {
             get

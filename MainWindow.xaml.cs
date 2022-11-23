@@ -28,6 +28,7 @@ namespace WomenConsulting
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Woman woman;
         private List<Trimestr> trimestrs;
 
         private string currentDirectory;
@@ -70,14 +71,11 @@ namespace WomenConsulting
             Settings.Load();
             CurrentDirectory = Settings.LastOpenDirectory;
         }
+
         private void InitPages()
         {
-            trimestrs = new List<Trimestr>()
-            {
-                new Trimestr(Path.Combine(CurrentDirectory,"1_trimestr.docx"),@"..\..\Шаблоны\1_trimestr.docx",Frame_Trimestr1.Content as Trimestr1),
-                new Trimestr(Path.Combine(CurrentDirectory,"2_trimestr.docx"),@"..\..\Шаблоны\2_trimestr.docx",Frame_Trimestr2.Content as Trimestr2),
-                new Trimestr(Path.Combine(CurrentDirectory,"3_trimestr.docx"),@"..\..\Шаблоны\3_trimestr.docx",Frame_Trimestr3.Content as Trimestr3)
-            };
+            woman = new Woman(CurrentDirectory);
+            DataContext = woman;
         }
 
         private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)

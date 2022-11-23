@@ -2,6 +2,7 @@
 using Aspose.Words.Saving;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,12 @@ using System.Windows.Controls;
 
 namespace WomenConsulting.Class
 {
-    class Trimestr
+    public class Trimestr
     {
         #region Fields
-        public Page TrimestrPage { get; }
+
+        public Page TrimestrPage { get; set; }
+
         public string SamplePath { get; }
 
         /// <summary>
@@ -23,6 +26,7 @@ namespace WomenConsulting.Class
         private Document Document { get; }
 
         #endregion
+
 
         #region Constructors
 
@@ -151,5 +155,6 @@ namespace WomenConsulting.Class
             Document.Save(Path.Combine(dirPath,fileName), sf);
         }
         #endregion
+
     }
 }

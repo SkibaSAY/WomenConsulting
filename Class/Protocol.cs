@@ -14,5 +14,6 @@ namespace WomenConsulting.Class
         {
             fetuses = new List<Fetus>();
         }
+        
     }
 }

@@ -28,8 +28,7 @@ namespace WomenConsulting
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Woman woman;
-        private List<Trimestr> trimestrs;
+        public Fetus fetus;
 
         private string currentDirectory;
 
@@ -74,8 +73,8 @@ namespace WomenConsulting
 
         private void InitPages()
         {
-            woman = new Woman(CurrentDirectory);
-            DataContext = woman;
+            fetus = new Fetus(CurrentDirectory);
+            DataContext = fetus;
         }
 
         private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)
@@ -100,10 +99,9 @@ namespace WomenConsulting
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var trimestr in trimestrs)
-            {
-                trimestr.SaveTrimestr(CurrentDirectory);
-            }
+            fetus.trimestr1.SaveTrimestr(CurrentDirectory);
+            fetus.trimestr2.SaveTrimestr(CurrentDirectory);
+            fetus.trimestr3.SaveTrimestr(CurrentDirectory);
         }
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)

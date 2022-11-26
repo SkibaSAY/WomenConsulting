@@ -28,7 +28,7 @@ namespace WomenConsulting
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Fetus fetus;
+        public Fetus fetuses;
 
         private string currentDirectory;
 
@@ -73,8 +73,8 @@ namespace WomenConsulting
 
         private void InitPages()
         {
-            fetus = new Fetus(CurrentDirectory);
-            DataContext = fetus;
+            fetuses = new Fetus(CurrentDirectory);
+            DataContext = fetuses;
         }
 
         private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)
@@ -99,9 +99,9 @@ namespace WomenConsulting
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            fetus.trimestr1.SaveTrimestr(CurrentDirectory);
-            fetus.trimestr2.SaveTrimestr(CurrentDirectory);
-            fetus.trimestr3.SaveTrimestr(CurrentDirectory);
+            fetuses.trimestr1.SaveTrimestr(CurrentDirectory);
+            fetuses.trimestr2.SaveTrimestr(CurrentDirectory);
+            fetuses.trimestr3.SaveTrimestr(CurrentDirectory);
         }
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)

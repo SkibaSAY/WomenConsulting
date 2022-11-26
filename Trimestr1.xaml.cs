@@ -27,9 +27,10 @@ namespace WomenConsulting
 
         private void dateOfLastMen_CalendarClosed(object sender, RoutedEventArgs e)
         {
-            var dateDifference = DateTime.Now - dateOfLastMen.SelectedDate;
-            gestationalTime_week.Text = (dateDifference.Value.Days / 7).ToString();
-            gestationalTime_day.Text = (dateDifference.Value.Days - dateDifference.Value.Days / 7 * 7).ToString();
+            //возвращаю в общие , поэтому пока комментим
+            //var dateDifference = DateTime.Now - dateOfLastMen.SelectedDate;
+            //gestationalTime_week.Text = (dateDifference.Value.Days / 7).ToString();
+            //gestationalTime_day.Text = (dateDifference.Value.Days - dateDifference.Value.Days / 7 * 7).ToString();
         }
     }
 }

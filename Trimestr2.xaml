@@ -20,43 +20,35 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-
-                <GroupBox Grid.Row="0" Header="Плод"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
-                    <ComboBox x:Name="fetus">
-
-                    </ComboBox>
-                </GroupBox>
-
-                <GroupBox Grid.Column="1" Grid.Row="0" Header="Положение" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Column="0" Grid.Row="0" Header="Положение" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <ComboBox x:Name="fetusLocation">
 
                     </ComboBox>
                 </GroupBox>
-                <GroupBox Grid.Column="2" Grid.Row="0" Header="Прилежание" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Column="1" Grid.Row="0" Header="Прилежание" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <ComboBox x:Name="fetusPresentation">
 
                     </ComboBox>
                 </GroupBox>
 
-                <GroupBox Grid.Row="1" Header="ЧСС"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Row="0" Grid.Column="2" Header="ЧСС"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <TextBox x:Name="fetusChSS" Height="23" TextWrapping="Wrap" HorizontalContentAlignment="Stretch"/>
                 </GroupBox>
 
-                <GroupBox Grid.Column="1" Grid.Row="1" Header="Ритм"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Column="0" Grid.Row="1" Header="Ритм"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <ComboBox x:Name="tempo">
 
                     </ComboBox>
                 </GroupBox>
 
-                <GroupBox Grid.Column="2" Grid.Row="1" Header="Движение"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Column="1" Grid.Row="1" Header="Движение"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <ComboBox x:Name="fetusMotion">
 
                     </ComboBox>
                 </GroupBox>
 
-                <GroupBox Grid.Column="3" Grid.Row="1" Header="Дыхательное Движение" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Column="2" Grid.Row="1" Header="Дыхательное Движение" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <ComboBox x:Name="fetusRespiration">
 
                     </ComboBox>

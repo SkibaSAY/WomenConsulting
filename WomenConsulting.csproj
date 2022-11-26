@@ -88,7 +88,8 @@
     </ApplicationDefinition>
     <Compile Include="Class\Fetus.cs" />
     <Compile Include="Class\Protocol.cs" />
-    <Compile Include="Class\Settings.cs" />
+    <Compile Include="Class\Settings\GeneralSettings.cs" />
+    <Compile Include="Class\Settings\Settings.cs" />
     <Compile Include="Class\Trimestr.cs" />
     <Compile Include="Trimestr2.xaml.cs">
       <DependentUpon>Trimestr2.xaml</DependentUpon>

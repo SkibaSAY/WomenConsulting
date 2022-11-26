@@ -18,9 +18,12 @@ namespace WomenConsulting.Class
         public Trimestr trimestr2 { get; set; }
         public Trimestr trimestr3 { get; set; }
 
+        //временно
+        public string Name { get; set; } = "Плод";
 
-        public Fetus(string path)
+        public Fetus(string path,string name)
         {
+            this.Name = name;
             string inputFile = "";
             if (Directory.Exists(path))
             {

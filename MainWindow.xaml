@@ -23,8 +23,39 @@
             <MenuItem Header="Настройки" ></MenuItem>
         </Menu>
         <DockPanel Grid.Row="1">
+            <DockPanel.Resources>
+                <DataTemplate x:Key="FetusContentTemplate">
+                    <TabControl x:Name="FetuseTabItem" Margin="0,5.6,-0.4,-2" BorderBrush="#FFAEB1FF">
+                        <TabItem x:Name="TabItemSem1" Header="1й триместр" Width="100" BorderBrush="#FFAEB1FF">
+                            <ScrollViewer Background="#FFAEB1FF">
+                                <Frame x:Name="Frame_Trimestr1"  NavigationUIVisibility="Hidden" Content="{Binding Path = trimestr1.TrimestrPage,UpdateSourceTrigger=PropertyChanged}">
+
+                                </Frame>
+                            </ScrollViewer>
+                        </TabItem>
+                        <TabItem x:Name="TabItemSem2" Header="2й триместр"  Width="100" Height="30">
+                            <ScrollViewer Background="#FFAEB1FF">
+                                <Frame x:Name="Frame_Trimestr2" Content="{Binding Path = trimestr2.TrimestrPage,UpdateSourceTrigger=PropertyChanged}" NavigationUIVisibility="Hidden">
+
+                                </Frame>
+                            </ScrollViewer>
+                        </TabItem>
+                        <TabItem x:Name="TabItemSem3" Header="3й триместр" Width="100" Height="30">
+                            <ScrollViewer Background="#FFAEB1FF">
+                                <Frame x:Name="Frame_Trimestr3" Content="{Binding Path = trimestr3.TrimestrPage,UpdateSourceTrigger=PropertyChanged}" NavigationUIVisibility="Hidden">
+
+                                </Frame>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                </DataTemplate>
+                <DataTemplate x:Key="FetusHeaderTemplate">
+                    <Label Content="{Binding Path=Name}"></Label>
+                </DataTemplate>
+            </DockPanel.Resources>
             
-            <Expander x:Name="generalData" DockPanel.Dock="Top" IsExpanded="True" Header="Общие данные" FontSize="18" FontWeight="Bold" Margin="0,10,0,0" Background="White">
+            <Expander x:Name="generalData" DockPanel.Dock="Top" IsExpanded="True" Header="Общие данные" FontSize="18" FontWeight="Bold" Margin="0,10,0,0" Background="White"
+                      DataContext="{Binding Path=generalSettings}">
                 <StackPanel Margin="0,10,0,0">
                     <Grid Margin="21,0,0,0">
                         <Label Content="ФИО" FontWeight="Normal" FontSize="16" HorizontalAlignment="Left"/>
@@ -55,29 +86,10 @@
                     </GroupBox>
                 </StackPanel>
             </Expander>
-            
-            <TabControl Margin="0,5.6,-0.4,-2" BorderBrush="#FFAEB1FF" DockPanel.Dock="Top">
-                <TabItem x:Name="TabItemSem1" Header="1й триместр" Width="100" BorderBrush="#FFAEB1FF">
-                    <ScrollViewer Background="#FFAEB1FF">
-                        <Frame x:Name="Frame_Trimestr1"  NavigationUIVisibility="Hidden" Content="{Binding Path = trimestr1.TrimestrPage,UpdateSourceTrigger=PropertyChanged}">
 
-                        </Frame>
-                    </ScrollViewer>
-                </TabItem>
-                <TabItem x:Name="TabItemSem2" Header="2й триместр"  Width="100" Height="30">
-                    <ScrollViewer Background="#FFAEB1FF">
-                        <Frame x:Name="Frame_Trimestr2" Content="{Binding Path = trimestr2.TrimestrPage,UpdateSourceTrigger=PropertyChanged}" NavigationUIVisibility="Hidden">
-
-                        </Frame>
-                    </ScrollViewer>
-                </TabItem>
-                <TabItem x:Name="TabItemSem3" Header="3й триместр" Width="100" Height="30">
-                    <ScrollViewer Background="#FFAEB1FF">
-                        <Frame x:Name="Frame_Trimestr3" Content="{Binding Path = trimestr3.TrimestrPage,UpdateSourceTrigger=PropertyChanged}" NavigationUIVisibility="Hidden">
-
-                        </Frame>
-                    </ScrollViewer>
-                </TabItem>
+            <TabControl x:Name="Fetuses" ItemsSource="{Binding fetuses}" BorderBrush="#FFAEB1FF" DockPanel.Dock="Top"
+                        ItemTemplate="{StaticResource FetusHeaderTemplate}"
+                        ContentTemplate="{StaticResource FetusContentTemplate}">
             </TabControl>
         </DockPanel>
         

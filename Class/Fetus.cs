@@ -24,16 +24,16 @@ namespace WomenConsulting.Class
         public Fetus(string path,string name)
         {
             this.Name = name;
-            string inputFile = "";
+            string inputDir = "";
             if (Directory.Exists(path))
             {
                 CurrentDirectory = new DirectoryInfo(path);
-                inputFile = path;
+                inputDir = path;
             }
 
-            trimestr1 = new Trimestr(Path.Combine(inputFile, "1_trimestr.docx"), @"..\..\Шаблоны\1_trimestr.docx", new Trimestr1());
-            trimestr2 = new Trimestr(Path.Combine(inputFile, "2_trimestr.docx"), @"..\..\Шаблоны\2_trimestr.docx", new Trimestr2());
-            trimestr3 = new Trimestr(Path.Combine(inputFile, "3_trimestr.docx"), @"..\..\Шаблоны\3_trimestr.docx", new Trimestr3());
+            trimestr1 = new Trimestr(Path.Combine(inputDir, Sample.FirstTrimestrName), Sample.FirstTrimestrFullName, new Trimestr1());
+            trimestr2 = new Trimestr(Path.Combine(inputDir, Sample.SecondTrimestrName), Sample.SecondTrimestrFullName, new Trimestr2());
+            trimestr3 = new Trimestr(Path.Combine(inputDir, Sample.ThirdTrimestrName), Sample.ThirdTrimestrFullName, new Trimestr3());
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Aspose.Words;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +17,20 @@ namespace WomenConsulting
         public Protocol(string currentDirectory)
         {
             fetuses = new List<Fetus>();
+            InitFetuses(currentDirectory);
             generalSettings = new GeneralSettings();
-            InitTest(currentDirectory);
         }
-        private void InitTest(string currentDirectory)
+        private void InitFetuses(string currentDirectory)
         {
+            //существование и создание по шаблону учти в конструкторах триместров(см. далее)
+            var firstStrimPath = Path.Combine(currentDirectory, Sample.FirstTrimestrName);
+
+            if(!File.Exists(firstStrimPath))
+                firstStrimPath = Path.Combine(Sample.Directory, Sample.FirstTrimestrName);
+
+            var firstTrimDoc = new Document(Path.);
+
+
             fetuses.Add(new Fetus(currentDirectory, "Плод 1"));
             fetuses.Add(new Fetus(currentDirectory, "Плод 2"));
         }

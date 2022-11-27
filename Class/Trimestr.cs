@@ -23,7 +23,7 @@ namespace WomenConsulting.Class
         /// <summary>
         /// Класс для работы с Word версией триместра
         /// </summary>
-        private Document Document { get; }
+        public Document Document { get; }
 
         #endregion
 

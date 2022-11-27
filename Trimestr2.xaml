@@ -122,73 +122,63 @@
                         </Grid.ColumnDefinitions>
 
                         <GroupBox Grid.Row="0" Header="Лицо"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Визуализируется"/>
-                                <ComboBoxItem Content="Нет"/>
+                            <ComboBox x:Name="Face">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="1" Grid.Row="0" Header="Носогубный треугольник" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="nosoGubTriangle">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" Header="Глазницы" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="eyeSockets">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="1" Header="Профиль лица"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="FaceProfile">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="1" Grid.Row="1" Header="Боковые желудочки"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="bockGeludchki">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Header="Полость прозрачной перегородки"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="polostProzrPeregor">
+
                             </ComboBox>
                         </GroupBox>
 
 
                         <GroupBox Grid.Column="0" Grid.Row="2" Header="III желудочек"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="ThreeGeludoch">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="1" Grid.Row="2" Header="IV желудочек"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="FourGeludoch">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="2" Header="Мозжечок"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="Mozgechok">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="3" Grid.Row="2" Header="Большая цистерна"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="BigZistern">
+
                             </ComboBox>
                         </GroupBox>
 
@@ -211,85 +201,74 @@
                         </Grid.ColumnDefinitions>
 
                         <GroupBox Grid.Row="0" Header="4x камерный срез"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Да"/>
-                                <ComboBoxItem Content="Нет"/>
+                            <ComboBox x:Name="FourCamerSrez">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="1" Grid.Row="0" Header="Камеры сердца" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
-                            <ComboBox>
-                                <ComboBoxItem Content="Не увеличены"/>
-                                <ComboBoxItem Content="Увеличены"/>
+                            <ComboBox x:Name="CameraOfHearth">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="0"  Header="МПП" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Без особенностей"/>
-                                <ComboBoxItem Content="С особенностями"/>
+                            <ComboBox x:Name="MPP">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="0" Grid.Column="3" Header="МЖП"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Без особенностей"/>
-                                <ComboBoxItem Content="С особенностями"/>
+                            <ComboBox x:Name="MGP">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="0" Grid.Row="1" Header="Магистральные артерии"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Нормальное положение"/>
-                                <ComboBoxItem Content="Ненормальное положение"/>
+                            <ComboBox x:Name="MagistralArter">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="1" Grid.Row="1" Header="Аорта"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="-непонятно, что писать-"/>
-                                <ComboBoxItem Content="-непонятно, что писать-"/>
+                            <ComboBox x:Name="Aorta">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="1" Header="Лёгочный ствол"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="-непонятно, что писать-"/>
-                                <ComboBoxItem Content="-непонятно, что писать-"/>
+                            <ComboBox x:Name="LegochStvol">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="3" Grid.Row="1" Header="ВПВ"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="В правом предсердии"/>
-                                <ComboBoxItem Content="В левом предсердии"/>
+                            <ComboBox x:Name="WPW">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="0" Grid.Row="2" Header="НПВ"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="В правом предсердии"/>
-                                <ComboBoxItem Content="В левом предсердии"/>
+                            <ComboBox x:Name="NPW">
+                                
                             </ComboBox>
                         </GroupBox>
 
 
                         <GroupBox Grid.Column="1" Grid.Row="2" Header="Лёгочные вены"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="В правом предсердии"/>
-                                <ComboBoxItem Content="В левом предсердии"/>
+                            <ComboBox x:Name="LogochWien">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="2" Header="Гидрооперикард"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Нет"/>
-                                <ComboBoxItem Content="Да"/>
+                            <ComboBox x:Name="Gidropericard">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="3" Grid.Row="2" Header="Кардиоторакарное отношение"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <TextBox></TextBox>
+                            <TextBox x:Name="CardiocatarnOtn"></TextBox>
                         </GroupBox>
                     </Grid>
                 </Expander>
@@ -308,30 +287,26 @@
                         </Grid.ColumnDefinitions>
 
                         <GroupBox Grid.Row="0" Header="Расположение сердца"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Правильное"/>
-                                <ComboBoxItem Content="Неправильное"/>
+                            <ComboBox x:Name="HeartPolosh">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="1" Grid.Row="0" Header="Эхоструктура лёгких" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
-                            <ComboBox>
-                                <ComboBoxItem Content="Обычная"/>
-                                <ComboBoxItem Content="Необычная"/>
+                            <ComboBox x:Name="ExoStruct">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="0"  Header="Обьёмные образования" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Нет"/>
-                                <ComboBoxItem Content="Да"/>
+                            <ComboBox x:Name="ObjomObrasov">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="0" Grid.Column="3" Header="Гидроторакс"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Нет"/>
-                                <ComboBoxItem Content="Да"/>
+                            <ComboBox x:Name="Gidrotoracs">
+                                
                             </ComboBox>
                         </GroupBox>
                     </Grid>
@@ -353,75 +328,63 @@
                         </Grid.ColumnDefinitions>
 
                         <GroupBox Grid.Row="0" Header="Передняя брюшная стенка"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Без дефектов"/>
-                                <ComboBoxItem Content="С дефектами"/>
+                            <ComboBox x:Name="PeredBruchSt">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="1" Grid.Row="0" Header="Пупочное кольцо" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
-                            <ComboBox>
-                                <ComboBoxItem Content="Не расширено"/>
-                                <ComboBoxItem Content="Расширено"/>
+                            <ComboBox x:Name="PupochRing">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="0"  Header="Печень" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Без особенностей"/>
-                                <ComboBoxItem Content="С особенностями"/>
+                            <ComboBox x:Name="Pechen">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="0" Grid.Column="3" Header="Селезёнка"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Без особенностей"/>
-                                <ComboBoxItem Content="С особенностями"/>
+                            <ComboBox x:Name="Selezenka">
+                                
                             </ComboBox>
                         </GroupBox>
 
 
                         <GroupBox Grid.Row="1" Grid.Column="0" Header="Желудок"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Визуализируется"/>
-                                <ComboBoxItem Content="Нет"/>
+                            <ComboBox x:Name="Geludok">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="1" Grid.Column="1" Header="Кишечник" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
-                            <ComboBox>
-                                <ComboBoxItem Content="Без особенностей"/>
-                                <ComboBoxItem Content="С особенностями"/>
+                            <ComboBox x:Name="Kishechnik">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="1"  Header="Почки" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Без особенностей,ЧЛК не разрешён"/>
-                                <ComboBoxItem Content="Без особенностей,ЧЛК разрешён"/>
-                                <ComboBoxItem Content="С особенностями,ЧЛК не разрешён"/>
-                                <ComboBoxItem Content="С особенностями,ЧЛК разрешён"/>
+                            <ComboBox x:Name="Pochki">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="1" Grid.Column="3" Header="Мочевой пузырь"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Без особенностей"/>
-                                <ComboBoxItem Content="С особенностями"/>
+                            <ComboBox x:Name="MochPuzir">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="2" Grid.Column="0" Header="Обьёмные образования"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Нет"/>
-                                <ComboBoxItem Content="Да"/>
+                            <ComboBox x:Name="ObjomObrasow">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="3" Grid.Column="1" Header="Ацистит" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
-                            <ComboBox>
-                                <ComboBoxItem Content="Нет"/>
-                                <ComboBoxItem Content="Да"/>
+                            <ComboBox x:Name="Aszit">
+
                             </ComboBox>
                         </GroupBox>
                     </Grid>
@@ -442,52 +405,45 @@
                         </Grid.ColumnDefinitions>
 
                         <GroupBox Grid.Row="0" Header="Позвоночник"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Без дефектов"/>
-                                <ComboBoxItem Content="С дефектами"/>
+                            <ComboBox x:Name="pozvonochnik">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="1" Grid.Row="0" Header="Большеберцовые кости" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="bolsheBerzKost">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="0"  Header="Малоберцовые кости" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="maloBerzKost">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="0" Grid.Column="3" Header="Локтевые кости"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="loktKost">
+
                             </ComboBox>
                         </GroupBox>
 
 
                         <GroupBox Grid.Row="1" Grid.Column="0" Header="Лучевые кости"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="lushevKost">
+
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Row="1" Grid.Column="1" Header="Кисти" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="kisty">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="2" Grid.Row="1"  Header="Стопы" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Норма"/>
-                                <ComboBoxItem Content="Ненорма"/>
+                            <ComboBox x:Name="Stopy">
+                                
                             </ComboBox>
                         </GroupBox>
                     </Grid>
@@ -508,18 +464,14 @@
                         </Grid.ColumnDefinitions>
 
                         <GroupBox Grid.Row="0" Header="Пупочные артерии"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="6">
-                            <ComboBox>
-                                <ComboBoxItem Content="Две"/>
-                                <ComboBoxItem Content="Одна"/>
-                                <ComboBoxItem Content="Три"/>
+                            <ComboBox x:Name="PupokArter">
+                                
                             </ComboBox>
                         </GroupBox>
 
                         <GroupBox Grid.Column="1" Grid.Row="0" Header="Сосуды пуповины" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="45" Margin="6" >
-                            <ComboBox>
-                                <ComboBoxItem Content="Три"/>
-                                <ComboBoxItem Content="Две"/>
-                                <ComboBoxItem Content="Одна"/>
+                            <ComboBox x:Name="SosudiPupoviny">
+                                
                             </ComboBox>
                         </GroupBox>
 
@@ -568,14 +520,13 @@
                                 <TextBox x:Name="IAG" Grid.Column="0" HorizontalContentAlignment="Stretch" />
                                 <Label Content="мм" Grid.Column="1"  />
                             </Grid>
-                            
+
                         </GroupBox>
-                        
+
 
                     </Grid>
                 </Expander>
-
-
+                
             </StackPanel>
         </Expander>
 
@@ -584,9 +535,13 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
@@ -597,15 +552,65 @@
                 </ComboBox>
             </GroupBox>
 
-            <GroupBox Grid.Row="1" Grid.ColumnSpan="2" Header="Дополнительные данные"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+            <GroupBox Grid.Row="1" Grid.Column="0" Header="Параметр1"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <ComboBox x:Name="ZaclOne">
+
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Grid.Column="1" Header="Параметр2"   HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <ComboBox x:Name="ZaclTwo">
+
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Grid.Column="2" Header="Параметр3"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <ComboBox x:Name="ZaclThree">
+
+                </ComboBox>
+            </GroupBox>
+
+            <GroupBox Grid.Row="2" Grid.Column="0" Header="Параметр4"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <ComboBox x:Name="ZaclFour">
+
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Grid.Row="2" Grid.Column="1" Header="Параметр5"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <ComboBox x:Name="ZaclFive">
+
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Grid.Row="2" Grid.Column="2" Header="Параметр6"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <ComboBox x:Name="ZaclSix">
+
+                </ComboBox>
+            </GroupBox>
+
+            <GroupBox Grid.Row="3" Grid.Column="0" Header="Параметр7"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <ComboBox x:Name="ZaclSeven">
+
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Grid.Row="3" Grid.Column="1" Header="Параметр8"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <ComboBox x:Name="ZaclEight">
+
+                </ComboBox>
+            </GroupBox>
+            <GroupBox Grid.Row="3" Grid.Column="2" Header="Параметр9"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
+                <ComboBox x:Name="ZaclNine">
+
+                </ComboBox>
+            </GroupBox>
+
+
+
+            <GroupBox Grid.Row="4" Grid.ColumnSpan="2" Header="Дополнительные данные"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6">
                 <TextBox x:Name="addData"></TextBox>
             </GroupBox>
 
-            <GroupBox Grid.Row="2" Grid.Column="0"  Header="Дата обследования"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
+            <GroupBox Grid.Row="5" Grid.Column="0"  Header="Дата обследования"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
                 <DatePicker x:Name="dateOfSurvey" />
             </GroupBox>
 
-            <GroupBox Grid.Row="2" Grid.Column="1"  Header="Врач"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
+            <GroupBox Grid.Row="5" Grid.Column="1"  Header="Врач"  HorizontalContentAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="6,6,6,15">
                 <ComboBox x:Name="doctorList">
 
                 </ComboBox>

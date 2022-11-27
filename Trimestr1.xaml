@@ -12,11 +12,7 @@
         <WrapPanel Background="#FFAEB1FF" Margin="0" >
             <Grid>
                 <Label Content="Тип обследования:" VerticalAlignment="Center" FontSize="16" Margin="15,0,0,0"/>
-                <ComboBox x:Name="typeOfSurvey" VerticalAlignment="Center" Width="120" HorizontalAlignment="Left" Margin="165,0,0,0" />
-            </Grid>
-            <Grid>
-                <Label Content="Плод:" VerticalAlignment="Center" FontSize="16" Margin="15,0,0,0"/>
-                <ComboBox x:Name="fetusList" VerticalAlignment="Center" Width="120" HorizontalAlignment="Left" Margin="70,0,0,0" />
+                <ComboBox x:Name="typeOfSurvey" VerticalAlignment="Center" Width="180" HorizontalAlignment="Left" Margin="165,0,0,0" />
             </Grid>
             <Grid>
                 <Label Content="ЧСС:" VerticalAlignment="Center" FontSize="16" Margin="15,0,0,0" />
@@ -24,7 +20,7 @@
             </Grid>
             <Grid>
                 <Label Content="Ритм:" VerticalAlignment="Center" FontSize="16" HorizontalAlignment="Left" Margin="15,0,0,0"/>
-                <ComboBox x:Name="rhythmList" VerticalAlignment="Center" Width="120" Margin="65,0,0,0" HorizontalAlignment="Left"/>
+                <ComboBox x:Name="rhythmList" VerticalAlignment="Center" Width="250" Margin="65,0,0,0" HorizontalAlignment="Left"/>
             </Grid>
             <Grid>
                 <Label Content="Движения:" VerticalAlignment="Center" FontSize="16" Margin="15,0,0,0"/>
@@ -69,49 +65,47 @@
                 <Label Content="ЦНС. Лицо. Шея." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <Grid>
                     <Label Content="Лицо" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Regular"/>
-                    <ComboBox x:Name="face" HorizontalAlignment="Left" Margin="65,5,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="12" FontWeight="Normal">
-                        <ListBoxItem Content="визуализируется" FontSize="12" FontWeight="Normal"/>
-                </ComboBox>
+                        <ComboBox x:Name="face" HorizontalAlignment="Left" Margin="65,5,0,0" VerticalAlignment="Top" Width="140" SelectedIndex="0" FontSize="12" FontWeight="Normal">
+                            
+                        </ComboBox>
                 </Grid>
                 <Grid>    
                     <Label Content="Глазницы" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="eyeSocketsList" HorizontalAlignment="Left" Margin="95,3,0,0" VerticalAlignment="Top" Width="100" SelectedIndex="0" FontSize="12" FontWeight="Normal">
-                        <ListBoxItem Content="норма" FontWeight="Normal" FontSize="12"/>
-                    </ComboBox>
+                        <ComboBox x:Name="eyeSocketsList" HorizontalAlignment="Left" Margin="95,3,0,0" VerticalAlignment="Top" Width="140" SelectedIndex="0" FontSize="12" FontWeight="Normal">
+                        </ComboBox>
                 </Grid>
                 <Grid>
                     <Label Content="Носовая кость" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="nasalBoneList" HorizontalAlignment="Left" Margin="130,3,0,0" VerticalAlignment="Top" Width="100" SelectedIndex="0" FontSize="12" FontWeight="Normal">
-                        <ListBoxItem Content="норма" FontWeight="Normal" FontSize="12"/>
-                </ComboBox>
+                        <ComboBox x:Name="nasalBoneList" HorizontalAlignment="Left" Margin="130,3,0,0" VerticalAlignment="Top" Width="140" SelectedIndex="0" FontSize="12" FontWeight="Normal">
+                        </ComboBox>
                 </Grid>
                 <Grid>
                     <Label Content="Хориоидные сплетения" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="choroidPlexusesList" HorizontalAlignment="Left" Margin="195,3,0,0" VerticalAlignment="Top" Width="100" SelectedIndex="0" FontSize="12" FontWeight="Normal">
-                        <ListBoxItem Content="норма" FontWeight="Normal" FontSize="12"/>
+                        <ComboBox x:Name="choroidPlexusesList" HorizontalAlignment="Left" Margin="195,3,0,0" VerticalAlignment="Top" Width="140" SelectedIndex="0" FontSize="12" FontWeight="Normal">
+                      
                     </ComboBox>
                 </Grid>
                 <Grid>
                     <Label Content="Лимфангиэктазия" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="limphangiectasiaList" HorizontalAlignment="Left" Margin="155,3,0,0" VerticalAlignment="Top" Width="150" FontSize="12" FontWeight="Normal"/>
+                        <ComboBox x:Name="limphangiectasiaList" HorizontalAlignment="Left" Margin="155,3,0,0" VerticalAlignment="Top" Width="140" FontSize="12" FontWeight="Normal"/>
                 </Grid>
             </WrapPanel>
             <WrapPanel Margin="11,5">
                 <Label Content="Сердце и крупные сосуды." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <Grid>
                     <Label Content="Сердце" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="heartList" HorizontalAlignment="Left" Margin="80,5,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="12" FontWeight="Normal">
-                        <ListBoxItem Content="визуализируется" FontWeight="Normal" FontSize="12"/>
+                        <ComboBox x:Name="heartList" HorizontalAlignment="Left" Margin="80,5,0,0" VerticalAlignment="Top" Width="140" SelectedIndex="0" FontSize="12" FontWeight="Normal">
+                     
                     </ComboBox>
                 </Grid>
                 <Grid>
                     <Label Content="4х камерный срез" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="chamber4SliceList" HorizontalAlignment="Left" Margin="155,5,0,0" VerticalAlignment="Top" Width="120" FontSize="12" FontWeight="Normal"/>
+                        <ComboBox x:Name="chamber4SliceList" HorizontalAlignment="Left" Margin="155,5,0,0" VerticalAlignment="Top" Width="140" FontSize="12" FontWeight="Normal"/>
                 </Grid>
                 <Grid>
                     <Label Content="Камеры сердца" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="heartChamberList" HorizontalAlignment="Left" Margin="135,5,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="12" FontWeight="Normal">
-                        <ListBoxItem Content="не увеличены" FontWeight="Normal" FontSize="12"/>
+                        <ComboBox x:Name="heartChamberList" HorizontalAlignment="Left" Margin="135,5,0,0" VerticalAlignment="Top" Width="140" SelectedIndex="0" FontSize="12" FontWeight="Normal">
+                
                     </ComboBox>
                 </Grid>
             </WrapPanel>
@@ -119,14 +113,14 @@
                 <Label Content="Грудная полость." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <Grid>
                     <Label Content="Расположение сердца" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="locationOfHeartList" HorizontalAlignment="Left" Margin="190,5,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="12" FontWeight="Normal">
-                        <ListBoxItem Content="правильное" FontWeight="Normal" FontSize="12"/>
+                        <ComboBox x:Name="locationOfHeartList" HorizontalAlignment="Left" Margin="190,5,0,0" VerticalAlignment="Top" Width="140" SelectedIndex="0" FontSize="12" FontWeight="Normal">
+  
                     </ComboBox>
                 </Grid>
                 <Grid>
                     <Label Content="Объемные образования" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="volumetricFormationsList" HorizontalAlignment="Left" Margin="205,5,0,0" VerticalAlignment="Top" Width="120" FontSize="12" FontWeight="Normal" SelectedIndex="0">
-                        <ListBoxItem Content="нет"/>
+                        <ComboBox x:Name="volumetricFormations" HorizontalAlignment="Left" Margin="205,5,0,0" VerticalAlignment="Top" Width="140" FontSize="12" FontWeight="Normal" SelectedIndex="0">
+                
                     </ComboBox>
                 </Grid>
             </WrapPanel>
@@ -134,32 +128,32 @@
                 <Label Content="Брюшная полость." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <Grid>
                     <Label Content="Передняя брюшная стенка" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="anteriorAbdominalWallList" HorizontalAlignment="Left" Margin="220,5,0,0" VerticalAlignment="Top" Width="120" FontSize="12" FontWeight="Normal" SelectedIndex="0">
-                        <ListBoxItem Content="без дефектов"/>
+                        <ComboBox x:Name="anteriorAbdominalWal" HorizontalAlignment="Left" Margin="220,5,0,0" VerticalAlignment="Top" Width="140" FontSize="12" FontWeight="Normal" SelectedIndex="0">
+                  
                     </ComboBox>
                 </Grid>
                 <Grid>
                     <Label Content="Пупочное кольцо" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="umbilicalRingList" HorizontalAlignment="Left" Margin="155,5,0,0" VerticalAlignment="Top" Width="120" FontSize="12" FontWeight="Normal" SelectedIndex="0">
-                        <ListBoxItem Content="не увеличено"/>
+                        <ComboBox x:Name="umbilicalRingList" HorizontalAlignment="Left" Margin="155,5,0,0" VerticalAlignment="Top" Width="140" FontSize="12" FontWeight="Normal" SelectedIndex="0">
+                   
                     </ComboBox>
                 </Grid>
                 <Grid>
                     <Label Content="Желудок" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="stomachList" HorizontalAlignment="Left" Margin="90,5,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="12" FontWeight="Normal">
-                        <ListBoxItem Content="визуализируется" FontWeight="Normal" FontSize="12"/>
+                        <ComboBox x:Name="stomachList" HorizontalAlignment="Left" Margin="90,5,0,0" VerticalAlignment="Top" Width="140" SelectedIndex="0" FontSize="12" FontWeight="Normal">
+       
                     </ComboBox>
                 </Grid>
                 <Grid>  
                     <Label Content="Мочевой пузырь" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="bladderList" HorizontalAlignment="Left" Margin="150,5,0,0" VerticalAlignment="Top" Width="120" FontSize="12" FontWeight="Normal" SelectedIndex="0">
-                        <ListBoxItem Content="визулизируется" FontWeight="Normal" FontSize="12"/>
+                        <ComboBox x:Name="bladderList" HorizontalAlignment="Left" Margin="150,5,0,0" VerticalAlignment="Top" Width="140" FontSize="12" FontWeight="Normal" SelectedIndex="0">
+                
                     </ComboBox>
                 </Grid>
                 <Grid>
                     <Label Content="Объемные образования" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="volumetricFormationsBellyList" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="12" FontWeight="Normal">
-                        <ListBoxItem Content="нет" FontWeight="Normal" FontSize="12"/>
+                        <ComboBox x:Name="volumetricFormaBelly" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top" Width="140" SelectedIndex="0" FontSize="12" FontWeight="Normal">
+                     
                     </ComboBox>
                 </Grid>
             </WrapPanel>
@@ -167,20 +161,20 @@
                 <Label Content="Скелет." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <Grid>
                     <Label Content="Позвоночник" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="spineList" HorizontalAlignment="Left" Margin="125,5,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="12" FontWeight="Normal">
-                        <ListBoxItem Content="без дефектов" FontWeight="Normal" FontSize="12"/>
+                        <ComboBox x:Name="spineList" HorizontalAlignment="Left" Margin="125,5,0,0" VerticalAlignment="Top" Width="140" SelectedIndex="0" FontSize="12" FontWeight="Normal">
+                    
                     </ComboBox>
                 </Grid>
                 <Grid>  
                     <Label Content="Конечности" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="limbsList" HorizontalAlignment="Left" Margin="110,5,0,0" VerticalAlignment="Top" Width="130" FontSize="12" FontWeight="Normal" SelectedIndex="0">
-                        <ListBoxItem Content="визуализируются"/>
+                        <ComboBox x:Name="limbsList" HorizontalAlignment="Left" Margin="110,5,0,0" VerticalAlignment="Top" Width="140" FontSize="12" FontWeight="Normal" SelectedIndex="0">
+                   
                     </ComboBox>
                 </Grid>
                 <Grid>
                     <Label Content="Кисти и стопы" FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ComboBox x:Name="handsAndFeetList" HorizontalAlignment="Left" Margin="125,5,0,0" VerticalAlignment="Top" Width="130" FontSize="12" FontWeight="Normal" SelectedIndex="0">
-                        <ListBoxItem Content="визуализируются"/>
+                        <ComboBox x:Name="handsAndFeetList" HorizontalAlignment="Left" Margin="125,5,0,0" VerticalAlignment="Top" Width="140" FontSize="12" FontWeight="Normal" SelectedIndex="0">
+                      
                     </ComboBox>
                 </Grid>
             </WrapPanel>
@@ -215,7 +209,7 @@
                     <Label Content="Количество вод" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                     <ComboBox x:Name="amountWaterList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="250"/>
                     <Label Content="Визуализация" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <TextBox x:Name="visualizationText" HorizontalAlignment="Left" Margin="5,7,0,0" VerticalAlignment="Top" Width="150" Text="удовлетворительная"/>
+                    <ComboBox x:Name="visualizationText" HorizontalAlignment="Left" Margin="5,7,0,0" VerticalAlignment="Top" Width="150" Text="удовлетворительная"/>
                 </WrapPanel>
         </StackPanel>
         <StackPanel Background="#FFAEB1FF">

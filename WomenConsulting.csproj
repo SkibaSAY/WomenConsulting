@@ -91,6 +91,9 @@
     <Compile Include="Class\Settings\GeneralSettings.cs" />
     <Compile Include="Class\Settings\Settings.cs" />
     <Compile Include="Class\Trimestr.cs" />
+    <Compile Include="MalyeSroki.xaml.cs">
+      <DependentUpon>MalyeSroki.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Trimestr2.xaml.cs">
       <DependentUpon>Trimestr2.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MalyeSroki.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Trimestr1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -152,6 +159,7 @@
     <None Include="Шаблоны\1_trimestr.docx" />
     <None Include="Шаблоны\2_trimestr.docx" />
     <None Include="Шаблоны\3_trimestr.docx" />
+    <None Include="Шаблоны\MalyeSroki.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

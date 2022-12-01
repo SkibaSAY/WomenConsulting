@@ -18,19 +18,11 @@ namespace WomenConsulting
     /// <summary>
     /// Логика взаимодействия для Page1.xaml
     /// </summary>
-    public partial class Trimestr1 : Page
+    public partial class MalyeSroki : Page
     {
-        public Trimestr1()
+        public MalyeSroki()
         {
             InitializeComponent();
-        }
-
-        private void dateOfLastMen_CalendarClosed(object sender, RoutedEventArgs e)
-        {
-            //возвращаю в общие , поэтому пока комментим
-            //var dateDifference = DateTime.Now - dateOfLastMen.SelectedDate;
-            //gestationalTime_week.Text = (dateDifference.Value.Days / 7).ToString();
-            //gestationalTime_day.Text = (dateDifference.Value.Days - dateDifference.Value.Days / 7 * 7).ToString();
         }
     }
 }

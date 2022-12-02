@@ -18,8 +18,6 @@ namespace WomenConsulting.Class
 
         public Page TrimestrPage { get; set; }
 
-        public string SamplePath { get; }
-
         /// <summary>
         /// Класс для работы с Word версией триместра
         /// </summary>
@@ -35,22 +33,11 @@ namespace WomenConsulting.Class
         /// </summary>
         /// <param name="samplePath">Шаблон документа</param>
         /// <param name="path">Путь к новому документу</param>
-        public Trimestr(string path, string samplePath,Page page)
+        public Trimestr(Document doc,Page page)
         {
-            if (File.Exists(path))
-            {
-                Document = new Document(path);
-            }
-            else if (File.Exists(samplePath))
-            {
-                Document = new Document(samplePath);
-            }
-            else
-            {
-                throw new ArgumentException($"Файл {samplePath} не существует");
-            }
+            Document = doc;
             TrimestrPage = page;
-            SamplePath = samplePath;
+
             UpdatePage();
         }
 
@@ -150,9 +137,9 @@ namespace WomenConsulting.Class
                 else if (pageControl is TextBox) docField.Result = (pageControl as TextBox).Text;
                 else if (pageControl is DatePicker) docField.Result = (pageControl as DatePicker).Text;
             }
-            var fileName = new FileInfo(SamplePath).Name;
+            //var fileName = new FileInfo(SamplePath).Name;
 
-            Document.Save(Path.Combine(dirPath,fileName), sf);
+            //Document.Save(Path.Combine(dirPath,fileName), sf);
         }
         #endregion
 

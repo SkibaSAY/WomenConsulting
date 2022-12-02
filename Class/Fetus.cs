@@ -25,9 +25,9 @@ namespace WomenConsulting.Class
         {
             this.Name = name;
 
-            trimestr1 = new Trimestr(Path.Combine(inputDir, Sample.FirstTrimestrName), Sample.FirstTrimestrFullName, new Trimestr1());
-            trimestr2 = new Trimestr(Path.Combine(inputDir, Sample.SecondTrimestrName), Sample.SecondTrimestrFullName, new Trimestr2());
-            trimestr3 = new Trimestr(Path.Combine(inputDir, Sample.ThirdTrimestrName), Sample.ThirdTrimestrFullName, new Trimestr3());
+            trimestr1 = new Trimestr(firstTrim, new Trimestr1());
+            trimestr2 = new Trimestr(secondTrim, new Trimestr2());
+            trimestr3 = new Trimestr(thirdTrim, new Trimestr3());
         }
     }
 }

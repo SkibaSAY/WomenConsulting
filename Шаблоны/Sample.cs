@@ -9,15 +9,19 @@ namespace WomenConsulting
 {
     public static class Sample
     {
-        public static string FirstTrimestrName = "1_trimestr.docx";
+        public static string Directory { get; } = @"..\..\Шаблоны";
+        public static string FirstTrimestrName { get; } = "1_trimestr.docx";
         public static string FirstTrimestrFullName = Path.Combine(Sample.Directory, Sample.FirstTrimestrName);
 
-        public static string SecondTrimestrName = "2_trimestr.docx";
+        public static string SecondTrimestrName { get; } = "2_trimestr.docx";
         public static string SecondTrimestrFullName = Path.Combine(Sample.Directory, Sample.SecondTrimestrName);
 
-        public static string ThirdTrimestrName = "3_trimestr.docx";
+        public static string ThirdTrimestrName { get; } = "3_trimestr.docx";
         public static string ThirdTrimestrFullName = Path.Combine(Sample.Directory, Sample.ThirdTrimestrName);
+        
+        static Sample()
+        {
 
-        public static string Directory = @"..\..\Шаблоны";
+        }
     }
 }

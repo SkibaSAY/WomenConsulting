@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aspose.Words;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -13,7 +14,6 @@ namespace WomenConsulting.Class
     /// </summary>
     public class Fetus
     {
-        public DirectoryInfo CurrentDirectory;
         public Trimestr trimestr1 { get; set; }
         public Trimestr trimestr2 { get; set; }
         public Trimestr trimestr3 { get; set; }
@@ -21,15 +21,9 @@ namespace WomenConsulting.Class
         //временно
         public string Name { get; set; } = "Плод";
 
-        public Fetus(string path,string name)
+        public Fetus(string name, Document firstTrim, Document secondTrim, Document thirdTrim)
         {
             this.Name = name;
-            string inputDir = "";
-            if (Directory.Exists(path))
-            {
-                CurrentDirectory = new DirectoryInfo(path);
-                inputDir = path;
-            }
 
             trimestr1 = new Trimestr(Path.Combine(inputDir, Sample.FirstTrimestrName), Sample.FirstTrimestrFullName, new Trimestr1());
             trimestr2 = new Trimestr(Path.Combine(inputDir, Sample.SecondTrimestrName), Sample.SecondTrimestrFullName, new Trimestr2());

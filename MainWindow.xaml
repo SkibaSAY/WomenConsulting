@@ -89,7 +89,7 @@
 
             <TabControl x:Name="Fetuses" ItemsSource="{Binding fetuses}" BorderBrush="#FFAEB1FF" DockPanel.Dock="Top"
                         ItemTemplate="{StaticResource FetusHeaderTemplate}"
-                        ContentTemplate="{StaticResource FetusContentTemplate}">
+                        ContentTemplate="{StaticResource FetusContentTemplate}" SelectedIndex="0">
             </TabControl>
         </DockPanel>
         

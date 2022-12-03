@@ -21,7 +21,19 @@ namespace WomenConsulting.Class
         /// <summary>
         /// Класс для работы с Word версией триместра
         /// </summary>
-        public Document Document { get; }
+        private Document _document;
+        public Document Document
+        {
+            get
+            {
+                UpdateDocument();
+                return _document;
+            }
+            private set
+            {
+                _document = value;
+            }
+        }
 
         #endregion
 
@@ -115,15 +127,12 @@ namespace WomenConsulting.Class
         }
 
         /// <summary>
-        /// Сохранение результата
+        /// Обновление документа
         /// </summary>
-        public void SaveTrimestr(string dirPath)
+        public void UpdateDocument()
         {
-            var sf = SaveOptions.CreateSaveOptions(SaveFormat.Docx);
-            sf.ExportGeneratorName = false;
-
             //нашли все поля, которые нужно заполнить с формы
-            var documentFields = Document.Range.FormFields;
+            var documentFields = _document.Range.FormFields;
 
             //заполняем документ значениями полей с формы 
             foreach (var docField in documentFields)
@@ -137,9 +146,6 @@ namespace WomenConsulting.Class
                 else if (pageControl is TextBox) docField.Result = (pageControl as TextBox).Text;
                 else if (pageControl is DatePicker) docField.Result = (pageControl as DatePicker).Text;
             }
-            //var fileName = new FileInfo(SamplePath).Name;
-
-            //Document.Save(Path.Combine(dirPath,fileName), sf);
         }
         #endregion
 

@@ -84,14 +84,33 @@ namespace WomenConsulting
         }
         public void Save(string CurrentDirectory)
         {
-            //временно
-            //переписать после обсуждения логики сохранения
+            var firstTrimList = fetuses.Select(x => x.trimestr1.Document).ToArray();
+            SaveSeveralDocsAsOne(firstTrimList,Path.Combine(CurrentDirectory,Sample.FirstTrimestrName));
 
-            var fetus = fetuses.First();
-            fetus.trimestr1.SaveTrimestr(CurrentDirectory);
-            fetus.trimestr2.SaveTrimestr(CurrentDirectory);
-            fetus.trimestr3.SaveTrimestr(CurrentDirectory);
+            var secondTrimList = fetuses.Select(x => x.trimestr2.Document).ToArray();
+            SaveSeveralDocsAsOne(secondTrimList, Path.Combine(CurrentDirectory, Sample.SecondTrimestrName));
+
+            var thirdTrimList = fetuses.Select(x => x.trimestr3.Document).ToArray();
+            SaveSeveralDocsAsOne(thirdTrimList, Path.Combine(CurrentDirectory, Sample.ThirdTrimestrName));
         }
+        private void SaveSeveralDocsAsOne(IEnumerable<Document> docs,string outDocPath)
+        {
+            var mergedDoc = MergeTrimestrDocument(docs);
+            mergedDoc.Save(outDocPath);
+        }
+        private Document MergeTrimestrDocument(IEnumerable<Document> docs)
+        {
+            var newDoc = new Document();
+            newDoc.Sections.Clear();
 
+            foreach (var doc in docs)
+            {               
+                //взяли секцию вместе с вложенными элементами
+                var sec = (Section)newDoc.ImportNode(doc.FirstSection, true);
+
+                newDoc.Sections.Add(sec);
+            }
+            return newDoc;
+        }
     }
 }

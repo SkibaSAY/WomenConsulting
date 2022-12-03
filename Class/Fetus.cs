@@ -29,5 +29,13 @@ namespace WomenConsulting.Class
             trimestr2 = new Trimestr(secondTrim, new Trimestr2());
             trimestr3 = new Trimestr(thirdTrim, new Trimestr3());
         }
+        public Fetus(string name):
+            this(name,new Document(Sample.FirstTrimestrFullName),
+            new Document(Sample.SecondTrimestrFullName),
+            new Document(Sample.ThirdTrimestrFullName)
+            )
+        {
+
+        }
     }
 }

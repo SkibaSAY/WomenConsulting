@@ -18,7 +18,7 @@
                 <MenuItem x:Name="OpenDirectoryDialog" Header="Открыть папку" Click="OpenDirectoryDialog_Click" Background="#FF6B71FF" ></MenuItem>
                 <MenuItem x:Name="Save" Header="Сохранить" Click="Save_Click" Background="#FF6B71FF" IsEnabled="False" ></MenuItem>
                 <MenuItem x:Name="SaveAs" Header="Сохранить как" Background="#FF6B71FF" Click="SaveAs_Click" ></MenuItem>
-                <MenuItem Header="Выход" Background="#FF6B71FF" ></MenuItem>
+                <MenuItem x:Name="Exit" Header="Выход" Background="#FF6B71FF" Click="Exit_Click" ></MenuItem>
             </MenuItem>
             <MenuItem Header="Настройки" ></MenuItem>
         </Menu>
@@ -87,7 +87,7 @@
                 </StackPanel>
             </Expander>
 
-            <TabControl x:Name="Fetuses" ItemsSource="{Binding fetuses}" BorderBrush="#FFAEB1FF" DockPanel.Dock="Top"
+            <TabControl x:Name="Fetuses" ItemsSource="{Binding fetuses, UpdateSourceTrigger=PropertyChanged}" BorderBrush="#FFAEB1FF" DockPanel.Dock="Top"
                         ItemTemplate="{StaticResource FetusHeaderTemplate}"
                         ContentTemplate="{StaticResource FetusContentTemplate}" SelectedIndex="0">
             </TabControl>

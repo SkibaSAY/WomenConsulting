@@ -1,27 +1,44 @@
 ﻿using Aspose.Words;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using WomenConsulting.Class;
 
 namespace WomenConsulting
 {
-    public class Protocol
+    public class Protocol: INotifyPropertyChanged
     {
-        public List<Fetus> fetuses { get; set; }
+        public ObservableCollection<Fetus> fetuses { get; set; }
         public GeneralSettings generalSettings { get; set; }
+
+        public void UpdateBindings()
+        {
+            OnPropertyChanged("fetuses");
+            OnPropertyChanged("generalSettings");
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
 
         public Protocol(string currentDirectory)
         {
             InitFetuses(currentDirectory);
             generalSettings = new GeneralSettings();
         }
+
+
         private void InitFetuses(string currentDirectory)
         {
-            fetuses = new List<Fetus>();
+            fetuses = new ObservableCollection<Fetus>();
 
             //существование и создание по шаблону учти в конструкторах триместров(см. далее)
             var firstTrimPath = GetPathToCurDocumentOrSampleDocument(currentDirectory, Sample.FirstTrimestrName);

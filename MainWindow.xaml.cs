@@ -125,5 +125,11 @@ namespace WomenConsulting
             InitSettings();
             InitPages();
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            protocol.fetuses.Add(new Fetus($"Плод_{protocol.fetuses.Count+1}"));
+            protocol.UpdateBindings();
+        }
     }
 }

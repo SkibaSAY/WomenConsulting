@@ -121,7 +121,7 @@ namespace WomenConsulting
             newDoc.Sections.Clear();
 
             foreach (var doc in docs)
-            {               
+            {       
                 //взяли секцию вместе с вложенными элементами
                 var sec = (Section)newDoc.ImportNode(doc.FirstSection, true);
 

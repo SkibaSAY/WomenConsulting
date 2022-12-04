@@ -21,20 +21,15 @@ namespace WomenConsulting.Class
         /// <summary>
         /// Класс для работы с Word версией триместра
         /// </summary>
-        private Document _document;
+        private Document document;
         public Document Document
         {
             get
             {
                 UpdateDocument();
-                return _document;
-            }
-            private set
-            {
-                _document = value;
+                return document;
             }
         }
-
         #endregion
 
 
@@ -47,7 +42,7 @@ namespace WomenConsulting.Class
         /// <param name="path">Путь к новому документу</param>
         public Trimestr(Document doc,Page page)
         {
-            Document = doc;
+            document = doc;
             TrimestrPage = page;
 
             UpdatePage();
@@ -66,14 +61,14 @@ namespace WomenConsulting.Class
         /// <param name="result">Значение, которое будет занесено в документ</param>
         public void UpdateField(string fieldName,string result)
         {
-            var field = Document.Range.FormFields.Where(x => x.Name.Equals(fieldName)).FirstOrDefault();
+            var field = document.Range.FormFields.Where(x => x.Name.Equals(fieldName)).FirstOrDefault();
             //возможно, стоит добавить обработку исключения, но пока не торопимся, тк это ошибка программиста
             field.Result = result;
         }
 
         public void UpdatePage()
         {
-            var fields = Document.Range.FormFields;
+            var fields = document.Range.FormFields;
             foreach (var field in fields)
             {
                 var pageControl = TrimestrPage.FindName(field.Name);
@@ -132,7 +127,7 @@ namespace WomenConsulting.Class
         public void UpdateDocument()
         {
             //нашли все поля, которые нужно заполнить с формы
-            var documentFields = _document.Range.FormFields;
+            var documentFields = document.Range.FormFields;
 
             //заполняем документ значениями полей с формы 
             foreach (var docField in documentFields)

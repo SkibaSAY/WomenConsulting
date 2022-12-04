@@ -80,9 +80,19 @@ namespace WomenConsulting
 
         private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)
         {
+            var savedCurrDirectory = CurrentDirectory;
             if (SelectDirectoryPath())
             {
-                InitPages();
+                try
+                {
+                    InitPages();
+                }
+                catch(IOException ex)
+                {
+                    //откатили
+                    CurrentDirectory = savedCurrDirectory;
+                    System.Windows.MessageBox.Show("Этот документ уже открыт в Word, закройте его и повторите попытку");
+                }
             }
 
         }
@@ -145,7 +155,7 @@ namespace WomenConsulting
         {
             if (protocol.fetuses.Count == 1)
             {
-                var messageBox = System.Windows.MessageBox.Show("Вы не можете удалить из протокола единственный плод.");
+                System.Windows.MessageBox.Show("Вы не можете удалить из протокола единственный плод.");
                 return;
             }
 

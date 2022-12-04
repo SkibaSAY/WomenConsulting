@@ -50,13 +50,16 @@ namespace WomenConsulting
             var thirdTrimPath = GetPathToCurDocumentOrSampleDocument(currentDirectory, Sample.ThirdTrimestrName);
             var thirdTrimList = SplitDocumentBySections(thirdTrimPath);
 
+            var malyeSrokiPath = GetPathToCurDocumentOrSampleDocument(currentDirectory, Sample.MalyeSrokiName);
+            var malyeSrokiList = SplitDocumentBySections(malyeSrokiPath);
+
             //считаем, что число плодов одинаково во всех триместрах, но стоит подумать, что если не так - будет ведь ошибка.
             //есть вариант дополнять пустые места шаблонами.
 
-            for(var i = 0; i < firstTrimList.Count; i++)
+            for (var i = 0; i < firstTrimList.Count; i++)
             {
                 var newName = $"Плод_{i+1}";
-                var newFetus = new Fetus(newName, firstTrimList[i], secondTrimList[i], thirdTrimList[i]);
+                var newFetus = new Fetus(newName, firstTrimList[i], secondTrimList[i], thirdTrimList[i], malyeSrokiList[i]);
                 fetuses.Add(newFetus);
             }
         }
@@ -109,6 +112,9 @@ namespace WomenConsulting
 
             var thirdTrimList = fetuses.Select(x => x.trimestr3.Document).ToArray();
             SaveSeveralDocsAsOne(thirdTrimList, Path.Combine(CurrentDirectory, Sample.ThirdTrimestrName));
+
+            var malyeSrokiList = fetuses.Select(x => x.malyeSroki.Document).ToArray();
+            SaveSeveralDocsAsOne(malyeSrokiList, Path.Combine(CurrentDirectory, Sample.MalyeSrokiName));
         }
         private void SaveSeveralDocsAsOne(IEnumerable<Document> docs,string outDocPath)
         {

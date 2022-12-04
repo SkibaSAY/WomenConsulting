@@ -18,7 +18,10 @@ namespace WomenConsulting
 
         public static string ThirdTrimestrName { get; } = "3_trimestr.docx";
         public static string ThirdTrimestrFullName = Path.Combine(Sample.Directory, Sample.ThirdTrimestrName);
-        
+
+        public static string MalyeSrokiName { get; } = "MalyeSroki.docx";
+        public static string MalyeSrokiFullName = Path.Combine(Sample.Directory, Sample.MalyeSrokiName);
+
         static Sample()
         {
 

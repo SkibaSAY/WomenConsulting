@@ -75,12 +75,16 @@ namespace WomenConsulting
         {
             protocol = new Protocol(CurrentDirectory);
             DataContext = protocol;
+            Fetuses.SelectedIndex = 0;
         }
 
         private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)
         {
-            if(SelectDirectoryPath())
+            if (SelectDirectoryPath())
+            {
                 InitPages();
+            }
+
         }
         private bool SelectDirectoryPath()
         {

@@ -40,21 +40,32 @@ namespace WomenConsulting
         {
             fetuses = new ObservableCollection<Fetus>();
 
+            var maxCount = 1;
             //существование и создание по шаблону учти в конструкторах триместров(см. далее)
             var firstTrimPath = GetPathToCurDocumentOrSampleDocument(currentDirectory, Sample.FirstTrimestrName);
             var firstTrimList = SplitDocumentBySections(firstTrimPath);
+            if (maxCount < firstTrimList.Count) maxCount = firstTrimList.Count;
 
-            var secondTrimPath = GetPathToCurDocumentOrSampleDocument(currentDirectory, Sample.SecondTrimestrName);
+             var secondTrimPath = GetPathToCurDocumentOrSampleDocument(currentDirectory, Sample.SecondTrimestrName);
             var secondTrimList = SplitDocumentBySections(secondTrimPath);
+            if (maxCount < secondTrimList.Count) maxCount = secondTrimList.Count;
 
             var thirdTrimPath = GetPathToCurDocumentOrSampleDocument(currentDirectory, Sample.ThirdTrimestrName);
             var thirdTrimList = SplitDocumentBySections(thirdTrimPath);
+            if (maxCount < thirdTrimList.Count) maxCount = thirdTrimList.Count;
 
             var malyeSrokiPath = GetPathToCurDocumentOrSampleDocument(currentDirectory, Sample.MalyeSrokiName);
             var malyeSrokiList = SplitDocumentBySections(malyeSrokiPath);
+            if (maxCount < malyeSrokiList.Count) maxCount = malyeSrokiList.Count;
+
+            FillTheCaps(firstTrimList, Sample.FirstTrimestrFullName, maxCount);
+            FillTheCaps(secondTrimList, Sample.SecondTrimestrName, maxCount);
+            FillTheCaps(thirdTrimList, Sample.ThirdTrimestrName, maxCount);
+            FillTheCaps(malyeSrokiList, Sample.MalyeSrokiFullName, maxCount);
 
             //считаем, что число плодов одинаково во всех триместрах, но стоит подумать, что если не так - будет ведь ошибка.
             //есть вариант дополнять пустые места шаблонами.
+
 
             for (var i = 0; i < firstTrimList.Count; i++)
             {
@@ -62,6 +73,10 @@ namespace WomenConsulting
                 var newFetus = new Fetus(newName, firstTrimList[i], secondTrimList[i], thirdTrimList[i], malyeSrokiList[i]);
                 fetuses.Add(newFetus);
             }
+        }
+        private void FillTheCaps(List<Document> documents,string sampleFullName,int neededCount)
+        {
+            while (documents.Count < neededCount) documents.Add(new Document(sampleFullName));
         }
         private List<Document> SplitDocumentBySections(string docPath)
         {

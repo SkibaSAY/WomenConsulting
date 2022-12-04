@@ -73,6 +73,7 @@
                     <Label Content="Бипариетарный размер" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
                     <TextBox x:Name="biparietalSize_mm" FontSize="16" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="мм" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <ComboBox x:Name="biparietalSizePerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
                     <TextBox x:Name="biparietalSize_week" FontSize="16" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="нед" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
@@ -80,6 +81,7 @@
                     <Label Content="Длина бедренной кости" FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
                     <TextBox x:Name="hipLen_mm" FontSize="16"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="мм" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <ComboBox x:Name="hipLenPerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
                     <TextBox x:Name="hipLen_week" FontSize="16" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="нед" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
@@ -87,6 +89,7 @@
                     <Label Content="Окружность живота" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
                     <TextBox x:Name="bellyCircle_mm" FontSize="16"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="мм" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <ComboBox x:Name="bellyCirclePerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
                     <TextBox x:Name="bellyCircle_week" FontSize="16" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="нед" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
@@ -94,6 +97,7 @@
                     <Label Content="Масса" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
                     <TextBox x:Name="mass_g" FontSize="16" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="г" FontSize="16"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="33"/>
+                    <ComboBox x:Name="massPerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
                     <TextBox x:Name="mass_week" FontSize="16" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="нед" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
@@ -101,6 +105,7 @@
                     <Label Content="Длина плеча:" FontSize="16" Width="210" FontWeight="Regular"/>
                     <TextBox x:Name="shoulderLenghtMM" Width="128" Height="23" FontWeight="Regular" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
+                    <ComboBox x:Name="shoulderLenghtPerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
                     <TextBox x:Name="shoulderLenghtWeek" Width="128" Height="23" FontWeight="Regular" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
@@ -108,6 +113,7 @@
                     <Label Content="Длина костей предплечья:" FontSize="16"  Width="210" FontWeight="Regular"/>
                     <TextBox x:Name="legthForearmMM" FontWeight="Regular"  Width="128" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
+                    <ComboBox x:Name="legthForearmPerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
                     <TextBox x:Name="legthForearmWeek" FontWeight="Regular" Width="128" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
@@ -115,6 +121,7 @@
                     <Label Content="Длина костей голени:" FontSize="16" Width="210" FontWeight="Regular"/>
                     <TextBox x:Name="legthShinMM" FontWeight="Regular" Width="128" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
+                    <ComboBox x:Name="legthShinPerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
                     <TextBox x:Name="legthShinWeek" FontWeight="Regular" Width="128" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>

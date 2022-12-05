@@ -74,6 +74,12 @@ namespace WomenConsulting
                 fetuses.Add(newFetus);
             }
         }
+        /// <summary>
+        /// Заполняет документы шаблонами до указанного количества
+        /// </summary>
+        /// <param name="documents"></param>
+        /// <param name="sampleFullName"></param>
+        /// <param name="neededCount"></param>
         private void FillTheCaps(List<Document> documents,string sampleFullName,int neededCount)
         {
             while (documents.Count < neededCount) documents.Add(new Document(sampleFullName));

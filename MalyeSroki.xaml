@@ -24,14 +24,14 @@
             <StackPanel Background="#D9DAFF" Margin="0" >
                 <WrapPanel>
                     <Label Content="Размеры матки:"  FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="uterineSizeMM" Width="80" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="uterineSizeMM" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                     <Label Content="мм" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
                     <ComboBox x:Name="uterneSize" VerticalAlignment="Top" Width="80" Margin="0,3,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <TextBox x:Name="uterineSizeText" Width="250" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Увеличена до:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="increasedTo" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <TextBox x:Name="increasedTo" VerticalAlignment="Top" Width="80" Margin="15,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <Label Content="недель" HorizontalAlignment="Left" FontSize="16"  Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
                     <TextBox x:Name="increasedToWeek" VerticalAlignment="Top" Width="500" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                 </WrapPanel>
@@ -52,14 +52,14 @@
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="КТР:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="ktr" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="ktr" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="222,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм,  соответствует сроку -" FontSize="16" Margin="11,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="ktrWeek" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="недель" FontSize="16" Margin="11,0,0,0" FontWeight="Regular"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Сердцебиение :" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <ComboBox x:Name="heartbeat" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="heartbeat" FontWeight="Regular" VerticalAlignment="Top" Width="100" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Диаметр желточного мешка :" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
@@ -68,36 +68,32 @@
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Хорион визуализируется на :" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <ComboBox x:Name="shorion" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="shorion" FontWeight="Regular" VerticalAlignment="Top" Width="380" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Левый яичник - " FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <ComboBox x:Name="leftOvary" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-                    <Label Content=", " FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
+                    <ComboBox x:Name="leftOvary" FontWeight="Regular" VerticalAlignment="Top" Width="320" Margin="22,5,0,0" HorizontalAlignment="Left"/>
+                    <Label Content=", " FontSize="16" Margin="16,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="leftOvaryText" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-                </WrapPanel>
-                <WrapPanel>
                     <Label Content="размеры:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="sizeOfLeftOvary" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм," FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <ComboBox x:Name="leftOvaryList" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="leftOvaryList" FontWeight="Regular" VerticalAlignment="Top" Width="160" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Правый  яичник - " FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <ComboBox x:Name="rightOvary" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="rightOvary" FontWeight="Regular" VerticalAlignment="Top" Width="320" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content=", " FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="rightOvaryText" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
-                </WrapPanel>
-                <WrapPanel>
                     <Label Content="размеры:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="sizeOfRightOvary" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм," FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <ComboBox x:Name="rightOvaryList" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="rightOvaryList" FontWeight="Regular" VerticalAlignment="Top" Width="160" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                 </WrapPanel>
                 <WrapPanel>
                     <TextBox x:Name="someText" FontWeight="Regular" VerticalAlignment="Top" Width="550" Margin="21,5,0,0" HorizontalAlignment="Left"/>
                 </WrapPanel>
-                <WrapPanel>
+                <WrapPanel Margin="0,0,0,15">
                     <Label Content="Дополнительные данные: " FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="additionData" FontWeight="Regular" VerticalAlignment="Top" Width="680" Margin="21,5,0,0" HorizontalAlignment="Left"/>
                 </WrapPanel>
@@ -107,7 +103,7 @@
             <WrapPanel Margin="16,5">
                 <Label Content="Заключение: " HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <ComboBox x:Name="conclusionList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
-                <TextBox x:Name="conclusion2" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <TextBox x:Name="conclusion2" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="750"/>
             </WrapPanel>
             <Grid Margin="11,5,11,15">
                 <Label Content="Дата обследования: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>

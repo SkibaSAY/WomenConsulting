@@ -66,18 +66,18 @@
                 <StackPanel x:Name="AddPlod" Margin="0,10,0,0">
                     <Grid Margin="21,0,0,0">
                         <Label Content="ФИО" FontWeight="Normal" FontSize="16" HorizontalAlignment="Left"/>
-                        <TextBox x:Name="surnameName" Text="{Binding Path=SurnameName}" Margin="50,5,140,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="16" FontWeight="Normal" MinWidth="350"/>
+                        <TextBox x:Name="surnameName" Text="{Binding Path=surnameName}" Margin="50,5,140,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="16" FontWeight="Normal" MinWidth="350"/>
                         <Label Content=", " FontWeight="Normal"  FontSize="16" Margin="5,5,120,0" HorizontalAlignment="Right"/>
-                        <TextBox x:Name="age" Text="{Binding Path=Age}" HorizontalAlignment="Right" Margin="5,5,60,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="16" FontWeight="Normal"/>
+                        <TextBox x:Name="age" Text="{Binding Path=age}" HorizontalAlignment="Right" Margin="5,5,60,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="16" FontWeight="Normal"/>
                         <Label Content="лет" FontWeight="Normal" Margin="5,5,21,0"  FontSize="16" HorizontalAlignment="Right"/>
                     </Grid>
                     <Grid Margin="21,0,0,0">
                         <Label Content="Адрес" FontWeight="Normal" FontSize="16"/>
-                        <TextBox x:Name="address" Text="{Binding Path=Address}" Margin="65,5,21,0" TextWrapping="Wrap"  VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="16" FontWeight="Normal" MinWidth="600"/>
+                        <TextBox x:Name="address" Text="{Binding Path=address}" Margin="65,5,21,0" TextWrapping="Wrap"  VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="16" FontWeight="Normal" MinWidth="600"/>
                     </Grid>
                     <WrapPanel Margin="21,0,0,0">
                         <Label Content="Дата последней менструации" FontWeight="Normal" FontSize="16"/>
-                        <DatePicker x:Name="dateOfLastMen" SelectedDate="{Binding Path=LastMenstr}"  HorizontalAlignment="Left" Margin="5,5,0,0"  VerticalAlignment="Top" Width="150" FontSize="16" FontWeight="Normal" Text="Выберите дату" Foreground="#FF635E5E"/>
+                        <DatePicker x:Name="dateOfLastMen" SelectedDate="{Binding Path=dateOfLastMen}"  HorizontalAlignment="Left" Margin="5,5,0,0"  VerticalAlignment="Top" Width="150" FontSize="16" FontWeight="Normal" Text="Выберите дату" Foreground="#FF635E5E"/>
                     </WrapPanel>
                     <WrapPanel Margin="21,0,0,0">
                         <Label Content="Срок беременности" FontWeight="Normal" FontSize="16"/>

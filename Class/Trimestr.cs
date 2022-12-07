@@ -118,7 +118,6 @@ namespace WomenConsulting.Class
                 }
                 doctorList.SelectedIndex = selectedIndex;
             }       
-
         }
 
         /// <summary>

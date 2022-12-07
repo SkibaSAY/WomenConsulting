@@ -8,19 +8,28 @@ namespace WomenConsulting
 {
     public class GeneralSettings
     {
-        public string SurnameName { get; set; } = "Картошка маленькая";
-        public string Address { get; set; } = "***";
-        public string Age { get; set; } = "27";
-        public DateTime LastMenstr { get; set; }
+        public string surnameName { get; set; } = "Картошка маленькая";
+        public string address { get; set; } = "***";
+        public string age { get; set; } = "27";
+        public DateTime dateOfLastMen { get; set; }
         public GeneralSettings() { }
-        public GeneralSettings(string surname,string address,string age, DateTime lastMenstrDate)
+        public GeneralSettings(string surname,string address,string age, DateTime dateOfLastMen)
         {
-            SurnameName = surname;
-            Address = address;
-            Age = age;
-            LastMenstr = lastMenstrDate;
+            surnameName = surname;
+            this.address = address;
+            this.age = age;
+            this.dateOfLastMen = dateOfLastMen;
         }
 
+        public Dictionary<string,string> GetFields()
+        {
+            var result = new Dictionary<string, string>();
+            foreach(var prop in typeof(GeneralSettings).GetProperties())
+            {
+                result.Add(prop.Name, prop.GetValue(this).ToString());
+            }
+            return result;
+        }
         //другие поля пока не нужны
     }
 }

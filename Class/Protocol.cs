@@ -38,7 +38,6 @@ namespace WomenConsulting
         private void InitGeneralSettings()
         {
             generalSettings = new GeneralSettings();
-
         }
 
         private void InitFetuses(string currentDirectory)
@@ -144,8 +143,21 @@ namespace WomenConsulting
         }
         private void SaveSeveralDocsAsOne(IEnumerable<Document> docs,string outDocPath)
         {
+            foreach (var doc in docs) FillGeneralSettings(doc);
             var mergedDoc = MergeTrimestrDocument(docs);
             mergedDoc.Save(outDocPath);
+        }
+        private void FillGeneralSettings(Document doc)
+        {
+            var generalFields = generalSettings.GetFields();
+            foreach(var field in generalFields)
+            {
+                var findedField = doc.Range.FormFields.Where(x => x.Name.Equals(field.Key)).FirstOrDefault();
+                if (findedField != null)
+                {
+                    findedField.Result = field.Value;
+                }
+            }
         }
         private Document MergeTrimestrDocument(IEnumerable<Document> docs)
         {

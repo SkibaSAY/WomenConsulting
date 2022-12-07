@@ -20,7 +20,7 @@ namespace WomenConsulting
         public void UpdateBindings()
         {
             OnPropertyChanged("fetuses");
-            OnPropertyChanged("generalSettings");
+            //OnPropertyChanged("generalSettings");
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
@@ -32,9 +32,14 @@ namespace WomenConsulting
         public Protocol(string currentDirectory)
         {
             InitFetuses(currentDirectory);
-            generalSettings = new GeneralSettings();
+            InitGeneralSettings();
         }
 
+        private void InitGeneralSettings()
+        {
+            generalSettings = new GeneralSettings();
+
+        }
 
         private void InitFetuses(string currentDirectory)
         {

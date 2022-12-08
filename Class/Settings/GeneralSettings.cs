@@ -8,12 +8,12 @@ namespace WomenConsulting
 {
     public class GeneralSettings
     {
-        public string surnameName { get; set; } = "Картошка маленькая";
-        public string address { get; set; } = "***";
-        public string age { get; set; } = "27";
-        public DateTime dateOfLastMen { get; set; }
+        public string surnameName { get; set; } = "";
+        public string address { get; set; } = "";
+        public string age { get; set; } = "";
+        public string dateOfLastMen { get; set; }
         public GeneralSettings() { }
-        public GeneralSettings(string surname,string address,string age, DateTime dateOfLastMen)
+        public GeneralSettings(string surname,string address,string age, string dateOfLastMen)
         {
             surnameName = surname;
             this.address = address;

@@ -38,6 +38,28 @@ namespace WomenConsulting
         private void InitGeneralSettings()
         {
             generalSettings = new GeneralSettings();
+            var allDocs = fetuses.SelectMany(
+                x => x.GetType().GetProperties()
+                    .Where(y => y.PropertyType.Equals(typeof(Trimestr)))
+                    .Select(z => ((Trimestr)z.GetValue(x)).Document)
+                    ).ToList();
+
+            foreach (var property in typeof(GeneralSettings).GetProperties())
+            {
+                var propertyName = property.Name;
+                var value = FindPropertyValue(allDocs, propertyName);
+                property.SetValue(generalSettings, value);
+            }
+        }
+        private string FindPropertyValue(List<Document>docs,string fieldName)
+        {
+            string result;
+            var correspondFields = new List<string>();
+            foreach (var doc in docs) correspondFields.AddRange(doc.Range.FormFields.Where(x=>x.Name.Equals(fieldName)).Select(x=>x.Result).ToList());
+            
+            result = correspondFields.OrderByDescending(s => s.Length).FirstOrDefault();
+            if (result == null) return "";
+            return result;
         }
 
         private void InitFetuses(string currentDirectory)

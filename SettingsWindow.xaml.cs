@@ -44,8 +44,20 @@ namespace WomenConsulting
         {
             if (DoctorsList.SelectedItem != null)
             {
-                Settings.RemoveDoctor(DoctorsList.SelectedItem.ToString());
-                DoctorsList.Items.Remove(DoctorsList.SelectedItem);
+                string msgtext = $"Вы точно хотите удалить выбранного врача?";
+                string txt = "";
+                MessageBoxButton button = MessageBoxButton.YesNo;
+                MessageBoxResult result = System.Windows.MessageBox.Show(msgtext, txt, button);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        Settings.RemoveDoctor(DoctorsList.SelectedItem.ToString());
+                        DoctorsList.Items.Remove(DoctorsList.SelectedItem);
+                        break;
+                    case MessageBoxResult.No:
+
+                        break;
+                }
             }
         }
     }

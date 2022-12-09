@@ -20,7 +20,7 @@
                 <MenuItem x:Name="SaveAs" Header="Сохранить как" Background="#FF6B71FF" Click="SaveAs_Click" ></MenuItem>
                 <MenuItem x:Name="Exit" Header="Выход" Background="#FF6B71FF" Click="Exit_Click" ></MenuItem>
             </MenuItem>
-            <MenuItem Header="Настройки" ></MenuItem>
+            <MenuItem x:Name="OpenSettings" Header="Настройки" Background="#FF6B71FF" Click="OpenSettings_Click" ></MenuItem>
         </Menu>
         <DockPanel Grid.Row="1">
             <DockPanel.Resources>

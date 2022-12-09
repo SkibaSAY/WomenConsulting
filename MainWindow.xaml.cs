@@ -180,5 +180,11 @@ namespace WomenConsulting
                     break;
             }
         }
+        private void OpenSettings_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow settingsWindow = new SettingsWindow();
+            settingsWindow.Show();
+            settingsWindow.Owner = this;
+        }
     }
 }

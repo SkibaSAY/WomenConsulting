@@ -94,6 +94,9 @@
     <Compile Include="MalyeSroki.xaml.cs">
       <DependentUpon>MalyeSroki.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Trimestr2.xaml.cs">
       <DependentUpon>Trimestr2.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
     <Page Include="MalyeSroki.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Trimestr1.xaml">
       <SubType>Designer</SubType>

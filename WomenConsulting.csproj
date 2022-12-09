@@ -86,6 +86,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddDoctorWindow.xaml.cs">
+      <DependentUpon>AddDoctorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Class\Fetus.cs" />
     <Compile Include="Class\Protocol.cs" />
     <Compile Include="Class\Settings\GeneralSettings.cs" />
@@ -104,6 +107,10 @@
       <DependentUpon>Trimestr3.xaml</DependentUpon>
     </Compile>
     <Compile Include="Шаблоны\Sample.cs" />
+    <Page Include="AddDoctorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

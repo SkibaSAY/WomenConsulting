@@ -20,11 +20,10 @@ namespace WomenConsulting
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        public List<String> Doctors;
         public SettingsWindow()
         {
             InitializeComponent();
-            Doctors = Settings.GetDoctors();
+            List<String> Doctors = Settings.GetDoctors();
             foreach (var item in Doctors)
             {
                 DoctorsList.Items.Add(item);
@@ -33,11 +32,21 @@ namespace WomenConsulting
         }
         private void AddDoctor_Click(object sender, RoutedEventArgs e)
         {
-
+            AddDoctorWindow addDoctorWindow = new AddDoctorWindow();
+            addDoctorWindow.ShowDialog();
+            if ((bool)addDoctorWindow.DialogResult)
+            {
+                Settings.AddDoctor(addDoctorWindow.DoctorName);
+                DoctorsList.Items.Add(addDoctorWindow.DoctorName);
+            }
         }
         private void RemoveDoctor_Click(object sender, RoutedEventArgs e)
         {
-
+            if (DoctorsList.SelectedItem != null)
+            {
+                Settings.RemoveDoctor(DoctorsList.SelectedItem.ToString());
+                DoctorsList.Items.Remove(DoctorsList.SelectedItem);
+            }
         }
     }
 }

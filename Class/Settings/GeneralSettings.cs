@@ -1,24 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WomenConsulting
 {
-    public class GeneralSettings
+    public class GeneralSettings: INotifyPropertyChanged
     {
         public string surnameName { get; set; } = "";
         public string address { get; set; } = "";
         public string age { get; set; } = "";
         public string dateOfLastMen { get; set; }
+        private string _fetusCount;
+        public string fetusCount
+        {
+            get
+            {
+                return _fetusCount;
+            }
+            set
+            {
+                _fetusCount = value;
+                OnPropertyChanged("fetusCount");
+            }
+        }
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public GeneralSettings() { }
-        public GeneralSettings(string surname,string address,string age, string dateOfLastMen)
+        public GeneralSettings(string surname,string address,string age, string dateOfLastMen,string fetusCount)
         {
             surnameName = surname;
             this.address = address;
             this.age = age;
             this.dateOfLastMen = dateOfLastMen;
+            this.fetusCount = fetusCount;
         }
 
         public Dictionary<string,string> GetFields()

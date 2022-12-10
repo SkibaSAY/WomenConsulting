@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WomenConsulting.Class;
 
 namespace WomenConsulting
@@ -20,7 +21,7 @@ namespace WomenConsulting
         public void UpdateBindings()
         {
             OnPropertyChanged("fetuses");
-            //OnPropertyChanged("generalSettings");
+            OnPropertyChanged("generalSettings");
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
@@ -85,8 +86,8 @@ namespace WomenConsulting
             if (maxCount < malyeSrokiList.Count) maxCount = malyeSrokiList.Count;
 
             FillTheCaps(firstTrimList, Sample.FirstTrimestrFullName, maxCount);
-            FillTheCaps(secondTrimList, Sample.SecondTrimestrName, maxCount);
-            FillTheCaps(thirdTrimList, Sample.ThirdTrimestrName, maxCount);
+            FillTheCaps(secondTrimList, Sample.SecondTrimestrFullName, maxCount);
+            FillTheCaps(thirdTrimList, Sample.ThirdTrimestrFullName, maxCount);
             FillTheCaps(malyeSrokiList, Sample.MalyeSrokiFullName, maxCount);
 
             //считаем, что число плодов одинаково во всех триместрах, но стоит подумать, что если не так - будет ведь ошибка.
@@ -194,6 +195,36 @@ namespace WomenConsulting
                 newDoc.Sections.Add(sec);
             }
             return newDoc;
+        }
+        public void AddFetus(Fetus newFetus)
+        {
+            fetuses.Add(newFetus);
+            generalSettings.fetusCount = fetuses.Count.ToString();
+            UpdateBindings();
+        }
+        public void DeleteFetus(int fetusIndex)
+        {
+            if(fetuses.Count <= fetusIndex || fetusIndex < 0)
+            {
+                throw new IndexOutOfRangeException("Вы пытаетесь удалить плод по некорректному индексу");
+            }
+
+            string msgtext = $"Вы точно хотите удалить {fetuses[fetusIndex].Name}?";
+            string txt = "Подтверждение";
+            MessageBoxButton button = MessageBoxButton.YesNo;
+            MessageBoxResult result = System.Windows.MessageBox.Show(msgtext, txt, button);
+
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    fetuses.RemoveAt(fetusIndex);
+                    generalSettings.fetusCount = fetuses.Count.ToString();
+                    UpdateBindings();
+                    break;
+                case MessageBoxResult.No:
+
+                    break;
+            }
         }
     }
 }

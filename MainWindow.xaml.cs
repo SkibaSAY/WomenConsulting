@@ -142,13 +142,12 @@ namespace WomenConsulting
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void AddPlod_Click(object sender, RoutedEventArgs e)
         {
-            protocol.fetuses.Add(new Fetus($"Плод_{protocol.fetuses.Count + 1}"));
-            protocol.UpdateBindings();
+            protocol.AddFetus(new Fetus($"Плод_{protocol.fetuses.Count + 1}"));
         }
 
         private void DeletePlod_Click(object sender, RoutedEventArgs e)
@@ -158,27 +157,7 @@ namespace WomenConsulting
                 System.Windows.MessageBox.Show("Вы не можете удалить из протокола единственный плод.");
                 return;
             }
-
-            string msgtext = $"Вы точно хотите удалить {protocol.fetuses[Fetuses.SelectedIndex].Name}?";
-            string txt = "А что вы тут делаете?)";
-            MessageBoxButton button = MessageBoxButton.YesNo;
-            MessageBoxResult result = System.Windows.MessageBox.Show(msgtext, txt, button);
-
-            switch (result)
-            {
-                case MessageBoxResult.Yes:
-                    protocol.fetuses.RemoveAt(Fetuses.SelectedIndex);
-                    //переиндексация
-                    for (var i = 0; i < protocol.fetuses.Count; i++)
-                    {
-                        protocol.fetuses[i].Name = $"Плод_{i + 1}";
-                    }
-                    protocol.UpdateBindings();
-                    break;
-                case MessageBoxResult.No:
-
-                    break;
-            }
+            protocol.DeleteFetus(Fetuses.SelectedIndex);
         }
         private void OpenSettings_Click(object sender, RoutedEventArgs e)
         {

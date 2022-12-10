@@ -11,6 +11,8 @@ namespace WomenConsulting.Class
     class BaseSettings
     {
         public List<string> Doctors { get; set; } = new List<string>();
+        public string BaseProtocolsPath { get; set; }
+
         [JsonIgnore]
         public string _lastOpenDirectory = "";
         public string LastOpenDirectory
@@ -36,11 +38,11 @@ namespace WomenConsulting.Class
         {
             get
             {
-                return settings._lastOpenDirectory;
+                return settings.LastOpenDirectory;
             }
             set
             {
-                settings._lastOpenDirectory = value;
+                settings.LastOpenDirectory = value;
             }
         }
 

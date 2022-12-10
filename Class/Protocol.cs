@@ -85,14 +85,13 @@ namespace WomenConsulting
             var malyeSrokiList = SplitDocumentBySections(malyeSrokiPath);
             if (maxCount < malyeSrokiList.Count) maxCount = malyeSrokiList.Count;
 
+            //считаем, что число плодов одинаково во всех триместрах, но стоит подумать, что если не так - будет ведь ошибка.
+            //есть вариант дополнять пустые места шаблонами.
+            //тут и заполняет пустые места
             FillTheCaps(firstTrimList, Sample.FirstTrimestrFullName, maxCount);
             FillTheCaps(secondTrimList, Sample.SecondTrimestrFullName, maxCount);
             FillTheCaps(thirdTrimList, Sample.ThirdTrimestrFullName, maxCount);
             FillTheCaps(malyeSrokiList, Sample.MalyeSrokiFullName, maxCount);
-
-            //считаем, что число плодов одинаково во всех триместрах, но стоит подумать, что если не так - будет ведь ошибка.
-            //есть вариант дополнять пустые места шаблонами.
-
 
             for (var i = 0; i < firstTrimList.Count; i++)
             {

@@ -71,7 +71,7 @@ namespace WomenConsulting
             CurrentDirectory = Settings.LastOpenDirectory;
         }
 
-        private void InitPages()
+        private void InitProtocol()
         {
             protocol = new Protocol(CurrentDirectory);
             DataContext = protocol;
@@ -85,7 +85,7 @@ namespace WomenConsulting
             {
                 try
                 {
-                    InitPages();
+                    InitProtocol();
                 }
                 catch(IOException ex)
                 {
@@ -125,7 +125,7 @@ namespace WomenConsulting
         private void NewProtocol_Click_1(object sender, RoutedEventArgs e)
         {
             ResetCurrentDirectory();
-            InitPages();
+            InitProtocol();
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace WomenConsulting
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             InitSettings();
-            InitPages();
+            InitProtocol();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

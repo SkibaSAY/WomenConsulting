@@ -8,16 +8,30 @@ using System.Threading.Tasks;
 
 namespace WomenConsulting.Class
 {
-    public class Settings
+    class BaseSettings
+    {
+        public List<string> Doctors { get; set; } = new List<string>();
+        [JsonIgnore]
+        public string _lastOpenDirectory = "";
+        public string LastOpenDirectory
+        {
+            get
+            {
+                return _lastOpenDirectory;
+            }
+            set
+            {
+                if(Directory.Exists(value))_lastOpenDirectory = value;
+            }
+        }
+    }
+    public static class Settings
     {
         [JsonIgnore]
         public static readonly string Path = "settings.json";
-        public List<string> Doctors { get; set; } = new List<string>();
-
         [JsonIgnore]
-        private static Settings settings = new Settings();
+        private static BaseSettings settings = new BaseSettings();
 
-        public string _lastOpenDirectory = "";
         public static string LastOpenDirectory
         {
             get
@@ -35,7 +49,7 @@ namespace WomenConsulting.Class
             if (File.Exists(Path))
             {
                 var content = File.ReadAllText(Path);
-                settings = JsonConvert.DeserializeObject<Settings>(content);
+                settings = JsonConvert.DeserializeObject<BaseSettings>(content);
             }
         }
         public static void Save()

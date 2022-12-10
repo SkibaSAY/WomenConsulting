@@ -95,7 +95,14 @@ namespace WomenConsulting.Class
                 }
                 else if (pageControl is DatePicker)
                 {
-                    (pageControl as DatePicker).Text = field.Result;
+                    if (String.IsNullOrEmpty(field.Result))
+                    {
+                        (pageControl as DatePicker).Text = DateTime.Now.ToString();
+                    }
+                    else
+                    {
+                        (pageControl as DatePicker).Text = field.Result;
+                    }
                 }
             }
             //заполнение списка врачей с учётом настроек

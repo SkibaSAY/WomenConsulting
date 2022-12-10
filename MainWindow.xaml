@@ -79,9 +79,9 @@
                         <Label Content="Дата последней менструации" FontWeight="Normal" FontSize="16"/>
                         <DatePicker x:Name="dateOfLastMen" SelectedDate="{Binding Path=dateOfLastMen}"  HorizontalAlignment="Left" Margin="5,5,0,0"  VerticalAlignment="Top" Width="150" FontSize="16" FontWeight="Normal" Text="Выберите дату" Foreground="#FF635E5E"/>
                     </WrapPanel>
-                    <WrapPanel>
-                        <Label  Content="Число плодов" Margin="21,0,0,0" FontWeight="Normal" FontSize="16"></Label>
-                        <Label x:Name="fetusCount" Content="{Binding Path=fetusCount,UpdateSourceTrigger=PropertyChanged}" Width="194" FontWeight="Normal" FontSize="16"></Label>
+                    <WrapPanel Margin="0,7,0,0">
+                        <Label  Content="Число плодов:" Margin="21,0,0,0" FontWeight="Normal" FontSize="16"></Label>
+                        <Label x:Name="fetusCount" Content="{Binding Path=fetusCount,UpdateSourceTrigger=PropertyChanged}" Width="194" FontWeight="Normal" FontSize="16" BorderBrush="#FF5C4F4F" Background="#00000000" BorderThickness="1"></Label>
                         
                         <Button Content="Добавить плод" HorizontalAlignment="Left" Click="AddPlod_Click" Height="28" VerticalAlignment="Center" Margin="10,0,10,5" Padding="20,1" Background="#FFAEB1FF" FontSize="16"/>
                         <Button x:Name="DeletePlod" Content="Удалить плод" HorizontalAlignment="Left" Click="DeletePlod_Click" Height="28" VerticalAlignment="Center" Margin="0,0,0,5" Padding="20,1" Background="#FFAEB1FF" FontSize="16"/>

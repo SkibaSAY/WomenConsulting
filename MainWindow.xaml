@@ -16,7 +16,7 @@
             <MenuItem Header="Файл" Foreground="White" Background="#FF6B71FF">
                 <MenuItem x:Name="NewProtocol" Header="Новый протокол" Click="NewProtocol_Click_1" Background="#FF6B71FF" ></MenuItem>
                 <MenuItem x:Name="OpenDirectoryDialog" Header="Открыть протокол" Click="OpenDirectoryDialog_Click" Background="#FF6B71FF" ></MenuItem>
-                <MenuItem x:Name="Save" Header="Сохранить" Click="Save_Click" Background="#FF6B71FF" IsEnabled="False" ></MenuItem>
+                <MenuItem x:Name="Save" Header="Сохранить" Click="Save_Click" Background="#FF6B71FF" ></MenuItem>
                 <MenuItem x:Name="SaveAs" Header="Сохранить как" Background="#FF6B71FF" Click="SaveAs_Click" ></MenuItem>
                 <MenuItem x:Name="Exit" Header="Выход" Background="#FF6B71FF" Click="Exit_Click" ></MenuItem>
             </MenuItem>

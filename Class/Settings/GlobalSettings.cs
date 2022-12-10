@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace WomenConsulting.Class
 {
-    class BaseSettings
+    public class _Settings
     {
         public List<string> Doctors { get; set; } = new List<string>();
         [JsonIgnore]
         private string _baseProtocolsPath = "";
         public string BaseProtocolsPath
         {
+            //когда потребуется, нужно получить непустой путь у пользователя
             get 
             {
                 if (!Directory.Exists(_baseProtocolsPath))
@@ -58,7 +59,19 @@ namespace WomenConsulting.Class
         [JsonIgnore]
         public static readonly string Path = "settings.json";
         [JsonIgnore]
-        private static BaseSettings settings = new BaseSettings();
+        private static _Settings settings = new _Settings();
+
+        public static string BaseProtocolsPath
+        {
+            get
+            {
+                return settings.BaseProtocolsPath;
+            }
+            set
+            {
+                settings.BaseProtocolsPath = value;
+            }
+        }
 
         public static string LastOpenDirectory
         {
@@ -77,7 +90,7 @@ namespace WomenConsulting.Class
             if (File.Exists(Path))
             {
                 var content = File.ReadAllText(Path);
-                settings = JsonConvert.DeserializeObject<BaseSettings>(content);
+                settings = JsonConvert.DeserializeObject<_Settings>(content);
             }
         }
         public static void Save()

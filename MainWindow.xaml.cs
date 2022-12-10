@@ -50,8 +50,8 @@ namespace WomenConsulting
                 {
                     throw new ArgumentException("Смотрите, что записываете в переменную с директорией");
                 }
-                //отключение/включение кнопки сохранения
-                Save.IsEnabled = !valueIsEmpty;
+                ////отключение/включение кнопки сохранения
+                //Save.IsEnabled = !valueIsEmpty;
                 currentDirectory = value;
             }
         }
@@ -81,26 +81,51 @@ namespace WomenConsulting
         private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)
         {
             var savedCurrDirectory = CurrentDirectory;
-            if (UserDialog.SelectDirectoryPath(out string selectedPath))
+
+            var protocolsWindow = new ProtocolListOpen(GlobalSettings.BaseProtocolsPath);
+            protocolsWindow.ShowDialog();
+
+            var selectedItem = protocolsWindow.ProtocolsList.SelectedItem;
+            if (selectedItem == null)
             {
-                CurrentDirectory = selectedPath;
-                try
-                {
-                    InitProtocol();
-                }
-                catch(IOException ex)
-                {
-                    //откатили
-                    CurrentDirectory = savedCurrDirectory;
-                    System.Windows.MessageBox.Show("Этот документ уже открыт в Word, закройте его и повторите попытку");
-                }
+                return;
+            }
+            else CurrentDirectory = selectedItem.ToString();
+
+            try
+            {
+                InitProtocol();
+            }
+            catch (IOException ex)
+            {
+                //откатили
+                CurrentDirectory = savedCurrDirectory;
+                System.Windows.MessageBox.Show("Этот документ уже открыт в Word, закройте его и повторите попытку");
             }
 
+            #region На удалении
+            //if (UserDialog.SelectDirectoryPath(out string selectedPath))
+            //{
+            //    CurrentDirectory = selectedPath;
+            //    try
+            //    {
+            //        InitProtocol();
+            //    }
+            //    catch(IOException ex)
+            //    {
+            //        //откатили
+            //        CurrentDirectory = savedCurrDirectory;
+            //        System.Windows.MessageBox.Show("Этот документ уже открыт в Word, закройте его и повторите попытку");
+            //    }
+            //}
+            #endregion 
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            protocol.Save(CurrentDirectory);
+            //protocol.Save(CurrentDirectory);
+            var path = Path.Combine(GlobalSettings.BaseProtocolsPath, protocol.generalSettings.surnameName);
+            protocol.Save(path);
         }
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)

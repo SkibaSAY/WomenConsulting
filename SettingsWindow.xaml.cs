@@ -23,7 +23,7 @@ namespace WomenConsulting
         public SettingsWindow()
         {
             InitializeComponent();
-            List<String> Doctors = Settings.GetDoctors();
+            List<String> Doctors = GlobalSettings.GetDoctors();
             foreach (var item in Doctors)
             {
                 DoctorsList.Items.Add(item);
@@ -36,7 +36,7 @@ namespace WomenConsulting
             addDoctorWindow.ShowDialog();
             if ((bool)addDoctorWindow.DialogResult)
             {
-                Settings.AddDoctor(addDoctorWindow.DoctorName);
+                GlobalSettings.AddDoctor(addDoctorWindow.DoctorName);
                 DoctorsList.Items.Add(addDoctorWindow.DoctorName);
             }
         }
@@ -51,7 +51,7 @@ namespace WomenConsulting
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        Settings.RemoveDoctor(DoctorsList.SelectedItem.ToString());
+                        GlobalSettings.RemoveDoctor(DoctorsList.SelectedItem.ToString());
                         DoctorsList.Items.Remove(DoctorsList.SelectedItem);
                         break;
                     case MessageBoxResult.No:

@@ -112,7 +112,7 @@ namespace WomenConsulting.Class
             doctorList.ItemsSource = null;
             doctorList.Items.Clear();
 
-            var doctorsInSettings = Settings.GetDoctors();
+            var doctorsInSettings = GlobalSettings.GetDoctors();
             doctorList.ItemsSource = doctorsInSettings;
             if (selectedDoctor != null)
             {

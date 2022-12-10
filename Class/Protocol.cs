@@ -16,7 +16,7 @@ namespace WomenConsulting
     public class Protocol: INotifyPropertyChanged
     {
         public ObservableCollection<Fetus> fetuses { get; set; }
-        public GeneralSettings generalSettings { get; set; }
+        public ProtocolCommonSettings generalSettings { get; set; }
 
         public void UpdateBindings()
         {
@@ -38,14 +38,14 @@ namespace WomenConsulting
 
         private void InitGeneralSettings()
         {
-            generalSettings = new GeneralSettings();
+            generalSettings = new ProtocolCommonSettings();
             var allDocs = fetuses.SelectMany(
                 x => x.GetType().GetProperties()
                     .Where(y => y.PropertyType.Equals(typeof(Trimestr)))
                     .Select(z => ((Trimestr)z.GetValue(x)).Document)
                     ).ToList();
 
-            foreach (var property in typeof(GeneralSettings).GetProperties())
+            foreach (var property in typeof(ProtocolCommonSettings).GetProperties())
             {
                 var propertyName = property.Name;
                 var value = FindPropertyValue(allDocs, propertyName);

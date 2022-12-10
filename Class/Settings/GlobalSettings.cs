@@ -11,7 +11,33 @@ namespace WomenConsulting.Class
     class BaseSettings
     {
         public List<string> Doctors { get; set; } = new List<string>();
-        public string BaseProtocolsPath { get; set; }
+        [JsonIgnore]
+        private string _baseProtocolsPath = "";
+        public string BaseProtocolsPath
+        {
+            get 
+            {
+                if (!Directory.Exists(_baseProtocolsPath))
+                {
+                    //если пользователь не выбрал директорию, нужно кинуть ошибку и обработать на уровнях ниже
+                    if(!UserDialog.SelectDirectoryPath
+                        (
+                        out string selectedPath,
+                        description:"Выберете базовую директорию, в которой будут храниться все протоколы по умолчанию."
+                        )
+                    )
+                    {
+                        throw new GlobalSettingsExceptions();
+                    }
+                    _baseProtocolsPath = selectedPath;
+                }
+                return _baseProtocolsPath;
+            }
+            set
+            {
+                if (Directory.Exists(value)) _baseProtocolsPath = value;               
+            }
+        }
 
         [JsonIgnore]
         public string _lastOpenDirectory = "";
@@ -27,7 +53,7 @@ namespace WomenConsulting.Class
             }
         }
     }
-    public static class Settings
+    public static class GlobalSettings
     {
         [JsonIgnore]
         public static readonly string Path = "settings.json";

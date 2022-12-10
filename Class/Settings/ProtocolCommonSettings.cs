@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WomenConsulting
 {
-    public class GeneralSettings: INotifyPropertyChanged
+    public class ProtocolCommonSettings: INotifyPropertyChanged
     {
         public string surnameName { get; set; } = "";
         public string address { get; set; } = "";
@@ -34,8 +34,8 @@ namespace WomenConsulting
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public GeneralSettings() { }
-        public GeneralSettings(string surname,string address,string age, string dateOfLastMen,string fetusCount)
+        public ProtocolCommonSettings() { }
+        public ProtocolCommonSettings(string surname,string address,string age, string dateOfLastMen,string fetusCount)
         {
             surnameName = surname;
             this.address = address;
@@ -47,7 +47,7 @@ namespace WomenConsulting
         public Dictionary<string,string> GetFields()
         {
             var result = new Dictionary<string, string>();
-            foreach(var prop in typeof(GeneralSettings).GetProperties())
+            foreach(var prop in typeof(ProtocolCommonSettings).GetProperties())
             {
                 result.Add(prop.Name, prop.GetValue(this).ToString());
             }

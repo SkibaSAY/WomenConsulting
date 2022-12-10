@@ -89,11 +89,13 @@
     <Compile Include="AddDoctorWindow.xaml.cs">
       <DependentUpon>AddDoctorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Class\Exceptions\GlobalSettingsExceptions.cs" />
     <Compile Include="Class\Fetus.cs" />
     <Compile Include="Class\Protocol.cs" />
-    <Compile Include="Class\Settings\GeneralSettings.cs" />
-    <Compile Include="Class\Settings\Settings.cs" />
+    <Compile Include="Class\Settings\ProtocolCommonSettings.cs" />
+    <Compile Include="Class\Settings\GlobalSettings.cs" />
     <Compile Include="Class\Trimestr.cs" />
+    <Compile Include="Class\UserDialog.cs" />
     <Compile Include="Enums\FetusCountToString.cs" />
     <Compile Include="MalyeSroki.xaml.cs">
       <DependentUpon>MalyeSroki.xaml</DependentUpon>

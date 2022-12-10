@@ -67,8 +67,8 @@ namespace WomenConsulting
         }
         private void InitSettings()
         {
-            Settings.Load();
-            CurrentDirectory = Settings.LastOpenDirectory;
+            GlobalSettings.Load();
+            CurrentDirectory = GlobalSettings.LastOpenDirectory;
         }
 
         private void InitProtocol()
@@ -81,8 +81,9 @@ namespace WomenConsulting
         private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)
         {
             var savedCurrDirectory = CurrentDirectory;
-            if (SelectDirectoryPath())
+            if (UserDialog.SelectDirectoryPath(out string selectedPath))
             {
+                CurrentDirectory = selectedPath;
                 try
                 {
                     InitProtocol();
@@ -96,20 +97,6 @@ namespace WomenConsulting
             }
 
         }
-        private bool SelectDirectoryPath()
-        {
-            FolderBrowserDialog folderDlg = new FolderBrowserDialog();
-            folderDlg.ShowNewFolderButton = true;
-
-            // Show the FolderBrowserDialog.  
-            DialogResult result = folderDlg.ShowDialog();
-            if (result == System.Windows.Forms.DialogResult.OK)
-            {
-                CurrentDirectory = folderDlg.SelectedPath;
-                return true;
-            }
-            return false;
-        }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
@@ -118,8 +105,12 @@ namespace WomenConsulting
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
-            if(SelectDirectoryPath()) 
-                Save_Click(sender, e);
+            if(!UserDialog.SelectDirectoryPath(out string selectedPath))
+            {
+                return;
+            }
+            CurrentDirectory = selectedPath;
+            Save_Click(sender, e);
         }
 
         private void NewProtocol_Click_1(object sender, RoutedEventArgs e)
@@ -130,8 +121,8 @@ namespace WomenConsulting
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            Settings.LastOpenDirectory = CurrentDirectory;
-            Settings.Save();
+            GlobalSettings.LastOpenDirectory = CurrentDirectory;
+            GlobalSettings.Save();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

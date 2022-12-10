@@ -199,10 +199,22 @@
             <WrapPanel Margin="11,5">
                 <Label Content="Заключение: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <ComboBox x:Name="ConclusionField" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <TextBox x:Name="ConclusionText" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <ComboBox x:Name="ConclusionField2" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <ComboBox x:Name="ConclusionField3" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <ComboBox x:Name="ConclusionField4" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <ComboBox x:Name="ConclusionField5" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <ComboBox x:Name="ConclusionField6" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <ComboBox x:Name="ConclusionField7" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <ComboBox x:Name="ConclusionField8" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <ComboBox x:Name="ConclusionField9" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <ComboBox x:Name="ConclusionField10" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <TextBox x:Name="ConclusionText2" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
             </WrapPanel>
             <WrapPanel Margin="11,5">
                 <Label Content="Дополнительные данные: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                <TextBox x:Name="additionalDataText" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="800"/>
+                <ComboBox x:Name="additionalDataField" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="350"/>
+                <TextBox x:Name="AddDataField" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="800"/>
             </WrapPanel>
             <Grid Margin="11,5,11,15">
                 <Label Content="Дата обследования: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>

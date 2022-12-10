@@ -14,6 +14,14 @@
                 <Label Content="Тип обследования:" VerticalAlignment="Center" FontSize="16" Margin="15,0,0,0"/>
                 <ComboBox x:Name="typeOfSurvey" VerticalAlignment="Center" Width="180" HorizontalAlignment="Left" Margin="165,0,0,0" />
             </Grid>
+            <WrapPanel Margin="15,0,0,0">
+                <Label Content="Срок беременности" FontWeight="Normal" FontSize="16"/>
+                <TextBox x:Name="gestationalTime_week" HorizontalAlignment="Left" Margin="5,7,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontWeight="Normal"/>
+                <Label Content="недель" FontWeight="Normal" FontSize="16"  Margin="5,0,5,0"/>
+                <TextBox x:Name="gestationalTime_day" HorizontalAlignment="Left" Margin="5,7,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontWeight="Normal"/>
+                <Label Content="дней" FontWeight="Normal"  Margin="5,0,5,0" FontSize="16"/>
+                <ComboBox x:Name="gestationList" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="200" FontWeight="Normal"/>
+            </WrapPanel>
             <Grid>
                 <Label Content="ЧСС:" VerticalAlignment="Center" FontSize="16" Margin="15,0,0,0" />
                 <TextBox x:Name="pulseText" VerticalAlignment="Center" Width="120" Margin="65,0,0,0" HorizontalAlignment="Left"/>

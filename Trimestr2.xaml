@@ -10,10 +10,11 @@
 
     <StackPanel Background="#FFD9DAFF" Margin="0">
         <Expander HorizontalContentAlignment="Stretch" FontSize="16" Background="#FFAEB1FF" VerticalContentAlignment="Stretch" Header="Общие параметры" VerticalAlignment="Top" Margin="0,0,0,10" IsExpanded="True">
-            <Grid Background="#FFAEB1FF" Margin="0" Height="134">
+            <Grid Background="#FFAEB1FF" Margin="0" Height="174">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -21,34 +22,42 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <GroupBox Grid.Column="0" Grid.Row="0" FontSize="16" Header="Положение" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <WrapPanel Margin="5,0,0,0" Grid.ColumnSpan="3">
+                    <Label Content="Срок беременности" FontWeight="Normal" FontSize="16"/>
+                    <TextBox x:Name="gestationalTime_week" FontSize="12" HorizontalAlignment="Left" Margin="5,7,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontWeight="Normal"/>
+                    <Label Content="недель" FontWeight="Normal" FontSize="16"  Margin="5,0,5,0"/>
+                    <TextBox x:Name="gestationalTime_day" FontSize="12" HorizontalAlignment="Left" Margin="5,7,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontWeight="Normal"/>
+                    <Label Content="дней" FontWeight="Normal"  Margin="5,0,5,0" FontSize="16"/>
+                    <ComboBox x:Name="gestationList" FontSize="12" HorizontalAlignment="Left" Margin="5,3,5,0" VerticalAlignment="Top" Width="200" FontWeight="Normal"/>
+                </WrapPanel>
+                <GroupBox Grid.Column="0" Grid.Row="1" FontSize="16" Header="Положение" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <ComboBox x:Name="fetusLocation" FontSize="12">
 
                     </ComboBox>
                 </GroupBox>
-                <GroupBox Grid.Column="1" Grid.Row="0" Header="Прилежание" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Column="1" Grid.Row="1" Header="Прилежание" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <ComboBox x:Name="fetusPresentation" FontSize="12">
 
                     </ComboBox>
                 </GroupBox>
 
-                <GroupBox Grid.Row="0" Grid.Column="2" Header="ЧСС"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Row="1" Grid.Column="2" Header="ЧСС"  HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <TextBox x:Name="fetusChSS" FontSize="12" Height="23" TextWrapping="Wrap" HorizontalContentAlignment="Stretch"/>
                 </GroupBox>
 
-                <GroupBox Grid.Column="0" Grid.Row="1" Header="Ритм"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Column="0" Grid.Row="2" Header="Ритм"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <ComboBox x:Name="tempo" FontSize="12">
 
                     </ComboBox>
                 </GroupBox>
 
-                <GroupBox Grid.Column="1" Grid.Row="1" Header="Движение"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Column="1" Grid.Row="2" Header="Движение"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <ComboBox x:Name="fetusMotion" FontSize="12">
 
                     </ComboBox>
                 </GroupBox>
 
-                <GroupBox Grid.Column="2" Grid.Row="1" Header="Дыхательное Движение" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
+                <GroupBox Grid.Column="2" Grid.Row="2" Header="Дыхательное Движение" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Center" Margin="6">
                     <ComboBox x:Name="fetusRespiration" FontSize="12">
 
                     </ComboBox>

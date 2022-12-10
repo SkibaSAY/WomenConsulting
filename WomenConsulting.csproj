@@ -94,6 +94,7 @@
     <Compile Include="Class\Settings\GeneralSettings.cs" />
     <Compile Include="Class\Settings\Settings.cs" />
     <Compile Include="Class\Trimestr.cs" />
+    <Compile Include="Enums\FetusCountToString.cs" />
     <Compile Include="MalyeSroki.xaml.cs">
       <DependentUpon>MalyeSroki.xaml</DependentUpon>
     </Compile>

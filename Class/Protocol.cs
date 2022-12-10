@@ -199,7 +199,7 @@ namespace WomenConsulting
         public void AddFetus(Fetus newFetus)
         {
             fetuses.Add(newFetus);
-            generalSettings.fetusCount = fetuses.Count.ToString();
+            generalSettings.fetusCount = FetusCount.GetStringFetusCount(fetuses.Count);
             UpdateBindings();
         }
         public void DeleteFetus(int fetusIndex)
@@ -218,7 +218,7 @@ namespace WomenConsulting
             {
                 case MessageBoxResult.Yes:
                     fetuses.RemoveAt(fetusIndex);
-                    generalSettings.fetusCount = fetuses.Count.ToString();
+                    generalSettings.fetusCount = FetusCount.GetStringFetusCount(fetuses.Count);
                     UpdateBindings();
                     break;
                 case MessageBoxResult.No:

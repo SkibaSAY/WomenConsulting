@@ -6,34 +6,21 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace WomenConsulting.Class
+namespace WomenConsulting
 {
-    public class ValuesTable
+    public class PercentilTable
     {
-        public List<WeekValues> Weeks = new List<WeekValues>();
-        public double MassConst1 { get; set; }
-        public double MassConst2 { get; set; }
-        public ValuesTable()
+        public Dictionary<int, WeekValues> Weeks = new Dictionary<int,WeekValues>();
+        public double MassConstA { get; set; }
+        public double MassConstB { get; set; }
+        public PercentilTable()
         {
-
+            Init();
         }
-        [JsonIgnore]
-        public static readonly string Path = "ValuesTable.json";
-        public static void Save(ValuesTable vt)
+        public void Init()
         {
-            var content = JsonConvert.SerializeObject(vt);
-            File.WriteAllText(Path, content);
-        }
-        public static void Load(ValuesTable vt)
-        {
-            if (File.Exists(Path))
-            {
-                var content = File.ReadAllText(Path);
-                vt = JsonConvert.DeserializeObject<ValuesTable>(content);
-            }
-        }
-        public void CreateNew()
-        {
+            MassConstA = 0.27777;
+            MassConstB = 0.001492;
             List<int> MaxMass = new List<int>();
             List<int> MinMass = new List<int>();
             List<int> MaxBPR = new List<int>();
@@ -48,7 +35,6 @@ namespace WomenConsulting.Class
             {
                 MaxMass.Add(0);
             }
-            MaxMass[11] = 13;
             MaxMass[12] = 25;
             MaxMass[13] = 37;
             MaxMass[14] = 60;
@@ -376,9 +362,9 @@ namespace WomenConsulting.Class
             MinDGK[38] = 97;
             MinDGK[39] = 99;
             MinDGK[40] = 101;
-            for (int i = 0; i <= 40; i++)
+            for (int i = 12; i <= 40; i++)
             {
-                Weeks.Add(new WeekValues(i,MinMass[i],MaxMass[i],MinBPR[i],MaxBPR[i],MinDB[i],MaxDB[i],MinOZh[i],MaxOZh[i],MinDGK[i],MaxDGK[i]));
+                Weeks.Add(i, new WeekValues(i,MinMass[i],MaxMass[i],MinBPR[i],MaxBPR[i],MinDB[i],MaxDB[i],MinOZh[i],MaxOZh[i],MinDGK[i],MaxDGK[i]));
             }
         }
     }

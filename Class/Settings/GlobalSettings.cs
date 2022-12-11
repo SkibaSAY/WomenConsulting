@@ -53,6 +53,18 @@ namespace WomenConsulting
                 if(Directory.Exists(value))_lastOpenDirectory = value;
             }
         }
+
+        private PercentilTable _percentilTbl = new PercentilTable();
+        public PercentilTable PercentilTbl
+        {
+            get { return _percentilTbl; }
+            set
+            {
+                _percentilTbl = value;
+            }
+        }
+        public _Settings() { 
+        }
     }
     public static class GlobalSettings
     {
@@ -85,6 +97,12 @@ namespace WomenConsulting
             }
         }
 
+        public static PercentilTable PercentilTbl
+        {
+            get { return settings.PercentilTbl; }
+            set { settings.PercentilTbl = value; }
+        }
+        #region methods
         public static void Load()
         {
             try
@@ -129,5 +147,6 @@ namespace WomenConsulting
         {
             return settings.Doctors;
         }
+        #endregion
     }
 }

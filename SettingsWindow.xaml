@@ -10,5 +10,8 @@
         <ListBox x:Name="DoctorsList" HorizontalAlignment="Left" Height="200" Margin="25,25,200,0" VerticalAlignment="Top" Width="500" MinWidth="200"/>
         <Button Content="Добавить врача" HorizontalAlignment="Left" Margin="540,25,0,0" VerticalAlignment="Top" Width="150" Height="70" FontSize="18" FontWeight="Bold" Click="AddDoctor_Click"/>
         <Button Content="Удалить врача" HorizontalAlignment="Left" Margin="540,125,0,0" VerticalAlignment="Top" Width="150" Height="70" FontSize="18" FontWeight="Bold" Click="RemoveDoctor_Click"/>
+        <Label Name="LastOpenLabel" Content="Последняя открытая директория:" HorizontalAlignment="Left" Margin="25,250,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="BasePathLabel" Content="Базовая директория:" HorizontalAlignment="Left" Margin="25,285,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Button Content="Изменить базовую директорию" HorizontalAlignment="Left" Margin="25,320,0,0" VerticalAlignment="Top" Width="210" Height="50" FontSize="13" FontWeight="Bold" Click="ChangeBasePath_Click"/>
     </Grid>
 </Window>

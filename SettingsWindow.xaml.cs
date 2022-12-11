@@ -28,7 +28,8 @@ namespace WomenConsulting
             {
                 DoctorsList.Items.Add(item);
             }
-
+            LastOpenLabel.Content = "Последняя открытая директория:" + GlobalSettings.LastOpenDirectory;
+            BasePathLabel.Content = "Базовая директория:" + GlobalSettings.BaseProtocolsPath;
         }
         private void AddDoctor_Click(object sender, RoutedEventArgs e)
         {
@@ -59,6 +60,19 @@ namespace WomenConsulting
                         break;
                 }
             }
+        }
+        private void ChangeBasePath_Click(object sender, RoutedEventArgs e)
+        {
+            if (UserDialog.SelectDirectoryPath
+                        (
+                        out string selectedPath,
+                        description: "Выберете базовую директорию, в которой будут храниться все протоколы по умолчанию."
+                        )
+                    )
+            {
+                GlobalSettings.BaseProtocolsPath = selectedPath;
+            }
+            BasePathLabel.Content = "Базовая директория:" + GlobalSettings.BaseProtocolsPath;
         }
     }
 }

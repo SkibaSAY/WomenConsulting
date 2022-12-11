@@ -6,12 +6,41 @@
         xmlns:local="clr-namespace:WomenConsulting"
         mc:Ignorable="d"
         Title="SettingsWindow" Height="450" Width="800">
-    <Grid Background="#FFAEB1FF">
-        <ListBox x:Name="DoctorsList" HorizontalAlignment="Left" Height="200" Margin="25,25,200,0" VerticalAlignment="Top" Width="500" MinWidth="200"/>
-        <Button Content="Добавить врача" HorizontalAlignment="Left" Margin="540,25,0,0" VerticalAlignment="Top" Width="150" Height="70" FontSize="18" FontWeight="Bold" Click="AddDoctor_Click"/>
-        <Button Content="Удалить врача" HorizontalAlignment="Left" Margin="540,125,0,0" VerticalAlignment="Top" Width="150" Height="70" FontSize="18" FontWeight="Bold" Click="RemoveDoctor_Click"/>
-        <Label Name="LastOpenLabel" Content="Последняя открытая директория:" HorizontalAlignment="Left" Margin="25,250,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="BasePathLabel" Content="Базовая директория:" HorizontalAlignment="Left" Margin="25,285,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Button Content="Изменить базовую директорию" HorizontalAlignment="Left" Margin="25,320,0,0" VerticalAlignment="Top" Width="210" Height="50" FontSize="13" FontWeight="Bold" Click="ChangeBasePath_Click"/>
-    </Grid>
+    <TabControl x:Name="SettingsTabs" Background="#FFAEB1FF" FontSize="20">
+        <TabItem Header="Базовые">
+            <Grid>
+                <ListBox x:Name="DoctorsList" HorizontalAlignment="Left" Height="200" Margin="25,25,200,0" VerticalAlignment="Top" Width="500" MinWidth="200"/>
+                <Button Content="Добавить врача" HorizontalAlignment="Left" Margin="540,25,0,0" VerticalAlignment="Top" Width="150" Height="70" FontSize="18" FontWeight="Bold" Click="AddDoctor_Click"/>
+                <Button Content="Удалить врача" HorizontalAlignment="Left" Margin="540,125,0,0" VerticalAlignment="Top" Width="150" Height="70" FontSize="18" FontWeight="Bold" Click="RemoveDoctor_Click"/>
+                <Label Name="LastOpenLabel" Content="Последняя открытая директория:" HorizontalAlignment="Left" Margin="25,250,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <Label x:Name="BasePathLabel" Content="Базовая директория:" HorizontalAlignment="Left" Margin="25,285,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <Button Content="Изменить базовую директорию" HorizontalAlignment="Left" Margin="25,320,0,0" VerticalAlignment="Top" Width="210" Height="50" FontSize="13" FontWeight="Bold" Click="ChangeBasePath_Click"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Перцентильные коридоры">
+            <TabItem.Resources>
+                <DataTemplate x:Key="WeekValue">
+                    <Label Content="{Binding Path=Value}"/>
+                </DataTemplate>
+            </TabItem.Resources>
+            
+            <ListBox Name="WeekValuesList" Margin="5" ItemsSource="{Binding Path= WeekValues}"
+                     ItemTemplate="{StaticResource WeekValue}">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Background" Value="LightSteelBlue"/>
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Padding" Value="5"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </TabItem>
+    </TabControl>
 </Window>

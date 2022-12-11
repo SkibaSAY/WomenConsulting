@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,11 +20,28 @@ namespace WomenConsulting
     /// <summary>
     /// Логика взаимодействия для SettingsWindow.xaml
     /// </summary>
-    public partial class SettingsWindow : Window
+    public partial class SettingsWindow : Window,INotifyPropertyChanged
     {
+        public Dictionary<int, WeekValues> WeekValues
+        {
+            get { return GlobalSettings.PercentilTbl.Weeks; }
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
+
         public SettingsWindow()
         {
             InitializeComponent();
+            Init();
+        }
+        public void Init()
+        {
             List<String> Doctors = GlobalSettings.GetDoctors();
             foreach (var item in Doctors)
             {
@@ -30,7 +49,10 @@ namespace WomenConsulting
             }
             LastOpenLabel.Content = "Последняя открытая директория:" + GlobalSettings.LastOpenDirectory;
             BasePathLabel.Content = "Базовая директория:" + GlobalSettings.BaseProtocolsPath;
+
+            DataContext = this;
         }
+
         private void AddDoctor_Click(object sender, RoutedEventArgs e)
         {
             AddDoctorWindow addDoctorWindow = new AddDoctorWindow();

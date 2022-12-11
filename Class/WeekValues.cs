@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +9,15 @@ namespace WomenConsulting
 {
     public class WeekValues
     {
+        [DisplayName(displayName:"Номер недели")]
         public int WeekNumber { get; set; }
+
+        [DisplayName(displayName: "Минимальная масса")]
         public int MinMass { get; set; }
+
+        [DisplayName(displayName: "Максимальная масса")]
         public int MaxMass { get; set; }
+
         public int MinBPR { get; set; }
         public int MaxBPR { get; set; }
         public int MinDB { get; set; }
@@ -36,6 +43,12 @@ namespace WomenConsulting
             MaxOZh = Maxozh;
             MinDGK = Mindgk;
             MaxDGK = Maxdgk;
+        }
+        public override string ToString()
+        {
+            var stringList = typeof(WeekValues).GetProperties().Select(x => $"{x.Name} : {x.GetValue(this)}").ToList();
+
+            return String.Join(" ", stringList);
         }
     }
 }

@@ -12,11 +12,11 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="277*"/>
-                <ColumnDefinition Width="365*"/>
-                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="383*"/>
+                <ColumnDefinition Width="210"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="BaseDirLabel"></Label>
+            <Button x:Name="BaseDirButton" Content="{Binding Path=BaseProtocolsDirectory}" Background="#FFAEB1FF" Click="BaseDirButton_Click"/>
             <TextBox x:Name="searchName" Grid.Column="1"/>
             <Button x:Name="searchBtn" Grid.Column="2" Background="#FFAEB1FF" Content="Поиск" Foreground="White" FontWeight="Bold" FontSize="16" Click="searchBtn_Click" />
         </Grid>

@@ -22,31 +22,42 @@ namespace WomenConsulting
     /// </summary>
     public partial class ProtocolListOpen : Window, INotifyPropertyChanged
     {
-        private string protocolsPath;
-
+        public string BaseProtocolsDirectory
+        {
+            get { return GlobalSettings.BaseProtocolsPath; }
+            set 
+            { 
+                GlobalSettings.BaseProtocolsPath = value;
+                OnPropertyChanged("BaseProtocolsDirectory");
+            }
+        }
+        private List<DirectoryInfo> _protocolDirs;
+        public List<DirectoryInfo> ProtocolDirs
+        {
+            get { return _protocolDirs; }
+            set
+            {
+                _protocolDirs = value;
+                OnPropertyChanged("ProtocolDirs");
+            }
+        }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-        public void UpdateBindings()
-        {
-            OnPropertyChanged("ProtocolDirs");
-        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public List<DirectoryInfo> ProtocolDirs { get; set; }
-
-        public ProtocolListOpen(string protocolsPath)
+        public ProtocolListOpen()
         {
             InitializeComponent();
-            this.protocolsPath = protocolsPath;
             InitPage();
         }
         private void InitPage()
         {
-            ProtocolDirs = Directory.GetDirectories(protocolsPath).Select(path=>new DirectoryInfo(path)).ToList();
+            ProtocolDirs = Directory.GetDirectories(BaseProtocolsDirectory).Select(path=>new DirectoryInfo(path)).ToList();
             DataContext = this;
         }
 
@@ -61,7 +72,6 @@ namespace WomenConsulting
             if (String.IsNullOrEmpty(searchText))
             {
                 InitPage();
-                UpdateBindings();
             }
             else
             {
@@ -74,7 +84,16 @@ namespace WomenConsulting
                     }
                 }
                 ProtocolDirs = findedProtocols;
-                UpdateBindings();
+            }
+        }
+
+        private void BaseDirButton_Click(object sender, RoutedEventArgs e)
+        {
+            UserDialog.SelectDirectoryPath(out string selectedDirPath, "Выберите базовую директорию.");
+            if (selectedDirPath != null)
+            {
+                BaseProtocolsDirectory = selectedDirPath;
+                InitPage();
             }
         }
     }

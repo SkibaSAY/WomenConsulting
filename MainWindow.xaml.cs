@@ -89,7 +89,7 @@ namespace WomenConsulting
             {
 
             #region окно с протоколами
-            var protocolsWindow = new ProtocolListOpen(GlobalSettings.BaseProtocolsPath);
+            var protocolsWindow = new ProtocolListOpen();
             protocolsWindow.ShowDialog();
 
             var selectedItem = protocolsWindow.ProtocolsList.SelectedItem;

@@ -24,5 +24,14 @@ namespace WomenConsulting
         {
             InitializeComponent();
         }
+        private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
+        }
+
+        private void doubleNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0) && !e.Text.StartsWith(",")) e.Handled = true;
+        }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WomenConsulting.Class;
 
 namespace WomenConsulting
 {
@@ -23,6 +24,23 @@ namespace WomenConsulting
         public Trimestr2()
         {
             InitializeComponent();
+        }
+
+        private void calculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            mass_g.Text = Trimestr.CalculateMass(
+                int.Parse(gestationalTime_week.Text),
+                double.Parse(biparietalSize_mm.Text),
+                double.Parse(hipLen_mm.Text),
+                double.Parse(bellyCircle_mm.Text),
+                double.Parse(shoulderLenghtMM.Text),
+                double.Parse(legthForearmMM.Text),
+                double.Parse(legthShinMM.Text)).ToString();
+        }
+
+        private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
         }
     }
 }

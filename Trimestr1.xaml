@@ -16,15 +16,15 @@
             </Grid>
             <WrapPanel Margin="15,0,0,0">
                 <Label Content="Срок беременности" FontWeight="Normal" FontSize="16"/>
-                <TextBox x:Name="gestationalTime_week" HorizontalAlignment="Left" Margin="5,7,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontWeight="Normal"/>
+                <TextBox x:Name="gestationalTime_week" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="5,7,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontWeight="Normal"/>
                 <Label Content="недель" FontWeight="Normal" FontSize="16"  Margin="5,0,5,0"/>
-                <TextBox x:Name="gestationalTime_day" HorizontalAlignment="Left" Margin="5,7,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontWeight="Normal"/>
+                <TextBox x:Name="gestationalTime_day" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="5,7,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontWeight="Normal"/>
                 <Label Content="дней" FontWeight="Normal"  Margin="5,0,5,0" FontSize="16"/>
                 <ComboBox x:Name="gestationList" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="200" FontWeight="Normal"/>
             </WrapPanel>
             <Grid>
                 <Label Content="ЧСС:" VerticalAlignment="Center" FontSize="16" Margin="15,0,0,0" />
-                <TextBox x:Name="pulseText" VerticalAlignment="Center" Width="120" Margin="65,0,0,0" HorizontalAlignment="Left"/>
+                <TextBox x:Name="pulseText" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Center" Width="120" Margin="65,0,0,0" HorizontalAlignment="Left"/>
             </Grid>
             <Grid>
                 <Label Content="Ритм:" VerticalAlignment="Center" FontSize="16" HorizontalAlignment="Left" Margin="15,0,0,0"/>
@@ -39,51 +39,51 @@
             <StackPanel Background="#D9DAFF" Margin="0" >
                 <WrapPanel>
                     <Label Content="Бипариетальный размер:"  FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="biparietalDiameterMM" Width="80" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="biparietalDiameterMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                     <Label Content="мм" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
-                    <TextBox x:Name="biparietalDiameterWe" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <TextBox x:Name="biparietalDiameterWe" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <Label Content="нед" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Длина бедренной кости:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="femurLenghtMM" VerticalAlignment="Top" Width="80" Margin="26,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <TextBox x:Name="femurLenghtMM" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="26,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <Label Content="мм" HorizontalAlignment="Left" FontSize="16"  Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
-                    <TextBox x:Name="femurLenghtWeek" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <TextBox x:Name="femurLenghtWeek" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <Label Content="нед" HorizontalAlignment="Left" FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
                 </WrapPanel>
                 <WrapPanel >
                     <Label Content="Окружность живота:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="circumferenceMM" VerticalAlignment="Top" Width="80" Margin="55,5,0,0" HorizontalAlignment="Left" FontWeight="Regular" />
+                    <TextBox x:Name="circumferenceMM" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="55,5,0,0" HorizontalAlignment="Left" FontWeight="Regular" />
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <TextBox x:Name="circumferenceWeek" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <TextBox x:Name="circumferenceWeek" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Копчико-теменной размер:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="coccyxParitelSizeMM" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="coccyxParitelSizeMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <TextBox x:Name="coccyxParitelSizeWee" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="coccyxParitelSizeWee" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Длина плеча:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="shoulderLenghtMM" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="110,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="shoulderLenghtMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="110,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <TextBox x:Name="shoulderLenghtWeek" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="shoulderLenghtWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Длина костей предплечья:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="legthForearmMM" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="13,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="legthForearmMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="13,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <TextBox x:Name="legthForearmWeek" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="legthForearmWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Длина костей голени:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="legthShinMM" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="50,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="legthShinMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="50,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <TextBox x:Name="legthShinWeek" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="legthShinWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
                 <Label Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
@@ -212,12 +212,12 @@
                 <Label Content="Маркеры ХА." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <Grid>
                     <Label Content="Толщина воротникового пространства" FontWeight="Regular" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <TextBox x:Name="colarMMText" HorizontalAlignment="Left" Margin="300,5,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="colarMMText" PreviewTextInput="doubleNumber_PreviewTextInput" HorizontalAlignment="Left" Margin="300,5,0,0" VerticalAlignment="Top" Width="120"/>
                     <Label Content="мм." FontWeight="Regular" HorizontalAlignment="Left" Margin="425,0,0,0" VerticalAlignment="Top" FontSize="16"/>
                 </Grid>
                 <Grid>
                     <Label Content="НК " FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <TextBox x:Name="NKText" HorizontalAlignment="Left" Margin="40,5,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="NKText" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="40,5,0,0" VerticalAlignment="Top" Width="120"/>
                     <Label Content="мм." FontWeight="Regular" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Top" FontSize="16"/>
                 </Grid>
             </WrapPanel>
@@ -232,7 +232,7 @@
                     <Label Content="Плацента" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                     <ComboBox x:Name="placentaWallList" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="250"/>
                     <TextBox x:Name="maturityFirstText" HorizontalAlignment="Left" Margin="5,7,0,0" VerticalAlignment="Top" Width="50"/>
-                    <TextBox x:Name="maturitySecondText" HorizontalAlignment="Left" Margin="5,7,0,0" VerticalAlignment="Top" Width="20"/>
+                    <TextBox x:Name="maturitySecondText" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="5,7,0,0" VerticalAlignment="Top" Width="20"/>
                     <Label Content="степени зрелости" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
                 </WrapPanel>
             <WrapPanel Margin="11,5,11,15">

@@ -71,17 +71,24 @@ namespace WomenConsulting
             CurrentDirectory = GlobalSettings.LastOpenDirectory;
         }
 
-        private void InitProtocol()
+        private void InitProtocol(Protocol protocol = null)
         {
-            protocol = new Protocol(CurrentDirectory);
-            DataContext = protocol;
+            if (protocol == null) this.protocol = new Protocol(CurrentDirectory);
+            else this.protocol = protocol;
+
+            DataContext = this.protocol;
             Fetuses.SelectedIndex = 0;
         }
 
         private void OpenDirectoryDialog_Click(object sender, RoutedEventArgs e)
         {
             var savedCurrDirectory = CurrentDirectory;
+            var lastProtocol = protocol;
 
+            try
+            {
+
+            #region окно с протоколами
             var protocolsWindow = new ProtocolListOpen(GlobalSettings.BaseProtocolsPath);
             protocolsWindow.ShowDialog();
 
@@ -90,17 +97,23 @@ namespace WomenConsulting
             {
                 return;
             }
+            #endregion
+
             else CurrentDirectory = selectedItem.ToString();
 
-            try
-            {
+
                 InitProtocol();
             }
             catch (IOException ex)
             {
                 //откатили
                 CurrentDirectory = savedCurrDirectory;
-                System.Windows.MessageBox.Show("Этот документ уже открыт в Word, закройте его и повторите попытку");
+                UserDialog.Message("Этот документ уже открыт в Word, закройте его и повторите попытку");
+            }
+            catch(UndefinedPathException ex)
+            {
+                UserDialog.Message(ex.Message);
+                InitProtocol(lastProtocol);
             }
 
             #region На удалении

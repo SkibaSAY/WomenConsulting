@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WomenConsulting.Class
+namespace WomenConsulting
 {
     public class _Settings
     {
@@ -28,7 +28,7 @@ namespace WomenConsulting.Class
                         )
                     )
                     {
-                        throw new GlobalSettingsExceptions();
+                        throw new UndefinedPathException("Для работы некоторых функций приложения требуется указать папку, куда по умолчанию будут сохранятся протоколы.");
                     }
                     _baseProtocolsPath = selectedPath;
                 }
@@ -87,16 +87,30 @@ namespace WomenConsulting.Class
 
         public static void Load()
         {
-            if (File.Exists(Path))
+            try
             {
-                var content = File.ReadAllText(Path);
-                settings = JsonConvert.DeserializeObject<_Settings>(content);
+                if (File.Exists(Path))
+                {
+                    var content = File.ReadAllText(Path);
+                    settings = JsonConvert.DeserializeObject<_Settings>(content);
+                }
+            }
+            catch (UndefinedPathException ex)
+            {
+                UserDialog.Message(ex.Message + $"\n\r Загрузка настроек пропущена, поскольку в загружаемом файле настроек({Path}) содержится некорректный путь к базовой директории.");
             }
         }
         public static void Save()
         {
-            var content = JsonConvert.SerializeObject(settings);
-            File.WriteAllText(Path, content);
+            try
+            {
+                var content = JsonConvert.SerializeObject(settings);
+                File.WriteAllText(Path, content);
+            }
+            catch (Exception ex)
+            {
+                UserDialog.Message("Сохранение настроек пропущено, поскольку не выбран базовый путь.");
+            }
         }
 
 

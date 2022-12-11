@@ -25,5 +25,9 @@ namespace WomenConsulting
             }
             return false;
         }
+        public static void Message(string message)
+        {
+            System.Windows.MessageBox.Show(message);
+        }
     }
 }

@@ -112,6 +112,7 @@
     <Compile Include="Trimestr3.xaml.cs">
       <DependentUpon>Trimestr3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Class\ValuesTable.cs" />
     <Compile Include="Шаблоны\Sample.cs" />
     <Page Include="AddDoctorWindow.xaml">
       <SubType>Designer</SubType>

@@ -28,6 +28,20 @@ namespace WomenConsulting
 
         private void calculateButton_Click(object sender, RoutedEventArgs e)
         {
+            if ((String.IsNullOrEmpty(gestationalTime_week.Text)) ||
+                (String.IsNullOrEmpty(BiparietalDiamField.Text)) ||
+                (String.IsNullOrEmpty(FemurLengthField.Text)) ||
+                (String.IsNullOrEmpty(AbdominalCircField.Text)) ||
+                (String.IsNullOrEmpty(shoulderLenghtMM.Text)) ||
+                (String.IsNullOrEmpty(legthForearmMM.Text)) ||
+                (String.IsNullOrEmpty(legthShinMM.Text)))
+            {
+                MessageBox.Show("Срок беременности или поля из фетометрии не заполнены. Заполните и повторите попытку, пожалуйста"
+                    , "Не все данные заполнены"
+                    , MessageBoxButton.OK
+                    , MessageBoxImage.Information);
+                return;
+            }
             MassField.Text = Trimestr.CalculateMass(
                 int.Parse(gestationalTime_week.Text),
                 double.Parse(BiparietalDiamField.Text),

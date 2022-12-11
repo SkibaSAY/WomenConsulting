@@ -32,5 +32,14 @@ namespace WomenConsulting
             //gestationalTime_week.Text = (dateDifference.Value.Days / 7).ToString();
             //gestationalTime_day.Text = (dateDifference.Value.Days - dateDifference.Value.Days / 7 * 7).ToString();
         }
+        private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
+        }
+
+        private void doubleNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0) && !e.Text.StartsWith(",")) e.Handled = true;
+        }
     }
 }

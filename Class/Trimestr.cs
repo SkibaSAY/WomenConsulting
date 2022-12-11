@@ -148,6 +148,15 @@ namespace WomenConsulting.Class
                 else if (pageControl is DatePicker) docField.Result = (pageControl as DatePicker).Text;
             }
         }
+        
+        public static double CalculateMass(int gestationWeek, double biparietalSize, double hipLen, double bellyCircle, double shoulderLenght, double legthForearmMM, double legthShin)
+        {
+            //ЗДЕСЬ ЗАПОЛНИТЬ 2 КОНСТАНТЫ
+            var const1 = GlobalSettings.PercentilTbl.MassConstA;
+            var const2 = GlobalSettings.PercentilTbl.MassConstB;
+
+            return (const1 + const2 * gestationWeek) * biparietalSize * bellyCircle * (hipLen + shoulderLenght + legthForearmMM + legthShin);
+        }
         #endregion
 
     }

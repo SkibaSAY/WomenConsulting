@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WomenConsulting.Class;
 
 namespace WomenConsulting
 {
@@ -23,6 +24,37 @@ namespace WomenConsulting
         public Trimestr2()
         {
             InitializeComponent();
+        }
+
+        private void calculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            if((String.IsNullOrEmpty(gestationalTime_week.Text)) ||
+                (String.IsNullOrEmpty(biparietalSize_mm.Text)) ||
+                (String.IsNullOrEmpty(hipLen_mm.Text)) ||
+                (String.IsNullOrEmpty(bellyCircle_mm.Text)) ||
+                (String.IsNullOrEmpty(shoulderLenghtMM.Text)) ||
+                (String.IsNullOrEmpty(legthForearmMM.Text)) ||
+                (String.IsNullOrEmpty(legthShinMM.Text)))
+            {
+                MessageBox.Show("Срок беременности или поля из фетометрии не заполнены. Заполните и повторите попытку, пожалуйста"
+                    ,"Не все данные заполнены"
+                    , MessageBoxButton.OK
+                    , MessageBoxImage.Information);
+                return;
+            }
+            mass_g.Text = Trimestr.CalculateMass(
+                int.Parse(gestationalTime_week.Text),
+                double.Parse(biparietalSize_mm.Text),
+                double.Parse(hipLen_mm.Text),
+                double.Parse(bellyCircle_mm.Text),
+                double.Parse(shoulderLenghtMM.Text),
+                double.Parse(legthForearmMM.Text),
+                double.Parse(legthShinMM.Text)).ToString();
+        }
+
+        private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
         }
     }
 }

@@ -167,6 +167,7 @@ namespace WomenConsulting
         {
             InitSettings();
             InitProtocol();
+
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

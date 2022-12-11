@@ -57,7 +57,7 @@ namespace WomenConsulting
 
         private void searchBtn_Click(object sender, RoutedEventArgs e)
         {
-            var searchText = searchName.Text;
+            var searchText = searchName.Text.ToLower();
             if (String.IsNullOrEmpty(searchText))
             {
                 InitPage();
@@ -68,7 +68,7 @@ namespace WomenConsulting
                 var findedProtocols = new List<DirectoryInfo>();
                 foreach(var protocolInfo in ProtocolDirs)
                 {
-                    if (protocolInfo.Name.Contains(searchText))
+                    if (protocolInfo.Name.ToLower().Contains(searchText))
                     {
                         findedProtocols.Add(protocolInfo);
                     }

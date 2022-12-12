@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,16 +11,19 @@ namespace WomenConsulting
 {
     public class WeekValues
     {
-        [DisplayName(displayName:"Номер недели")]
+        [DisplayName("Номер недели")]
         public int WeekNumber { get; set; }
 
-        [DisplayName(displayName: "Минимальная масса")]
+        [DisplayName("Минимальная масса")]
         public int MinMass { get; set; }
 
-        [DisplayName(displayName: "Максимальная масса")]
+        [DisplayName("Максимальная масса")]
         public int MaxMass { get; set; }
 
+        [DisplayName("Минимальный бипориетарный размер")]
         public int MinBPR { get; set; }
+
+        [DisplayName("Максимальная бипориетарный размер")]
         public int MaxBPR { get; set; }
         public int MinDB { get; set; }
         public int MaxDB { get; set; }
@@ -46,7 +51,11 @@ namespace WomenConsulting
         }
         public override string ToString()
         {
-            var stringList = typeof(WeekValues).GetProperties().Select(x => $"{x.Name} : {x.GetValue(this)}").ToList();
+            var stringList = typeof(WeekValues).GetProperties()
+                .Select(
+                    x => $"{(x.GetCustomAttribute(typeof(DisplayNameAttribute))!=null ? (x.GetCustomAttribute(typeof(DisplayNameAttribute)) as DisplayNameAttribute).DisplayName : x.Name)} " 
+                    +$": {x.GetValue(this)}"
+                    ).ToList();
 
             return String.Join(" ", stringList);
         }

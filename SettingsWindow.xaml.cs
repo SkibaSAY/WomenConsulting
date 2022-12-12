@@ -96,5 +96,16 @@ namespace WomenConsulting
             }
             BasePathLabel.Content = "Базовая директория:" + GlobalSettings.BaseProtocolsPath;
         }
+
+        //отобразить окно с выбранным перцентильным коридором
+        private void WeekValuesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listBox = (ListBox)sender;
+            if (listBox.SelectedItem == null) return;
+            var selectedWeek = ((KeyValuePair<int, WeekValues>)listBox.SelectedItem).Value;
+            var weekPercentilWindow = new PercentilSettings(selectedWeek);
+            weekPercentilWindow.ShowDialog();
+            listBox.SelectedItem = null;
+        }
     }
 }

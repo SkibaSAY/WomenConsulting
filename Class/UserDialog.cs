@@ -29,5 +29,18 @@ namespace WomenConsulting
         {
             System.Windows.MessageBox.Show(message);
         }
+        public static bool AskYesNo(string message,string caption="")
+        {
+            var result = System.Windows.MessageBox.Show(message,caption,button:System.Windows.MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case System.Windows.MessageBoxResult.Yes:
+                    return true;
+                    break;
+                default:
+                    return false;
+                    break;
+            }
+        }
     }
 }

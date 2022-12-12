@@ -29,7 +29,7 @@
             </TabItem.Resources>
             
             <ListBox Name="WeekValuesList" Margin="5" ItemsSource="{Binding Path= WeekValues}"
-                     ItemTemplate="{StaticResource WeekValue}">
+                     ItemTemplate="{StaticResource WeekValue}" SelectionChanged="WeekValuesList_SelectionChanged">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Background" Value="#FFAEB1FF"/>

@@ -17,7 +17,7 @@
                 <Button Content="Добавить врача" HorizontalAlignment="Left" Margin="298.09,25,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="16" Click="AddDoctor_Click" Background="#FFD9DAFF" Foreground="Black" BorderBrush="{x:Null}" FontFamily="Segoe UI Semibold" Grid.Column="1"/>
                 <Button Content="Удалить врача" HorizontalAlignment="Left" Margin="298.09,85,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="16" FontWeight="Bold" Background="#FFD9DAFF" Foreground="Black" BorderBrush="{x:Null}" FontFamily="Segoe UI Semibold" Click="RemoveDoctor_Click" Grid.Column="1"/>
                 <Label Name="LastOpenLabel" Content="Последняя открытая директория:" HorizontalAlignment="Left" Margin="25,250,0,0" FontFamily="Segoe UI Semibold" VerticalAlignment="Top" FontSize="16" Grid.ColumnSpan="2"/>
-                <Label x:Name="BasePathLabel" Content="Базовая директория:" HorizontalAlignment="Left" Margin="25,285,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="16"/>
+                <Label x:Name="BasePathLabel" Content="Базовая директория:" HorizontalAlignment="Left" Margin="25,285,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="16" Grid.ColumnSpan="2"/>
                 <Button Content="Изменить базовую директорию" HorizontalAlignment="Left" Margin="25,320,0,0" VerticalAlignment="Top" Width="300" Height="35" FontSize="16"  FontFamily="Segoe UI Semibold" Click="ChangeBasePath_Click" Background="#FFD9DAFF" BorderBrush="{x:Null}" Grid.ColumnSpan="2"/>
             </Grid>
         </TabItem>

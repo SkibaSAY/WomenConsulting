@@ -1,0 +1,19 @@
+﻿<Window x:Class="WomenConsulting.PercentilSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WomenConsulting"
+        mc:Ignorable="d"
+        Title="PercentilSettings" Height="450" Width="800" Closing="Window_Closing">
+    <Window.Resources>
+        <DataTemplate x:Key="WeekViewPercentil">
+            <GroupBox Header="{Binding Path=DisplayName}" FontSize="24">
+                <TextBox x:Name="ItemTextBox" Text="{Binding Path=Value}"/>
+            </GroupBox>
+        </DataTemplate>
+    </Window.Resources>
+    <ListBox x:Name="weekParcentils" ItemsSource="{Binding Path=WeekViews}" ItemTemplate="{StaticResource WeekViewPercentil}">
+
+    </ListBox>
+</Window>

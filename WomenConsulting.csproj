@@ -101,6 +101,9 @@
     <Compile Include="MalyeSroki.xaml.cs">
       <DependentUpon>MalyeSroki.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PercentilSettings.xaml.cs">
+      <DependentUpon>PercentilSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProtocolListOpen.xaml.cs">
       <DependentUpon>ProtocolListOpen.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
     <Page Include="MalyeSroki.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PercentilSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProtocolListOpen.xaml">
       <SubType>Designer</SubType>
@@ -199,6 +206,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Спецификация.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

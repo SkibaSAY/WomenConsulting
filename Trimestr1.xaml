@@ -212,12 +212,12 @@
                 <Label Content="Маркеры ХА." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <Grid>
                     <Label Content="Толщина воротникового пространства" FontWeight="Regular" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <TextBox x:Name="colarMMText" PreviewTextInput="doubleNumber_PreviewTextInput" HorizontalAlignment="Left" Margin="300,5,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="colarMMText" PreviewTextInput="doubleNumber_PreviewTextInput" HorizontalAlignment="Left" Margin="300,5,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal"/>
                     <Label Content="мм." FontWeight="Regular" HorizontalAlignment="Left" Margin="425,0,0,0" VerticalAlignment="Top" FontSize="16"/>
                 </Grid>
                 <Grid>
                     <Label Content="НК " FontWeight="Regular" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <TextBox x:Name="NKText" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="40,5,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="NKText" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="40,5,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal"/>
                     <Label Content="мм." FontWeight="Regular" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Top" FontSize="16"/>
                 </Grid>
             </WrapPanel>

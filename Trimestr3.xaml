@@ -19,8 +19,6 @@
                 <ComboBox x:Name="gestationList" HorizontalAlignment="Left" Margin="5,3,5,0" VerticalAlignment="Top" Width="200" FontWeight="Normal"/>
             </WrapPanel>
             <WrapPanel>
-                <Label Content="Плод" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                <ComboBox x:Name="FetusField" HorizontalAlignment="Left" Margin="5,15,0,0" VerticalAlignment="Top" Width="150"/>
                 <Label Content="Положение" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
                 <ComboBox x:Name="PositionField" HorizontalAlignment="Left" Margin="5,15,0,0" VerticalAlignment="Top" Width="150"/>
                 <Label Content="Предлежание" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
@@ -41,41 +39,41 @@
             <StackPanel>
                 <WrapPanel VerticalAlignment="Bottom">
                     <Label Content="Бипариетальный размер" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <TextBox x:Name="BiparietalDiamField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="25,3,0,0" VerticalAlignment="Top" Width="80"/>
+                    <TextBox x:Name="BiparietalDiamField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="25,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="BiparietalDiamProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom"></ComboBox>
-                    <TextBox x:Name="BiparDiamWeekField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80"/>
+                    <ComboBox x:Name="BiparietalDiamProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
+                    <TextBox x:Name="BiparDiamWeekField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Длина бедренной кости" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <TextBox x:Name="FemurLengthField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="30,3,0,0" VerticalAlignment="Top" Width="80"/>
+                    <TextBox x:Name="FemurLengthField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="30,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="FemurLengthProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom"></ComboBox>
-                    <TextBox x:Name="FemurWeekField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80"/>
+                    <ComboBox x:Name="FemurLengthProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
+                    <TextBox x:Name="FemurWeekField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Окружность живота" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <TextBox x:Name="AbdominalCircField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="59,3,0,0" VerticalAlignment="Top" Width="80"/>
+                    <TextBox x:Name="AbdominalCircField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="59,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="AbdominalCircProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom"></ComboBox>
-                    <TextBox x:Name="AbdominalWeekField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80"/>
+                    <ComboBox x:Name="AbdominalCircProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
+                    <TextBox x:Name="AbdominalWeekField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Масса" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <TextBox x:Name="MassField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="162,3,0,0" VerticalAlignment="Top" Width="80"/>
+                    <TextBox x:Name="MassField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="162,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
                     <Label Content="г" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="MassProc" Width="120" Margin="21,0,10,5" FontSize="12" VerticalAlignment="Bottom"></ComboBox>
-                    <TextBox x:Name="MassWeek" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80"/>
+                    <ComboBox x:Name="MassProc" Width="120" Margin="21,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
+                    <TextBox x:Name="MassWeek" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Длина плеча:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="shoulderLenghtMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="110,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <ComboBox x:Name="shoulderLenghtProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom"></ComboBox>
+                    <ComboBox x:Name="shoulderLenghtProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
                     <TextBox x:Name="shoulderLenghtWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
@@ -83,7 +81,7 @@
                     <Label Content="Длина костей предплечья:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="legthForearmMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="13,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <ComboBox x:Name="legthForearmProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom"></ComboBox>
+                    <ComboBox x:Name="legthForearmProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
                     <TextBox x:Name="legthForearmWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
@@ -91,7 +89,7 @@
                     <Label Content="Длина костей голени:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="legthShinMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="50,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <ComboBox x:Name="legthShinProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom"></ComboBox>
+                    <ComboBox x:Name="legthShinProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
                     <TextBox x:Name="legthShinWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
@@ -229,7 +227,7 @@
             </WrapPanel>
             <Grid Margin="11,5,11,15">
                 <Label Content="Дата обследования: " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                <TextBox x:Name="DateField" HorizontalAlignment="Left" Margin="185,7,0,0" VerticalAlignment="Top" Width="100"/>
+                <DatePicker x:Name="DateField" HorizontalAlignment="Left" Margin="185,7,0,0" VerticalAlignment="Top" Width="100"/>
                 <Label Content="Врач: " HorizontalAlignment="Right" Margin="0,0,210,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                 <ComboBox x:Name="doctorList" HorizontalAlignment="Right" Margin="5,5,0,0" VerticalAlignment="Top" Width="200"/>
             </Grid>

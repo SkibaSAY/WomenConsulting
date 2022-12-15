@@ -134,6 +134,11 @@ namespace WomenConsulting
             #endregion 
         }
 
+        private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
+        }
+
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             //protocol.Save(CurrentDirectory);

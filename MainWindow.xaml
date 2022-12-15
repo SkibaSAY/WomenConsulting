@@ -68,7 +68,7 @@
                         <Label Content="ФИО" FontWeight="Normal" FontSize="16" HorizontalAlignment="Left"/>
                         <TextBox x:Name="surnameName" Text="{Binding Path=surnameName}" Margin="50,5,140,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="16" FontWeight="Normal" MinWidth="350"/>
                         <Label Content=", " FontWeight="Normal"  FontSize="16" Margin="5,5,120,0" HorizontalAlignment="Right"/>
-                        <TextBox x:Name="age" Text="{Binding Path=age}" HorizontalAlignment="Right" Margin="5,5,60,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="16" FontWeight="Normal"/>
+                        <TextBox x:Name="age" Text="{Binding Path=age}" HorizontalAlignment="Right" Margin="5,5,60,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="16" FontWeight="Normal" PreviewTextInput="onlyDigits_PreviewTextInput"/>
                         <Label Content="лет" FontWeight="Normal" Margin="5,5,21,0"  FontSize="16" HorizontalAlignment="Right"/>
                     </Grid>
                     <Grid Margin="21,0,0,0">

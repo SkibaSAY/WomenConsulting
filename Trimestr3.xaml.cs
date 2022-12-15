@@ -53,11 +53,19 @@ namespace WomenConsulting
         }
         private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
+            if ((sender as TextBox).Text == "0" || String.IsNullOrWhiteSpace((sender as TextBox).Text))
+            {
+                (sender as TextBox).Text = "";
+            }
             if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
         }
 
         private void doubleNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
+            if ((sender as TextBox).Text == "0" || String.IsNullOrWhiteSpace((sender as TextBox).Text))
+            {
+                (sender as TextBox).Text = "";
+            }
             if (!Char.IsDigit(e.Text, 0) && !e.Text.StartsWith(",")) e.Handled = true;
         }
 

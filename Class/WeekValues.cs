@@ -11,7 +11,7 @@ namespace WomenConsulting
 {
     public class WeekValues
     {
-        [DisplayName("Номер недели")]
+        [DisplayName("Неделя")]
         public int WeekNumber { get; set; }
 
         [DisplayName("Минимальная масса")]
@@ -20,10 +20,10 @@ namespace WomenConsulting
         [DisplayName("Максимальная масса")]
         public int MaxMass { get; set; }
 
-        [DisplayName("Минимальный бипориетарный размер")]
+        [DisplayName("Минимальный бипариетарный размер")]
         public int MinBPR { get; set; }
 
-        [DisplayName("Максимальная бипориетарный размер")]
+        [DisplayName("Максимальный бипариетарный размер")]
         public int MaxBPR { get; set; }
         public int MinDB { get; set; }
         public int MaxDB { get; set; }
@@ -57,7 +57,7 @@ namespace WomenConsulting
                     +$": {x.GetValue(this)}"
                     ).ToList();
 
-            return String.Join(" ", stringList);
+            return String.Join(", ", stringList);
         }
     }
 }

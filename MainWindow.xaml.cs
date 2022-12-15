@@ -134,6 +134,11 @@ namespace WomenConsulting
             #endregion 
         }
 
+        private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
+        }
+
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             //protocol.Save(CurrentDirectory);
@@ -148,7 +153,7 @@ namespace WomenConsulting
                 return;
             }
             CurrentDirectory = selectedPath;
-            Save_Click(sender, e);
+            protocol.Save(CurrentDirectory);
         }
 
         private void NewProtocol_Click_1(object sender, RoutedEventArgs e)

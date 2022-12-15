@@ -136,6 +136,10 @@ namespace WomenConsulting
 
         private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
+            if ((sender as System.Windows.Controls.TextBox).Text == "0" || String.IsNullOrWhiteSpace((sender as System.Windows.Controls.TextBox).Text))
+            {
+                (sender as System.Windows.Controls.TextBox).Text = "";
+            }
             if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
         }
 
@@ -181,7 +185,10 @@ namespace WomenConsulting
 
         private void AddPlod_Click(object sender, RoutedEventArgs e)
         {
-            protocol.AddFetus(new Fetus($"Плод_{protocol.fetuses.Count + 1}"));
+            if (protocol.fetuses.Count < 4)
+            {
+                protocol.AddFetus(new Fetus($"Плод_{protocol.fetuses.Count + 1}"));
+            }
         }
 
         private void DeletePlod_Click(object sender, RoutedEventArgs e)

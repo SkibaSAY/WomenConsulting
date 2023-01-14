@@ -46,5 +46,14 @@
                 </ListBox.ItemContainerStyle>
             </ListBox>
         </TabItem>
+        <TabItem Header="Значения констант">
+            <Grid>
+                <Label Content="Формула массы:" Margin="25,15,45,0" FontFamily="Segoe UI Semibold" VerticalAlignment="Top" FontSize="16"/>
+                <TextBox Name="FormulatextBox" Text="(A+B*Срок беременности в неделях) * Бипариетальный * Окружность живота * (Длина бедренной кости + Длина плеча + Длина кости голени + Длина костей предплечья)" Margin="25,50,45,0" FontFamily="Segoe UI Semibold" VerticalAlignment="Top" FontSize="16" Height="54" TextWrapping="Wrap"/>
+                <Label Name="FormulaConstA" Content="Значение константы А:" Margin="25,110,45,0" FontFamily="Segoe UI Semibold" VerticalAlignment="Top" FontSize="16" Height="33"/>
+                <Label Name ="FormulaConstB" Content="Значение константы B:" Margin="25,150,45,0" FontFamily="Segoe UI Semibold" VerticalAlignment="Top" FontSize="16" Height="33"/>
+                
+            </Grid>
+        </TabItem>
     </TabControl>
 </Window>

@@ -65,6 +65,26 @@ namespace WomenConsulting
         }
         public _Settings() { 
         }
+
+        public double constA = 0.27777;
+        public double ConstA
+        {
+            get { return constA; }
+            set
+            {
+                constA = value;
+            }
+        }
+
+        public double constB = 0.001492;
+        public double ConstB
+        {
+            get { return constB; }
+            set
+            {
+                constB = value;
+            }
+        }
     }
     public static class GlobalSettings
     {
@@ -102,6 +122,17 @@ namespace WomenConsulting
             get { return settings.PercentilTbl; }
             set { settings.PercentilTbl = value; }
         }
+        public static double ConstA
+        {
+            get { return settings.ConstA; }
+            set { settings.ConstA = value; }
+        }
+        public static double ConstB
+        {
+            get { return settings.ConstB; }
+            set { settings.ConstB = value; }
+        }
+
         #region methods
         public static void Load()
         {

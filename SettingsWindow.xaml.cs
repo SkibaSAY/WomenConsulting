@@ -49,7 +49,8 @@ namespace WomenConsulting
             }
             LastOpenLabel.Content = "Последняя открытая директория:" + GlobalSettings.LastOpenDirectory;
             BasePathLabel.Content = "Базовая директория:" + GlobalSettings.BaseProtocolsPath;
-
+            FormulaConstA.Content = "Значение константы A:" + GlobalSettings.ConstA;
+            FormulaConstB.Content = "Значение константы B:" + GlobalSettings.ConstB;
             DataContext = this;
         }
 

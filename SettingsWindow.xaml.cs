@@ -51,6 +51,8 @@ namespace WomenConsulting
             BasePathLabel.Content = "Базовая директория:" + GlobalSettings.BaseProtocolsPath;
             FormulaConstA.Content = "Значение константы A:" + GlobalSettings.ConstA;
             FormulaConstB.Content = "Значение константы B:" + GlobalSettings.ConstB;
+            NewConstABox.Text = GlobalSettings.ConstA.ToString();
+            NewConstBBox.Text = GlobalSettings.ConstB.ToString();
             DataContext = this;
         }
 
@@ -83,6 +85,20 @@ namespace WomenConsulting
                         break;
                 }
             }
+        }
+        private void ConstSaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            GlobalSettings.ConstA = double.Parse(NewConstABox.Text);
+            GlobalSettings.ConstB = double.Parse(NewConstBBox.Text);
+            NewConstABox.Text = GlobalSettings.ConstA.ToString();
+            NewConstBBox.Text = GlobalSettings.ConstB.ToString();
+            FormulaConstA.Content = "Значение константы A:" + GlobalSettings.ConstA;
+            FormulaConstB.Content = "Значение константы B:" + GlobalSettings.ConstB;
+        }
+        private void ConstCancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            NewConstABox.Text = GlobalSettings.ConstA.ToString();
+            NewConstBBox.Text = GlobalSettings.ConstB.ToString();
         }
         private void ChangeBasePath_Click(object sender, RoutedEventArgs e)
         {

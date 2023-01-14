@@ -367,5 +367,60 @@ namespace WomenConsulting
                 Weeks.Add(i, new WeekValues(i,MinMass[i],MaxMass[i],MinBPR[i],MaxBPR[i],MinDB[i],MaxDB[i],MinOZh[i],MaxOZh[i],MinDGK[i],MaxDGK[i]));
             }
         }
+
+        public int[] GetParameterFromPercentileTableByName(int numberOfWeek, string nameOfParameter)
+        {
+            var ourWeek = Weeks[numberOfWeek];
+            switch (nameOfParameter)
+            {
+                case "Mass": return new int[] { ourWeek.MinMass, ourWeek.MaxMass };
+                case "BPR": return new int[] { ourWeek.MinBPR, ourWeek.MaxBPR };
+                case "DB": return new int[] { ourWeek.MinDB, ourWeek.MaxDB };
+                case "OZh": return new int[] { ourWeek.MinOZh, ourWeek.MaxOZh };
+                case "DGK": return new int[] { ourWeek.MinDGK, ourWeek.MaxDGK };
+                default:
+                    return new int[] { 0, 0 };
+            }
+        }
+
+        public Dictionary<string, int[]> GetParameterFromPercentileTableByName(int numberOfWeek, params string[] namesOfParameters)
+        {
+            var valuesFromTable = new Dictionary<string, int[]>();
+            foreach (var parameter in namesOfParameters) 
+            {
+                valuesFromTable.Add(parameter, GetParameterFromPercentileTableByName(numberOfWeek, parameter));
+            }
+            return valuesFromTable;
+        }
+
+
+        public int GetCorrespondingWeekByNameOfParameter(string nameOfParameter, double valueOfParameter)
+        {
+            KeyValuePair<int, WeekValues>? ourWeek;
+            switch (nameOfParameter)
+            {
+                case "Mass":
+                    ourWeek = Weeks.Where(week => week.Value.MinMass <= valueOfParameter && week.Value.MaxMass >= valueOfParameter).FirstOrDefault();
+                    break;
+                case "BPR":
+                    ourWeek = Weeks.Where(week => week.Value.MinBPR <= valueOfParameter && week.Value.MaxBPR >= valueOfParameter).FirstOrDefault();
+                    break;
+                case "OZh":
+                    ourWeek = Weeks.Where(week => week.Value.MinOZh <= valueOfParameter && week.Value.MaxOZh >= valueOfParameter).FirstOrDefault();
+                    break;
+                case "DGK":
+                    ourWeek = Weeks.Where(week => week.Value.MinDGK <= valueOfParameter && week.Value.MaxDGK >= valueOfParameter).FirstOrDefault();
+                    break;
+                case "DB":
+                    ourWeek = Weeks.Where(week => week.Value.MinDB <= valueOfParameter && week.Value.MaxDB >= valueOfParameter).FirstOrDefault();
+                    break;
+                default: return 0;
+            }
+            if (ourWeek == null)
+            {
+                return 0;
+            }
+            return ourWeek.Value.Key;
+        }
     }
 }

@@ -155,7 +155,7 @@ namespace WomenConsulting.Class
             var const1 = GlobalSettings.PercentilTbl.MassConstA;
             var const2 = GlobalSettings.PercentilTbl.MassConstB;
 
-            return (const1 + const2 * gestationWeek) * biparietalSize * bellyCircle * (hipLen + shoulderLenght + legthForearmMM + legthShin);
+            return (const1 + const2 * gestationWeek) * biparietalSize*0.1 * bellyCircle*0.1 * (hipLen + shoulderLenght + legthForearmMM + legthShin)*0.1;
         }
         #endregion
 

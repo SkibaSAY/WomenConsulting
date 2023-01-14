@@ -29,6 +29,7 @@ namespace WomenConsulting
         private void calculateButton_Click(object sender, RoutedEventArgs e)
         {
             if((String.IsNullOrEmpty(gestationalTime_week.Text)) ||
+                int.Parse(gestationalTime_week.Text) == 0 ||
                 (String.IsNullOrEmpty(biparietalSize_mm.Text)) ||
                 (String.IsNullOrEmpty(hipLen_mm.Text)) ||
                 (String.IsNullOrEmpty(bellyCircle_mm.Text)) ||
@@ -50,7 +51,54 @@ namespace WomenConsulting
                 double.Parse(shoulderLenghtMM.Text),
                 double.Parse(legthForearmMM.Text),
                 double.Parse(legthShinMM.Text)).ToString();
+
+            CalculatePercentileTable();
+
         }
+
+        private void CalculatePercentileTable()
+        {
+            //заполнили комбобоксы к параметрам
+            var ourNormBPR = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "BPR");
+            SetComboBoxSelectedIndex(biparietalSizePerc, ourNormBPR, biparietalSize_mm);
+
+            var ourNormDB = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "DB");
+            SetComboBoxSelectedIndex(hipLenPerc, ourNormDB, hipLen_mm);
+
+            var ourNormOZh = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "OZh");
+            SetComboBoxSelectedIndex(bellyCirclePerc, ourNormOZh, bellyCircle_mm);
+
+            var ourNormMass = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "Mass");
+            SetComboBoxSelectedIndex(massPerc, ourNormMass, mass_g);
+
+            var ourNormDGK = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "DGK");
+            SetComboBoxSelectedIndex(shoulderLenghtPerc, ourNormDGK, shoulderLenghtMM);
+
+            //заполнили предполагаемое количество недель по параметрам
+            biparietalSize_week.Text    = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("BPR", double.Parse(biparietalSize_mm.Text)).ToString();
+            hipLen_week.Text            = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DB", double.Parse(hipLen_mm.Text)).ToString();
+            bellyCircle_week.Text       = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("OZh", double.Parse(bellyCircle_mm.Text)).ToString();
+            mass_week.Text              = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("Mass", double.Parse(mass_g.Text)).ToString();
+            shoulderLenghtWeek.Text     = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DGK", double.Parse(shoulderLenghtMM.Text)).ToString();
+        }
+
+        private void SetComboBoxSelectedIndex(ComboBox curComboBox, int[] percCorridor, TextBox ourValue)
+        {
+            var currentValue = double.Parse(ourValue.Text);
+            if (currentValue < percCorridor[0])
+            {
+                curComboBox.SelectedIndex = 1;
+            }
+            else if (currentValue > percCorridor[1])
+            {
+                curComboBox.SelectedIndex = 2;
+            }
+            else
+            {
+                curComboBox.SelectedIndex = 0;
+            }
+        }
+
 
         private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

@@ -121,7 +121,12 @@ namespace WomenConsulting
             if (listBox.SelectedItem == null) return;
             var selectedWeek = ((KeyValuePair<int, WeekValues>)listBox.SelectedItem).Value;
             var weekPercentilWindow = new PercentilSettings(selectedWeek);
-            weekPercentilWindow.ShowDialog();
+            weekPercentilWindow.Owner = this;
+
+            if(weekPercentilWindow.ShowDialog() == true)
+            {
+
+            }
             listBox.SelectedItem = null;
         }
     }

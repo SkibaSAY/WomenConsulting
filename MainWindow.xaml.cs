@@ -203,8 +203,12 @@ namespace WomenConsulting
         private void OpenSettings_Click(object sender, RoutedEventArgs e)
         {
             SettingsWindow settingsWindow = new SettingsWindow();
-            settingsWindow.Show();
             settingsWindow.Owner = this;
+            //тут мы ожидаем, когда дочернее окно не закроется,чтобы вернуть фокус на родителя
+            if (settingsWindow.ShowDialog() == true)
+            {
+
+            }            
         }
     }
 }

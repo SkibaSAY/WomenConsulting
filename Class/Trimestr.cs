@@ -152,8 +152,8 @@ namespace WomenConsulting.Class
         public static double CalculateMass(int gestationWeek, double biparietalSize, double hipLen, double bellyCircle, double shoulderLenght, double legthForearmMM, double legthShin)
         {
             //ЗДЕСЬ ЗАПОЛНИТЬ 2 КОНСТАНТЫ
-            var const1 = GlobalSettings.PercentilTbl.MassConstA;
-            var const2 = GlobalSettings.PercentilTbl.MassConstB;
+            var const1 = GlobalSettings.ConstA;
+            var const2 = GlobalSettings.ConstB;
 
             return (const1 + const2 * gestationWeek) * biparietalSize*0.1 * bellyCircle*0.1 * (hipLen + shoulderLenght + legthForearmMM + legthShin)*0.1;
         }

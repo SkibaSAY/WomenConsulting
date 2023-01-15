@@ -35,68 +35,80 @@
                 <ComboBox x:Name="BMovementField" HorizontalAlignment="Left" Margin="5,15,0,0" VerticalAlignment="Top" Width="100"/>
             </WrapPanel>
         </StackPanel>
-        <Expander Foreground="Black" Header ="Фетометрия" Background="#FFD9DAFF" FontSize="18" FontWeight="Bold" IsExpanded="True">
-            <StackPanel>
-                <WrapPanel VerticalAlignment="Bottom">
-                    <Label Content="Бипариетальный размер" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <TextBox x:Name="BiparietalDiamField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="25,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
-                    <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="BiparietalDiamProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
-                    <TextBox x:Name="BiparDiamWeekField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
-                    <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+        <Expander HorizontalContentAlignment="Stretch" Background="#FFD9DAFF" VerticalContentAlignment="Stretch" Header="Фетометрия" Padding="0,0,0,5" IsExpanded="True" FontSize="16">
+            <Grid Background="#FFD9DAFF">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <WrapPanel Margin="5">
+                    <Label Content="Бипариетарный размер" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
+                    <TextBox x:Name="biparietalSize_mm" FontSize="16" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" PreviewTextInput="onlyDigits_PreviewTextInput"/>
+                    <Label Content="мм" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <ComboBox x:Name="biparietalSizePerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
+                    <TextBox x:Name="biparietalSize_week" FontSize="16" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" PreviewTextInput="onlyDigits_PreviewTextInput"/>
+                    <Label Content="нед" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
-                <WrapPanel>
-                    <Label Content="Длина бедренной кости" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <TextBox x:Name="FemurLengthField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="30,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
-                    <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="FemurLengthProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
-                    <TextBox x:Name="FemurWeekField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
-                    <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                <WrapPanel Grid.Row="1" Margin="5">
+                    <Label Content="Длина бедренной кости" FontSize="16"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
+                    <TextBox x:Name="hipLen_mm" FontSize="16"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" PreviewTextInput="onlyDigits_PreviewTextInput"/>
+                    <Label Content="мм" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <ComboBox x:Name="hipLenPerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
+                    <TextBox x:Name="hipLen_week" FontSize="16" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" PreviewTextInput="onlyDigits_PreviewTextInput"/>
+                    <Label Content="нед" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
-                <WrapPanel>
-                    <Label Content="Окружность живота" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <TextBox x:Name="AbdominalCircField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="59,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
-                    <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="AbdominalCircProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
-                    <TextBox x:Name="AbdominalWeekField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
-                    <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                <WrapPanel Grid.Row="2" Margin="5">
+                    <Label Content="Окружность живота" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
+                    <TextBox x:Name="bellyCircle_mm" FontSize="16"  HorizontalAlignment="Left" Height="23" PreviewTextInput="onlyDigits_PreviewTextInput" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="мм" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <ComboBox x:Name="bellyCirclePerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
+                    <TextBox x:Name="bellyCircle_week" FontSize="16" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="нед" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
                 </WrapPanel>
-                <WrapPanel>
-                    <Label Content="Масса" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <TextBox x:Name="MassField" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="162,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
-                    <Label Content="г" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="MassProc" Width="120" Margin="21,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
-                    <TextBox x:Name="MassWeek" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="80" FontWeight="Normal"/>
-                    <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                <WrapPanel Grid.Row="3" Margin="5">
+                    <Label Content="Масса" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
+                    <TextBox x:Name="mass_g" FontSize="16" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="г" FontSize="16"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="33"/>
+                    <ComboBox x:Name="massPerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
+                    <TextBox x:Name="mass_week" FontSize="16" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="нед" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
+
                 </WrapPanel>
-                <WrapPanel>
-                    <Label Content="Длина плеча:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="shoulderLenghtMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="110,5,0,0" HorizontalAlignment="Left"/>
+                <WrapPanel Grid.Row="4" Margin="5">
+                    <Label Content="Длина плеча:" FontSize="16" Width="210" FontWeight="Regular"/>
+                    <TextBox x:Name="shoulderLenghtMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="128" Height="23" FontWeight="Regular" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <ComboBox x:Name="shoulderLenghtProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
-                    <TextBox x:Name="shoulderLenghtWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="shoulderLenghtPerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
+                    <TextBox x:Name="shoulderLenghtWeek" PreviewTextInput="onlyDigits_PreviewTextInput" Width="128" Height="23" FontWeight="Regular" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
-                <WrapPanel>
-                    <Label Content="Длина костей предплечья:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="legthForearmMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="13,5,0,0" HorizontalAlignment="Left"/>
+                <WrapPanel Grid.Row="5" Margin="5">
+                    <Label Content="Длина костей предплечья:" FontSize="16"  Width="210" FontWeight="Regular"/>
+                    <TextBox x:Name="legthForearmMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular"  Width="128" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <ComboBox x:Name="legthForearmProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
-                    <TextBox x:Name="legthForearmWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="legthForearmPerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
+                    <TextBox x:Name="legthForearmWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" Width="128" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
-                <WrapPanel>
-                    <Label Content="Длина костей голени:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="legthShinMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="50,5,0,0" HorizontalAlignment="Left"/>
+                <WrapPanel Grid.Row="6" Margin="5">
+                    <Label Content="Длина костей голени:" FontSize="16"  Width="210"  FontWeight="Regular"/>
+                    <TextBox x:Name="legthShinMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular"  Margin="0,3,0,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
-                    <ComboBox x:Name="legthShinProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom" FontWeight="Normal"></ComboBox>
-                    <TextBox x:Name="legthShinWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="legthShinProc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Bottom"></ComboBox>
+                    <TextBox x:Name="legthShinWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="128" Margin="0,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
                 <Grid Grid.Row="7" Margin="5">
-                    <Button x:Name="calculateButton" Content="Расчитать массу и проверить перцентильные коридоры"  Background="#FFAEB1FF" Padding="20,5" HorizontalAlignment="Center" FontWeight="Normal" Click="calculateButton_Click"/>
+                    <Button x:Name="calculateButton" Content="Расчитать массу и проверить перцентильные коридоры"  Background="#FFAEB1FF" Padding="20,5" HorizontalAlignment="Center" Click="calculateButton_Click"/>
                 </Grid>
-            </StackPanel>
+            </Grid>
         </Expander>
         <Expander Foreground="Black" Header ="Расширенный осмотр" Background="#FFAEB1FF" FontSize="18" FontWeight="Bold" IsExpanded="True">
             <StackPanel>

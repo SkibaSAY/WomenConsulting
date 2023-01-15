@@ -7,9 +7,40 @@
         mc:Ignorable="d"
         Title="PercentilSettings" Height="450" Width="800" Closing="Window_Closing" Icon="Шаблоны/Иконка.png">
     <Window.Resources>
+        <ControlTemplate x:Key="validationTemplate">
+            <DockPanel>
+                <TextBlock Foreground="Red" FontSize="27"/>
+                <AdornedElementPlaceholder/>
+            </DockPanel>
+        </ControlTemplate>
+        <Style x:Key="textBoxInError" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)/ErrorContent}"/>
+                    <Setter Property="Foreground"
+                            Value="Red"/>
+                    <Setter Property="BorderBrush"
+                            Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <DataTemplate x:Key="WeekViewPercentil">
             <GroupBox Header="{Binding Path=DisplayName}" FontSize="24">
-                <TextBox x:Name="ItemTextBox" Text="{Binding Path=Value}"/>
+                <TextBox x:Name="ItemTextBox"
+                         Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                         Style="{StaticResource textBoxInError}">
+                    <TextBox.Text>
+                        <Binding Path="Value">
+                            <Binding.ValidationRules>
+                                <local:NumberValidator Min="0"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+                
             </GroupBox>
         </DataTemplate>
     </Window.Resources>

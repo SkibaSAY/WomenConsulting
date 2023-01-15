@@ -22,6 +22,44 @@ namespace WomenConsulting
     /// </summary>
     public partial class PercentilSettings : Window
     {
+        public class ViewWeekPercentil
+        {
+            private readonly PropertyInfo _property;
+            private WeekValues _weekPercentil;
+            public bool IsNeedUpdate
+            {
+                get { return !Value.Equals(ValueInSettings); }
+            }
+            public string DisplayName { get; set; }
+            public object Value { get; set; }
+
+            public object ValueInSettings
+            {
+                get { return _property.GetValue(_weekPercentil); }
+            }
+
+            public ViewWeekPercentil(PropertyInfo _property, WeekValues _weekPercentil)
+            {
+                this._property = _property;
+                this._weekPercentil = _weekPercentil;
+                this.Value = _property.GetValue(_weekPercentil);
+
+                var customAttribute = _property.GetCustomAttribute(typeof(DisplayNameAttribute));
+                if (customAttribute != null)
+                {
+                    DisplayName = (customAttribute as DisplayNameAttribute).DisplayName;
+                }
+                else
+                {
+                    DisplayName = _property.Name;
+                }
+            }
+            public void Update()
+            {
+                _property.SetValue(_weekPercentil, int.Parse(Value.ToString()));
+            }
+        }
+
         public WeekValues week;
         public List<ViewWeekPercentil> WeekViews { get; set; }
         public PercentilSettings(WeekValues week)
@@ -56,43 +94,7 @@ namespace WomenConsulting
                 week.Update();
             }
         }
-        public class ViewWeekPercentil
-        {
-            private readonly PropertyInfo _property;
-            private WeekValues _weekPercentil;
-            public bool IsNeedUpdate
-            {
-                get { return !Value.Equals(ValueInSettings); }
-            }
-            public string DisplayName { get; set; }
-            public object Value { get; set; }
-
-            public object ValueInSettings
-            {
-                get { return _property.GetValue(_weekPercentil); }
-            }
-
-            public ViewWeekPercentil(PropertyInfo _property, WeekValues _weekPercentil)
-            {
-                this._property = _property;
-                this._weekPercentil = _weekPercentil;
-                this.Value = _property.GetValue(_weekPercentil);
-
-                var customAttribute = _property.GetCustomAttribute(typeof(DisplayNameAttribute));
-                if (customAttribute!= null)
-                {
-                    DisplayName = (customAttribute as DisplayNameAttribute).DisplayName;
-                }
-                else
-                {
-                    DisplayName = _property.Name;
-                }
-            }
-            public void Update()
-            {
-                _property.SetValue(_weekPercentil, int.Parse(Value.ToString()));
-            }
-        }
+        
 
         private void Window_Closing(object sender, CancelEventArgs e)
         {

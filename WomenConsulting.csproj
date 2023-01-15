@@ -92,6 +92,7 @@
     <Compile Include="Class\Exceptions\UndefinedPathException.cs" />
     <Compile Include="Class\Fetus.cs" />
     <Compile Include="Class\Protocol.cs" />
+    <Compile Include="Class\RuleValidators\NumberValidator.cs" />
     <Compile Include="Class\Settings\ProtocolCommonSettings.cs" />
     <Compile Include="Class\Settings\GlobalSettings.cs" />
     <Compile Include="Class\Trimestr.cs" />

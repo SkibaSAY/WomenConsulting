@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using WomenConsulting.Class;
@@ -168,6 +170,8 @@ namespace WomenConsulting
             foreach (var doc in docs) FillGeneralSettings(doc);
             var mergedDoc = MergeTrimestrDocument(docs);
             mergedDoc.Save(outDocPath);
+
+            DeleteWatrMarks(outDocPath);
         }
         private void FillGeneralSettings(Document doc)
         {
@@ -195,6 +199,52 @@ namespace WomenConsulting
             }
             return newDoc;
         }
+
+        private static Regex HeaderReference = new Regex(@"<w:headerReference w:type=""default"" r:id=""rId(\d+)"" />", RegexOptions.Compiled);
+        private static Regex FooterReference = new Regex(@"<w:footerReference w:type=""default"" r:id=""rId(\d+)"" />", RegexOptions.Compiled);
+        private static Regex TextHeader = new Regex("<w:t>Evaluation Only. Created with Aspose.Words. Copyright 2003-2022 Aspose Pty Ltd.</w:t>", RegexOptions.Compiled);
+        private static Regex TextFooter = new Regex("<w:t>This document was truncated here because it was created in the Evaluation Mode.</w:t>", RegexOptions.Compiled);
+        
+        private void DeleteWatrMarks(string docxPath)
+        {
+            var directoryPath = Path.GetDirectoryName(docxPath);
+            var filePathWithExt = Path.Combine(directoryPath, Path.GetFileNameWithoutExtension(docxPath));
+            var zipPath = filePathWithExt + ".zip";
+            File.Move(docxPath, zipPath);
+
+            var zipArchive = ZipFile.Open(zipPath, ZipArchiveMode.Update);
+            var document = zipArchive.Entries.First(x => x.Name.EndsWith("document.xml"));
+
+            var extractPath = Path.Combine(directoryPath, "document.xml");
+
+            document.ExtractToFile(extractPath,true);
+
+            var waterMarksRegex = new Regex[] {
+                HeaderReference,
+                FooterReference,
+                TextHeader,
+                TextFooter
+            };
+
+            var fileText = File.ReadAllText(extractPath);
+            
+            foreach (var markReg in waterMarksRegex)
+            {
+                fileText = markReg.Replace(fileText,"");
+            }
+
+            File.WriteAllText(extractPath, fileText);
+
+            var docInZipPAth = document.FullName;
+            document.Delete();
+            zipArchive.CreateEntryFromFile(extractPath, docInZipPAth);
+
+            File.Delete(extractPath);
+            zipArchive.Dispose();
+
+            File.Move(zipPath, docxPath);
+        }
+
         public void AddFetus(Fetus newFetus)
         {
             fetuses.Add(newFetus);

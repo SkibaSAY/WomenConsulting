@@ -113,7 +113,8 @@ namespace WomenConsulting
             {
                 (sender as TextBox).Text = "";
             }
-            if (!Char.IsDigit(e.Text, 0) && !e.Text.StartsWith(",")) e.Handled = true;
+            if (!Char.IsDigit(e.Text, 0) && !e.Text.StartsWith(",") ||
+                (sender as TextBox).Text.Contains(",") && e.Text.StartsWith(",")) e.Handled = true;
         }
 
     }

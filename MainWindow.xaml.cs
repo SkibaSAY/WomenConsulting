@@ -48,7 +48,7 @@ namespace WomenConsulting
                 var valueIsEmpty = String.IsNullOrEmpty(value);
                 if (!valueIsEmpty && !Directory.Exists(value))
                 {
-                    throw new ArgumentException("Смотрите, что записываете в переменную с директорией");
+                    throw new ArgumentException("Неверно указана временная директория");
                 }
                 ////отключение/включение кнопки сохранения
                 //Save.IsEnabled = !valueIsEmpty;

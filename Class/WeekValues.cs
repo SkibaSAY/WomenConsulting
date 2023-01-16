@@ -25,11 +25,22 @@ namespace WomenConsulting
 
         [DisplayName("Максимальный бипариетарный размер")]
         public int MaxBPR { get; set; }
+
+        [DisplayName("Минимальная длина бедренной кости")]
         public int MinDB { get; set; }
+
+        [DisplayName("Максимальная длина бедренной кости")]
         public int MaxDB { get; set; }
+
+        [DisplayName("Минимальная окружность живота")]
         public int MinOZh { get; set; }
+
+        [DisplayName("Максимальная окружность живота")]
         public int MaxOZh { get; set; }
+
+        [DisplayName("Минимальная длина плеча")]
         public int MinDGK { get; set; }
+        [DisplayName("Максимальная длина плеча")]
         public int MaxDGK { get; set; }
         public WeekValues()
         {

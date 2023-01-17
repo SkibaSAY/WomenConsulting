@@ -18,16 +18,11 @@ namespace WomenConsulting
     {
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show(
-                "Произошла непредвиденная ошибка. Хотите сохранить информацию об ошибке?",
-                "Сообщение об ошибке",
-                System.Windows.Forms.MessageBoxButtons.YesNo,
-                System.Windows.Forms.MessageBoxIcon.Error,
-                MessageBoxDefaultButton.Button1,
-                System.Windows.Forms.MessageBoxOptions.DefaultDesktopOnly
-            );
+            UserDialog.Message(e.Exception.Message);
+            var saveError=UserDialog.AskYesNo("Произошла непредвиденная ошибка. Хотите сохранить информацию об ошибке?",
+                "Сообщение об ошибке");
 
-            if (result == DialogResult.Yes)
+            if (saveError)
             {
                 FolderBrowserDialog folderDlg = new FolderBrowserDialog();
 

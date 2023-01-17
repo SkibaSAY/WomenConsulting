@@ -20,10 +20,10 @@ namespace WomenConsulting
         [DisplayName("Максимальная масса")]
         public int MaxMass { get; set; }
 
-        [DisplayName("Минимальный бипариетарный размер")]
+        [DisplayName("Минимальный бипариетальный размер")]
         public int MinBPR { get; set; }
 
-        [DisplayName("Максимальный бипариетарный размер")]
+        [DisplayName("Максимальный бипариетальный размер")]
         public int MaxBPR { get; set; }
 
         [DisplayName("Минимальная длина бедренной кости")]
@@ -62,13 +62,17 @@ namespace WomenConsulting
         }
         public override string ToString()
         {
-            var stringList = typeof(WeekValues).GetProperties()
-                .Select(
-                    x => $"{(x.GetCustomAttribute(typeof(DisplayNameAttribute))!=null ? (x.GetCustomAttribute(typeof(DisplayNameAttribute)) as DisplayNameAttribute).DisplayName : x.Name)} " 
-                    +$": {x.GetValue(this)}"
-                    ).ToList();
+            //var stringList = typeof(WeekValues).GetProperties()
+            //    .Select(
+            //        x => $"{(x.GetCustomAttribute(typeof(DisplayNameAttribute))!=null ? (x.GetCustomAttribute(typeof(DisplayNameAttribute)) as DisplayNameAttribute).DisplayName : x.Name)} " 
+            //        +$": {x.GetValue(this)}"
+            //        ).ToList();
 
-            return String.Join(", ", stringList);
+            return $"{WeekNumber}я неделя: Масса: {MinMass} - {MaxMass}; " +
+                $"Бипариетальный размер: {MinBPR} - {MaxBPR}; " +
+                $"Длина бедренной кости: {MinDB} - {MaxDB}; " +
+                $"Окружность живота: {MinOZh} - {MaxOZh}; " +
+                $"Длина плеча: {MinDGK} - {MaxDGK}";
         }
     }
 }

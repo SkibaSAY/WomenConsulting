@@ -54,8 +54,8 @@
                 <Label Name ="FormulaConstB" Content="Значение константы B:" Margin="25,150,45,0" FontFamily="Segoe UI Semibold" VerticalAlignment="Top" FontSize="16" Height="33"/>
                 <Label Content="Изменить значение константы А:" Margin="25,185,0,0" FontFamily="Segoe UI Semibold" VerticalAlignment="Top" FontSize="16" Height="33"/>
                 <Label Content="Изменить значение константы B:" Margin="305,185,0,0" FontFamily="Segoe UI Semibold" VerticalAlignment="Top" FontSize="16" Height="33"/>
-                <TextBox Name ="NewConstABox"  HorizontalAlignment="Left" Height="25" Margin="25,220,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260"/>
-                <TextBox Name ="NewConstBBox" HorizontalAlignment="Left" Height="25" Margin="305,220,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260"/>
+                <TextBox Name ="NewConstABox"  HorizontalAlignment="Left" Height="25" Margin="25,220,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260" PreviewTextInput="doubleNumber_PreviewTextInput"/>
+                <TextBox Name ="NewConstBBox" HorizontalAlignment="Left" Height="25" Margin="305,220,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260" PreviewTextInput="doubleNumber_PreviewTextInput"/>
                 <Button Content="Сохранить" HorizontalAlignment="Left" Margin="25,260,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="16" Click="ConstSaveButton_Click" Background="#FFD9DAFF" Foreground="Black" BorderBrush="{x:Null}" FontFamily="Segoe UI Semibold"/>
                 <Button Content="Отменить" HorizontalAlignment="Left" Margin="305,260,0,0" VerticalAlignment="Top" Width="220" Height="50" FontSize="16" Click="ConstCancelButton_Click" Background="#FFD9DAFF" Foreground="Black" BorderBrush="{x:Null}" FontFamily="Segoe UI Semibold"/>
             </Grid>

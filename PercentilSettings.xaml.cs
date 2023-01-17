@@ -33,6 +33,15 @@ namespace WomenConsulting
             public string DisplayName { get; set; }
             public object Value { get; set; }
 
+            public bool IsEnable
+            {
+                //если есть аттрибут IsEnableAttribute cо свойством IsEnable = false, то выключено.
+                get
+                {
+                    return !_property.GetCustomAttributes().Any(x => x.GetType() == typeof(IsEnableAttribute) && !(x as IsEnableAttribute).IsEnable);
+                }
+            }
+
             public object ValueInSettings
             {
                 get { return _property.GetValue(_weekPercentil); }

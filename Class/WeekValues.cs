@@ -9,9 +9,17 @@ using System.Threading.Tasks;
 
 namespace WomenConsulting
 {
+    public class IsEnableAttribute : Attribute
+    {
+        public bool IsEnable { get; private set; }
+        public IsEnableAttribute(bool state)
+        {
+            IsEnable = state;
+        }
+    }
     public class WeekValues
     {
-        [DisplayName("Неделя")]
+        [DisplayName("Неделя"),IsEnable(false)]
         public int WeekNumber { get; set; }
 
         [DisplayName("Минимальная масса")]

@@ -24,6 +24,10 @@
                     <Setter Property="BorderBrush"
                             Value="Red"/>
                 </Trigger>
+                <DataTrigger Binding="{Binding Path = IsEnable}" Value="false">
+                    <Setter Property="IsEnabled"
+                            Value="False"/>
+                </DataTrigger>
             </Style.Triggers>
         </Style>
 
@@ -40,10 +44,11 @@
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
-                
+
             </GroupBox>
         </DataTemplate>
     </Window.Resources>
+    
     <ListBox x:Name="weekParcentils" ItemsSource="{Binding Path=WeekViews}" ItemTemplate="{StaticResource WeekViewPercentil}">
 
     </ListBox>

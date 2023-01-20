@@ -216,5 +216,11 @@
   <ItemGroup>
     <Resource Include="Шаблоны\Иконка.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-edit-calendar-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-edit-calendar-96.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

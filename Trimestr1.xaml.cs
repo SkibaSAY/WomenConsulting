@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,14 +25,6 @@ namespace WomenConsulting
         {
             InitializeComponent();
         }
-
-        private void dateOfLastMen_CalendarClosed(object sender, RoutedEventArgs e)
-        {
-            //возвращаю в общие , поэтому пока комментим
-            //var dateDifference = DateTime.Now - dateOfLastMen.SelectedDate;
-            //gestationalTime_week.Text = (dateDifference.Value.Days / 7).ToString();
-            //gestationalTime_day.Text = (dateDifference.Value.Days - dateDifference.Value.Days / 7 * 7).ToString();
-        }
         private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             if((sender as TextBox).Text == "0" || String.IsNullOrWhiteSpace((sender as TextBox).Text))
@@ -49,6 +42,20 @@ namespace WomenConsulting
             }
             if (!Char.IsDigit(e.Text, 0) && !e.Text.StartsWith(",") ||
                 (sender as TextBox).Text.Contains(",") && e.Text.StartsWith(",")) e.Handled = true;
+        }
+
+        private void calculateGestationalTime_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(MainWindow.protocol.generalSettings.dateOfLastMen))
+            {
+                gestationalTime_week.Text = "0";
+                gestationalTime_day.Text = "0";
+                return;
+            }
+
+            var dateDifference = DateTime.Now - DateTime.Parse(MainWindow.protocol.generalSettings.dateOfLastMen, CultureInfo.CreateSpecificCulture("en-US"));
+            gestationalTime_week.Text = (dateDifference.Days / 7).ToString();
+            gestationalTime_day.Text = (dateDifference.Days - dateDifference.Days / 7 * 7).ToString();
         }
     }
 }

@@ -77,7 +77,7 @@
                     </Grid>
                     <WrapPanel Margin="21,0,0,0">
                         <Label Content="Дата последней менструации" FontWeight="Normal" FontSize="16"/>
-                        <DatePicker x:Name="dateOfLastMen" SelectedDate="{Binding Path=dateOfLastMen}"  HorizontalAlignment="Left" Margin="5,5,0,0"  VerticalAlignment="Top" Width="150" FontSize="16" FontWeight="Normal" Text="Выберите дату" Foreground="#FF635E5E"/>
+                        <DatePicker x:Name="dateOfLastMen" SelectedDate="{Binding Path=dateOfLastMen}"  HorizontalAlignment="Left" Margin="5,5,0,0"  VerticalAlignment="Top" Width="150" FontSize="16" FontWeight="Normal" Text="Выберите дату" Foreground="#FF635E5E" SelectedDateFormat="Long"/>
                     </WrapPanel>
                     <WrapPanel Margin="0,7,0,0">
                         <Label  Content="Число плодов:" Margin="21,0,0,0" FontWeight="Normal" FontSize="16"></Label>

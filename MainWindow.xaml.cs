@@ -28,7 +28,7 @@ namespace WomenConsulting
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Protocol protocol;
+        public static Protocol protocol;
 
         private string currentDirectory;
 
@@ -71,12 +71,12 @@ namespace WomenConsulting
             CurrentDirectory = GlobalSettings.LastOpenDirectory;
         }
 
-        private void InitProtocol(Protocol protocol = null)
+        private void InitProtocol(Protocol newProtocol = null)
         {
-            if (protocol == null) this.protocol = new Protocol(CurrentDirectory);
-            else this.protocol = protocol;
+            if (newProtocol == null) protocol = new Protocol(CurrentDirectory);
+            else protocol = newProtocol;
 
-            DataContext = this.protocol;
+            DataContext = protocol;
             Fetuses.SelectedIndex = 0;
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -117,5 +118,18 @@ namespace WomenConsulting
                 (sender as TextBox).Text.Contains(",") && e.Text.StartsWith(",")) e.Handled = true;
         }
 
+        private void calculateGestationalTime_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(MainWindow.protocol.generalSettings.dateOfLastMen))
+            {
+                gestationalTime_week.Text = "0";
+                gestationalTime_day.Text = "0";
+                return;
+            }
+
+            var dateDifference = DateTime.Now - DateTime.Parse(MainWindow.protocol.generalSettings.dateOfLastMen, CultureInfo.CreateSpecificCulture("en-US"));
+            gestationalTime_week.Text = (dateDifference.Days / 7).ToString();
+            gestationalTime_day.Text = (dateDifference.Days - dateDifference.Days / 7 * 7).ToString();
+        }
     }
 }

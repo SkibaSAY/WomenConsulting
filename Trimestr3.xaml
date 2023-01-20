@@ -8,14 +8,58 @@
       d:DesignHeight="1380" d:DesignWidth="800"
       Title="Trimestr3">
 
+    <Page.Resources>
+        <Style x:Key="calculateGestTime" TargetType="{x:Type Button}">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ButtonBase}">
+                            <Border x:Name="Border" BorderThickness="1" BorderBrush="Transparent">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="icons8-edit-calendar-96.png"/>
+                                </Border.Background>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Border" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="icons8-edit-calendar-96.png"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="Border" Property="BorderBrush" Value="White" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="35"/>
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="icons8-edit-calendar-96.png"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    
     <StackPanel Background="#FFD9DAFF" Margin="0">
         <StackPanel Background="#FFAEB1FF" Margin="0">
             <WrapPanel Margin="10,10,0,0" Grid.ColumnSpan="3">
                 <Label Content="Срок беременности" FontWeight="Normal" FontSize="16"/>
-                <TextBox x:Name="gestationalTime_week" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="5,7,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontWeight="Normal"/>
-                <Label Content="недель" FontWeight="Normal" FontSize="16"  Margin="5,0,5,0"/>
-                <TextBox x:Name="gestationalTime_day" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="5,7,5,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" FontWeight="Normal"/>
-                <Label Content="дней" FontWeight="Normal"  Margin="5,0,5,0" FontSize="16"/>
+                <TextBox x:Name="gestationalTime_week" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="5,7,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="50" FontWeight="Normal"/>
+                <Label Content="недель" FontWeight="Normal" FontSize="16"  Margin="5,0,0,0"/>
+                <TextBox x:Name="gestationalTime_day" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="5,7,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="50" FontWeight="Normal"/>
+                <Label Content="дней" FontWeight="Normal"  Margin="5,0,0,0" FontSize="16"/>
+                <Button x:Name="calculateGestationalTime" Content ="Tolltip" Style="{StaticResource calculateGestTime}" ToolTip="Нажмите на кнопку для автоматического расчета срока беременности по дате последней менструации" Width="25" Foreground="{x:Null}" Margin="5,0,15,0" BorderBrush="{x:Null}" Height="25" Click="calculateGestationalTime_Click" RenderTransformOrigin="0.5,0.504">
+                    <Button.Background>
+                        <ImageBrush ImageSource="icons8-edit-calendar-96.png"/>
+                    </Button.Background>
+                </Button>
                 <ComboBox x:Name="gestationList" HorizontalAlignment="Left" Margin="5,3,5,0" VerticalAlignment="Top" Width="200" FontWeight="Normal"/>
             </WrapPanel>
             <WrapPanel>

@@ -145,9 +145,31 @@ namespace WomenConsulting
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            //protocol.Save(CurrentDirectory);
-            var path = Path.Combine(GlobalSettings.BaseProtocolsPath, protocol.generalSettings.surnameName);
-            protocol.Save(path);
+            if (!String.IsNullOrEmpty(CurrentDirectory))
+            {
+                protocol.Save(CurrentDirectory);
+            }
+            //когда CurrentDirectory пустое, т.е. сейчас сохраняется новый протокол, его нужно проверить на то, что папка такая уже существует
+            else
+            {
+                var surname = protocol.generalSettings.surnameName;
+                var path = Path.Combine(GlobalSettings.BaseProtocolsPath, surname);
+                if (String.IsNullOrWhiteSpace(surname))
+                {
+                    UserDialog.Message("Для сохранения заполните поле ФИО и повторите сохранение, пожалуйста.");
+                    return;
+                }
+                //Директория с таким именем уже существует
+                else if (Directory.Exists(path))
+                {
+
+                }
+                else
+                {
+                    protocol.Save(path);
+                }
+            }
+
         }
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)

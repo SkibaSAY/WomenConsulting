@@ -150,7 +150,7 @@
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
                 <Grid Grid.Row="7" Margin="5">
-                    <Button x:Name="calculateButton" Content="Расчитать массу и проверить перцентильные коридоры"  Background="#FFAEB1FF" Padding="20,5" HorizontalAlignment="Center" Click="calculateButton_Click"/>
+                    <Button x:Name="calculateButton" Content="Рассчитать массу и проверить перцентильные коридоры"  Background="#FFAEB1FF" Padding="20,5" HorizontalAlignment="Center" Click="calculateButton_Click"/>
                 </Grid>
             </Grid>
         </Expander>

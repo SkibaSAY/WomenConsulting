@@ -57,5 +57,14 @@ namespace WomenConsulting
             gestationalTime_week.Text = (dateDifference.Days / 7).ToString();
             gestationalTime_day.Text = (dateDifference.Days - dateDifference.Days / 7 * 7).ToString();
         }
+
+        private void calculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            //заполнили предполагаемое количество недель по параметрам
+            biparietalDiameterWe.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("BPR", double.Parse(biparietalDiameterMM.Text)).ToString();
+            femurLenghtWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DB", double.Parse(femurLenghtMM.Text)).ToString();
+            circumferenceWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("OZh", double.Parse(circumferenceMM.Text)).ToString();
+            shoulderLenghtWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DGK", double.Parse(shoulderLenghtMM.Text)).ToString();
+        }
     }
 }

@@ -29,21 +29,15 @@ namespace WomenConsulting
 
         private void calculateButton_Click(object sender, RoutedEventArgs e)
         {
-            if((String.IsNullOrEmpty(gestationalTime_week.Text)) ||
-                int.Parse(gestationalTime_week.Text) == 0 ||
-                (String.IsNullOrEmpty(biparietalSize_mm.Text)) ||
-                (String.IsNullOrEmpty(hipLen_mm.Text)) ||
-                (String.IsNullOrEmpty(bellyCircle_mm.Text)) ||
-                (String.IsNullOrEmpty(shoulderLenghtMM.Text)) ||
-                (String.IsNullOrEmpty(legthForearmMM.Text)) ||
-                (String.IsNullOrEmpty(legthShinMM.Text)))
+            if (!UserDialog.FetometryGestationFilled(gestationalTime_week.Text, biparietalSize_mm.Text,
+            hipLen_mm.Text, bellyCircle_mm.Text, shoulderLenghtMM.Text, legthForearmMM.Text,
+            legthShinMM.Text))
             {
-                MessageBox.Show("Срок беременности или поля из фетометрии не заполнены. Заполните и повторите попытку, пожалуйста"
-                    ,"Не все данные заполнены"
-                    , MessageBoxButton.OK
-                    , MessageBoxImage.Information);
+                UserDialog.Message("Срок беременности или поля из фетометрии не заполнены. Заполните и повторите попытку, пожалуйста",
+                    "Не все данные заполнены");
                 return;
             }
+
             mass_g.Text = Trimestr.CalculateMass(
                 int.Parse(gestationalTime_week.Text),
                 double.Parse(biparietalSize_mm.Text),
@@ -54,7 +48,6 @@ namespace WomenConsulting
                 double.Parse(legthShinMM.Text)).ToString();
 
             CalculatePercentileTable();
-
         }
 
         private void CalculatePercentileTable()

@@ -50,6 +50,23 @@ namespace WomenConsulting
         public int MinDGK { get; set; }
         [DisplayName("Максимальная длина плеча")]
         public int MaxDGK { get; set; }
+
+
+        [DisplayName("Минимальный кобчико-теменной размер")]
+        public int MinCobchTemSize { get; set; }
+        [DisplayName("Максимальный кобчико-теменной размер")]
+        public int MaxCobchTemSize { get; set; }
+
+        [DisplayName("Минимальная длина костей предплечья")]
+        public int MinPredPlechLength { get; set; }
+        [DisplayName("Максимальная длина костей предплечья")]
+        public int MaxPredPlechLength { get; set; }
+
+        [DisplayName("Минимальная длина костей голени")]
+        public int MinHipLength { get; set; }
+        [DisplayName("Максимальная длина костей голени")]
+        public int MaxHipLength { get; set; }
+
         public WeekValues()
         {
 
@@ -80,7 +97,10 @@ namespace WomenConsulting
                 $"Бипариетальный размер: {MinBPR} - {MaxBPR}; " +
                 $"Длина бедренной кости: {MinDB} - {MaxDB}; " +
                 $"Окружность живота: {MinOZh} - {MaxOZh}; " +
-                $"Длина плеча: {MinDGK} - {MaxDGK}";
+                $"Длина плеча: {MinDGK} - {MaxDGK} " +
+                $"Кобчико-теменной размер: {MinCobchTemSize} - {MaxCobchTemSize} " +
+                $"Длина костей предплечья: {MinPredPlechLength} - {MaxPredPlechLength} " +
+                $"Длина костей голени: {MinHipLength} - {MaxHipLength}";
         }
     }
 }

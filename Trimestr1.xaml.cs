@@ -60,6 +60,21 @@ namespace WomenConsulting
 
         private void calculateButton_Click(object sender, RoutedEventArgs e)
         {
+            if ((String.IsNullOrEmpty(gestationalTime_week.Text)) ||
+                int.Parse(gestationalTime_week.Text) == 0 ||
+                (String.IsNullOrEmpty(biparietalDiameterWe.Text)) ||
+                (String.IsNullOrEmpty(femurLenghtWeek.Text)) ||
+                (String.IsNullOrEmpty(circumferenceWeek.Text)) ||
+                (String.IsNullOrEmpty(shoulderLenghtMM.Text)) ||
+                (String.IsNullOrEmpty(legthForearmMM.Text)) ||
+                (String.IsNullOrEmpty(legthShinMM.Text)))
+            {
+                MessageBox.Show("Срок беременности или поля из фетометрии не заполнены. Заполните и повторите попытку, пожалуйста"
+                    , "Не все данные заполнены"
+                    , MessageBoxButton.OK
+                    , MessageBoxImage.Information);
+                return;
+            }
             //заполнили предполагаемое количество недель по параметрам
             biparietalDiameterWe.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("BPR", double.Parse(biparietalDiameterMM.Text)).ToString();
             femurLenghtWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DB", double.Parse(femurLenghtMM.Text)).ToString();

@@ -69,5 +69,18 @@ namespace WomenConsulting
             }
             return true;
         }
+
+        public static bool QuestionAnswerDialog(string question, out string userAnswer, string defaultAnswer = "")
+        {
+            var inputDialogWindow = new QuestionAnswerDialog
+            (
+                question: question,
+                defaultAnswer: defaultAnswer
+            );
+            var dialogResult = inputDialogWindow.ShowDialog().Value;
+
+            userAnswer = inputDialogWindow.Answer;
+            return dialogResult;
+        }
     }
 }

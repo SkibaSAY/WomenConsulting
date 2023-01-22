@@ -162,14 +162,39 @@ namespace WomenConsulting
                 //Директория с таким именем уже существует
                 else if (Directory.Exists(path))
                 {
+                    var question = $"Мы не можем сохранить новый протокол по пути {path}, поскольку такой протокол уже существует." +
+                        $"\n\rПо умолчанию мы сохраняем протокол в папку по ФИО, но в данном случае вам нужно выбрать название папки для нового протокола самостоятельно.";
+                    var postfix = $"_{SurnamePostfix(path)}";
+                    var defaultAnswer = surname + postfix;
 
+                    string userAnswer = "";
+
+                    var dialogSuccess = UserDialog.QuestionAnswerDialog(question, out userAnswer, defaultAnswer);
+
+                    if (dialogSuccess)
+                    {
+                        path = Path.Combine(GlobalSettings.BaseProtocolsPath, userAnswer);
+                    }               
+                    else
+                    {
+                        UserDialog.Message("Сохранение было прервано, пользователь не указал требуемые данные.\n\r" +
+                            "Вы можете указать другое ФИО или сохранить протокол вручную, используя \"Сохранить как\".");
+                        return;
+                    }
                 }
-                else
-                {
-                    protocol.Save(path);
-                }
+                protocol.Save(path);
+                CurrentDirectory = path;
             }
 
+        }
+        private int SurnamePostfix(string path)
+        {
+            var postfix = 2;
+            while (Directory.Exists(path + $"_{postfix}"))
+            {
+                postfix++;
+            }
+            return postfix;
         }
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)

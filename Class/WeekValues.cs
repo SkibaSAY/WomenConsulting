@@ -52,9 +52,9 @@ namespace WomenConsulting
         public int MaxDGK { get; set; }
 
 
-        [DisplayName("Минимальный кобчико-теменной размер")]
+        [DisplayName("Минимальный копчико-теменной размер")]
         public int MinCobchTemSize { get; set; }
-        [DisplayName("Максимальный кобчико-теменной размер")]
+        [DisplayName("Максимальный копчико-теменной размер")]
         public int MaxCobchTemSize { get; set; }
 
         [DisplayName("Минимальная длина костей предплечья")]
@@ -98,7 +98,7 @@ namespace WomenConsulting
                 $"Длина бедренной кости: {MinDB} - {MaxDB}; " +
                 $"Окружность живота: {MinOZh} - {MaxOZh}; " +
                 $"Длина плеча: {MinDGK} - {MaxDGK} " +
-                $"Кобчико-теменной размер: {MinCobchTemSize} - {MaxCobchTemSize} " +
+                $"Копчико-теменной размер: {MinCobchTemSize} - {MaxCobchTemSize} " +
                 $"Длина костей предплечья: {MinPredPlechLength} - {MaxPredPlechLength} " +
                 $"Длина костей голени: {MinHipLength} - {MaxHipLength}";
         }

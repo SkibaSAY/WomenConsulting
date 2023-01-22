@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -181,7 +182,15 @@ namespace WomenConsulting
                 var findedField = doc.Range.FormFields.Where(x => x.Name.Equals(field.Key)).FirstOrDefault();
                 if (findedField != null)
                 {
-                    findedField.Result = field.Value;
+                    DateTime ourDate;
+                    if (DateTime.TryParse(field.Value, CultureInfo.CreateSpecificCulture("en-US"), DateTimeStyles.None, out ourDate))
+                    {
+                        findedField.Result = ourDate.ToString("dd.MM.yyyy");
+                    }
+                    else
+                    {
+                        findedField.Result = field.Value;
+                    }
                 }
             }
         }

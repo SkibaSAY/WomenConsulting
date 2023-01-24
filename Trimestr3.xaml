@@ -70,9 +70,9 @@
             </WrapPanel>
             <WrapPanel>
                 <Label Content="ЧСС" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                <TextBox x:Name="HeartRateField" HorizontalAlignment="Left" Margin="5,16,0,0" VerticalAlignment="Top" Width="70"/>
+                <TextBox x:Name="HeartRateField" HorizontalAlignment="Left" Margin="5,16,0,0" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="70"/>
                 <Label Content="Ритм" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                <ComboBox x:Name="RhythmField" HorizontalAlignment="Left" Margin="5,15,0,0" VerticalAlignment="Top" Width="100"/>
+                <ComboBox x:Name="RhythmField" HorizontalAlignment="Left" Margin="5,15,0,0" VerticalAlignment="Top" Width="200"/>
                 <Label Content="Движения" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
                 <ComboBox x:Name="MovementField" HorizontalAlignment="Left" Margin="5,15,0,0" VerticalAlignment="Top" Width="100"/>
                 <Label Content="Дых. Движения" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
@@ -93,7 +93,7 @@
                 </Grid.RowDefinitions>
 
                 <WrapPanel Margin="5">
-                    <Label Content="Бипариетарный размер" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
+                    <Label Content="Бипариетальный размер" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
                     <TextBox x:Name="biparietalSize_mm" FontSize="16" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" PreviewTextInput="onlyDigits_PreviewTextInput"/>
                     <Label Content="мм" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
                     <ComboBox x:Name="biparietalSizePerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
@@ -158,89 +158,155 @@
             <StackPanel>
                 <WrapPanel>
                     <Label Content="ЦНС. Лицо. Шея" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Лицо" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox1" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Боковые желудочки" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox2" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Полость прозрачной перегородки" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox3" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="III желудочек" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox4" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="IV желудочек" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox5" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Мозжечок" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox6" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Большая цистерна" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox7" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Сильвиева борозда" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox8" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
+                    <Grid>
+                        <Label Content="Лицо" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox1" HorizontalAlignment="Left" Margin="65,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Боковые желудочки" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox2" HorizontalAlignment="Left" Margin="175,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Полость прозрачной перегородки" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox3" HorizontalAlignment="Left" Margin="285,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="III желудочек" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox4" HorizontalAlignment="Left" Margin="125,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="IV желудочек" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox5" HorizontalAlignment="Left" Margin="125,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Мозжечок" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox6" HorizontalAlignment="Left" Margin="105,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Большая цистерна" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox7" HorizontalAlignment="Left" Margin="165,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Сильвиева борозда" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox8" HorizontalAlignment="Left" Margin="175,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Сердце и крупные сосуды" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Камеры сердца" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox9" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="МПП" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox10" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="МЖП" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox11" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Магистральные артерии" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox12" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Аорта" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox13" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Легочный ствол" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox14" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="ВПВ" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox15" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="НПВ" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox16" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Легочные вены" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox17" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Гидроперикард" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox18" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Кардиоторакальное отношение" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox19" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
+                    <Grid>
+                        <Label Content="Камеры сердца" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox9" HorizontalAlignment="Left" Margin="145,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="МПП" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox10" HorizontalAlignment="Left" Margin="65,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="МЖП" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox11" HorizontalAlignment="Left" Margin="65,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Магистральные артерии" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox12" HorizontalAlignment="Left" Margin="205,3,0,0" VerticalAlignment="Top" Width="180" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Аорта" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox13" HorizontalAlignment="Left" Margin="75,3,0,0" VerticalAlignment="Top" Width="180" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Легочный ствол" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox14" HorizontalAlignment="Left" Margin="145,3,0,0" VerticalAlignment="Top" Width="180" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="ВПВ" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox15" HorizontalAlignment="Left" Margin="55,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="НПВ" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox16" HorizontalAlignment="Left" Margin="55,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Легочные вены" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox17" HorizontalAlignment="Left" Margin="145,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Гидроперикард" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox18" HorizontalAlignment="Left" Margin="145,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Кардиоторакальное отношение" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox19" HorizontalAlignment="Left" Margin="265,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Грудная полость" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Расположение сердца" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox20" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Эхогенность легких" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="EchogenicityField" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Вилочковая железа" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox22" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Объемные образования" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox23" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Гидроторакс" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox24" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
+                    <Grid>
+                        <Label Content="Расположение сердца" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox20" HorizontalAlignment="Left" Margin="195,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Эхогенность легких" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="EchogenicityField" HorizontalAlignment="Left" Margin="175,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Вилочковая железа" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox22" HorizontalAlignment="Left" Margin="175,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Объемные образования" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox23" HorizontalAlignment="Left" Margin="205,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Гидроторакс" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox24" HorizontalAlignment="Left" Margin="125,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Брюшная полость" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Печень" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox25" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Селезенка" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox26" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Почки" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox27" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Мочевой пузырь" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox28" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Объемные образования" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox29" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Асцит" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox30" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
+                    <Grid>
+                        <Label Content="Печень" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox25" HorizontalAlignment="Left" Margin="85,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Селезенка" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox26" HorizontalAlignment="Left" Margin="105,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Почки" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox27" HorizontalAlignment="Left" Margin="75,3,0,0" VerticalAlignment="Top" Width="250" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Мочевой пузырь" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox28" HorizontalAlignment="Left" Margin="155,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Объемные образования" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox29" HorizontalAlignment="Left" Margin="205,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Асцит" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox30" HorizontalAlignment="Left" Margin="75,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Скелет" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
                     <Label Content="Позвоночник" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox31" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
+                    <ComboBox x:Name="OsmBox31" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Пуповина" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Пупочные артерии" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox32" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Сосуды пуповины" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="OsmBox33" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
-                    <Label Content="Прикрепление" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
-                    <ComboBox x:Name="AttachmentField" HorizontalAlignment="Left" Margin="5,3,0,0" VerticalAlignment="Top" Width="120" FontWeight="Normal" FontSize="12"/>
+                    <Grid>
+                        <Label Content="Пупочные артерии" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox32" HorizontalAlignment="Left" Margin="175,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Сосуды пуповины" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="OsmBox33" HorizontalAlignment="Left" Margin="160,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
+                    <Grid>
+                        <Label Content="Прикрепление" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Normal"/>
+                        <ComboBox x:Name="AttachmentField" HorizontalAlignment="Left" Margin="145,3,0,0" VerticalAlignment="Top" Width="150" FontWeight="Normal" FontSize="12"/>
+                    </Grid>
                 </WrapPanel>
             </StackPanel>
         </Expander>

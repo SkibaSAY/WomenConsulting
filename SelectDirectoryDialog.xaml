@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WomenConsulting"
         mc:Ignorable="d"
-                Title="Input" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen"
+                Title="Введите название папки для сохранения протокола" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen"
         ContentRendered="Window_ContentRendered">
 
     <Grid Margin="15">

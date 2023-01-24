@@ -14,12 +14,12 @@ using System.Windows.Shapes;
 
 namespace WomenConsulting
 {
-	public partial class SelectProtocolDirectoryName : Window
+	public partial class QuestionAnswerDialog : Window
 	{
-		public SelectProtocolDirectoryName(string caption, string defaultAnswer = "")
+		public QuestionAnswerDialog(string question, string defaultAnswer = "")
 		{
 			InitializeComponent();
-			lblQuestion.Content = caption;
+			lblQuestion.Content = question;
 			txtAnswer.Text = defaultAnswer;
 		}
 

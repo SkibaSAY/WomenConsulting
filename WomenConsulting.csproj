@@ -110,8 +110,8 @@
     <Compile Include="ProtocolListOpen.xaml.cs">
       <DependentUpon>ProtocolListOpen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SelectProtocolDirectoryName.xaml.cs">
-      <DependentUpon>SelectProtocolDirectoryName.xaml</DependentUpon>
+    <Compile Include="QuestionAnswerDialog.xaml.cs">
+      <DependentUpon>QuestionAnswerDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
@@ -152,7 +152,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SelectProtocolDirectoryName.xaml">
+    <Page Include="QuestionAnswerDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

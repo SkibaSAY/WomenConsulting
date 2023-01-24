@@ -26,7 +26,7 @@
                     <Label Content="Размеры матки:"  FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="uterineSizeMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                     <Label Content="мм" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
-                    <ComboBox x:Name="uterneSize" VerticalAlignment="Top" Width="80" Margin="0,3,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <ComboBox x:Name="uterneSize" VerticalAlignment="Top" Width="180" Margin="0,3,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <TextBox x:Name="uterineSizeText" Width="250" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                 </WrapPanel>
                 <WrapPanel>
@@ -37,11 +37,11 @@
                 </WrapPanel>
                 <WrapPanel >
                     <Label Content="Форма матки:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <ComboBox x:Name="uterusShape" VerticalAlignment="Top" Width="180" Margin="5,5,0,0" HorizontalAlignment="Left" FontWeight="Regular" />
+                    <ComboBox x:Name="uterusShape" VerticalAlignment="Top" Width="240" Margin="5,5,0,0" HorizontalAlignment="Left" FontWeight="Regular" />
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Эхоструктура:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <ComboBox x:Name="echostructure" FontWeight="Regular" VerticalAlignment="Top" Width="180" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <ComboBox x:Name="echostructure" FontWeight="Regular" VerticalAlignment="Top" Width="330" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Средний диаметр плодного яйца:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>

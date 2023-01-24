@@ -72,7 +72,7 @@ namespace WomenConsulting
 
         public static bool QuestionAnswerDialog(string question, out string userAnswer, string defaultAnswer = "")
         {
-            var inputDialogWindow = new QuestionAnswerDialog
+            var inputDialogWindow = new SelectDirectoryDialog
             (
                 question: question,
                 defaultAnswer: defaultAnswer

@@ -14,9 +14,10 @@ using System.Windows.Shapes;
 
 namespace WomenConsulting
 {
-	public partial class QuestionAnswerDialog : Window
+	public partial class SelectDirectoryDialog : Window
 	{
-		public QuestionAnswerDialog(string question, string defaultAnswer = "")
+		private FreeDirectoryNameValidator _validator = new FreeDirectoryNameValidator();
+		public SelectDirectoryDialog(string question, string defaultAnswer = "")
 		{
 			InitializeComponent();
 			lblQuestion.Content = question;
@@ -25,18 +26,23 @@ namespace WomenConsulting
 
 		private void btnDialogOk_Click(object sender, RoutedEventArgs e)
 		{
-			this.DialogResult = true;
+			var validatorResult = _validator.Validate(txtAnswer.Text, null);
+			if(validatorResult.IsValid) this.DialogResult = true;
+            else
+            {
+				UserDialog.Message(validatorResult.ErrorContent.ToString());
+            }
 		}
 
 		private void Window_ContentRendered(object sender, EventArgs e)
 		{
-			txtAnswer.SelectAll();
-			txtAnswer.Focus();
-		}
+            txtAnswer.SelectAll();
+            txtAnswer.Focus();
+        }
 
 		public string Answer
 		{
 			get { return txtAnswer.Text; }
 		}
-	}
+    }
 }

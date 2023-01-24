@@ -94,6 +94,7 @@
     <Compile Include="Class\Exceptions\UndefinedPathException.cs" />
     <Compile Include="Class\Fetus.cs" />
     <Compile Include="Class\Protocol.cs" />
+    <Compile Include="Class\RuleValidators\FreeDirectoryNameValidator.cs" />
     <Compile Include="Class\RuleValidators\NumberValidator.cs" />
     <Compile Include="Class\Settings\ProtocolCommonSettings.cs" />
     <Compile Include="Class\Settings\GlobalSettings.cs" />
@@ -110,8 +111,8 @@
     <Compile Include="ProtocolListOpen.xaml.cs">
       <DependentUpon>ProtocolListOpen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="QuestionAnswerDialog.xaml.cs">
-      <DependentUpon>QuestionAnswerDialog.xaml</DependentUpon>
+    <Compile Include="SelectDirectoryDialog.xaml.cs">
+      <DependentUpon>SelectDirectoryDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
@@ -152,7 +153,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="QuestionAnswerDialog.xaml">
+    <Page Include="SelectDirectoryDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

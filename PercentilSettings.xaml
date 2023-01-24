@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WomenConsulting"
         mc:Ignorable="d"
-        Title="PercentilSettings" Height="450" Width="800" Closing="Window_Closing" Icon="Шаблоны/Иконка.png">
+        Title="Ввод данных для перцентильных коридоров" Height="450" Width="800" Closing="Window_Closing" Icon="Шаблоны/Иконка.png">
     <Window.Resources>
         <ControlTemplate x:Key="validationTemplate">
             <DockPanel>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WomenConsulting"
         mc:Ignorable="d"
-        Title="Выбор протокола" Height="450" Width="800" Icon="Шаблоны/Иконка.png">
+        Title="Выбор протокола" Height="450" Width="800" Icon="/Иконка.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>

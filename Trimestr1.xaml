@@ -57,9 +57,9 @@
                 <Label Content="недель" FontWeight="Normal" FontSize="16"  Margin="0"/>
                 <TextBox x:Name="gestationalTime_day" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Margin="0,7,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="50" FontWeight="Normal"/>
                 <Label Content="дней" FontWeight="Normal"  Margin="0" FontSize="16"/>
-                <Button x:Name="calculateGestationalTime" Content ="Tolltip" Style="{StaticResource calculateGestTime}" ToolTip="Нажмите на кнопку для автоматического расчета срока беременности по дате последней менструации" Width="25" Foreground="{x:Null}" Margin="5,0,15,0" BorderBrush="{x:Null}" Height="25" Click="calculateGestationalTime_Click">
+                <Button x:Name="calculateGestationalTime" Content ="Tolltip" Style="{StaticResource calculateGestTime}" ToolTip="Нажмите на кнопку для автоматического расчета срока беременности по дате последней менструации" Width="25" Foreground="{x:Null}" BorderBrush="{x:Null}" Height="25" Click="calculateGestationalTime_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="icons8-edit-calendar-96.png"/>
+                        <ImageBrush ImageSource="/icons8-edit-calendar-96.png"/>
                     </Button.Background>
                 </Button>
                 <ComboBox x:Name="gestationList" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="200" FontWeight="Normal"></ComboBox>

@@ -211,7 +211,7 @@ namespace WomenConsulting
 
         private static Regex HeaderReference = new Regex(@"<w:headerReference w:type=""default"" r:id=""rId(\d+)"" />", RegexOptions.Compiled);
         private static Regex FooterReference = new Regex(@"<w:footerReference w:type=""default"" r:id=""rId(\d+)"" />", RegexOptions.Compiled);
-        private static Regex TextHeader = new Regex("<w:t>Evaluation Only. Created with Aspose.Words. Copyright 2003-2022 Aspose Pty Ltd.</w:t>", RegexOptions.Compiled);
+        private static Regex TextHeader = new Regex(@"<w:p><w:r><w:rPr><w:b /><w:color w:val=""FF0000"" /><w:sz w:val=""24"" /></w:rPr><w:t>Evaluation Only. Created with Aspose.Words. Copyright 2003-2022 Aspose Pty Ltd.</w:t></w:r></w:p>", RegexOptions.Compiled);
         private static Regex TextFooter = new Regex("<w:t>This document was truncated here because it was created in the Evaluation Mode.</w:t>", RegexOptions.Compiled);
         
         private void DeleteWatrMarks(string docxPath)

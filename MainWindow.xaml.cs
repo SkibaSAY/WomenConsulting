@@ -216,7 +216,6 @@ namespace WomenConsulting
         private void Window_Closed(object sender, EventArgs e)
         {
             GlobalSettings.LastOpenDirectory = CurrentDirectory;
-            GlobalSettings.Save();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

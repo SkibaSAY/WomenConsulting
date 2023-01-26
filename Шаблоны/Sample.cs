@@ -9,7 +9,7 @@ namespace WomenConsulting
 {
     public static class Sample
     {
-        public static string Directory { get; } = @"..\..\Шаблоны";
+        public static string Directory { get; } = @"Шаблоны";
         public static string FirstTrimestrName { get; } = "1_trimestr.docx";
         public static string FirstTrimestrFullName = Path.Combine(Sample.Directory, Sample.FirstTrimestrName);
 

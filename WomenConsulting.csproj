@@ -200,10 +200,18 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Шаблоны\1_trimestr.docx" />
-    <None Include="Шаблоны\2_trimestr.docx" />
-    <None Include="Шаблоны\3_trimestr.docx" />
-    <None Include="Шаблоны\MalyeSroki.docx" />
+    <None Include="Шаблоны\1_trimestr.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Шаблоны\2_trimestr.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Шаблоны\3_trimestr.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Шаблоны\MalyeSroki.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -222,10 +230,14 @@
     <Resource Include="Спецификация.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Шаблоны\Иконка.png" />
+    <Resource Include="Шаблоны\Иконка.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons8-edit-calendar-96.png" />
+    <Resource Include="icons8-edit-calendar-96.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

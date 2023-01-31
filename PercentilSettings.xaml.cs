@@ -109,5 +109,10 @@ namespace WomenConsulting
         {
             SaveValues();
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            GlobalSettings.Save();
+        }
     }
 }

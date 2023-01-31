@@ -105,16 +105,42 @@ namespace WomenConsulting
 
         private void calculateGestationalTime_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(MainWindow.protocol.generalSettings.dateOfLastMen))
+            if (gestationList.SelectedIndex == 0)
             {
-                gestationalTime_week.Text = "0";
-                gestationalTime_day.Text = "0";
+                if (String.IsNullOrEmpty(MainWindow.protocol.generalSettings.dateOfLastMen))
+                {
+                    gestationalTime_week.Text = "0";
+                    gestationalTime_day.Text = "0";
+                    return;
+                }
+
+                var dateDifference = DateTime.Now - DateTime.Parse(MainWindow.protocol.generalSettings.dateOfLastMen, CultureInfo.CreateSpecificCulture("en-US"));
+                gestationalTime_week.Text = (dateDifference.Days / 7).ToString();
+                gestationalTime_day.Text = (dateDifference.Days - dateDifference.Days / 7 * 7).ToString();
                 return;
             }
+            if(gestationList.SelectedIndex == 1) 
+            {
+                var firstTrimPage1 = MainWindow.protocol.fetuses[0].trimestr1.TrimestrPage;
 
-            var dateDifference = DateTime.Now - DateTime.Parse(MainWindow.protocol.generalSettings.dateOfLastMen, CultureInfo.CreateSpecificCulture("en-US"));
-            gestationalTime_week.Text = (dateDifference.Days / 7).ToString();
-            gestationalTime_day.Text = (dateDifference.Days - dateDifference.Days / 7 * 7).ToString();
+                var firstWeekText = ((TextBox)firstTrimPage1.FindName("gestationalTime_week")).Text;
+                var firstDayText = ((TextBox)firstTrimPage1.FindName("gestationalTime_day")).Text;
+
+                if (String.IsNullOrEmpty(firstWeekText) || String.IsNullOrEmpty(firstDayText))
+                {
+                    gestationalTime_week.Text = "0";
+                    gestationalTime_day.Text = "0";
+                    return;
+                }
+
+                var firstDate = (DatePicker)firstTrimPage1.FindName("dateText");
+
+                var dateDifference = DateTime.Now - DateTime.Parse(firstDate.Text);
+                var difference = dateDifference + TimeSpan.FromDays(int.Parse(firstWeekText) * 7 + int.Parse(firstDayText));
+                gestationalTime_week.Text = (difference.Days / 7).ToString();
+                gestationalTime_day.Text = (difference.Days - difference.Days / 7 * 7).ToString();
+
+            }
         }
     }
 }

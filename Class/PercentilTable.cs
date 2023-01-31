@@ -23,14 +23,37 @@ namespace WomenConsulting
             MassConstB = 0.001492;
             List<int> perc90_Mass = new List<int>();
             List<int> perc10_Mass = new List<int>();
+            List<int> perc5_Mass = new List<int>();
+
             List<int> perc90_BPR = new List<int>();
             List<int> perc10_BPR = new List<int>();
+            List<int> perc5_BPR = new List<int>();
+
             List<int> perc90_DB = new List<int>();
             List<int> perc10_DB = new List<int>();
+            List<int> perc5_DB = new List<int>();
+
             List<int> perc90_OZh = new List<int>();
             List<int> perc10_OZh = new List<int>();
+            List<int> perc5_OZh = new List<int>();
+
             List<int> perc90_DGK = new List<int>();
             List<int> perc10_DGK = new List<int>();
+            List<int> perc5_DGK = new List<int>();
+
+            List<int> perc90_CopchTemSize = new List<int>();
+            List<int> perc10_CopchTemSize = new List<int>();
+            List<int> perc5_CopchTemSize = new List<int>();
+
+            List<int> perc90_PredPlechLength = new List<int>();
+            List<int> perc10_PredPlechLength = new List<int>();
+            List<int> perc5_PredPlechLength = new List<int>();
+
+            List<int> perc90_HipLength = new List<int>();
+            List<int> perc10_HipLength = new List<int>();
+            List<int> perc5_HipLength = new List<int>();
+
+            #region perc_90
             for (int i = 0; i <= 40; i++)
             {
                 perc90_Mass.Add(0);
@@ -197,6 +220,9 @@ namespace WomenConsulting
             perc90_DGK[38] = 101;
             perc90_DGK[39] = 103;
             perc90_DGK[40] = 105;
+            #endregion
+
+            #region perc_10
             for (int i = 0; i <= 40; i++)
             {
                 perc10_Mass.Add(0);
@@ -362,9 +388,30 @@ namespace WomenConsulting
             perc10_DGK[38] = 97;
             perc10_DGK[39] = 99;
             perc10_DGK[40] = 101;
+            #endregion
+
+            #region perc_5
+
+            #endregion
+
             for (int i = 12; i <= 40; i++)
             {
-                Weeks.Add(i, new WeekValues(i, perc10_Mass[i], perc90_Mass[i], perc10_BPR[i], perc90_BPR[i], perc10_DB[i], perc90_DB[i], perc10_OZh[i], perc90_OZh[i], perc10_DGK[i], perc90_DGK[i]));
+                Weeks.Add(
+                    i,
+                    new WeekValues{
+                        WeekNumber = i, 
+                        perc10_Mass = perc10_Mass[i],
+                        perc90_Mass = perc90_Mass[i],
+                        perc10_BPR = perc10_BPR[i],
+                        perc90_BPR = perc90_BPR[i],
+                        perc10_DB = perc10_DB[i],
+                        perc90_DB = perc90_DB[i],
+                        perc10_OZh = perc10_OZh[i],
+                        perc90_OZh = perc90_OZh[i],
+                        perc10_DGK = perc10_DGK[i],
+                        perc90_DGK = perc90_DGK[i] 
+                    }
+                );
             }
         }
 

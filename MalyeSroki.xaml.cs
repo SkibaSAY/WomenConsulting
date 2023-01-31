@@ -42,5 +42,28 @@ namespace WomenConsulting
             if (!Char.IsDigit(e.Text, 0) && !e.Text.StartsWith(",") ||
                 (sender as TextBox).Text.Contains(",") && e.Text.StartsWith(",")) e.Handled = true;
         }
+        private void calculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            int LeftVolume;
+            if (LengthOfLeftOvary.Text == "" || WidthOfLeftOvary.Text == "" || HeightOfLeftOvary.Text == "")
+            {
+                LeftVolume = 0;
+            }
+            else
+            {
+                LeftVolume = int.Parse(LengthOfLeftOvary.Text) * int.Parse(WidthOfLeftOvary.Text) * int.Parse(HeightOfLeftOvary.Text);
+            }
+            VolumeOfLeftOvary.Text = LeftVolume.ToString();
+            int RightVolume;
+            if (LengthOfRightOvary.Text == "" || WidthOfRightOvary.Text == "" || HeightOfRightOvary.Text == "")
+            {
+                RightVolume = 0;
+            }
+            else
+            {
+                RightVolume = int.Parse(LengthOfRightOvary.Text) * int.Parse(WidthOfRightOvary.Text) * int.Parse(HeightOfRightOvary.Text);
+            }
+            VolumeOfRightOvary.Text = RightVolume.ToString();
+        }
     }
 }

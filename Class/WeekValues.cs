@@ -59,13 +59,13 @@ namespace WomenConsulting
         public int perc90_OZh { get; set; }
 
         [DisplayName("Длина плеча(5-й перцентиль)")]
-        public int perc5_DGK { get; set; }
+        public int perc5_DPK { get; set; }
 
         [DisplayName("Длина плеча(10-й перцентиль)")]
-        public int perc10_DGK { get; set; }
+        public int perc10_DPK { get; set; }
 
         [DisplayName("Длина плеча(90-й перцентиль)")]
-        public int perc90_DGK { get; set; }
+        public int perc90_DPK { get; set; }
 
         [DisplayName("Копчико-теменной размер(5-й перцентиль)")]
         public int perc5_CopchTemSize { get; set; }
@@ -86,13 +86,13 @@ namespace WomenConsulting
         public int perc90_PredPlechLength { get; set; }
 
         [DisplayName("Длина костей голени(5-й перцентиль)")]
-        public int perc5_HipLength { get; set; }
+        public int perc5_DKG { get; set; }
 
         [DisplayName("Длина костей голени(10-й перцентиль)")]
-        public int perc10_HipLength { get; set; }
+        public int perc10_DKG { get; set; }
 
         [DisplayName("Длина костей голени(90-й перцентиль)")]
-        public int perc90_HipLength { get; set; }
+        public int perc90_DKG { get; set; }
 
         public WeekValues()
         {
@@ -110,10 +110,10 @@ namespace WomenConsulting
                 $"Бипариетальный размер: {perc10_BPR} - {perc90_BPR}; " +
                 $"Длина бедренной кости: {perc10_DB} - {perc90_DB}; " +
                 $"Окружность живота: {perc10_OZh} - {perc90_OZh}; " +
-                $"Длина плеча: {perc10_DGK} - {perc90_DGK} " +
+                $"Длина плеча: {perc10_DPK} - {perc90_DPK} " +
                 $"Копчико-теменной размер: {perc10_CopchTemSize} - {perc90_CopchTemSize} " +
                 $"Длина костей предплечья: {perc10_PredPlechLength} - {perc90_PredPlechLength} " +
-                $"Длина костей голени: {perc10_HipLength} - {perc90_HipLength}";
+                $"Длина костей голени: {perc10_DKG} - {perc90_DKG}";
         }
     }
 }

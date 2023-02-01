@@ -73,7 +73,7 @@ namespace WomenConsulting
             biparietalDiameterWe.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("BPR", double.Parse(biparietalDiameterMM.Text)).ToString();
             femurLenghtWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DB", double.Parse(femurLenghtMM.Text)).ToString();
             circumferenceWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("OZh", double.Parse(circumferenceMM.Text)).ToString();
-            shoulderLenghtWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DGK", double.Parse(shoulderLenghtMM.Text)).ToString();
+            shoulderLenghtWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DPK", double.Parse(shoulderLenghtMM.Text)).ToString();
         }
     }
 }

@@ -30,8 +30,7 @@ namespace WomenConsulting
         private void calculateButton_Click(object sender, RoutedEventArgs e)
         {
             if (!UserDialog.FetometryGestationFilled(gestationalTime_week.Text, biparietalSize_mm.Text,
-            hipLen_mm.Text, bellyCircle_mm.Text, shoulderLenghtMM.Text, legthForearmMM.Text,
-            legthShinMM.Text))
+            hipLen_mm.Text, bellyCircle_mm.Text))
             {
                 UserDialog.Message("Срок беременности или поля из фетометрии не заполнены. Заполните и повторите попытку, пожалуйста",
                     "Не все данные заполнены");
@@ -76,20 +75,24 @@ namespace WomenConsulting
             shoulderLenghtWeek.Text     = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DPK", double.Parse(shoulderLenghtMM.Text)).ToString();
         }
 
-        private void SetComboBoxSelectedIndex(ComboBox curComboBox, int[] percCorridor, TextBox ourValue)
+        private void SetComboBoxSelectedIndex(ComboBox curComboBox, dynamic percCorridor, TextBox ourValue)
         {
             var currentValue = double.Parse(ourValue.Text);
-            if (currentValue < percCorridor[0])
+            if (currentValue <= percCorridor.percentile5)
+            {
+                curComboBox.SelectedIndex = 0;
+            }
+            else if(percCorridor.percentile5 < currentValue && currentValue <= percCorridor.percentile10)
             {
                 curComboBox.SelectedIndex = 1;
             }
-            else if (currentValue > percCorridor[1])
+            else if (percCorridor.percentile10 < currentValue && currentValue <= percCorridor.percentile90)
             {
                 curComboBox.SelectedIndex = 2;
             }
             else
             {
-                curComboBox.SelectedIndex = 0;
+                curComboBox.SelectedIndex = 3;
             }
         }
 

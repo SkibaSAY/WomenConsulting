@@ -617,17 +617,28 @@ namespace WomenConsulting
                 Weeks.Add(
                     i,
                     new WeekValues{
-                        WeekNumber = i, 
+                        WeekNumber = i,
+                        perc5_Mass = perc5_Mass[i],
                         perc10_Mass = perc10_Mass[i],
                         perc90_Mass = perc90_Mass[i],
+                        perc5_BPR = perc5_BPR[i],
                         perc10_BPR = perc10_BPR[i],
                         perc90_BPR = perc90_BPR[i],
+                        perc5_DB = perc5_DB[i],
                         perc10_DB = perc10_DB[i],
                         perc90_DB = perc90_DB[i],
+                        perc5_OZh = perc5_OZh[i],
                         perc10_OZh = perc10_OZh[i],
                         perc90_OZh = perc90_OZh[i],
+                        perc5_DPK = perc5_DPK[i],
                         perc10_DPK = perc10_DPK[i],
-                        perc90_DPK = perc90_DPK[i] 
+                        perc90_DPK = perc90_DPK[i],
+                        perc5_DKG = perc5_DKG[i],
+                        perc10_DKG = perc10_DPK[i],
+                        perc90_DKG = perc90_DPK[i],
+                        perc5_DPP = perc5_DPP[i],
+                        perc10_DPP = perc10_DPK[i],
+                        perc90_DPP = perc90_DPK[i]
                     }
                 );
             }
@@ -637,17 +648,25 @@ namespace WomenConsulting
         {
             var percentile = new { percentile5 = 0, percentile10 = 0, percentile90 = 0 };
 
-            var ourWeek = Weeks[numberOfWeek];
-            switch (nameOfParameter)
+            WeekValues ourWeek;
+            if (Weeks.ContainsKey(numberOfWeek))
             {
-                case "Mass": return new int[] { ourWeek.perc10_Mass, ourWeek.perc90_Mass };
-                case "BPR": return new int[] { ourWeek.perc10_BPR, ourWeek.perc90_BPR };
-                case "DB": return new int[] { ourWeek.perc10_DB, ourWeek.perc90_DB };
-                case "OZh": return new int[] { ourWeek.perc10_OZh, ourWeek.perc90_OZh };
-                case "DPK": return new int[] { ourWeek.perc10_DPK, ourWeek.perc90_DPK };
-                default:
-                    return new int[] { 0, 0 };
+                ourWeek = Weeks[numberOfWeek];
+                switch (nameOfParameter)
+                {
+                    case "Mass": return new { percentile5 = ourWeek.perc5_Mass, percentile10 = ourWeek.perc10_Mass, percentile90 = ourWeek.perc90_Mass };
+                    case "BPR": return new { percentile5 = ourWeek.perc5_BPR, percentile10 = ourWeek.perc10_BPR, percentile90 = ourWeek.perc90_BPR };
+                    case "DB": return new { percentile5 = ourWeek.perc5_DB, percentile10 = ourWeek.perc10_DB, percentile90 = ourWeek.perc90_DB };
+                    case "OZh": return new { percentile5 = ourWeek.perc5_OZh, percentile10 = ourWeek.perc10_OZh, percentile90 = ourWeek.perc90_OZh };
+                    case "DPK": return new { percentile5 = ourWeek.perc5_DPK, percentile10 = ourWeek.perc10_DPK, percentile90 = ourWeek.perc90_DPK };
+                    default:
+                        return new { percentile5 = 0, percentile10 = 0, percentile90 = 0 };
+                }
             }
+            else
+            {
+                return new { percentile5 = 0, percentile10 = 0, percentile90 = 0 };
+            }      
         }
 
         public Dictionary<string, int[]> GetParameterFromPercentileTableByName(int numberOfWeek, params string[] namesOfParameters)

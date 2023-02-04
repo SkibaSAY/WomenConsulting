@@ -41,19 +41,19 @@ namespace WomenConsulting
             List<int> perc10_DPK = new List<int>();
             List<int> perc5_DPK = new List<int>();
 
-            List<int> perc90_CopchTemSize = new List<int>();
-            List<int> perc10_CopchTemSize = new List<int>();
-            List<int> perc5_CopchTemSize = new List<int>();
+            List<int> perc90_KTR = new List<int>();
+            List<int> perc10_KTR = new List<int>();
+            List<int> perc5_KTR = new List<int>();
 
-            List<int> perc90_PredPlechLength = new List<int>();
-            List<int> perc10_PredPlechLength = new List<int>();
-            List<int> perc5_PredPlechLength = new List<int>();
+            List<int> perc90_DPP = new List<int>();
+            List<int> perc10_DPP = new List<int>();
+            List<int> perc5_DPP = new List<int>();
 
             List<int> perc90_DKG = new List<int>();
             List<int> perc10_DKG = new List<int>();
             List<int> perc5_DKG = new List<int>();
 
-            #region perc_90
+            #region Mass
             for (int i = 0; i <= 40; i++)
             {
                 perc90_Mass.Add(0);
@@ -90,6 +90,66 @@ namespace WomenConsulting
 
             for (int i = 0; i <= 40; i++)
             {
+                perc10_Mass.Add(0);
+            }
+            perc10_Mass[12] = 13;
+            perc10_Mass[13] = 25;
+            perc10_Mass[14] = 37;
+            perc10_Mass[15] = 60;
+            perc10_Mass[16] = 88;
+            perc10_Mass[17] = 130;
+            perc10_Mass[18] = 180;
+            perc10_Mass[19] = 230;
+            perc10_Mass[20] = 290;
+            perc10_Mass[21] = 382;
+            perc10_Mass[22] = 458;
+            perc10_Mass[23] = 552;
+            perc10_Mass[24] = 630;
+            perc10_Mass[25] = 754;
+            perc10_Mass[26] = 870;
+            perc10_Mass[27] = 990;
+            perc10_Mass[28] = 1200;
+            perc10_Mass[29] = 1350;
+            perc10_Mass[30] = 1500;
+            perc10_Mass[31] = 1690;
+            perc10_Mass[32] = 1800;
+            perc10_Mass[33] = 2000;
+            perc10_Mass[34] = 2200;
+            perc10_Mass[35] = 2320;
+            perc10_Mass[36] = 2600;
+            perc10_Mass[37] = 2700;
+            perc10_Mass[38] = 2885;
+            perc10_Mass[39] = 3000;
+            perc10_Mass[40] = 3223;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc5_Mass.Add(0);
+            }
+            perc5_Mass[22] = 470;
+            perc5_Mass[23] = 524;
+            perc5_Mass[24] = 585;
+            perc5_Mass[25] = 654;
+            perc5_Mass[26] = 732;
+            perc5_Mass[27] = 818;
+            perc5_Mass[28] = 915;
+            perc5_Mass[29] = 1021;
+            perc5_Mass[30] = 1138;
+            perc5_Mass[31] = 1265;
+            perc5_Mass[32] = 1401;
+            perc5_Mass[33] = 1547;
+            perc5_Mass[34] = 1700;
+            perc5_Mass[35] = 1860;
+            perc5_Mass[36] = 2024;
+            perc5_Mass[37] = 2190;
+            perc5_Mass[38] = 2355;
+            perc5_Mass[39] = 2516;
+            perc5_Mass[40] = 2670;
+            #endregion
+
+            #region BPR
+            for (int i = 0; i <= 40; i++)
+            {
                 perc90_BPR.Add(0);
             }
             perc90_BPR[12] = 24;
@@ -121,6 +181,74 @@ namespace WomenConsulting
             perc90_BPR[38] = 100;
             perc90_BPR[39] = 102;
             perc90_BPR[40] = 103;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc10_BPR.Add(0);
+            }
+            perc10_BPR[12] = 22;
+            perc10_BPR[13] = 25;
+            perc10_BPR[14] = 28;
+            perc10_BPR[15] = 31;
+            perc10_BPR[16] = 34;
+            perc10_BPR[17] = 38;
+            perc10_BPR[18] = 42;
+            perc10_BPR[19] = 48;
+            perc10_BPR[20] = 50;
+            perc10_BPR[21] = 54;
+            perc10_BPR[22] = 57;
+            perc10_BPR[23] = 61;
+            perc10_BPR[24] = 65;
+            perc10_BPR[25] = 68;
+            perc10_BPR[26] = 71;
+            perc10_BPR[27] = 75;
+            perc10_BPR[28] = 77;
+            perc10_BPR[29] = 80;
+            perc10_BPR[30] = 83;
+            perc10_BPR[31] = 86;
+            perc10_BPR[32] = 88;
+            perc10_BPR[33] = 90;
+            perc10_BPR[34] = 92;
+            perc10_BPR[35] = 94;
+            perc10_BPR[36] = 96;
+            perc10_BPR[37] = 98;
+            perc10_BPR[38] = 99;
+            perc10_BPR[39] = 101;
+            perc10_BPR[40] = 103;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc5_BPR.Add(0);
+            }
+
+            perc5_BPR[16] = 31;
+            perc5_BPR[17] = 34;
+            perc5_BPR[18] = 37;
+            perc5_BPR[19] = 41;
+            perc5_BPR[20] = 43;
+            perc5_BPR[21] = 46;
+            perc5_BPR[22] = 48;
+            perc5_BPR[23] = 52;
+            perc5_BPR[24] = 55;
+            perc5_BPR[25] = 58;
+            perc5_BPR[26] = 61;
+            perc5_BPR[27] = 64;
+            perc5_BPR[28] = 67;
+            perc5_BPR[29] = 70;
+            perc5_BPR[30] = 71;
+            perc5_BPR[31] = 73;
+            perc5_BPR[32] = 75;
+            perc5_BPR[33] = 77;
+            perc5_BPR[34] = 79;
+            perc5_BPR[35] = 81;
+            perc5_BPR[36] = 83;
+            perc5_BPR[37] = 85;
+            perc5_BPR[38] = 86;
+            perc5_BPR[39] = 88;
+            perc5_BPR[40] = 89;
+            #endregion
+
+            #region DB
             for (int i = 0; i <= 40; i++)
             {
                 perc90_DB.Add(0);
@@ -157,6 +285,72 @@ namespace WomenConsulting
 
             for (int i = 0; i <= 40; i++)
             {
+                perc10_DB.Add(0);
+            }
+            perc10_DB[12] = 7;
+            perc10_DB[13] = 10;
+            perc10_DB[14] = 13;
+            perc10_DB[15] = 15;
+            perc10_DB[16] = 17;
+            perc10_DB[17] = 20;
+            perc10_DB[18] = 23;
+            perc10_DB[19] = 26;
+            perc10_DB[20] = 29;
+            perc10_DB[21] = 35;
+            perc10_DB[22] = 37;
+            perc10_DB[23] = 40;
+            perc10_DB[24] = 42;
+            perc10_DB[25] = 46;
+            perc10_DB[26] = 49;
+            perc10_DB[27] = 53;
+            perc10_DB[28] = 54;
+            perc10_DB[29] = 55;
+            perc10_DB[30] = 56;
+            perc10_DB[31] = 59;
+            perc10_DB[32] = 60;
+            perc10_DB[33] = 63;
+            perc10_DB[34] = 64;
+            perc10_DB[35] = 65;
+            perc10_DB[36] = 67;
+            perc10_DB[37] = 68;
+            perc10_DB[38] = 70;
+            perc10_DB[39] = 72;
+            perc10_DB[40] = 74;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc5_DB.Add(0);
+            }
+            perc5_DB[16] = 17;
+            perc5_DB[17] = 20;
+            perc5_DB[18] = 23;
+            perc5_DB[19] = 26;
+            perc5_DB[20] = 29;
+            perc5_DB[21] = 35;
+            perc5_DB[22] = 37;
+            perc5_DB[23] = 40;
+            perc5_DB[24] = 42;
+            perc5_DB[25] = 46;
+            perc5_DB[26] = 49;
+            perc5_DB[27] = 53;
+            perc5_DB[28] = 54;
+            perc5_DB[29] = 55;
+            perc5_DB[30] = 56;
+            perc5_DB[31] = 59;
+            perc5_DB[32] = 60;
+            perc5_DB[33] = 63;
+            perc5_DB[34] = 64;
+            perc5_DB[35] = 65;
+            perc5_DB[36] = 67;
+            perc5_DB[37] = 68;
+            perc5_DB[38] = 70;
+            perc5_DB[39] = 72;
+            perc5_DB[40] = 74;
+            #endregion
+
+            #region Ozh
+            for (int i = 0; i <= 40; i++)
+            {
                 perc90_OZh.Add(0);
             }
             perc90_OZh[12] = 71;
@@ -189,175 +383,6 @@ namespace WomenConsulting
             perc90_OZh[39] = 375;
             perc90_OZh[40] = 380;
 
-            for (int i = 0; i <= 40; i++)
-            {
-                perc90_DPK.Add(0);
-            }
-            perc90_DPK[12] = 25;
-            perc90_DPK[13] = 26;
-            perc90_DPK[14] = 28;
-            perc90_DPK[15] = 30;
-            perc90_DPK[16] = 36;
-            perc90_DPK[17] = 40;
-            perc90_DPK[18] = 43;
-            perc90_DPK[19] = 46;
-            perc90_DPK[20] = 50;
-            perc90_DPK[21] = 52;
-            perc90_DPK[22] = 55;
-            perc90_DPK[23] = 58;
-            perc90_DPK[24] = 62;
-            perc90_DPK[25] = 64;
-            perc90_DPK[26] = 66;
-            perc90_DPK[27] = 71;
-            perc90_DPK[28] = 75;
-            perc90_DPK[29] = 78;
-            perc90_DPK[30] = 81;
-            perc90_DPK[31] = 83;
-            perc90_DPK[32] = 85;
-            perc90_DPK[33] = 87;
-            perc90_DPK[34] = 90;
-            perc90_DPK[35] = 93;
-            perc90_DPK[36] = 96;
-            perc90_DPK[37] = 99;
-            perc90_DPK[38] = 101;
-            perc90_DPK[39] = 103;
-            perc90_DPK[40] = 105;
-
-            //for (int i = 0; i <= 40; i++)
-            //{
-            //    perc90_CopchTemSize.Add(0);
-            //}
-            //perc90_CopchTemSize[12] = ;
-            //perc90_CopchTemSize[13] = ;
-            //perc90_CopchTemSize[14] = ;
-            //perc90_CopchTemSize[15] = ;
-            //perc90_CopchTemSize[16] = ;
-            //perc90_CopchTemSize[17] = ;
-            //perc90_CopchTemSize[18] = ;
-            //perc90_CopchTemSize[19] = ;
-            //perc90_CopchTemSize[20] = ;
-            //perc90_CopchTemSize[21] = ;
-            //perc90_CopchTemSize[22] = ;
-            //perc90_CopchTemSize[23] = ;
-            //perc90_CopchTemSize[24] = ;
-            //perc90_CopchTemSize[25] = ;
-            //perc90_CopchTemSize[26] = ;
-            //perc90_CopchTemSize[27] = ;
-            //perc90_CopchTemSize[28] = ;
-            //perc90_CopchTemSize[29] = ;
-            //perc90_CopchTemSize[30] = ;
-            //perc90_CopchTemSize[31] = ;
-            //perc90_CopchTemSize[32] = ;
-            //perc90_CopchTemSize[33] = ;
-            //perc90_CopchTemSize[34] = ;
-            //perc90_CopchTemSize[35] = ;
-            //perc90_CopchTemSize[36] = ;
-            //perc90_CopchTemSize[37] = ;
-            //perc90_CopchTemSize[38] = ;
-            //perc90_CopchTemSize[39] = ;
-            //perc90_CopchTemSize[40] = ;
-            #endregion
-
-            #region perc_10
-            for (int i = 0; i <= 40; i++)
-            {
-                perc10_Mass.Add(0);
-            }
-            perc10_Mass[12] = 13;
-            perc10_Mass[13] = 25;
-            perc10_Mass[14] = 37;
-            perc10_Mass[15] = 60;
-            perc10_Mass[16] = 88;
-            perc10_Mass[17] = 130;
-            perc10_Mass[18] = 180;
-            perc10_Mass[19] = 230;
-            perc10_Mass[20] = 290;
-            perc10_Mass[21] = 382;
-            perc10_Mass[22] = 458;
-            perc10_Mass[23] = 552;
-            perc10_Mass[24] = 630;
-            perc10_Mass[25] = 754;
-            perc10_Mass[26] = 870;
-            perc10_Mass[27] = 990;
-            perc10_Mass[28] = 1200;
-            perc10_Mass[29] = 1350;
-            perc10_Mass[30] = 1500;
-            perc10_Mass[31] = 1690;
-            perc10_Mass[32] = 1800;
-            perc10_Mass[33] = 2000;
-            perc10_Mass[34] = 2200;
-            perc10_Mass[35] = 2320;
-            perc10_Mass[36] = 2600;
-            perc10_Mass[37] = 2700;
-            perc10_Mass[38] = 2885;
-            perc10_Mass[39] = 3000;
-            perc10_Mass[40] = 3223;
-            for (int i = 0; i <= 40; i++)
-            {
-                perc10_BPR.Add(0);
-            }
-            perc10_BPR[12] = 22;
-            perc10_BPR[13] = 25;
-            perc10_BPR[14] = 28;
-            perc10_BPR[15] = 31;
-            perc10_BPR[16] = 34;
-            perc10_BPR[17] = 38;
-            perc10_BPR[18] = 42;
-            perc10_BPR[19] = 48;
-            perc10_BPR[20] = 50;
-            perc10_BPR[21] = 54;
-            perc10_BPR[22] = 57;
-            perc10_BPR[23] = 61;
-            perc10_BPR[24] = 65;
-            perc10_BPR[25] = 68;
-            perc10_BPR[26] = 71;
-            perc10_BPR[27] = 75;
-            perc10_BPR[28] = 77;
-            perc10_BPR[29] = 80;
-            perc10_BPR[30] = 83;
-            perc10_BPR[31] = 86;
-            perc10_BPR[32] = 88;
-            perc10_BPR[33] = 90;
-            perc10_BPR[34] = 92;
-            perc10_BPR[35] = 94;
-            perc10_BPR[36] = 96;
-            perc10_BPR[37] = 98;
-            perc10_BPR[38] = 99;
-            perc10_BPR[39] = 101;
-            perc10_BPR[40] = 103;
-            for (int i = 0; i <= 40; i++)
-            {
-                perc10_DB.Add(0);
-            }
-            perc10_DB[12] = 7;
-            perc10_DB[13] = 10;
-            perc10_DB[14] = 13;
-            perc10_DB[15] = 15;
-            perc10_DB[16] = 17;
-            perc10_DB[17] = 20;
-            perc10_DB[18] = 23;
-            perc10_DB[19] = 26;
-            perc10_DB[20] = 29;
-            perc10_DB[21] = 35;
-            perc10_DB[22] = 37;
-            perc10_DB[23] = 40;
-            perc10_DB[24] = 42;
-            perc10_DB[25] = 46;
-            perc10_DB[26] = 49;
-            perc10_DB[27] = 53;
-            perc10_DB[28] = 54;
-            perc10_DB[29] = 55;
-            perc10_DB[30] = 56;
-            perc10_DB[31] = 59;
-            perc10_DB[32] = 60;
-            perc10_DB[33] = 63;
-            perc10_DB[34] = 64;
-            perc10_DB[35] = 65;
-            perc10_DB[36] = 67;
-            perc10_DB[37] = 68;
-            perc10_DB[38] = 70;
-            perc10_DB[39] = 72;
-            perc10_DB[40] = 74;
             for (int i = 0; i <= 40; i++)
             {
                 perc10_OZh.Add(0);
@@ -393,6 +418,74 @@ namespace WomenConsulting
             perc10_OZh[40] = 313;
             for (int i = 0; i <= 40; i++)
             {
+                perc5_OZh.Add(0);
+            }
+            perc5_OZh[14] = 74;
+            perc5_OZh[15] = 84;
+            perc5_OZh[16] = 94;
+            perc5_OZh[17] = 105;
+            perc5_OZh[18] = 115;
+            perc5_OZh[19] = 125;
+            perc5_OZh[20] = 135;
+            perc5_OZh[21] = 145;
+            perc5_OZh[22] = 156;
+            perc5_OZh[23] = 166;
+            perc5_OZh[24] = 176;
+            perc5_OZh[25] = 186;
+            perc5_OZh[26] = 195;
+            perc5_OZh[27] = 205;
+            perc5_OZh[28] = 215;
+            perc5_OZh[29] = 224;
+            perc5_OZh[30] = 234;
+            perc5_OZh[31] = 243;
+            perc5_OZh[32] = 252;
+            perc5_OZh[33] = 260;
+            perc5_OZh[34] = 269;
+            perc5_OZh[35] = 277;
+            perc5_OZh[36] = 285;
+            perc5_OZh[37] = 293;
+            perc5_OZh[38] = 300;
+            perc5_OZh[39] = 307;
+            perc5_OZh[40] = 312;
+            #endregion
+
+            #region DPK
+            for (int i = 0; i <= 40; i++)
+            {
+                perc90_DPK.Add(0);
+            }
+            perc90_DPK[12] = 25;
+            perc90_DPK[13] = 26;
+            perc90_DPK[14] = 28;
+            perc90_DPK[15] = 30;
+            perc90_DPK[16] = 36;
+            perc90_DPK[17] = 40;
+            perc90_DPK[18] = 43;
+            perc90_DPK[19] = 46;
+            perc90_DPK[20] = 50;
+            perc90_DPK[21] = 52;
+            perc90_DPK[22] = 55;
+            perc90_DPK[23] = 58;
+            perc90_DPK[24] = 62;
+            perc90_DPK[25] = 64;
+            perc90_DPK[26] = 66;
+            perc90_DPK[27] = 71;
+            perc90_DPK[28] = 75;
+            perc90_DPK[29] = 78;
+            perc90_DPK[30] = 81;
+            perc90_DPK[31] = 83;
+            perc90_DPK[32] = 85;
+            perc90_DPK[33] = 87;
+            perc90_DPK[34] = 90;
+            perc90_DPK[35] = 93;
+            perc90_DPK[36] = 96;
+            perc90_DPK[37] = 99;
+            perc90_DPK[38] = 101;
+            perc90_DPK[39] = 103;
+            perc90_DPK[40] = 105;
+
+            for (int i = 0; i <= 40; i++)
+            {
                 perc10_DPK.Add(0);
             }
             perc10_DPK[12] = 21;
@@ -424,95 +517,6 @@ namespace WomenConsulting
             perc10_DPK[38] = 97;
             perc10_DPK[39] = 99;
             perc10_DPK[40] = 101;
-            #endregion
-
-            #region perc_5
-            for (int i = 0; i <= 40; i++)
-            {
-                perc5_Mass.Add(0);
-            }
-            perc5_Mass[22] = 470;
-            perc5_Mass[23] = 524;
-            perc5_Mass[24] = 585;
-            perc5_Mass[25] = 654;
-            perc5_Mass[26] = 732;
-            perc5_Mass[27] = 818;
-            perc5_Mass[28] = 915;
-            perc5_Mass[29] = 1021;
-            perc5_Mass[30] = 1138;
-            perc5_Mass[31] = 1265;
-            perc5_Mass[32] = 1401;
-            perc5_Mass[33] = 1547;
-            perc5_Mass[34] = 1700;
-            perc5_Mass[35] = 1860;
-            perc5_Mass[36] = 2024;
-            perc5_Mass[37] = 2190;
-            perc5_Mass[38] = 2355;
-            perc5_Mass[39] = 2516;
-            perc5_Mass[40] = 2670;
-
-            for (int i = 0; i <= 40; i++)
-            {
-                perc5_OZh.Add(0);
-            }
-            perc5_OZh[14] = 74;
-            perc5_OZh[15] = 84;
-            perc5_OZh[16] = 94;
-            perc5_OZh[17] = 105;
-            perc5_OZh[18] = 115;
-            perc5_OZh[19] = 125;
-            perc5_OZh[20] = 135;
-            perc5_OZh[21] = 145;
-            perc5_OZh[22] = 156;
-            perc5_OZh[23] = 166;
-            perc5_OZh[24] = 176;
-            perc5_OZh[25] = 186;
-            perc5_OZh[26] = 195;
-            perc5_OZh[27] = 205;
-            perc5_OZh[28] = 215;
-            perc5_OZh[29] = 224;
-            perc5_OZh[30] = 234;
-            perc5_OZh[31] = 243;
-            perc5_OZh[32] = 252;
-            perc5_OZh[33] = 260;
-            perc5_OZh[34] = 269;
-            perc5_OZh[35] = 277;
-            perc5_OZh[36] = 285;
-            perc5_OZh[37] = 293;
-            perc5_OZh[38] = 300;
-            perc5_OZh[39] = 307;
-            perc5_OZh[40] = 312;
-
-            for (int i = 0; i <= 40; i++)
-            {
-                perc5_BPR.Add(0);
-            }
-
-            perc5_BPR[16] = 31;
-            perc5_BPR[17] = 34;
-            perc5_BPR[18] = 37;
-            perc5_BPR[19] = 41;
-            perc5_BPR[20] = 43;
-            perc5_BPR[21] = 46;
-            perc5_BPR[22] = 48;
-            perc5_BPR[23] = 52;
-            perc5_BPR[24] = 55;
-            perc5_BPR[25] = 58;
-            perc5_BPR[26] = 61;
-            perc5_BPR[27] = 64;
-            perc5_BPR[28] = 67;
-            perc5_BPR[29] = 70;
-            perc5_BPR[30] = 71;
-            perc5_BPR[31] = 73;
-            perc5_BPR[32] = 75;
-            perc5_BPR[33] = 77;
-            perc5_BPR[34] = 79;
-            perc5_BPR[35] = 81;
-            perc5_BPR[36] = 83;
-            perc5_BPR[37] = 85;
-            perc5_BPR[38] = 86;
-            perc5_BPR[39] = 88;
-            perc5_BPR[40] = 89;
 
             for (int i = 0; i <= 40; i++)
             {
@@ -543,6 +547,20 @@ namespace WomenConsulting
             perc5_DPK[38] = 60;
             perc5_DPK[39] = 60;
             perc5_DPK[40] = 61;
+            #endregion
+
+            #region DKG
+            for (int i = 0; i <= 40; i++)
+            {
+                perc90_DKG.Add(0);
+            }
+
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc10_DKG.Add(0);
+            }
+
 
             for (int i = 0; i <= 40; i++)
             {
@@ -573,6 +591,25 @@ namespace WomenConsulting
             perc5_DKG[38] = 60;
             perc5_DKG[39] = 61;
             perc5_DKG[40] = 62;
+            #endregion
+
+            #region DPP
+            for (int i = 0; i <= 40; i++)
+            {
+                perc90_DPP.Add(0);
+            }
+
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc10_DPP.Add(0);
+            }
+
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc5_DPP.Add(0);
+            }
             #endregion
 
             for (int i = 12; i <= 40; i++)

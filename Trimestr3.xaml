@@ -90,6 +90,7 @@
                     <RowDefinition Height="50*"></RowDefinition>
                     <RowDefinition Height="50*"></RowDefinition>
                     <RowDefinition Height="50*"></RowDefinition>
+                    <RowDefinition Height="50*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <WrapPanel Margin="5">
@@ -123,9 +124,9 @@
                     <ComboBox x:Name="massPerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>
                     <TextBox x:Name="mass_week" FontSize="16" PreviewTextInput="onlyDigits_PreviewTextInput" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
                     <Label Content="нед" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="45"/>
-
                 </WrapPanel>
-                <WrapPanel Grid.Row="4" Margin="5">
+                <Label Grid.Row="4" Margin="5" Content="*Дополнительные поля:"/>
+                <WrapPanel Grid.Row="5" Margin="5">
                     <Label Content="Длина плеча:" FontSize="16" Width="210" FontWeight="Regular"/>
                     <TextBox x:Name="shoulderLenghtMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="128" Height="23" FontWeight="Regular" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
@@ -133,7 +134,7 @@
                     <TextBox x:Name="shoulderLenghtWeek" PreviewTextInput="onlyDigits_PreviewTextInput" Width="128" Height="23" FontWeight="Regular" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
-                <WrapPanel Grid.Row="5" Margin="5">
+                <WrapPanel Grid.Row="6" Margin="5">
                     <Label Content="Длина костей предплечья:" FontSize="16"  Width="210" FontWeight="Regular"/>
                     <TextBox x:Name="legthForearmMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular"  Width="128" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
@@ -141,7 +142,7 @@
                     <TextBox x:Name="legthForearmWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" Width="128" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
-                <WrapPanel Grid.Row="6" Margin="5">
+                <WrapPanel Grid.Row="7" Margin="5">
                     <Label Content="Длина костей голени:" FontSize="16"  Width="210"  FontWeight="Regular"/>
                     <TextBox x:Name="legthShinMM" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular"  Margin="0,3,0,0" VerticalAlignment="Top" Width="130" HorizontalAlignment="Left"/>
                     <Label Content="мм" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
@@ -149,7 +150,7 @@
                     <TextBox x:Name="legthShinWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="128" Margin="0,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="нед" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular" FontSize="16"/>
                 </WrapPanel>
-                <Grid Grid.Row="7" Margin="5">
+                <Grid Grid.Row="8" Margin="5">
                     <Button x:Name="calculateButton" Content="Рассчитать массу и проверить перцентильные коридоры"  Background="#FFAEB1FF" Padding="20,5" HorizontalAlignment="Center" Click="calculateButton_Click"/>
                 </Grid>
             </Grid>

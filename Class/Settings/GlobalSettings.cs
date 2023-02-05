@@ -63,6 +63,8 @@ namespace WomenConsulting
                 _percentilTbl = value;
             }
         }
+
+        public MillimetrWeekTable _millimetrTbl { get; set; } = new MillimetrWeekTable();
         public _Settings() { 
         }
 

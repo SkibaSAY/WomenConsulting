@@ -24,18 +24,18 @@
             <StackPanel Background="#D9DAFF" Margin="0" >
                 <WrapPanel>
                     <Label Content="Размеры матки:"  FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="uterineLengthMM" PreviewTextInput="rectangleInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="uterineLengthMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                     <Label Content="x" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
-                    <TextBox x:Name="uterinePZRMM" PreviewTextInput="rectangleInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="uterinePZRMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                     <Label Content="x" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
-                    <TextBox x:Name="uterineWidthMM" PreviewTextInput="rectangleInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="uterineWidthMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                     <Label Content="мм" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
                     <ComboBox x:Name="uterneSize" VerticalAlignment="Top" Width="180" Margin="0,3,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <TextBox x:Name="uterineSizeText" Width="250" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="Увеличена до:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="increasedTo" VerticalAlignment="Top" Width="80" Margin="15,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <TextBox x:Name="increasedTo" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="15,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <Label Content="недель" HorizontalAlignment="Left" FontSize="16"  Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
                     <TextBox x:Name="increasedToWeek" VerticalAlignment="Top" Width="500" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                 </WrapPanel>

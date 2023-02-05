@@ -64,7 +64,7 @@ namespace WomenConsulting
             }
         }
 
-        public MillimetrWeekTable _millimetrTbl { get; set; } = new MillimetrWeekTable();
+        public MillimetrWeekTable MillimetrTbl { get; set; } = new MillimetrWeekTable();
         public _Settings() { 
         }
 
@@ -123,6 +123,12 @@ namespace WomenConsulting
         {
             get { return settings.PercentilTbl; }
             set { settings.PercentilTbl = value; }
+        }
+
+        public static MillimetrWeekTable MillimetrTbl
+        {
+            get { return settings.MillimetrTbl; }
+            set { settings.MillimetrTbl = value; }
         }
         public static double ConstA
         {

@@ -65,6 +65,9 @@
                     <TextBox x:Name="gestationKTRDay" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="дней" FontSize="16" Margin="11,0,0,0" FontWeight="Regular"/>
                 </WrapPanel>
+                <StackPanel>
+                    <Button x:Name="calculateTimeButton" Content="Рассчитать сроки"  Background="#FFAEB1FF" Padding="20,5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0" Click="calculateTimeButton_Click"/>
+                </StackPanel>
                 <WrapPanel>
                     <Label Content="Сердцебиение :" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <ComboBox x:Name="heartbeat" FontWeight="Regular" VerticalAlignment="Top" Width="100" Margin="5,5,0,0" HorizontalAlignment="Left"/>

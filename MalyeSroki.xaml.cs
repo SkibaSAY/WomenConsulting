@@ -66,8 +66,29 @@ namespace WomenConsulting
             VolumeOfRightOvary.Text = RightVolume.ToString();
         }
 
-        private void rectangleInput(object sender, TextCompositionEventArgs e)
+        private void calculateTimeButton_Click(object sender, RoutedEventArgs e)
         {
+            if(!String.IsNullOrWhiteSpace(diameterOfFertileEgg.Text))
+            {
+                var weekAndDay = GlobalSettings.MillimetrTbl.GetWeekFromValue(int.Parse(diameterOfFertileEgg.Text), "Egg");
+                gestationOfEggWeek.Text = weekAndDay.weeks.ToString();
+                gestationOfEggDay.Text = weekAndDay.days.ToString();
+            }
+
+            if (!String.IsNullOrWhiteSpace(ktr.Text))
+            {
+                var weekAndDay = GlobalSettings.MillimetrTbl.GetWeekFromValue(int.Parse(ktr.Text), "KTR");
+                gestationKTRWeek.Text = weekAndDay.weeks.ToString();
+                gestationKTRDay.Text = weekAndDay.days.ToString();
+            }
+            if (!String.IsNullOrWhiteSpace(uterineLengthMM.Text)
+                && !String.IsNullOrWhiteSpace(uterinePZRMM.Text)
+                && !String.IsNullOrWhiteSpace(uterineWidthMM.Text))
+            {
+                var size = int.Parse(uterineLengthMM.Text) * int.Parse(uterinePZRMM.Text) * int.Parse(uterineWidthMM.Text);
+                var weekAndDay = GlobalSettings.MillimetrTbl.GetWeekFromValue(size, "Matka");
+                increasedTo.Text = weekAndDay.weeks.ToString();
+            }
 
         }
     }

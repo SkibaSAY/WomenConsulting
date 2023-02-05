@@ -75,20 +75,24 @@ namespace WomenConsulting
             shoulderLenghtWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DPK", double.Parse(shoulderLenghtMM.Text)).ToString();
         }
 
-        private void SetComboBoxSelectedIndex(ComboBox curComboBox, int[] percCorridor, TextBox ourValue)
+        private void SetComboBoxSelectedIndex(ComboBox curComboBox, dynamic percCorridor, TextBox ourValue)
         {
             var currentValue = double.Parse(ourValue.Text);
-            if (currentValue < percCorridor[0])
+            if (currentValue <= percCorridor.percentile5)
+            {
+                curComboBox.SelectedIndex = 0;
+            }
+            else if (percCorridor.percentile5 < currentValue && currentValue <= percCorridor.percentile10)
             {
                 curComboBox.SelectedIndex = 1;
             }
-            else if (currentValue > percCorridor[1])
+            else if (percCorridor.percentile10 < currentValue && currentValue <= percCorridor.percentile90)
             {
                 curComboBox.SelectedIndex = 2;
             }
             else
             {
-                curComboBox.SelectedIndex = 0;
+                curComboBox.SelectedIndex = 3;
             }
         }
         private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)

@@ -24,7 +24,11 @@
             <StackPanel Background="#D9DAFF" Margin="0" >
                 <WrapPanel>
                     <Label Content="Размеры матки:"  FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="uterineSizeMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="uterineLengthMM" PreviewTextInput="rectangleInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <Label Content="x" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="uterinePZRMM" PreviewTextInput="rectangleInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <Label Content="x" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="uterineWidthMM" PreviewTextInput="rectangleInput" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                     <Label Content="мм" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
                     <ComboBox x:Name="uterneSize" VerticalAlignment="Top" Width="180" Margin="0,3,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <TextBox x:Name="uterineSizeText" Width="250" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
@@ -47,18 +51,18 @@
                     <Label Content="Средний диаметр плодного яйца:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="diameterOfFertileEgg" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм,  соответствует сроку -" FontSize="16" Margin="11,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="gestationOfEggWeek" FontWeight="Regular" VerticalAlignment="Top" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="gestationOfEggWeek" FontWeight="Regular" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="недель" FontSize="16" Margin="3,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="gestationOfEggDay" PreviewTextInput="doubleNumber_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="gestationOfEggDay" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="дней" FontSize="16" Margin="11,0,0,0" FontWeight="Regular"/>
                 </WrapPanel>
                 <WrapPanel>
                     <Label Content="КТР:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="ktr" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="80" Margin="10,3,0,0" HorizontalAlignment="Left"/>
                     <Label Content="мм,  соответствует сроку -" FontSize="16" Margin="11,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="gestationKTRWeek" PreviewTextInput="doubleNumber_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="gestationKTRWeek" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="недель" FontSize="16" Margin="11,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="gestationKTRDay" PreviewTextInput="doubleNumber_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="gestationKTRDay" PreviewTextInput="onlyDigits_PreviewTextInput" FontWeight="Regular" VerticalAlignment="Top" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left"/>
                     <Label Content="дней" FontSize="16" Margin="11,0,0,0" FontWeight="Regular"/>
                 </WrapPanel>
                 <WrapPanel>

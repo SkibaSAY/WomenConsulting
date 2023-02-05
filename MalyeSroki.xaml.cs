@@ -65,5 +65,10 @@ namespace WomenConsulting
             }
             VolumeOfRightOvary.Text = RightVolume.ToString();
         }
+
+        private void rectangleInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
     }
 }

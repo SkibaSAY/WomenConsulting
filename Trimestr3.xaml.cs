@@ -36,15 +36,44 @@ namespace WomenConsulting
                     "Не все данные заполнены");
                 return;
             }
-
+            double shoulderLength = 0.0;
+            if (shoulderLenghtMM.Text == "" || double.Parse(shoulderLenghtMM.Text) == 0)
+            {
+                dynamic shoulderPerc = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text),"DPK");
+                shoulderLength = (shoulderPerc.percentile10 + shoulderPerc.percentile90) / 2;
+            }
+            else
+            {
+                shoulderLength = double.Parse(shoulderLenghtMM.Text);
+            }
+            double ForearmLength = 0.0;
+            if (legthForearmMM.Text == "" || double.Parse(legthForearmMM.Text) == 0)
+            {
+                dynamic forearmPerc = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "DPP");
+                ForearmLength = (forearmPerc.percentile10 + forearmPerc.percentile90) / 2;
+            }
+            else
+            {
+                ForearmLength = double.Parse(legthForearmMM.Text);
+            }
+            double ShinLength = 0.0;
+            if (legthShinMM.Text == "" || double.Parse(legthShinMM.Text) == 0)
+            {
+                dynamic shinPerc = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "DGK");
+                ShinLength = (shinPerc.percentile10 + shinPerc.percentile90) / 2;
+            }
+            else
+            {
+                ShinLength = double.Parse(legthShinMM.Text);
+            }
             mass_g.Text = Trimestr.CalculateMass(
                 int.Parse(gestationalTime_week.Text),
                 double.Parse(biparietalSize_mm.Text),
                 double.Parse(hipLen_mm.Text),
                 double.Parse(bellyCircle_mm.Text),
-                double.Parse(shoulderLenghtMM.Text),
-                double.Parse(legthForearmMM.Text),
-                double.Parse(legthShinMM.Text)).ToString();
+                shoulderLength,
+                ForearmLength,
+                ShinLength).ToString();
 
             CalculatePercentileTable();
         }

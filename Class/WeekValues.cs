@@ -99,25 +99,19 @@ namespace WomenConsulting
         #region Доплерометрия
 
         [DisplayName("Средний пульсационный индекс маточных артерий(5-й перцентиль)")]
-        public int perc5_UterineArteries { get; set; }
-        [DisplayName("Средний пульсационный индекс маточных артерий(50-й перцентиль)")]
-        public int perc50_UterineArteries { get; set; }
+        public double perc5_UterineArteries { get; set; }
         [DisplayName("Средний пульсационный индекс маточных артерий(95-й перцентиль)")]
-        public int perc95_UterineArteries { get; set; }
+        public double perc95_UterineArteries { get; set; }
 
         [DisplayName("Пульсационный индекс артерий пуповины(5-й перцентиль)")]
-        public int perc5_UmbilicalArteries { get; set; }
-        [DisplayName("Пульсационный индекс артерий пуповины(50-й перцентиль)")]
-        public int perc50_UmbilicalArteries { get; set; }
+        public double perc5_UmbilicalArteries { get; set; }
         [DisplayName("Пульсационный индекс артерий пуповины(95-й перцентиль)")]
-        public int perc95_UmbilicalArteries { get; set; }
+        public double perc95_UmbilicalArteries { get; set; }
 
         [DisplayName("Церебрально-плацентарное отношение(5-й перцентиль)")]
-        public int perc5_CelebralAttitude { get; set; }
-        [DisplayName("Церебрально-плацентарное отношение(50-й перцентиль)")]
-        public int perc50_CelebralAttitude { get; set; }
+        public double perc5_CelebralAttitude { get; set; }
         [DisplayName("Церебрально-плацентарное отношение(95-й перцентиль)")]
-        public int perc95_CelebralAttitude { get; set; }
+        public double perc95_CelebralAttitude { get; set; }
         #endregion
         public WeekValues()
         {

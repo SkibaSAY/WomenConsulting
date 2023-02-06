@@ -21,6 +21,8 @@ namespace WomenConsulting
         {
             MassConstA = 0.27777;
             MassConstB = 0.001492;
+
+            #region фетометрия
             List<int> perc90_Mass = new List<int>();
             List<int> perc10_Mass = new List<int>();
             List<int> perc5_Mass = new List<int>();
@@ -186,35 +188,31 @@ namespace WomenConsulting
             {
                 perc10_BPR.Add(0);
             }
-            perc10_BPR[12] = 22;
-            perc10_BPR[13] = 25;
-            perc10_BPR[14] = 28;
-            perc10_BPR[15] = 31;
-            perc10_BPR[16] = 34;
-            perc10_BPR[17] = 38;
-            perc10_BPR[18] = 42;
-            perc10_BPR[19] = 48;
-            perc10_BPR[20] = 50;
-            perc10_BPR[21] = 54;
-            perc10_BPR[22] = 57;
-            perc10_BPR[23] = 61;
-            perc10_BPR[24] = 65;
-            perc10_BPR[25] = 68;
-            perc10_BPR[26] = 71;
-            perc10_BPR[27] = 75;
-            perc10_BPR[28] = 77;
-            perc10_BPR[29] = 80;
-            perc10_BPR[30] = 83;
-            perc10_BPR[31] = 86;
-            perc10_BPR[32] = 88;
-            perc10_BPR[33] = 90;
-            perc10_BPR[34] = 92;
-            perc10_BPR[35] = 94;
-            perc10_BPR[36] = 96;
-            perc10_BPR[37] = 98;
-            perc10_BPR[38] = 99;
-            perc10_BPR[39] = 101;
-            perc10_BPR[40] = 103;
+            perc10_BPR[16] = 31;
+            perc10_BPR[17] = 34;
+            perc10_BPR[18] = 37;
+            perc10_BPR[19] = 41;
+            perc10_BPR[20] = 43;
+            perc10_BPR[21] = 46;
+            perc10_BPR[22] = 48;
+            perc10_BPR[23] = 52;
+            perc10_BPR[24] = 55;
+            perc10_BPR[25] = 58;
+            perc10_BPR[26] = 61;
+            perc10_BPR[27] = 64;
+            perc10_BPR[28] = 67;
+            perc10_BPR[29] = 70;
+            perc10_BPR[30] = 71;
+            perc10_BPR[31] = 73;
+            perc10_BPR[32] = 75;
+            perc10_BPR[33] = 77;
+            perc10_BPR[34] = 79;
+            perc10_BPR[35] = 81;
+            perc10_BPR[36] = 83;
+            perc10_BPR[37] = 85;
+            perc10_BPR[38] = 86;
+            perc10_BPR[39] = 88;
+            perc10_BPR[40] = 89;
 
             for (int i = 0; i <= 40; i++)
             {
@@ -612,6 +610,200 @@ namespace WomenConsulting
             }
             #endregion
 
+            #endregion
+
+            #region доплерометрия
+            var perc95_UterineArteries = new List<double>();
+            var perc5_UterineArteries = new List<double>();
+
+            var perc95_UmbilicalArteries = new List<double>();
+            var perc5_UmbilicalArteries = new List<double>();
+
+            var perc95_CelebralAttitude = new List<double>();
+            var perc5_CelebralAttitude = new List<double>();
+
+            #region UterineArteries
+            for (int i = 0; i <= 40; i++)
+            {
+                perc95_UterineArteries.Add(0);
+            }
+            perc95_UterineArteries[11] = 2.7;
+            perc95_UterineArteries[12] = 2.53;
+            perc95_UterineArteries[13] = 2.38;
+            perc95_UterineArteries[14] = 2.24;
+            perc95_UterineArteries[15] = 2.11;
+            perc95_UterineArteries[16] = 1.99;
+            perc95_UterineArteries[17] = 1.88;
+            perc95_UterineArteries[18] = 1.79;
+            perc95_UterineArteries[19] = 1.70;
+            perc95_UterineArteries[20] = 1.61;
+            perc95_UterineArteries[21] = 1.54;
+            perc95_UterineArteries[22] = 1.47;
+            perc95_UterineArteries[23] = 1.41;
+            perc95_UterineArteries[24] = 1.35;
+            perc95_UterineArteries[25] = 1.30;
+            perc95_UterineArteries[26] = 1.25;
+            perc95_UterineArteries[27] = 1.21;
+            perc95_UterineArteries[28] = 1.17;
+            perc95_UterineArteries[29] = 1.13;
+            perc95_UterineArteries[30] = 1.10;
+            perc95_UterineArteries[31] = 1.06;
+            perc95_UterineArteries[32] = 1.04;
+            perc95_UterineArteries[33] = 1.01;
+            perc95_UterineArteries[34] = 0.99;
+            perc95_UterineArteries[35] = 0.97;
+            perc95_UterineArteries[36] = 0.95;
+            perc95_UterineArteries[37] = 0.94;
+            perc95_UterineArteries[38] = 0.92;
+            perc95_UterineArteries[39] = 0.91;
+            perc95_UterineArteries[40] = 0.90;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc5_UterineArteries.Add(0);
+            }
+            perc5_UterineArteries[11] = 1.18;
+            perc5_UterineArteries[12] = 1.11;
+            perc5_UterineArteries[13] = 1.05;
+            perc5_UterineArteries[14] = 0.99;
+            perc5_UterineArteries[15] = 0.94;
+            perc5_UterineArteries[16] = 0.89;
+            perc5_UterineArteries[17] = 0.85;
+            perc5_UterineArteries[18] = 0.81;
+            perc5_UterineArteries[19] = 0.78;
+            perc5_UterineArteries[20] = 0.74;
+            perc5_UterineArteries[21] = 0.71;
+            perc5_UterineArteries[22] = 0.69;
+            perc5_UterineArteries[23] = 0.66;
+            perc5_UterineArteries[24] = 0.64;
+            perc5_UterineArteries[25] = 0.62;
+            perc5_UterineArteries[26] = 0.60;
+            perc5_UterineArteries[27] = 0.58;
+            perc5_UterineArteries[28] = 0.56;
+            perc5_UterineArteries[29] = 0.55;
+            perc5_UterineArteries[30] = 0.54;
+            perc5_UterineArteries[31] = 0.52;
+            perc5_UterineArteries[32] = 0.51;
+            perc5_UterineArteries[33] = 0.50;
+            perc5_UterineArteries[34] = 0.50;
+            perc5_UterineArteries[35] = 0.49;
+            perc5_UterineArteries[36] = 0.48;
+            perc5_UterineArteries[37] = 0.48;
+            perc5_UterineArteries[38] = 0.47;
+            perc5_UterineArteries[39] = 0.47;
+            perc5_UterineArteries[40] = 0.47;
+            #endregion
+
+            #region UmbilicalArteries
+            for (int i = 0; i <= 40; i++)
+            {
+                perc95_UmbilicalArteries.Add(0);
+            }
+            perc95_UmbilicalArteries[20] = 1.553;
+            perc95_UmbilicalArteries[21] = 1.526;
+            perc95_UmbilicalArteries[22] = 1.499;
+            perc95_UmbilicalArteries[23] = 1.472;
+            perc95_UmbilicalArteries[24] = 1.446;
+            perc95_UmbilicalArteries[25] = 1.420;
+            perc95_UmbilicalArteries[26] = 1.395;
+            perc95_UmbilicalArteries[27] = 1.371;
+            perc95_UmbilicalArteries[28] = 1.346;
+            perc95_UmbilicalArteries[29] = 1.322;
+            perc95_UmbilicalArteries[30] = 1.299;
+            perc95_UmbilicalArteries[31] = 1.275;
+            perc95_UmbilicalArteries[32] = 1.252;
+            perc95_UmbilicalArteries[33] = 1.229;
+            perc95_UmbilicalArteries[34] = 1.207;
+            perc95_UmbilicalArteries[35] = 1.184;
+            perc95_UmbilicalArteries[36] = 1.162;
+            perc95_UmbilicalArteries[37] = 1.140;
+            perc95_UmbilicalArteries[38] = 1.118;
+            perc95_UmbilicalArteries[39] = 1.097;
+            perc95_UmbilicalArteries[40] = 1.075;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc5_UmbilicalArteries.Add(0);
+            }
+            perc5_UmbilicalArteries[20] = 0.955;
+            perc5_UmbilicalArteries[21] = 0.939;
+            perc5_UmbilicalArteries[22] = 0.922;
+            perc5_UmbilicalArteries[23] = 0.906;
+            perc5_UmbilicalArteries[24] = 0.889;
+            perc5_UmbilicalArteries[25] = 0.871;
+            perc5_UmbilicalArteries[26] = 0.854;
+            perc5_UmbilicalArteries[27] = 0.836;
+            perc5_UmbilicalArteries[28] = 0.818;
+            perc5_UmbilicalArteries[29] = 0.800;
+            perc5_UmbilicalArteries[30] = 0.782;
+            perc5_UmbilicalArteries[31] = 0.763;
+            perc5_UmbilicalArteries[32] = 0.744;
+            perc5_UmbilicalArteries[33] = 0.725;
+            perc5_UmbilicalArteries[34] = 0.706;
+            perc5_UmbilicalArteries[35] = 0.687;
+            perc5_UmbilicalArteries[36] = 0.668;
+            perc5_UmbilicalArteries[37] = 0.649;
+            perc5_UmbilicalArteries[38] = 0.630;
+            perc5_UmbilicalArteries[39] = 0.610;
+            perc5_UmbilicalArteries[40] = 0.591;
+            #endregion
+
+            #region CelebralAttitude
+            for (int i = 0; i <= 40; i++)
+            {
+                perc95_CelebralAttitude.Add(0);
+            }
+
+            perc95_CelebralAttitude[20] = 1.686;
+            perc95_CelebralAttitude[21] = 1.780;
+            perc95_CelebralAttitude[22] = 1.877;
+            perc95_CelebralAttitude[23] = 1.977;
+            perc95_CelebralAttitude[24] = 2.079;
+            perc95_CelebralAttitude[25] = 2.180;
+            perc95_CelebralAttitude[26] = 2.281;
+            perc95_CelebralAttitude[27] = 2.378;
+            perc95_CelebralAttitude[28] = 2.471;
+            perc95_CelebralAttitude[29] = 2.557;
+            perc95_CelebralAttitude[30] = 2.634;
+            perc95_CelebralAttitude[31] = 2.700;
+            perc95_CelebralAttitude[32] = 2.753;
+            perc95_CelebralAttitude[33] = 2.790;
+            perc95_CelebralAttitude[34] = 2.811;
+            perc95_CelebralAttitude[35] = 2.813;
+            perc95_CelebralAttitude[36] = 2.795;
+            perc95_CelebralAttitude[37] = 2.756;
+            perc95_CelebralAttitude[38] = 2.696;
+            perc95_CelebralAttitude[39] = 2.615;
+            perc95_CelebralAttitude[40] = 2.514;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc5_CelebralAttitude.Add(0);
+            }
+            perc5_CelebralAttitude[20] = 0.872;
+            perc5_CelebralAttitude[21] = 0.934;
+            perc5_CelebralAttitude[22] = 0.996;
+            perc5_CelebralAttitude[23] = 1.059;
+            perc5_CelebralAttitude[24] = 1.121;
+            perc5_CelebralAttitude[25] = 1.181;
+            perc5_CelebralAttitude[26] = 1.237;
+            perc5_CelebralAttitude[27] = 1.290;
+            perc5_CelebralAttitude[28] = 1.336;
+            perc5_CelebralAttitude[29] = 1.375;
+            perc5_CelebralAttitude[30] = 1.406;
+            perc5_CelebralAttitude[31] = 1.426;
+            perc5_CelebralAttitude[32] = 1.436;
+            perc5_CelebralAttitude[33] = 1.434;
+            perc5_CelebralAttitude[34] = 1.419;
+            perc5_CelebralAttitude[35] = 1.392;
+            perc5_CelebralAttitude[36] = 1.353;
+            perc5_CelebralAttitude[37] = 1.301;
+            perc5_CelebralAttitude[38] = 1.239;
+            perc5_CelebralAttitude[39] = 1.167;
+            perc5_CelebralAttitude[40] = 1.086;
+            #endregion
+            #endregion
+
             for (int i = 12; i <= 40; i++)
             {
                 Weeks.Add(
@@ -638,7 +830,13 @@ namespace WomenConsulting
                         perc90_DKG = perc90_DKG[i],
                         perc5_DPP = perc5_DPP[i],
                         perc10_DPP = perc10_DPP[i],
-                        perc90_DPP = perc90_DPP[i]
+                        perc90_DPP = perc90_DPP[i],
+                        perc95_UterineArteries = perc95_UterineArteries[i],
+                        perc5_UterineArteries = perc5_UterineArteries[i],
+                        perc95_UmbilicalArteries = perc95_UmbilicalArteries[i],
+                        perc5_UmbilicalArteries = perc5_UmbilicalArteries[i],
+                        perc95_CelebralAttitude = perc95_CelebralAttitude[i],
+                        perc5_CelebralAttitude = perc5_CelebralAttitude[i],
                     }
                 );
             }

@@ -46,18 +46,24 @@ namespace WomenConsulting
                     break;
             }
         }
-    
+
         public static bool FetometryGestationFilled(
             string gestationalTime_week,
             string biparietalSize_mm,
             string hipLen_mm,
-            string bellyCircle_mm)
+            string bellyCircle_mm,
+            string shoulderLenghtMM,
+            string legthForearmMM,
+            string legthShinMM)
         {
             if ((String.IsNullOrWhiteSpace(gestationalTime_week)) ||
                 int.Parse(gestationalTime_week) == 0 ||
                 (String.IsNullOrWhiteSpace(biparietalSize_mm)) ||
                 (String.IsNullOrWhiteSpace(hipLen_mm)) ||
-                (String.IsNullOrWhiteSpace(bellyCircle_mm)))
+                (String.IsNullOrWhiteSpace(bellyCircle_mm)) ||
+                (String.IsNullOrWhiteSpace(shoulderLenghtMM) ||
+                (String.IsNullOrWhiteSpace(legthForearmMM)) ||
+                (String.IsNullOrWhiteSpace(legthShinMM))))
             {
                 return false;
             }

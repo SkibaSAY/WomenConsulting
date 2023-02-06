@@ -61,7 +61,7 @@ namespace WomenConsulting
         private void calculateButton_Click(object sender, RoutedEventArgs e)
         {
             if (!UserDialog.FetometryGestationFilled(gestationalTime_week.Text,biparietalDiameterMM.Text, 
-                femurLenghtMM.Text,circumferenceMM.Text))
+                femurLenghtMM.Text,circumferenceMM.Text, shoulderLenghtMM.Text, legthForearmMM.Text, legthShinMM.Text))
             {
                 UserDialog.Message("Срок беременности или поля из фетометрии не заполнены. Заполните и повторите попытку, пожалуйста",
                     "Не все данные заполнены");

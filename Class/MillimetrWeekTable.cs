@@ -210,7 +210,7 @@ namespace WomenConsulting
                     {
                         return new WeekAndDay();
                     }
-                    correspondingWeekAndDay = KTRTable[value];
+                    correspondingWeekAndDay = GetMinWeekAndDay(KTRTable, value);
                     break;
                 case "Egg":
                     correspondingWeekAndDay = GetMinWeekAndDay(EggTable, value);

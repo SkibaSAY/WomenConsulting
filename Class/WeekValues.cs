@@ -19,6 +19,7 @@ namespace WomenConsulting
     }
     public class WeekValues
     {
+        #region фетометрия
         [DisplayName("Неделя"),IsEnable(false)]
         public int WeekNumber { get; set; }
 
@@ -93,7 +94,31 @@ namespace WomenConsulting
 
         [DisplayName("Длина костей голени(90-й перцентиль)")]
         public int perc90_DKG { get; set; }
+        #endregion
 
+        #region Доплерометрия
+
+        [DisplayName("Средний пульсационный индекс маточных артерий(5-й перцентиль)")]
+        public int perc5_UterineArteries { get; set; }
+        [DisplayName("Средний пульсационный индекс маточных артерий(50-й перцентиль)")]
+        public int perc50_UterineArteries { get; set; }
+        [DisplayName("Средний пульсационный индекс маточных артерий(95-й перцентиль)")]
+        public int perc95_UterineArteries { get; set; }
+
+        [DisplayName("Пульсационный индекс артерий пуповины(5-й перцентиль)")]
+        public int perc5_UmbilicalArteries { get; set; }
+        [DisplayName("Пульсационный индекс артерий пуповины(50-й перцентиль)")]
+        public int perc50_UmbilicalArteries { get; set; }
+        [DisplayName("Пульсационный индекс артерий пуповины(95-й перцентиль)")]
+        public int perc95_UmbilicalArteries { get; set; }
+
+        [DisplayName("Церебрально-плацентарное отношение(5-й перцентиль)")]
+        public int perc5_CelebralAttitude { get; set; }
+        [DisplayName("Церебрально-плацентарное отношение(50-й перцентиль)")]
+        public int perc50_CelebralAttitude { get; set; }
+        [DisplayName("Церебрально-плацентарное отношение(95-й перцентиль)")]
+        public int perc95_CelebralAttitude { get; set; }
+        #endregion
         public WeekValues()
         {
 

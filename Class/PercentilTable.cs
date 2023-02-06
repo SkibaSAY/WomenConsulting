@@ -634,11 +634,11 @@ namespace WomenConsulting
                         perc10_DPK = perc10_DPK[i],
                         perc90_DPK = perc90_DPK[i],
                         perc5_DKG = perc5_DKG[i],
-                        perc10_DKG = perc10_DPK[i],
-                        perc90_DKG = perc90_DPK[i],
+                        perc10_DKG = perc10_DKG[i],
+                        perc90_DKG = perc90_DKG[i],
                         perc5_DPP = perc5_DPP[i],
-                        perc10_DPP = perc10_DPK[i],
-                        perc90_DPP = perc90_DPK[i]
+                        perc10_DPP = perc10_DPP[i],
+                        perc90_DPP = perc90_DPP[i]
                     }
                 );
             }

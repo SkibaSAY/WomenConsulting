@@ -155,6 +155,34 @@
                 </Grid>
             </Grid>
         </Expander>
+        <Expander Foreground="Black" Header ="Доплерометрия" Background="#FFD9DAFF" FontSize="18" FontWeight="Bold" IsExpanded="True" Margin="0">
+            <StackPanel Background="#D9DAFF" Margin="0,0,0,15">
+                <WrapPanel>
+                    <Label Content="Средний пульсационный индекс маточных артерий:"  FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
+                    <TextBox x:Name="uterineArteriesMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <Label Content="мм" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <ComboBox x:Name="uterineArteriesCombo" Width="120" Margin="5,5,10,5" FontSize="12" VerticalAlignment="Top" Height="25"></ComboBox>
+                    <TextBox x:Name="uterineArteriesWeek" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <Label Content="нед" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                </WrapPanel>
+                <WrapPanel>
+                    <Label Content="Пульсационный индекс артерий пуповины:"  FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
+                    <TextBox x:Name="umbilicalArteriesMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <Label Content="мм" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <ComboBox x:Name="umbilicalArteriesCom" Width="120" Margin="5,5,10,5" FontSize="12" VerticalAlignment="Top" Height="25"></ComboBox>
+                    <TextBox x:Name="umbilicalArteriesWee" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <Label Content="нед" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                </WrapPanel>
+                <WrapPanel>
+                    <Label Content="Церебрально-плацентарное отношение:"  FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
+                    <TextBox x:Name="celebralAttitudeMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <Label Content="мм" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <ComboBox x:Name="celebralAttitudeComb" Width="120" Margin="5,5,10,5" FontSize="12" VerticalAlignment="Top" Height="25"></ComboBox>
+                    <TextBox x:Name="celebralAttitudeWeek" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <Label Content="нед" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
+                </WrapPanel>
+            </StackPanel>
+        </Expander>
         <Expander Foreground="Black" Header ="Расширенный осмотр" Background="#FFAEB1FF" FontSize="18" FontWeight="Bold" IsExpanded="True">
             <StackPanel>
                 <WrapPanel>

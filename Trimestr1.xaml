@@ -135,13 +135,13 @@
                 </Grid>
             </StackPanel>
         </Expander>
-        <Expander Foreground="Black" Header ="Фетометрия" Background="#FFD9DAFF" FontSize="18" FontWeight="Bold" IsExpanded="True" Margin="0">
-            <StackPanel Background="#D9DAFF" Margin="0" >
+        <Expander Foreground="Black" Header ="Доплерометрия" Background="#FFD9DAFF" FontSize="18" FontWeight="Bold" IsExpanded="True" Margin="0">
+            <StackPanel Background="#D9DAFF" Margin="0,0,0,15">
                 <WrapPanel>
                     <Label Content="Средний пульсационный индекс маточных артерий:"  FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
-                    <TextBox x:Name="biparietalDiameterMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
+                    <TextBox x:Name="uterineArteriesMM" PreviewTextInput="onlyDigits_PreviewTextInput" Width="80" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                     <Label Content="мм" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
-                    <TextBox x:Name="biparietalDiameterWe" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
+                    <TextBox x:Name="uterineArteriesWeek" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <Label Content="нед" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
                 </WrapPanel>
             </StackPanel>

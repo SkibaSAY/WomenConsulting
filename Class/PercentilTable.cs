@@ -23,9 +23,12 @@ namespace WomenConsulting
             MassConstB = 0.001492;
 
             #region фетометрия
+            List<int> perc97_Mass = new List<int>();
+            List<int> perc95_Mass = new List<int>();
             List<int> perc90_Mass = new List<int>();
             List<int> perc10_Mass = new List<int>();
             List<int> perc5_Mass = new List<int>();
+            List<int> perc3_Mass = new List<int>();
 
             List<int> perc90_BPR = new List<int>();
             List<int> perc10_BPR = new List<int>();
@@ -35,9 +38,12 @@ namespace WomenConsulting
             List<int> perc10_DB = new List<int>();
             List<int> perc5_DB = new List<int>();
 
+            List<int> perc97_OZh = new List<int>();
+            List<int> perc95_OZh = new List<int>();
             List<int> perc90_OZh = new List<int>();
             List<int> perc10_OZh = new List<int>();
             List<int> perc5_OZh = new List<int>();
+            List<int> perc3_OZh = new List<int>();
 
             List<int> perc90_DPK = new List<int>();
             List<int> perc10_DPK = new List<int>();
@@ -56,6 +62,54 @@ namespace WomenConsulting
             List<int> perc5_DKG = new List<int>();
 
             #region Mass
+            for (int i = 0; i <= 40; i++)
+            {
+                perc97_Mass.Add(0);
+            }
+            perc97_Mass[22] = 607;
+            perc97_Mass[23] = 695;
+            perc97_Mass[24] = 796;
+            perc97_Mass[25] = 913;
+            perc97_Mass[26] = 1048;
+            perc97_Mass[27] = 1202;
+            perc97_Mass[28] = 1375;
+            perc97_Mass[29] = 1569;
+            perc97_Mass[30] = 1783;
+            perc97_Mass[31] = 2016;
+            perc97_Mass[32] = 2266;
+            perc97_Mass[33] = 2529;
+            perc97_Mass[34] = 2800;
+            perc97_Mass[35] = 3071;
+            perc97_Mass[36] = 3335;
+            perc97_Mass[37] = 3582;
+            perc97_Mass[38] = 3799;
+            perc97_Mass[39] = 3976;
+            perc97_Mass[40] = 4101;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc95_Mass.Add(0);
+            }
+            perc95_Mass[22] = 596;
+            perc95_Mass[23] = 680;
+            perc95_Mass[24] = 778;
+            perc95_Mass[25] = 891;
+            perc95_Mass[26] = 1020;
+            perc95_Mass[27] = 1168;
+            perc95_Mass[28] = 1335;
+            perc95_Mass[29] = 1521;
+            perc95_Mass[30] = 1728;
+            perc95_Mass[31] = 1953;
+            perc95_Mass[32] = 2195;
+            perc95_Mass[33] = 2450;
+            perc95_Mass[34] = 2713;
+            perc95_Mass[35] = 2978;
+            perc95_Mass[36] = 3237;
+            perc95_Mass[37] = 3480;
+            perc95_Mass[38] = 3697;
+            perc95_Mass[39] = 3876;
+            perc95_Mass[40] = 4006;
+
             for (int i = 0; i <= 40; i++)
             {
                 perc90_Mass.Add(0);
@@ -147,6 +201,30 @@ namespace WomenConsulting
             perc5_Mass[38] = 2355;
             perc5_Mass[39] = 2516;
             perc5_Mass[40] = 2670;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc3_Mass.Add(0);
+            }
+            perc3_Mass[22] = 463;
+            perc3_Mass[23] = 516;
+            perc3_Mass[24] = 575;
+            perc3_Mass[25] = 641;
+            perc3_Mass[26] = 716;
+            perc3_Mass[27] = 800;
+            perc3_Mass[28] = 892;
+            perc3_Mass[29] = 994;
+            perc3_Mass[30] = 1106;
+            perc3_Mass[31] = 1227;
+            perc3_Mass[32] = 1357;
+            perc3_Mass[33] = 1495;
+            perc3_Mass[34] = 1641;
+            perc3_Mass[35] = 1792;
+            perc3_Mass[36] = 1948;
+            perc3_Mass[37] = 2106;
+            perc3_Mass[38] = 2265;
+            perc3_Mass[39] = 2422;
+            perc3_Mass[40] = 2574;
             #endregion
 
             #region BPR
@@ -154,12 +232,9 @@ namespace WomenConsulting
             {
                 perc90_BPR.Add(0);
             }
-            perc90_BPR[12] = 24;
-            perc90_BPR[13] = 27;
-            perc90_BPR[14] = 30;
-            perc90_BPR[15] = 33;
+
             perc90_BPR[16] = 37;
-            perc90_BPR[17] = 41;
+            perc90_BPR[17] = 42;
             perc90_BPR[18] = 47;
             perc90_BPR[19] = 49;
             perc90_BPR[20] = 53;
@@ -218,29 +293,30 @@ namespace WomenConsulting
             {
                 perc5_BPR.Add(0);
             }
-
-            perc5_BPR[16] = 31;
-            perc5_BPR[17] = 34;
-            perc5_BPR[18] = 37;
-            perc5_BPR[19] = 41;
-            perc5_BPR[20] = 43;
-            perc5_BPR[21] = 46;
-            perc5_BPR[22] = 48;
-            perc5_BPR[23] = 52;
-            perc5_BPR[24] = 55;
-            perc5_BPR[25] = 58;
-            perc5_BPR[26] = 61;
-            perc5_BPR[27] = 64;
-            perc5_BPR[28] = 67;
-            perc5_BPR[29] = 70;
-            perc5_BPR[30] = 71;
-            perc5_BPR[31] = 73;
-            perc5_BPR[32] = 75;
-            perc5_BPR[33] = 77;
-            perc5_BPR[34] = 79;
-            perc5_BPR[35] = 81;
-            perc5_BPR[36] = 83;
-            perc5_BPR[37] = 85;
+            perc5_BPR[14] = 18;
+            perc5_BPR[15] = 22;
+            perc5_BPR[16] = 26;
+            perc5_BPR[17] = 29;
+            perc5_BPR[18] = 32;
+            perc5_BPR[19] = 36;
+            perc5_BPR[20] = 39;
+            perc5_BPR[21] = 42;
+            perc5_BPR[22] = 45;
+            perc5_BPR[23] = 48;
+            perc5_BPR[24] = 51;
+            perc5_BPR[25] = 53;
+            perc5_BPR[26] = 56;
+            perc5_BPR[27] = 59;
+            perc5_BPR[28] = 62;
+            perc5_BPR[29] = 64;
+            perc5_BPR[30] = 67;
+            perc5_BPR[31] = 69;
+            perc5_BPR[32] = 72;
+            perc5_BPR[33] = 74;
+            perc5_BPR[34] = 76;
+            perc5_BPR[35] = 79;
+            perc5_BPR[36] = 81;
+            perc5_BPR[37] = 83;
             perc5_BPR[38] = 86;
             perc5_BPR[39] = 88;
             perc5_BPR[40] = 89;
@@ -319,34 +395,100 @@ namespace WomenConsulting
             {
                 perc5_DB.Add(0);
             }
-            perc5_DB[16] = 17;
-            perc5_DB[17] = 20;
-            perc5_DB[18] = 23;
-            perc5_DB[19] = 26;
-            perc5_DB[20] = 29;
-            perc5_DB[21] = 35;
-            perc5_DB[22] = 37;
-            perc5_DB[23] = 40;
-            perc5_DB[24] = 42;
-            perc5_DB[25] = 46;
-            perc5_DB[26] = 49;
-            perc5_DB[27] = 53;
-            perc5_DB[28] = 54;
-            perc5_DB[29] = 55;
-            perc5_DB[30] = 56;
-            perc5_DB[31] = 59;
-            perc5_DB[32] = 60;
-            perc5_DB[33] = 63;
-            perc5_DB[34] = 64;
-            perc5_DB[35] = 65;
-            perc5_DB[36] = 67;
-            perc5_DB[37] = 68;
-            perc5_DB[38] = 70;
-            perc5_DB[39] = 72;
-            perc5_DB[40] = 74;
+            perc5_DB[14] = 8;
+            perc5_DB[15] = 10;
+            perc5_DB[16] = 13;
+            perc5_DB[17] = 16;
+            perc5_DB[18] = 18;
+            perc5_DB[19] = 21;
+            perc5_DB[20] = 23;
+            perc5_DB[21] = 26;
+            perc5_DB[22] = 28;
+            perc5_DB[23] = 31;
+            perc5_DB[24] = 33;
+            perc5_DB[25] = 36;
+            perc5_DB[26] = 38;
+            perc5_DB[27] = 40;
+            perc5_DB[28] = 43;
+            perc5_DB[29] = 45;
+            perc5_DB[30] = 47;
+            perc5_DB[31] = 50;
+            perc5_DB[32] = 52;
+            perc5_DB[33] = 54;
+            perc5_DB[34] = 57;
+            perc5_DB[35] = 59;
+            perc5_DB[36] = 61;
+            perc5_DB[37] = 63;
+            perc5_DB[38] = 65;
+            perc5_DB[39] = 68;
+            perc5_DB[40] = 70;
             #endregion
 
             #region Ozh
+            for (int i = 0; i <= 40; i++)
+            {
+                perc97_OZh.Add(0);
+            }
+            perc97_OZh[14] = 88;
+            perc97_OZh[15] = 101;
+            perc97_OZh[16] = 113;
+            perc97_OZh[17] = 126;
+            perc97_OZh[18] = 138;
+            perc97_OZh[19] = 150;
+            perc97_OZh[20] = 162;
+            perc97_OZh[21] = 174;
+            perc97_OZh[22] = 186;
+            perc97_OZh[23] = 197;
+            perc97_OZh[24] = 209;
+            perc97_OZh[25] = 221;
+            perc97_OZh[26] = 232;
+            perc97_OZh[27] = 243;
+            perc97_OZh[28] = 255;
+            perc97_OZh[29] = 266;
+            perc97_OZh[30] = 277;
+            perc97_OZh[31] = 288;
+            perc97_OZh[32] = 300;
+            perc97_OZh[33] = 311;
+            perc97_OZh[34] = 322;
+            perc97_OZh[35] = 333;
+            perc97_OZh[36] = 345;
+            perc97_OZh[37] = 356;
+            perc97_OZh[38] = 368;
+            perc97_OZh[39] = 380;
+            perc97_OZh[40] = 392;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc95_OZh.Add(0);
+            }
+            perc95_OZh[14] = 87;
+            perc95_OZh[15] = 100;
+            perc95_OZh[16] = 112;
+            perc95_OZh[17] = 124;
+            perc95_OZh[18] = 136;
+            perc95_OZh[19] = 148;
+            perc95_OZh[20] = 160;
+            perc95_OZh[21] = 172;
+            perc95_OZh[22] = 184;
+            perc95_OZh[23] = 195;
+            perc95_OZh[24] = 207;
+            perc95_OZh[25] = 218;
+            perc95_OZh[26] = 230;
+            perc95_OZh[27] = 241;
+            perc95_OZh[28] = 252;
+            perc95_OZh[29] = 263;
+            perc95_OZh[30] = 274;
+            perc95_OZh[31] = 285;
+            perc95_OZh[32] = 296;
+            perc95_OZh[33] = 307;
+            perc95_OZh[34] = 319;
+            perc95_OZh[35] = 330;
+            perc95_OZh[36] = 341;
+            perc95_OZh[37] = 352;
+            perc95_OZh[38] = 364;
+            perc95_OZh[39] = 375;
+            perc95_OZh[40] = 387;
+
             for (int i = 0; i <= 40; i++)
             {
                 perc90_OZh.Add(0);
@@ -445,6 +587,38 @@ namespace WomenConsulting
             perc5_OZh[38] = 300;
             perc5_OZh[39] = 307;
             perc5_OZh[40] = 312;
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc3_OZh.Add(0);
+            }
+            perc3_OZh[14] = 73;
+            perc3_OZh[15] = 83;
+            perc3_OZh[16] = 93;
+            perc3_OZh[17] = 103;
+            perc3_OZh[18] = 113;
+            perc3_OZh[19] = 123;
+            perc3_OZh[20] = 133;
+            perc3_OZh[21] = 143;
+            perc3_OZh[22] = 154;
+            perc3_OZh[23] = 163;
+            perc3_OZh[24] = 173;
+            perc3_OZh[25] = 183;
+            perc3_OZh[26] = 193;
+            perc3_OZh[27] = 203;
+            perc3_OZh[28] = 212;
+            perc3_OZh[29] = 221;
+            perc3_OZh[30] = 231;
+            perc3_OZh[31] = 240;
+            perc3_OZh[32] = 248;
+            perc3_OZh[33] = 257;
+            perc3_OZh[34] = 265;
+            perc3_OZh[35] = 273;
+            perc3_OZh[36] = 281;
+            perc3_OZh[37] = 288;
+            perc3_OZh[38] = 295;
+            perc3_OZh[39] = 302;
+            perc3_OZh[40] = 308;
             #endregion
 
             #region DPK
@@ -810,18 +984,24 @@ namespace WomenConsulting
                     i,
                     new WeekValues{
                         WeekNumber = i,
+                        perc3_Mass = perc3_Mass[i],
                         perc5_Mass = perc5_Mass[i],
                         perc10_Mass = perc10_Mass[i],
                         perc90_Mass = perc90_Mass[i],
+                        perc95_Mass = perc95_Mass[i],
+                        perc97_Mass = perc97_Mass[i],
                         perc5_BPR = perc5_BPR[i],
                         perc10_BPR = perc10_BPR[i],
                         perc90_BPR = perc90_BPR[i],
                         perc5_DB = perc5_DB[i],
                         perc10_DB = perc10_DB[i],
                         perc90_DB = perc90_DB[i],
+                        perc3_OZh = perc3_OZh[i],
                         perc5_OZh = perc5_OZh[i],
                         perc10_OZh = perc10_OZh[i],
                         perc90_OZh = perc90_OZh[i],
+                        perc95_OZh = perc95_OZh[i],
+                        perc97_OZh = perc97_OZh[i],
                         perc5_DPK = perc5_DPK[i],
                         perc10_DPK = perc10_DPK[i],
                         perc90_DPK = perc90_DPK[i],

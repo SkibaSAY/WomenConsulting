@@ -23,6 +23,8 @@ namespace WomenConsulting
         [DisplayName("Неделя"),IsEnable(false)]
         public int WeekNumber { get; set; }
 
+        [DisplayName("Масса(3-й перцентиль)")]
+        public int perc3_Mass { get; set; }
         [DisplayName("Масса(5-й перцентиль)")]
         public int perc5_Mass { get; set; }
 
@@ -31,6 +33,12 @@ namespace WomenConsulting
 
         [DisplayName("Масса(90-й перцентиль)")]
         public int perc90_Mass { get; set; }
+
+        [DisplayName("Масса(95-й перцентиль)")]
+        public int perc95_Mass { get; set; }
+
+        [DisplayName("Масса(97-й перцентиль)")]
+        public int perc97_Mass { get; set; }
 
         [DisplayName("Бипариетальный размер(5-й перцентиль)")]
         public int perc5_BPR { get; set; }
@@ -50,6 +58,8 @@ namespace WomenConsulting
         [DisplayName("Длина бедренной кости(90-й перцентиль)")]
         public int perc90_DB { get; set; }
 
+        [DisplayName("Окружность живота(3-й перцентиль)")]
+        public int perc3_OZh { get; set; }
         [DisplayName("Окружность живота(5-й перцентиль)")]
         public int perc5_OZh { get; set; }
 
@@ -58,6 +68,12 @@ namespace WomenConsulting
 
         [DisplayName("Окружность живота(90-й перцентиль)")]
         public int perc90_OZh { get; set; }
+
+        [DisplayName("Окружность живота(95-й перцентиль)")]
+        public int perc95_OZh { get; set; }
+
+        [DisplayName("Окружность живота(97-й перцентиль)")]
+        public int perc97_OZh { get; set; }
 
         [DisplayName("Длина плеча(5-й перцентиль)")]
         public int perc5_DPK { get; set; }

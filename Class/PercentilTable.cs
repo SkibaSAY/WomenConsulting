@@ -1032,11 +1032,11 @@ namespace WomenConsulting
                 ourWeek = Weeks[numberOfWeek];
                 switch (nameOfParameter)
                 {
-                    case "Mass": return new { percentile5 = ourWeek.perc5_Mass, percentile10 = ourWeek.perc10_Mass, percentile90 = ourWeek.perc90_Mass };
-                    case "BPR": return new { percentile5 = ourWeek.perc5_BPR, percentile10 = ourWeek.perc10_BPR, percentile90 = ourWeek.perc90_BPR };
-                    case "DB": return new { percentile5 = ourWeek.perc5_DB, percentile10 = ourWeek.perc10_DB, percentile90 = ourWeek.perc90_DB };
-                    case "OZh": return new { percentile5 = ourWeek.perc5_OZh, percentile10 = ourWeek.perc10_OZh, percentile90 = ourWeek.perc90_OZh };
-                    case "DPK": return new { percentile5 = ourWeek.perc5_DPK, percentile10 = ourWeek.perc10_DPK, percentile90 = ourWeek.perc90_DPK };
+                    case "Mass": return new { percentile3 = ourWeek.perc3_Mass, percentile5 = ourWeek.perc5_Mass, percentile10 = ourWeek.perc10_Mass, percentile90 = ourWeek.perc90_Mass, percentile95 = ourWeek.perc95_Mass, percentile97 = ourWeek.perc97_Mass };
+                    case "BPR": return new { percentile3 = -1, percentile5 = ourWeek.perc5_BPR, percentile10 = ourWeek.perc10_BPR, percentile90 = ourWeek.perc90_BPR, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
+                    case "DB": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DB, percentile10 = ourWeek.perc10_DB, percentile90 = ourWeek.perc90_DB, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
+                    case "OZh": return new { percentile3 = ourWeek.perc3_OZh, percentile5 = ourWeek.perc5_OZh, percentile10 = ourWeek.perc10_OZh, percentile90 = ourWeek.perc90_OZh, percentile95 = ourWeek.perc95_OZh, percentile97 = ourWeek.perc97_OZh };
+                    case "DPK": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DPK, percentile10 = ourWeek.perc10_DPK, percentile90 = ourWeek.perc90_DPK, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
                     default:
                         return new { percentile5 = 0, percentile10 = 0, percentile90 = 0 };
                 }

@@ -78,7 +78,11 @@ namespace WomenConsulting
         private void SetComboBoxSelectedIndex(ComboBox curComboBox, dynamic percCorridor, TextBox ourValue)
         {
             var currentValue = double.Parse(ourValue.Text);
-            if (currentValue <= percCorridor.percentile5)
+            if (currentValue <= percCorridor.percentile3)
+            {
+                curComboBox.SelectedIndex = 5;
+            }
+            else if (currentValue <= percCorridor.percentile5)
             {
                 curComboBox.SelectedIndex = 0;
             }
@@ -90,9 +94,17 @@ namespace WomenConsulting
             {
                 curComboBox.SelectedIndex = 2;
             }
-            else
+            else if (percCorridor.percentile90 < currentValue && currentValue <= percCorridor.percentile95)
             {
                 curComboBox.SelectedIndex = 3;
+            }
+            else if (percCorridor.percentile95 < currentValue && currentValue <= percCorridor.percentile97)
+            {
+                curComboBox.SelectedIndex = 4;
+            }
+            else if (percCorridor.percentile97 < currentValue)
+            {
+                curComboBox.SelectedIndex = 6;
             }
         }
 

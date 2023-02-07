@@ -125,7 +125,7 @@
                 </Grid.RowDefinitions>
                 
                 <WrapPanel Margin="5">
-                    <Label Content="Бипариетарный размер" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
+                    <Label Content="Бипариетальный размер" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="210"/>
                     <TextBox x:Name="biparietalSize_mm" FontSize="16" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128" PreviewTextInput="onlyDigits_PreviewTextInput"/>
                     <Label Content="мм" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
                     <ComboBox x:Name="biparietalSizePerc" Width="120" Margin="5,0,10,5" FontSize="12" VerticalAlignment="Top"></ComboBox>

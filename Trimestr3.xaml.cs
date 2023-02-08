@@ -204,5 +204,49 @@ namespace WomenConsulting
             }
 
         }
+
+        private void calculateDoplerometryButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(uterineArteriesMM.Text)
+                || String.IsNullOrWhiteSpace(umbilicalArteriesMM.Text)
+                || String.IsNullOrWhiteSpace(celebralAttitudeMM.Text))
+            {
+                UserDialog.Message("Срок беременности или поля из доплерометрии не заполнены. Заполните и повторите попытку, пожалуйста",
+    "Не все данные заполнены");
+                return;
+            }
+
+            //заполнили комбобоксы к параметрам
+            var ourNormUterine = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "Uterine");
+            SetComboBoxDoplerometrySelectedIndex(uterineArteriesCombo, ourNormUterine, uterineArteriesMM);
+
+            var ourNormUmbilical = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "Umbilical");
+            SetComboBoxDoplerometrySelectedIndex(umbilicalArteriesCom, ourNormUmbilical, umbilicalArteriesMM);
+
+            var ourNormCelebral = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "Celebral");
+            SetComboBoxDoplerometrySelectedIndex(celebralAttitudeComb, ourNormCelebral, celebralAttitudeMM);
+
+            //заполнили значения недели по значению параметра
+            uterineArteriesWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("Uterine", double.Parse(uterineArteriesMM.Text)).ToString();
+            umbilicalArteriesWee.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("Umbilical", double.Parse(umbilicalArteriesMM.Text)).ToString();
+        }
+
+        private void SetComboBoxDoplerometrySelectedIndex(ComboBox curComboBox, dynamic percCorridor, TextBox ourValue)
+        {
+            var currentValue = double.Parse(ourValue.Text);
+            if (currentValue <= percCorridor.percentile5)
+            {
+                curComboBox.SelectedIndex = 0;
+            }
+            else if (currentValue <= percCorridor.percentile95)
+            {
+                curComboBox.SelectedIndex = 1;
+            }
+            else
+            {
+                curComboBox.SelectedIndex = 2;
+            }
+
+        }
     }
 }

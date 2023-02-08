@@ -181,6 +181,9 @@
                     <TextBox x:Name="celebralAttitudeWeek" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="0,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <Label Content="нед" HorizontalAlignment="Left"  FontSize="16" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Regular"/>
                 </WrapPanel>
+                <Grid Margin="15">
+                    <Button x:Name="calculateDoplerometryButton" Content="Рассчитать срок"  Background="#FFAEB1FF" Padding="20,5" HorizontalAlignment="Center" FontWeight="Normal" FontSize="16" Click="calculateDoplerometryButton_Click"/>
+                </Grid>
             </StackPanel>
         </Expander>
         <Expander Foreground="Black" Header ="Расширенный осмотр" Background="#FFAEB1FF" FontSize="18" FontWeight="Bold" IsExpanded="True">

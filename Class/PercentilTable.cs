@@ -724,6 +724,35 @@ namespace WomenConsulting
             perc90_DKG[39] = 71;
             perc90_DKG[40] = 72;
 
+            for (int i = 0; i <= 40; i++)
+            {
+                perc10_DKG.Add(0);
+            }
+            perc10_DKG[16] = 15;
+            perc10_DKG[17] = 17;
+            perc10_DKG[18] = 20;
+            perc10_DKG[19] = 23;
+            perc10_DKG[20] = 26;
+            perc10_DKG[21] = 29;
+            perc10_DKG[22] = 31;
+            perc10_DKG[23] = 34;
+            perc10_DKG[24] = 36;
+            perc10_DKG[25] = 38;
+            perc10_DKG[26] = 41;
+            perc10_DKG[27] = 43;
+            perc10_DKG[28] = 45;
+            perc10_DKG[29] = 47;
+            perc10_DKG[30] = 49;
+            perc10_DKG[31] = 50;
+            perc10_DKG[32] = 51;
+            perc10_DKG[33] = 53;
+            perc10_DKG[34] = 55;
+            perc10_DKG[35] = 56;
+            perc10_DKG[36] = 57;
+            perc10_DKG[37] = 59;
+            perc10_DKG[38] = 60;
+            perc10_DKG[39] = 61;
+            perc10_DKG[40] = 62;
 
             for (int i = 0; i <= 40; i++)
             {
@@ -754,36 +783,6 @@ namespace WomenConsulting
             perc5_DKG[38] = 55;
             perc5_DKG[39] = 56;
             perc5_DKG[40] = 57;
-
-            for (int i = 0; i <= 40; i++)
-            {
-                perc10_DKG.Add(0);
-            }
-            perc10_DKG[16] = 15;
-            perc10_DKG[17] = 17;
-            perc10_DKG[18] = 20;
-            perc10_DKG[19] = 23;
-            perc10_DKG[20] = 26;
-            perc10_DKG[21] = 29;
-            perc10_DKG[22] = 31;
-            perc10_DKG[23] = 34;
-            perc10_DKG[24] = 36;
-            perc10_DKG[25] = 38;
-            perc10_DKG[26] = 41;
-            perc10_DKG[27] = 43;
-            perc10_DKG[28] = 45;
-            perc10_DKG[29] = 47;
-            perc10_DKG[30] = 49;
-            perc10_DKG[31] = 50;
-            perc10_DKG[32] = 51;
-            perc10_DKG[33] = 53;
-            perc10_DKG[34] = 55;
-            perc10_DKG[35] = 56;
-            perc10_DKG[36] = 57;
-            perc10_DKG[37] = 59;
-            perc10_DKG[38] = 60;
-            perc10_DKG[39] = 61;
-            perc10_DKG[40] = 62;
             #endregion
 
             #region DPP
@@ -1060,6 +1059,10 @@ namespace WomenConsulting
                     case "DPK": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DPK, percentile10 = ourWeek.perc10_DPK, percentile90 = ourWeek.perc90_DPK, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
                     case "DPP": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DPP, percentile10 = ourWeek.perc10_DPP, percentile90 = ourWeek.perc90_DPP, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
                     case "DKG": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DKG, percentile10 = ourWeek.perc10_DKG, percentile90 = ourWeek.perc90_DKG, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
+
+                    case "Uterine": return new { percentile5 = ourWeek.perc5_UterineArteries, percentile95 = ourWeek.perc95_UterineArteries };
+                    case "Umbilical": return new { percentile5 = ourWeek.perc5_UmbilicalArteries, percentile95 = ourWeek.perc95_UmbilicalArteries };
+                    case "Celebral": return new { percentile5 = ourWeek.perc5_CelebralAttitude, percentile95 = ourWeek.perc95_CelebralAttitude };
                     default:
                         break;
                 }
@@ -1103,6 +1106,15 @@ namespace WomenConsulting
                     break;
                 case "DKG":
                     ourWeek = Weeks.Where(week => week.Value.perc10_DKG <= valueOfParameter && week.Value.perc90_DKG >= valueOfParameter).FirstOrDefault();
+                    break;
+                case "Uterine":
+                    ourWeek = Weeks.Where(week => week.Value.perc5_UterineArteries <= valueOfParameter && week.Value.perc95_UterineArteries >= valueOfParameter).FirstOrDefault();
+                    break;
+                case "Umbilical":
+                    ourWeek = Weeks.Where(week => week.Value.perc5_UmbilicalArteries <= valueOfParameter && week.Value.perc95_UmbilicalArteries >= valueOfParameter).FirstOrDefault();
+                    break;
+                case "Celebral":
+                    ourWeek = Weeks.Where(week => week.Value.perc5_CelebralAttitude <= valueOfParameter && week.Value.perc95_CelebralAttitude >= valueOfParameter).FirstOrDefault();
                     break;
                 default: return 0;
             }

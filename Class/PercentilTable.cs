@@ -698,43 +698,68 @@ namespace WomenConsulting
             {
                 perc90_DKG.Add(0);
             }
-
-
-            for (int i = 0; i <= 40; i++)
-            {
-                perc10_DKG.Add(0);
-            }
+            perc90_DKG[16] = 21;
+            perc90_DKG[17] = 25;
+            perc90_DKG[18] = 28;
+            perc90_DKG[19] = 31;
+            perc90_DKG[20] = 34;
+            perc90_DKG[21] = 37;
+            perc90_DKG[22] = 39;
+            perc90_DKG[23] = 42;
+            perc90_DKG[24] = 44;
+            perc90_DKG[25] = 46;
+            perc90_DKG[26] = 49;
+            perc90_DKG[27] = 51;
+            perc90_DKG[28] = 53;
+            perc90_DKG[29] = 55;
+            perc90_DKG[30] = 57;
+            perc90_DKG[31] = 60;
+            perc90_DKG[32] = 61;
+            perc90_DKG[33] = 63;
+            perc90_DKG[34] = 65;
+            perc90_DKG[35] = 66;
+            perc90_DKG[36] = 67;
+            perc90_DKG[37] = 69;
+            perc90_DKG[38] = 70;
+            perc90_DKG[39] = 71;
+            perc90_DKG[40] = 72;
 
 
             for (int i = 0; i <= 40; i++)
             {
                 perc5_DKG.Add(0);
             }
-            perc5_DKG[16] = 15;
-            perc5_DKG[17] = 17;
-            perc5_DKG[18] = 20;
-            perc5_DKG[19] = 23;
-            perc5_DKG[20] = 26;
-            perc5_DKG[21] = 29;
-            perc5_DKG[22] = 31;
-            perc5_DKG[23] = 34;
-            perc5_DKG[24] = 36;
-            perc5_DKG[25] = 38;
-            perc5_DKG[26] = 41;
-            perc5_DKG[27] = 43;
-            perc5_DKG[28] = 45;
-            perc5_DKG[29] = 47;
-            perc5_DKG[30] = 49;
-            perc5_DKG[31] = 50;
-            perc5_DKG[32] = 51;
-            perc5_DKG[33] = 53;
-            perc5_DKG[34] = 55;
-            perc5_DKG[35] = 56;
-            perc5_DKG[36] = 57;
-            perc5_DKG[37] = 59;
-            perc5_DKG[38] = 60;
-            perc5_DKG[39] = 61;
-            perc5_DKG[40] = 62;
+
+
+            for (int i = 0; i <= 40; i++)
+            {
+                perc10_DKG.Add(0);
+            }
+            perc10_DKG[16] = 15;
+            perc10_DKG[17] = 17;
+            perc10_DKG[18] = 20;
+            perc10_DKG[19] = 23;
+            perc10_DKG[20] = 26;
+            perc10_DKG[21] = 29;
+            perc10_DKG[22] = 31;
+            perc10_DKG[23] = 34;
+            perc10_DKG[24] = 36;
+            perc10_DKG[25] = 38;
+            perc10_DKG[26] = 41;
+            perc10_DKG[27] = 43;
+            perc10_DKG[28] = 45;
+            perc10_DKG[29] = 47;
+            perc10_DKG[30] = 49;
+            perc10_DKG[31] = 50;
+            perc10_DKG[32] = 51;
+            perc10_DKG[33] = 53;
+            perc10_DKG[34] = 55;
+            perc10_DKG[35] = 56;
+            perc10_DKG[36] = 57;
+            perc10_DKG[37] = 59;
+            perc10_DKG[38] = 60;
+            perc10_DKG[39] = 61;
+            perc10_DKG[40] = 62;
             #endregion
 
             #region DPP

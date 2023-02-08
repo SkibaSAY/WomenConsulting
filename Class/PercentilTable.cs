@@ -729,31 +729,31 @@ namespace WomenConsulting
             {
                 perc5_DKG.Add(0);
             }
-            perc5_DKG[16] = 13;
-            perc5_DKG[17] = 16;
-            perc5_DKG[18] = 18;
-            perc5_DKG[19] = 21;
-            perc5_DKG[20] = 23;
-            perc5_DKG[21] = 26;
-            perc5_DKG[22] = 28;
-            perc5_DKG[23] = 31;
-            perc5_DKG[24] = 33;
-            perc5_DKG[25] = 36;
-            perc5_DKG[26] = 38;
-            perc5_DKG[27] = 40;
-            perc5_DKG[28] = 43;
-            perc5_DKG[29] = 45;
-            perc5_DKG[30] = 47;
-            perc5_DKG[31] = 50;
-            perc5_DKG[32] = 51;
-            perc5_DKG[33] = 53;
-            perc5_DKG[34] = 55;
-            perc5_DKG[35] = 56;
-            perc5_DKG[36] = 57;
-            perc5_DKG[37] = 59;
-            perc5_DKG[38] = 60;
-            perc5_DKG[39] = 61;
-            perc5_DKG[40] = 62;
+            perc5_DKG[16] = 11;
+            perc5_DKG[17] = 14;
+            perc5_DKG[18] = 16;
+            perc5_DKG[19] = 19;
+            perc5_DKG[20] = 21;
+            perc5_DKG[21] = 24;
+            perc5_DKG[22] = 26;
+            perc5_DKG[23] = 28;
+            perc5_DKG[24] = 30;
+            perc5_DKG[25] = 32;
+            perc5_DKG[26] = 34;
+            perc5_DKG[27] = 36;
+            perc5_DKG[28] = 38;
+            perc5_DKG[29] = 40;
+            perc5_DKG[30] = 42;
+            perc5_DKG[31] = 43;
+            perc5_DKG[32] = 45;
+            perc5_DKG[33] = 47;
+            perc5_DKG[34] = 48;
+            perc5_DKG[35] = 50;
+            perc5_DKG[36] = 51;
+            perc5_DKG[37] = 53;
+            perc5_DKG[38] = 55;
+            perc5_DKG[39] = 56;
+            perc5_DKG[40] = 57;
 
             for (int i = 0; i <= 40; i++)
             {

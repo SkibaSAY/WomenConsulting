@@ -49,10 +49,6 @@ namespace WomenConsulting
             List<int> perc10_DPK = new List<int>();
             List<int> perc5_DPK = new List<int>();
 
-            List<int> perc90_KTR = new List<int>();
-            List<int> perc10_KTR = new List<int>();
-            List<int> perc5_KTR = new List<int>();
-
             List<int> perc90_DPP = new List<int>();
             List<int> perc10_DPP = new List<int>();
             List<int> perc5_DPP = new List<int>();

@@ -146,7 +146,6 @@ namespace WomenConsulting
                 $"Длина бедренной кости: {perc10_DB} - {perc90_DB}; " +
                 $"Окружность живота: {perc10_OZh} - {perc90_OZh}; " +
                 $"Длина плеча: {perc10_DPK} - {perc90_DPK} " +
-                $"Копчико-теменной размер: {perc10_KTR} - {perc90_KTR} " +
                 $"Длина костей предплечья: {perc10_DPP} - {perc90_DPP} " +
                 $"Длина костей голени: {perc10_DKG} - {perc90_DKG}";
         }

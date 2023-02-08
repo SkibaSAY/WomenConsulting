@@ -96,12 +96,20 @@ namespace WomenConsulting
             var ourNormDPK = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "DPK");
             SetComboBoxSelectedIndex(shoulderLenghtPerc, ourNormDPK, shoulderLenghtMM);
 
+            var ourNormForearm = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "DPP");
+            SetComboBoxSelectedIndex(legthForearmPerc, ourNormForearm, legthForearmMM);
+
+            var ourNormShin = GlobalSettings.PercentilTbl.GetParameterFromPercentileTableByName(int.Parse(gestationalTime_week.Text), "DKG");
+            SetComboBoxSelectedIndex(legthShinProc, ourNormShin, legthShinMM);
+
             //заполнили предполагаемое количество недель по параметрам
             biparietalSize_week.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("BPR", double.Parse(biparietalSize_mm.Text)).ToString();
             hipLen_week.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DB", double.Parse(hipLen_mm.Text)).ToString();
             bellyCircle_week.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("OZh", double.Parse(bellyCircle_mm.Text)).ToString();
             mass_week.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("Mass", double.Parse(mass_g.Text)).ToString();
             shoulderLenghtWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DPK", double.Parse(shoulderLenghtMM.Text)).ToString();
+            legthForearmWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DPP", double.Parse(legthForearmMM.Text)).ToString();
+            legthShinWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DKG", double.Parse(legthShinMM.Text)).ToString();
         }
 
         private void SetComboBoxSelectedIndex(ComboBox curComboBox, dynamic percCorridor, TextBox ourValue)

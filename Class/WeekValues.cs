@@ -84,15 +84,6 @@ namespace WomenConsulting
         [DisplayName("Длина плеча(90-й перцентиль)")]
         public int perc90_DPK { get; set; }
 
-        [DisplayName("Копчико-теменной размер(5-й перцентиль)")]
-        public int perc5_KTR { get; set; }
-
-        [DisplayName("Копчико-теменной размер(10-й перцентиль)")]
-        public int perc10_KTR { get; set; }
-
-        [DisplayName("Копчико-теменной размер(90-й перцентиль)")]
-        public int perc90_KTR { get; set; }
-
         [DisplayName("Длина костей предплечья(5-й перцентиль)")]
         public int perc5_DPP { get; set; }
 

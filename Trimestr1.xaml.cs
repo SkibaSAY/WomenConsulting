@@ -74,7 +74,7 @@ namespace WomenConsulting
             circumferenceWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("OZh", double.Parse(circumferenceMM.Text)).ToString();
             shoulderLenghtWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DPK", double.Parse(shoulderLenghtMM.Text)).ToString();
 
-            coccyxParitelSizeWee.Text = GlobalSettings.MillimetrTbl.GetWeekFromValue(int.Parse(coccyxParitelSizeMM.Text), "KTR").ToString();
+            coccyxParitelSizeWee.Text = GlobalSettings.MillimetrTbl.GetWeekFromValue(int.Parse(coccyxParitelSizeMM.Text), "KTR").weeks.ToString();
 
             legthForearmWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DPP", double.Parse(legthForearmMM.Text)).ToString();
             legthShinWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DKG", double.Parse(legthShinMM.Text)).ToString();

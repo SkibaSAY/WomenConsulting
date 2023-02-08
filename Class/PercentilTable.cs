@@ -1013,14 +1013,13 @@ namespace WomenConsulting
                     case "DB": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DB, percentile10 = ourWeek.perc10_DB, percentile90 = ourWeek.perc90_DB, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
                     case "OZh": return new { percentile3 = ourWeek.perc3_OZh, percentile5 = ourWeek.perc5_OZh, percentile10 = ourWeek.perc10_OZh, percentile90 = ourWeek.perc90_OZh, percentile95 = ourWeek.perc95_OZh, percentile97 = ourWeek.perc97_OZh };
                     case "DPK": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DPK, percentile10 = ourWeek.perc10_DPK, percentile90 = ourWeek.perc90_DPK, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
+                    case "DPP": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DPP, percentile10 = ourWeek.perc10_DPP, percentile90 = ourWeek.perc90_DPP, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
+                    case "DKG": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DKG, percentile10 = ourWeek.perc10_DKG, percentile90 = ourWeek.perc90_DKG, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
                     default:
-                        return new { percentile5 = 0, percentile10 = 0, percentile90 = 0 };
+                        break;
                 }
             }
-            else
-            {
-                return new { percentile5 = 0, percentile10 = 0, percentile90 = 0 };
-            }      
+            return new { percentile3 = 0, percentile5 = 0, percentile10 = 0, percentile90 = 0, percentile95 = 0, percentile97 = 0 };
         }
 
         public Dictionary<string, int[]> GetParameterFromPercentileTableByName(int numberOfWeek, params string[] namesOfParameters)

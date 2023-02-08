@@ -114,69 +114,49 @@ namespace WomenConsulting
             {
                 perc90_Mass.Add(0);
             }
-            perc90_Mass[12] = 25;
-            perc90_Mass[13] = 37;
-            perc90_Mass[14] = 60;
-            perc90_Mass[15] = 88;
-            perc90_Mass[16] = 130;
-            perc90_Mass[17] = 180;
-            perc90_Mass[18] = 230;
-            perc90_Mass[19] = 290;
-            perc90_Mass[20] = 382;
-            perc90_Mass[21] = 458;
-            perc90_Mass[22] = 552;
-            perc90_Mass[23] = 630;
-            perc90_Mass[24] = 754;
-            perc90_Mass[25] = 870;
-            perc90_Mass[26] = 990;
-            perc90_Mass[27] = 1200;
-            perc90_Mass[28] = 1350;
-            perc90_Mass[29] = 1500;
-            perc90_Mass[30] = 1690;
-            perc90_Mass[31] = 1800;
-            perc90_Mass[32] = 2000;
-            perc90_Mass[33] = 2200;
-            perc90_Mass[34] = 2320;
-            perc90_Mass[35] = 2600;
-            perc90_Mass[36] = 2700;
-            perc90_Mass[37] = 2885;
-            perc90_Mass[38] = 3000;
-            perc90_Mass[39] = 3223;
-            perc90_Mass[40] = 3400;
+            perc90_Mass[22] = 578;
+            perc90_Mass[23] = 658;
+            perc90_Mass[24] = 751;
+            perc90_Mass[25] = 858;
+            perc90_Mass[26] = 980;
+            perc90_Mass[27] = 1119;
+            perc90_Mass[28] = 1276;
+            perc90_Mass[29] = 1452;
+            perc90_Mass[30] = 1647;
+            perc90_Mass[31] = 1860;
+            perc90_Mass[32] = 2089;
+            perc90_Mass[33] = 2332;
+            perc90_Mass[34] = 2583;
+            perc90_Mass[35] = 2838;
+            perc90_Mass[36] = 3089;
+            perc90_Mass[37] = 3326;
+            perc90_Mass[38] = 3541;
+            perc90_Mass[39] = 3722;
+            perc90_Mass[40] = 3858;
 
             for (int i = 0; i <= 40; i++)
             {
                 perc10_Mass.Add(0);
             }
-            perc10_Mass[12] = 13;
-            perc10_Mass[13] = 25;
-            perc10_Mass[14] = 37;
-            perc10_Mass[15] = 60;
-            perc10_Mass[16] = 88;
-            perc10_Mass[17] = 130;
-            perc10_Mass[18] = 180;
-            perc10_Mass[19] = 230;
-            perc10_Mass[20] = 290;
-            perc10_Mass[21] = 382;
-            perc10_Mass[22] = 458;
-            perc10_Mass[23] = 552;
-            perc10_Mass[24] = 630;
-            perc10_Mass[25] = 754;
-            perc10_Mass[26] = 870;
-            perc10_Mass[27] = 990;
-            perc10_Mass[28] = 1200;
-            perc10_Mass[29] = 1350;
-            perc10_Mass[30] = 1500;
-            perc10_Mass[31] = 1690;
-            perc10_Mass[32] = 1800;
-            perc10_Mass[33] = 2000;
-            perc10_Mass[34] = 2200;
-            perc10_Mass[35] = 2320;
-            perc10_Mass[36] = 2600;
-            perc10_Mass[37] = 2700;
-            perc10_Mass[38] = 2885;
-            perc10_Mass[39] = 3000;
-            perc10_Mass[40] = 3223;
+            perc10_Mass[22] = 481;
+            perc10_Mass[23] = 538;
+            perc10_Mass[24] = 602;
+            perc10_Mass[25] = 674;
+            perc10_Mass[26] = 757;
+            perc10_Mass[27] = 849;
+            perc10_Mass[28] = 951;
+            perc10_Mass[29] = 1065;
+            perc10_Mass[30] = 1190;
+            perc10_Mass[31] = 1326;
+            perc10_Mass[32] = 1473;
+            perc10_Mass[33] = 1630;
+            perc10_Mass[34] = 1795;
+            perc10_Mass[35] = 1967;
+            perc10_Mass[36] = 2144;
+            perc10_Mass[37] = 2321;
+            perc10_Mass[38] = 2495;
+            perc10_Mass[39] = 2663;
+            perc10_Mass[40] = 2818;
 
             for (int i = 0; i <= 40; i++)
             {
@@ -493,69 +473,65 @@ namespace WomenConsulting
             {
                 perc90_OZh.Add(0);
             }
-            perc90_OZh[12] = 71;
-            perc90_OZh[13] = 79;
-            perc90_OZh[14] = 91;
-            perc90_OZh[15] = 103;
-            perc90_OZh[16] = 115;
-            perc90_OZh[17] = 130;
-            perc90_OZh[18] = 144;
-            perc90_OZh[19] = 154;
-            perc90_OZh[20] = 163;
-            perc90_OZh[21] = 177;
-            perc90_OZh[22] = 190;
-            perc90_OZh[23] = 201;
-            perc90_OZh[24] = 223;
-            perc90_OZh[25] = 228;
-            perc90_OZh[26] = 240;
-            perc90_OZh[27] = 253;
-            perc90_OZh[28] = 264;
-            perc90_OZh[29] = 277;
-            perc90_OZh[30] = 290;
-            perc90_OZh[31] = 300;
-            perc90_OZh[32] = 314;
-            perc90_OZh[33] = 334;
-            perc90_OZh[34] = 336;
-            perc90_OZh[35] = 344;
-            perc90_OZh[36] = 353;
-            perc90_OZh[37] = 360;
-            perc90_OZh[38] = 368;
-            perc90_OZh[39] = 375;
-            perc90_OZh[40] = 380;
+            perc90_OZh[14] = 86;
+            perc90_OZh[15] = 98;
+            perc90_OZh[16] = 110;
+            perc90_OZh[17] = 122;
+            perc90_OZh[18] = 134;
+            perc90_OZh[19] = 146;
+            perc90_OZh[20] = 158;
+            perc90_OZh[21] = 169;
+            perc90_OZh[22] = 181;
+            perc90_OZh[23] = 192;
+            perc90_OZh[24] = 203;
+            perc90_OZh[25] = 215;
+            perc90_OZh[26] = 226;
+            perc90_OZh[27] = 237;
+            perc90_OZh[28] = 248;
+            perc90_OZh[29] = 259;
+            perc90_OZh[30] = 270;
+            perc90_OZh[31] = 281;
+            perc90_OZh[32] = 291;
+            perc90_OZh[33] = 302;
+            perc90_OZh[34] = 313;
+            perc90_OZh[35] = 324;
+            perc90_OZh[36] = 335;
+            perc90_OZh[37] = 346;
+            perc90_OZh[38] = 356;
+            perc90_OZh[39] = 367;
+            perc90_OZh[40] = 379;
 
             for (int i = 0; i <= 40; i++)
             {
                 perc10_OZh.Add(0);
             }
-            perc10_OZh[12] = 50;
-            perc10_OZh[13] = 58;
-            perc10_OZh[14] = 66;
-            perc10_OZh[15] = 85;
-            perc10_OZh[16] = 88;
-            perc10_OZh[17] = 93;
-            perc10_OZh[18] = 105;
-            perc10_OZh[19] = 114;
-            perc10_OZh[20] = 125;
-            perc10_OZh[21] = 137;
-            perc10_OZh[22] = 148;
-            perc10_OZh[23] = 160;
-            perc10_OZh[24] = 173;
-            perc10_OZh[25] = 183;
-            perc10_OZh[26] = 194;
-            perc10_OZh[27] = 206;
-            perc10_OZh[28] = 217;
-            perc10_OZh[29] = 228;
+            perc10_OZh[14] = 75;
+            perc10_OZh[15] = 86;
+            perc10_OZh[16] = 96;
+            perc10_OZh[17] = 107;
+            perc10_OZh[18] = 117;
+            perc10_OZh[19] = 128;
+            perc10_OZh[20] = 138;
+            perc10_OZh[21] = 148;
+            perc10_OZh[22] = 159;
+            perc10_OZh[23] = 169;
+            perc10_OZh[24] = 179;
+            perc10_OZh[25] = 189;
+            perc10_OZh[26] = 199;
+            perc10_OZh[27] = 209;
+            perc10_OZh[28] = 219;
+            perc10_OZh[29] = 229;
             perc10_OZh[30] = 238;
             perc10_OZh[31] = 247;
-            perc10_OZh[32] = 258;
-            perc10_OZh[33] = 267;
-            perc10_OZh[34] = 276;
-            perc10_OZh[35] = 285;
-            perc10_OZh[36] = 292;
-            perc10_OZh[37] = 300;
-            perc10_OZh[38] = 304;
-            perc10_OZh[39] = 310;
-            perc10_OZh[40] = 313;
+            perc10_OZh[32] = 257;
+            perc10_OZh[33] = 265;
+            perc10_OZh[34] = 274;
+            perc10_OZh[35] = 282;
+            perc10_OZh[36] = 291;
+            perc10_OZh[37] = 299;
+            perc10_OZh[38] = 306;
+            perc10_OZh[39] = 314;
+            perc10_OZh[40] = 321;
             for (int i = 0; i <= 40; i++)
             {
                 perc5_OZh.Add(0);
@@ -1077,6 +1053,12 @@ namespace WomenConsulting
                     break;
                 case "DB":
                     ourWeek = Weeks.Where(week => week.Value.perc10_DB <= valueOfParameter && week.Value.perc90_DB >= valueOfParameter).FirstOrDefault();
+                    break;
+                case "DPP":
+                    ourWeek = Weeks.Where(week => week.Value.perc10_DPP <= valueOfParameter && week.Value.perc90_DPP >= valueOfParameter).FirstOrDefault();
+                    break;
+                case "DKG":
+                    ourWeek = Weeks.Where(week => week.Value.perc10_DKG <= valueOfParameter && week.Value.perc90_DKG >= valueOfParameter).FirstOrDefault();
                     break;
                 default: return 0;
             }

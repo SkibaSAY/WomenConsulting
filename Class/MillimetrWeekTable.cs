@@ -177,6 +177,57 @@ namespace WomenConsulting
             KTRTable.Add(289,new WeekAndDay(23,0));
 
             #endregion
+            #region Egg
+            EggTable.Add(6, new WeekAndDay(5,3));
+            EggTable.Add(7, new WeekAndDay(5,3));
+            EggTable.Add(8, new WeekAndDay(5,4));
+            EggTable.Add(9, new WeekAndDay(5,5));
+            EggTable.Add(10, new WeekAndDay(5,6));
+
+            EggTable.Add(11, new WeekAndDay(6,0));
+            EggTable.Add(12, new WeekAndDay(6,1));
+            EggTable.Add(13, new WeekAndDay(6,2));
+            EggTable.Add(14, new WeekAndDay(6,3));
+            EggTable.Add(15, new WeekAndDay(6,4));
+            EggTable.Add(16, new WeekAndDay(6,5));
+            EggTable.Add(17, new WeekAndDay(6,5));
+            EggTable.Add(18, new WeekAndDay(6,6));
+            EggTable.Add(19, new WeekAndDay(7,0));
+
+            EggTable.Add(20, new WeekAndDay(7,1));
+            EggTable.Add(21, new WeekAndDay(7,2));
+            EggTable.Add(22, new WeekAndDay(7,3));
+            EggTable.Add(23, new WeekAndDay(7,4));
+            EggTable.Add(24, new WeekAndDay(7,5));
+            EggTable.Add(25, new WeekAndDay(7,5));
+            EggTable.Add(26, new WeekAndDay(7,6));
+            EggTable.Add(27, new WeekAndDay(8,0));
+            EggTable.Add(28, new WeekAndDay(8,1));
+            EggTable.Add(29, new WeekAndDay(8,2));
+
+            EggTable.Add(30, new WeekAndDay(8,3));
+            EggTable.Add(31, new WeekAndDay(8,3));
+            EggTable.Add(32, new WeekAndDay(8,4));
+            EggTable.Add(33, new WeekAndDay(8,5));
+            EggTable.Add(34, new WeekAndDay(8,6));
+            EggTable.Add(35, new WeekAndDay(9,0));
+            EggTable.Add(36, new WeekAndDay(9,1));
+            EggTable.Add(37, new WeekAndDay(9,1));
+            EggTable.Add(38, new WeekAndDay(9,2));
+            EggTable.Add(39, new WeekAndDay(9,3));
+
+            EggTable.Add(40, new WeekAndDay(9,4));
+            EggTable.Add(41, new WeekAndDay(9,4));
+            EggTable.Add(42, new WeekAndDay(9,5));
+            EggTable.Add(43, new WeekAndDay(9,6));
+            EggTable.Add(44, new WeekAndDay(10,0));
+            EggTable.Add(45, new WeekAndDay(10,1));
+            EggTable.Add(46, new WeekAndDay(10,1));
+            EggTable.Add(47, new WeekAndDay(10,2));
+            EggTable.Add(48, new WeekAndDay(10,3));
+            EggTable.Add(49, new WeekAndDay(10,3));
+            EggTable.Add(50, new WeekAndDay(10,4));
+            #endregion
         }
 
         private WeekAndDay GetMinWeekAndDay(Dictionary<int, WeekAndDay> dict, int value)

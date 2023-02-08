@@ -790,18 +790,91 @@ namespace WomenConsulting
             {
                 perc90_DPP.Add(0);
             }
-
+            perc90_DPP[16] = 18;
+            perc90_DPP[17] = 21;
+            perc90_DPP[18] = 23;
+            perc90_DPP[19] = 26;
+            perc90_DPP[20] = 29;
+            perc90_DPP[21] = 32;
+            perc90_DPP[22] = 34;
+            perc90_DPP[23] = 37;
+            perc90_DPP[24] = 39;
+            perc90_DPP[25] = 41;
+            perc90_DPP[26] = 43;
+            perc90_DPP[27] = 45;
+            perc90_DPP[28] = 47;
+            perc90_DPP[29] = 48;
+            perc90_DPP[30] = 50;
+            perc90_DPP[31] = 52;
+            perc90_DPP[32] = 53;
+            perc90_DPP[33] = 54;
+            perc90_DPP[34] = 56;
+            perc90_DPP[35] = 57;
+            perc90_DPP[36] = 58;
+            perc90_DPP[37] = 59;
+            perc90_DPP[38] = 60;
+            perc90_DPP[39] = 61;
+            perc90_DPP[40] = 62;
 
             for (int i = 0; i <= 40; i++)
             {
                 perc10_DPP.Add(0);
             }
-
+            perc10_DPP[16] = 12;
+            perc10_DPP[17] = 15;
+            perc10_DPP[18] = 17;
+            perc10_DPP[19] = 20;
+            perc10_DPP[20] = 22;
+            perc10_DPP[21] = 24;
+            perc10_DPP[22] = 26;
+            perc10_DPP[23] = 29;
+            perc10_DPP[24] = 31;
+            perc10_DPP[25] = 33;
+            perc10_DPP[26] = 35;
+            perc10_DPP[27] = 37;
+            perc10_DPP[28] = 39;
+            perc10_DPP[29] = 40;
+            perc10_DPP[30] = 42;
+            perc10_DPP[31] = 44;
+            perc10_DPP[32] = 45;
+            perc10_DPP[33] = 46;
+            perc10_DPP[34] = 48;
+            perc10_DPP[35] = 49;
+            perc10_DPP[36] = 50;
+            perc10_DPP[37] = 51;
+            perc10_DPP[38] = 52;
+            perc10_DPP[39] = 53;
+            perc10_DPP[40] = 54;
 
             for (int i = 0; i <= 40; i++)
             {
                 perc5_DPP.Add(0);
             }
+            perc5_DPP[16] = 12;
+            perc5_DPP[17] = 15;
+            perc5_DPP[18] = 17;
+            perc5_DPP[19] = 20;
+            perc5_DPP[20] = 22;
+            perc5_DPP[21] = 24;
+            perc5_DPP[22] = 26;
+            perc5_DPP[23] = 29;
+            perc5_DPP[24] = 31;
+            perc5_DPP[25] = 33;
+            perc5_DPP[26] = 35;
+            perc5_DPP[27] = 37;
+            perc5_DPP[28] = 39;
+            perc5_DPP[29] = 40;
+            perc5_DPP[30] = 42;
+            perc5_DPP[31] = 44;
+            perc5_DPP[32] = 45;
+            perc5_DPP[33] = 46;
+            perc5_DPP[34] = 48;
+            perc5_DPP[35] = 49;
+            perc5_DPP[36] = 50;
+            perc5_DPP[37] = 51;
+            perc5_DPP[38] = 52;
+            perc5_DPP[39] = 53;
+            perc5_DPP[40] = 54;
             #endregion
 
             #endregion

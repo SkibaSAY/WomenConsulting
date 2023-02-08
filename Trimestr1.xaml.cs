@@ -79,5 +79,17 @@ namespace WomenConsulting
             legthForearmWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DPP", double.Parse(legthForearmMM.Text)).ToString();
             legthShinWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("DKG", double.Parse(legthShinMM.Text)).ToString();
         }
+
+        private void calculateDoplerometryButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(uterineArteriesMM.Text))
+            {
+                UserDialog.Message("Срок беременности или поля из доплерометрии не заполнены. Заполните и повторите попытку, пожалуйста",
+    "Не все данные заполнены");
+                return;
+            }
+
+            uterineArteriesWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("UterineArteries", double.Parse(uterineArteriesMM.Text)).ToString();
+        }
     }
 }

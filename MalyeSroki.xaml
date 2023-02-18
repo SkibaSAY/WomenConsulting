@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="800"
       Title="Page1" VerticalAlignment="Top">
-    
+
     <StackPanel>
         <WrapPanel Background="#FFAEB1FF" Margin="0" >
             <Grid>
@@ -33,6 +33,16 @@
                     <ComboBox x:Name="uterneSize" VerticalAlignment="Top" Width="180" Margin="0,3,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>
                     <TextBox x:Name="uterineSizeText" Width="250" Margin="20,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Regular"/>
                 </WrapPanel>
+                <Expander Foreground="Black" Header ="Таблица с размерами матки" Background="#FFD9DAFF" FontSize="16" FontWeight="Bold" IsExpanded="False" Margin="30,0,0,0">
+                    <DataGrid x:Name="Table" ItemsSource="{Binding Path=tableSource}" Margin="20,15,0,0" AutoGenerateColumns="False" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left" Width="254" FontWeight="Normal" FontSize="14" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Week}" ClipboardContentBinding="{x:Null}" Header="Неделя"/>
+                            <DataGridTextColumn Binding="{Binding Length}" ClipboardContentBinding="{x:Null}" Header="Длина"/>
+                            <DataGridTextColumn Binding="{Binding PZR}" ClipboardContentBinding="{x:Null}" Header="ПЗР"/>
+                            <DataGridTextColumn Binding="{Binding Width}" ClipboardContentBinding="{x:Null}" Header="Ширина"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Expander>
                 <WrapPanel>
                     <Label Content="Увеличена до:" FontSize="16" Margin="21,0,0,0" FontWeight="Regular"/>
                     <TextBox x:Name="increasedTo" PreviewTextInput="onlyDigits_PreviewTextInput" VerticalAlignment="Top" Width="80" Margin="15,5,0,0" HorizontalAlignment="Left" FontWeight="Regular"/>

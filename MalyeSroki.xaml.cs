@@ -18,12 +18,72 @@ namespace WomenConsulting
     /// <summary>
     /// Логика взаимодействия для Page1.xaml
     /// </summary>
+    
+    public class TableElem
+    {
+        public int Week { get; set; }
+        public int Length { get; set; }
+        public int Width { get; set; }
+        public int PZR { get; set; }
+
+        public TableElem(int week, int length = 0, int width = 0, int pzr = 0)
+        {
+            Week = week;
+            Length = length;
+            Width = width;
+            PZR = pzr;
+        }
+    }
+ 
     public partial class MalyeSroki : Page
     {
+        public List<TableElem> tableSource { get; set; } = new List<TableElem>();
         public MalyeSroki()
         {
             InitializeComponent();
+            FillThMatkaTable();
+            DataContext = this;
         }
+
+        public void FillThMatkaTable()
+        {
+            var lengthMatkaTable = GlobalSettings.MillimetrTbl.lengthMatkaTable;
+            var widthMatkaTable = GlobalSettings.MillimetrTbl.lengthMatkaTable;
+            var PZRMatkaTable = GlobalSettings.MillimetrTbl.PZRMatkaTable;
+
+            var weeks = new Dictionary<int, int>();
+            foreach (var elem in lengthMatkaTable)
+            {
+                tableSource.Add(new TableElem(elem.Value.weeks, elem.Key));
+                weeks.Add(elem.Value.weeks, tableSource.Count - 1);
+            }
+            foreach (var elem in widthMatkaTable)
+            {
+                if (weeks.ContainsKey(elem.Value.weeks))
+                {
+                    tableSource[weeks[elem.Value.weeks]].Width = elem.Key;
+                }
+                else
+                {
+                    tableSource.Add(new TableElem(elem.Value.weeks, 0, elem.Key));
+                    weeks.Add(elem.Value.weeks, tableSource.Count - 1);
+                }
+            }
+            foreach (var elem in PZRMatkaTable)
+            {
+                if (weeks.ContainsKey(elem.Value.weeks))
+                {
+                    tableSource[weeks[elem.Value.weeks]].PZR = elem.Key;
+                }
+                else
+                {
+                    tableSource.Add(new TableElem(elem.Value.weeks, 0, 0, elem.Key));
+                    weeks.Add(elem.Value.weeks, tableSource.Count - 1);
+                }
+                
+            }
+        }
+
         private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             if ((sender as TextBox).Text == "0" || String.IsNullOrWhiteSpace((sender as TextBox).Text))

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,15 @@ using WomenConsulting.Class;
 
 namespace WomenConsulting
 {
+    public class TabItem
+    {
+        public string Name { get; set; }
+        public List<MillimetrTableRow> Table { get; set; }
+        public TabItem()
+        {
+
+        }
+    }
     /// <summary>
     /// Логика взаимодействия для SettingsWindow.xaml
     /// </summary>
@@ -25,6 +35,22 @@ namespace WomenConsulting
         public Dictionary<int, WeekValues> WeekValues
         {
             get { return GlobalSettings.PercentilTbl.Weeks; }
+        }
+
+        public List<TabItem> TablesWeekByMm
+        {
+            get
+            {
+                var millimetrTable = GlobalSettings.MillimetrTbl;
+                var tables = millimetrTable.GetType().GetProperties().Where(p => p.PropertyType.Equals(typeof(MyList<MillimetrTableRow>)))
+                    .Select(p =>
+                    new TabItem{
+                        Name = p.GetCustomAttribute(typeof(DisplayNameAttribute)) != null ? (p.GetCustomAttribute(typeof(DisplayNameAttribute)) as DisplayNameAttribute).DisplayName : "Таблица",
+                        Table =  (List<MillimetrTableRow>)p.GetValue(millimetrTable)
+                    }
+                ).ToList();
+                return tables;
+            }
         }
 
 

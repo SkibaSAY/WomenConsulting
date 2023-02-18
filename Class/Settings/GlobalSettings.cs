@@ -149,6 +149,7 @@ namespace WomenConsulting
                 if (File.Exists(Path))
                 {
                     var content = File.ReadAllText(Path);
+                    settings = null;
                     settings = JsonConvert.DeserializeObject<_Settings>(content);
                 }
             }

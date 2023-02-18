@@ -1,32 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WomenConsulting
 {
+    public class MillimetrTableRow
+    {
+        public int MM { get; set; }
+        public WeekAndDay WeekAndDay { get; set; }
+
+        public MillimetrTableRow(int mm, WeekAndDay weekAndDay)
+        {
+            MM = mm;
+            WeekAndDay = weekAndDay;
+        }
+    }
+    public class MyList<T>: List<MillimetrTableRow>
+    {
+        public new void Add(int mm, WeekAndDay weekAndDay)
+        {
+            var item = new MillimetrTableRow(mm,weekAndDay);
+            base.Add(item);
+        }
+    }
     public class WeekAndDay
     {
-        public int weeks;
-        public int days;
+        public int Weeks { get; set; }
+        public int Days { get; set; }
 
         public WeekAndDay(int weeks = 0, int days = 0)
         {
-            this.weeks = weeks;
-            this.days = days;
+            this.Weeks = weeks;
+            this.Days = days;
+        }
+
+        public override string ToString()
+        {
+            return $"{Weeks}-я неделя, {Days}-й день";
         }
     }
 
     public class MillimetrWeekTable
     {
-        public Dictionary<int, WeekAndDay> lengthMatkaTable = new Dictionary<int, WeekAndDay>();
-        public Dictionary<int, WeekAndDay> widthMatkaTable = new Dictionary<int, WeekAndDay>();
-        public Dictionary<int, WeekAndDay> PZRMatkaTable = new Dictionary<int, WeekAndDay>();
-        Dictionary<int, WeekAndDay> sizeRMatkaTable = new Dictionary<int, WeekAndDay>();
-
-        public Dictionary<int, WeekAndDay> KTRTable = new Dictionary<int, WeekAndDay>();
-        public Dictionary<int, WeekAndDay> EggTable = new Dictionary<int, WeekAndDay>();
+        [DisplayName("Длина матки")]
+        public MyList<MillimetrTableRow> lengthMatkaTable { get; set; } = new MyList<MillimetrTableRow>();
+        [DisplayName("Ширина матки")]
+        public MyList<MillimetrTableRow> widthMatkaTable { get; set; } = new MyList<MillimetrTableRow>();
+        [DisplayName("ПЗР матки")]
+        public MyList<MillimetrTableRow> PZRMatkaTable { get; set; } = new MyList<MillimetrTableRow>();
+        [DisplayName("Обьём матки")]
+        public MyList<MillimetrTableRow> sizeRMatkaTable { get; set; } = new MyList<MillimetrTableRow>();
+        [DisplayName("КТР")]
+        public MyList<MillimetrTableRow> KTRTable { get; set; } = new MyList<MillimetrTableRow>();
+        [DisplayName("Средний диаметр плодного яйца")]
+        public MyList<MillimetrTableRow> EggTable { get; set; } = new MyList<MillimetrTableRow>();
 
         public MillimetrWeekTable()
         {
@@ -230,7 +260,7 @@ namespace WomenConsulting
             #endregion
         }
 
-        private WeekAndDay GetMinWeekAndDay(Dictionary<int, WeekAndDay> dict, int value)
+        private WeekAndDay GetMinWeekAndDay(MyList<MillimetrTableRow> dict, int value)
         {
             var correspondingWeekAndDay = new WeekAndDay();
             var difference = 1000;
@@ -238,11 +268,11 @@ namespace WomenConsulting
             var listOfSize = dict.ToList();
             for (int i = 0; i < dict.Count; i++)
             {
-                var currentDifference = Math.Abs(listOfSize[i].Key - value);
+                var currentDifference = Math.Abs(listOfSize[i].MM - value);
                 if (currentDifference < difference)
                 {
                     difference = currentDifference;
-                    correspondingWeekAndDay = listOfSize[i].Value;
+                    correspondingWeekAndDay = listOfSize[i].WeekAndDay;
                 }
             }
             return correspondingWeekAndDay;
@@ -257,7 +287,7 @@ namespace WomenConsulting
                     correspondingWeekAndDay = GetMinWeekAndDay(sizeRMatkaTable, value);
                     break;
                 case "KTR":
-                    if(KTRTable.First().Key > value || KTRTable.Last().Key < value)
+                    if(KTRTable.First().MM > value || KTRTable.Last().MM < value)
                     {
                         return new WeekAndDay();
                     }

@@ -46,6 +46,27 @@
                 </ListBox.ItemContainerStyle>
             </ListBox>
         </TabItem>
+        <TabItem Header="Таблица недель по мм">
+            <TabControl x:Name="TableWeekByMm" ItemsSource="{Binding Path=TablesWeekByMm}">
+                <TabControl.ItemTemplate>
+                    <!-- this is the header template-->
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path = Name}" />
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+                <TabControl.ContentTemplate>
+                    <DataTemplate>
+                        <DataGrid AutoGenerateColumns="False" ItemsSource ="{Binding Path=Table}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Path=MM}" Header="Миллиметр"/>
+                                <DataGridTextColumn Binding="{Binding Path=WeekAndDay.Weeks}" Header="Неделя"/>
+                                <DataGridTextColumn Binding="{Binding Path=WeekAndDay.Days}" Header="День"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DataTemplate>
+                </TabControl.ContentTemplate>
+            </TabControl>
+        </TabItem>
         <TabItem Header="Значения констант">
             <Grid>
                 <Label Content="Формула массы:" Margin="25,15,45,0" FontFamily="Segoe UI Semibold" VerticalAlignment="Top" FontSize="16"/>

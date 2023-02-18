@@ -54,31 +54,31 @@ namespace WomenConsulting
             var weeks = new Dictionary<int, int>();
             foreach (var elem in lengthMatkaTable)
             {
-                tableSource.Add(new TableElem(elem.Value.weeks, elem.Key));
-                weeks.Add(elem.Value.weeks, tableSource.Count - 1);
+                tableSource.Add(new TableElem(elem.WeekAndDay.Weeks, elem.MM));
+                weeks.Add(elem.WeekAndDay.Weeks, tableSource.Count - 1);
             }
             foreach (var elem in widthMatkaTable)
             {
-                if (weeks.ContainsKey(elem.Value.weeks))
+                if (weeks.ContainsKey(elem.WeekAndDay.Weeks))
                 {
-                    tableSource[weeks[elem.Value.weeks]].Width = elem.Key;
+                    tableSource[weeks[elem.WeekAndDay.Weeks]].Width = elem.MM;
                 }
                 else
                 {
-                    tableSource.Add(new TableElem(elem.Value.weeks, 0, elem.Key));
-                    weeks.Add(elem.Value.weeks, tableSource.Count - 1);
+                    tableSource.Add(new TableElem(elem.WeekAndDay.Weeks, 0, elem.MM));
+                    weeks.Add(elem.WeekAndDay.Weeks, tableSource.Count - 1);
                 }
             }
             foreach (var elem in PZRMatkaTable)
             {
-                if (weeks.ContainsKey(elem.Value.weeks))
+                if (weeks.ContainsKey(elem.WeekAndDay.Weeks))
                 {
-                    tableSource[weeks[elem.Value.weeks]].PZR = elem.Key;
+                    tableSource[weeks[elem.WeekAndDay.Weeks]].PZR = elem.MM;
                 }
                 else
                 {
-                    tableSource.Add(new TableElem(elem.Value.weeks, 0, 0, elem.Key));
-                    weeks.Add(elem.Value.weeks, tableSource.Count - 1);
+                    tableSource.Add(new TableElem(elem.WeekAndDay.Weeks, 0, 0, elem.MM));
+                    weeks.Add(elem.WeekAndDay.Weeks, tableSource.Count - 1);
                 }
                 
             }

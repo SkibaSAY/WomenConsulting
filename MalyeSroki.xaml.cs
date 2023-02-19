@@ -19,7 +19,7 @@ namespace WomenConsulting
     /// Логика взаимодействия для Page1.xaml
     /// </summary>
     
-    public class TableElem
+    public class TableElem : IComparable
     {
         public int Week { get; set; }
         public int Length { get; set; }
@@ -32,6 +32,11 @@ namespace WomenConsulting
             Length = length;
             Width = width;
             PZR = pzr;
+        }
+
+        public int CompareTo(object obj)
+        {
+            return Week.CompareTo(obj);
         }
     }
  
@@ -48,41 +53,38 @@ namespace WomenConsulting
         public void FillThMatkaTable()
         {
             var lengthMatkaTable = GlobalSettings.MillimetrTbl.lengthMatkaTable;
-            var widthMatkaTable = GlobalSettings.MillimetrTbl.lengthMatkaTable;
+            var widthMatkaTable = GlobalSettings.MillimetrTbl.widthMatkaTable;
             var PZRMatkaTable = GlobalSettings.MillimetrTbl.PZRMatkaTable;
 
-            var weeks = new List<KeyValuePair<int, int>>();
             foreach (var elem in lengthMatkaTable)
             {
                 tableSource.Add(new TableElem(elem.WeekAndDay.Weeks, elem.MM));
-                weeks.Add(new KeyValuePair<int,int>(elem.WeekAndDay.Weeks, tableSource.Count - 1));
             }
-            //понять, как поправить
-            //foreach (var elem in widthMatkaTable)
-            //{
-            //    if (weeks.(elem.WeekAndDay.Weeks))
-            //    {
-            //        tableSource[weeks[elem.WeekAndDay.Weeks]].Width = elem.MM;
-            //    }
-            //    else
-            //    {
-            //        tableSource.Add(new TableElem(elem.WeekAndDay.Weeks, 0, elem.MM));
-            //        weeks.Add(elem.WeekAndDay.Weeks, tableSource.Count - 1);
-            //    }
-            //}
-            //foreach (var elem in PZRMatkaTable)
-            //{
-            //    if (weeks.ContainsKey(elem.WeekAndDay.Weeks))
-            //    {
-            //        tableSource[weeks[elem.WeekAndDay.Weeks]].PZR = elem.MM;
-            //    }
-            //    else
-            //    {
-            //        tableSource.Add(new TableElem(elem.WeekAndDay.Weeks, 0, 0, elem.MM));
-            //        weeks.Add(elem.WeekAndDay.Weeks, tableSource.Count - 1);
-            //    }
-                
-            //}
+            foreach (var elem in widthMatkaTable)
+            {
+                var newElem = new TableElem(elem.WeekAndDay.Weeks, 0, elem.MM);
+                if (tableSource.Find(p => p.Week == newElem.Week) != null)
+                {
+                    tableSource[tableSource.FindIndex(p => p.Week == newElem.Week)].Width = elem.MM;
+                }
+                else
+                {
+                    tableSource.Add(newElem);
+                }
+            }
+            foreach (var elem in PZRMatkaTable)
+            {
+                var newElem = new TableElem(elem.WeekAndDay.Weeks, 0, elem.MM);
+                if (tableSource.Find(p => p.Week == newElem.Week) != null)
+                {
+                    tableSource[tableSource.FindIndex(p => p.Week == newElem.Week)].PZR = elem.MM;
+                }
+                else
+                {
+                    tableSource.Add(newElem);;
+                }
+
+            }
         }
 
         private void onlyDigits_PreviewTextInput(object sender, TextCompositionEventArgs e)

@@ -60,6 +60,7 @@ namespace WomenConsulting
 
         public MillimetrWeekTable()
         {
+            lengthMatkaTable = new MyList<MillimetrTableRow>();
             Init();
         }
 

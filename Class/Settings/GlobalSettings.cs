@@ -150,7 +150,10 @@ namespace WomenConsulting
                 {
                     var content = File.ReadAllText(Path);
                     settings = null;
-                    settings = JsonConvert.DeserializeObject<_Settings>(content);
+                    settings = JsonConvert.DeserializeObject<_Settings>(content, new JsonSerializerSettings
+                    {
+                        ObjectCreationHandling = ObjectCreationHandling.Replace
+                    });
                 }
             }
             catch (UndefinedPathException ex)

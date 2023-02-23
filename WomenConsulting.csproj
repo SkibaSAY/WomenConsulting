@@ -107,7 +107,7 @@
     <Compile Include="Class\Settings\GlobalSettings.cs" />
     <Compile Include="Class\Trimestr.cs" />
     <Compile Include="Class\UserDialog.cs" />
-    <Compile Include="Class\WeekValues.cs" />
+    <Compile Include="Class\PercentilTableRow.cs" />
     <Compile Include="Enums\FetusCountToString.cs" />
     <Compile Include="MalyeSroki.xaml.cs">
       <DependentUpon>MalyeSroki.xaml</DependentUpon>

@@ -10,7 +10,7 @@ namespace WomenConsulting
 {
     public class PercentilTable
     {
-        public Dictionary<int, WeekValues> Weeks = new Dictionary<int, WeekValues>();
+        public List<PercentilTableRow> WeekRows = new List<PercentilTableRow>();
         public double MassConstA { get; set; }
         public double MassConstB { get; set; }
         public PercentilTable()
@@ -1073,9 +1073,9 @@ namespace WomenConsulting
 
             for (int i = 12; i <= 40; i++)
             {
-                Weeks.Add(
-                    i,
-                    new WeekValues{
+                WeekRows.Add(
+                    new PercentilTableRow
+                    {
                         WeekNumber = i,
                         perc3_Mass = perc3_Mass[i],
                         perc5_Mass = perc5_Mass[i],
@@ -1119,23 +1119,23 @@ namespace WomenConsulting
         {
             var percentile = new { percentile5 = 0, percentile10 = 0, percentile90 = 0 };
 
-            WeekValues ourWeek;
-            if (Weeks.ContainsKey(numberOfWeek))
+            PercentilTableRow tableRow = WeekRows.FirstOrDefault(row => row.WeekNumber == numberOfWeek);
+            if (tableRow != null)
             {
-                ourWeek = Weeks[numberOfWeek];
+                var ourWeekValue = tableRow;
                 switch (nameOfParameter)
                 {
-                    case "Mass": return new { percentile3 = ourWeek.perc3_Mass, percentile5 = ourWeek.perc5_Mass, percentile10 = ourWeek.perc10_Mass, percentile90 = ourWeek.perc90_Mass, percentile95 = ourWeek.perc95_Mass, percentile97 = ourWeek.perc97_Mass };
-                    case "BPR": return new { percentile3 = -1, percentile5 = ourWeek.perc5_BPR, percentile10 = ourWeek.perc10_BPR, percentile90 = ourWeek.perc90_BPR, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
-                    case "DB": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DB, percentile10 = ourWeek.perc10_DB, percentile90 = ourWeek.perc90_DB, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
-                    case "OZh": return new { percentile3 = ourWeek.perc3_OZh, percentile5 = ourWeek.perc5_OZh, percentile10 = ourWeek.perc10_OZh, percentile90 = ourWeek.perc90_OZh, percentile95 = ourWeek.perc95_OZh, percentile97 = ourWeek.perc97_OZh };
-                    case "DPK": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DPK, percentile10 = ourWeek.perc10_DPK, percentile90 = ourWeek.perc90_DPK, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
-                    case "DPP": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DPP, percentile10 = ourWeek.perc10_DPP, percentile90 = ourWeek.perc90_DPP, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
-                    case "DKG": return new { percentile3 = -1, percentile5 = ourWeek.perc5_DKG, percentile10 = ourWeek.perc10_DKG, percentile90 = ourWeek.perc90_DKG, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
+                    case "Mass": return new { percentile3 = ourWeekValue.perc3_Mass, percentile5 = ourWeekValue.perc5_Mass, percentile10 = ourWeekValue.perc10_Mass, percentile90 = ourWeekValue.perc90_Mass, percentile95 = ourWeekValue.perc95_Mass, percentile97 = ourWeekValue.perc97_Mass };
+                    case "BPR": return new { percentile3 = -1, percentile5 = ourWeekValue.perc5_BPR, percentile10 = ourWeekValue.perc10_BPR, percentile90 = ourWeekValue.perc90_BPR, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
+                    case "DB": return new { percentile3 = -1, percentile5 = ourWeekValue.perc5_DB, percentile10 = ourWeekValue.perc10_DB, percentile90 = ourWeekValue.perc90_DB, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
+                    case "OZh": return new { percentile3 = ourWeekValue.perc3_OZh, percentile5 = ourWeekValue.perc5_OZh, percentile10 = ourWeekValue.perc10_OZh, percentile90 = ourWeekValue.perc90_OZh, percentile95 = ourWeekValue.perc95_OZh, percentile97 = ourWeekValue.perc97_OZh };
+                    case "DPK": return new { percentile3 = -1, percentile5 = ourWeekValue.perc5_DPK, percentile10 = ourWeekValue.perc10_DPK, percentile90 = ourWeekValue.perc90_DPK, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
+                    case "DPP": return new { percentile3 = -1, percentile5 = ourWeekValue.perc5_DPP, percentile10 = ourWeekValue.perc10_DPP, percentile90 = ourWeekValue.perc90_DPP, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
+                    case "DKG": return new { percentile3 = -1, percentile5 = ourWeekValue.perc5_DKG, percentile10 = ourWeekValue.perc10_DKG, percentile90 = ourWeekValue.perc90_DKG, percentile95 = int.MaxValue, percentile97 = int.MaxValue };
 
-                    case "Uterine": return new { percentile5 = ourWeek.perc5_UterineArteries, percentile95 = ourWeek.perc95_UterineArteries };
-                    case "Umbilical": return new { percentile5 = ourWeek.perc5_UmbilicalArteries, percentile95 = ourWeek.perc95_UmbilicalArteries };
-                    case "Celebral": return new { percentile5 = ourWeek.perc5_CelebralAttitude, percentile95 = ourWeek.perc95_CelebralAttitude };
+                    case "Uterine": return new { percentile5 = ourWeekValue.perc5_UterineArteries, percentile95 = ourWeekValue.perc95_UterineArteries };
+                    case "Umbilical": return new { percentile5 = ourWeekValue.perc5_UmbilicalArteries, percentile95 = ourWeekValue.perc95_UmbilicalArteries };
+                    case "Celebral": return new { percentile5 = ourWeekValue.perc5_CelebralAttitude, percentile95 = ourWeekValue.perc95_CelebralAttitude };
                     default:
                         break;
                 }
@@ -1156,46 +1156,46 @@ namespace WomenConsulting
 
         public int GetCorrespondingWeekByNameOfParameter(string nameOfParameter, double valueOfParameter)
         {
-            KeyValuePair<int, WeekValues>? ourWeek;
+            PercentilTableRow tableRow;
             switch (nameOfParameter)
             {
                 case "Mass":
-                    ourWeek = Weeks.Where(week => week.Value.perc10_Mass <= valueOfParameter && week.Value.perc90_Mass >= valueOfParameter).FirstOrDefault();
+                    tableRow = WeekRows.Where(week => week.perc10_Mass <= valueOfParameter && week.perc90_Mass >= valueOfParameter).FirstOrDefault();
                     break;
                 case "BPR":
-                    ourWeek = Weeks.Where(week => week.Value.perc10_BPR <= valueOfParameter && week.Value.perc90_BPR >= valueOfParameter).FirstOrDefault();
+                    tableRow = WeekRows.Where(week => week.perc10_BPR <= valueOfParameter && week.perc90_BPR >= valueOfParameter).FirstOrDefault();
                     break;
                 case "OZh":
-                    ourWeek = Weeks.Where(week => week.Value.perc10_OZh <= valueOfParameter && week.Value.perc90_OZh >= valueOfParameter).FirstOrDefault();
+                    tableRow = WeekRows.Where(week => week.perc10_OZh <= valueOfParameter && week.perc90_OZh >= valueOfParameter).FirstOrDefault();
                     break;
                 case "DPK":
-                    ourWeek = Weeks.Where(week => week.Value.perc10_DPK <= valueOfParameter && week.Value.perc90_DPK >= valueOfParameter).FirstOrDefault();
+                    tableRow = WeekRows.Where(week => week.perc10_DPK <= valueOfParameter && week.perc90_DPK >= valueOfParameter).FirstOrDefault();
                     break;
                 case "DB":
-                    ourWeek = Weeks.Where(week => week.Value.perc10_DB <= valueOfParameter && week.Value.perc90_DB >= valueOfParameter).FirstOrDefault();
+                    tableRow = WeekRows.Where(week => week.perc10_DB <= valueOfParameter && week.perc90_DB >= valueOfParameter).FirstOrDefault();
                     break;
                 case "DPP":
-                    ourWeek = Weeks.Where(week => week.Value.perc10_DPP <= valueOfParameter && week.Value.perc90_DPP >= valueOfParameter).FirstOrDefault();
+                    tableRow = WeekRows.Where(week => week.perc10_DPP <= valueOfParameter && week.perc90_DPP >= valueOfParameter).FirstOrDefault();
                     break;
                 case "DKG":
-                    ourWeek = Weeks.Where(week => week.Value.perc10_DKG <= valueOfParameter && week.Value.perc90_DKG >= valueOfParameter).FirstOrDefault();
+                    tableRow = WeekRows.Where(week => week.perc10_DKG <= valueOfParameter && week.perc90_DKG >= valueOfParameter).FirstOrDefault();
                     break;
                 case "Uterine":
-                    ourWeek = Weeks.Where(week => week.Value.perc5_UterineArteries <= valueOfParameter && week.Value.perc95_UterineArteries >= valueOfParameter).FirstOrDefault();
+                    tableRow = WeekRows.Where(week => week.perc5_UterineArteries <= valueOfParameter && week.perc95_UterineArteries >= valueOfParameter).FirstOrDefault();
                     break;
                 case "Umbilical":
-                    ourWeek = Weeks.Where(week => week.Value.perc5_UmbilicalArteries <= valueOfParameter && week.Value.perc95_UmbilicalArteries >= valueOfParameter).FirstOrDefault();
+                    tableRow = WeekRows.Where(week => week.perc5_UmbilicalArteries <= valueOfParameter && week.perc95_UmbilicalArteries >= valueOfParameter).FirstOrDefault();
                     break;
                 case "Celebral":
-                    ourWeek = Weeks.Where(week => week.Value.perc5_CelebralAttitude <= valueOfParameter && week.Value.perc95_CelebralAttitude >= valueOfParameter).FirstOrDefault();
+                    tableRow = WeekRows.Where(week => week.perc5_CelebralAttitude <= valueOfParameter && week.perc95_CelebralAttitude >= valueOfParameter).FirstOrDefault();
                     break;
                 default: return 0;
             }
-            if (ourWeek == null)
+            if (tableRow == null)
             {
                 return 0;
             }
-            return ourWeek.Value.Key;
+            return tableRow.WeekNumber;
         }
     }
 }

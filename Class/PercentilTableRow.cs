@@ -17,7 +17,7 @@ namespace WomenConsulting
             IsEnable = state;
         }
     }
-    public class WeekValues
+    public class PercentilTableRow
     {
         #region фетометрия
         [DisplayName("Неделя"),IsEnable(false)]
@@ -120,7 +120,7 @@ namespace WomenConsulting
         [DisplayName("Церебрально-плацентарное отношение(95-й перцентиль)")]
         public double perc95_CelebralAttitude { get; set; }
         #endregion
-        public WeekValues()
+        public PercentilTableRow()
         {
 
         }

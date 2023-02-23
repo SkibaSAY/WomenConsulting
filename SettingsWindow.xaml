@@ -67,6 +67,14 @@
                 </TabControl.ContentTemplate>
             </TabControl>
         </TabItem>
+        <TabItem Header="Таблица Перцентилей">
+            <DataGrid AutoGenerateColumns="False" ItemsSource ="{Binding Path=PercentilTable.Weeks}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=Key}" Header="Неделя"/>
+                    <DataGridTextColumn Binding="{Binding Path=Value.perc3_Mass}" Header="перцентиль"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </TabItem>
         <TabItem Header="Значения констант">
             <Grid>
                 <Label Content="Формула массы:" Margin="25,15,45,0" FontFamily="Segoe UI Semibold" VerticalAlignment="Top" FontSize="16"/>

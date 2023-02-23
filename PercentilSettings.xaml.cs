@@ -25,7 +25,7 @@ namespace WomenConsulting
         public class ViewWeekPercentil
         {
             private readonly PropertyInfo _property;
-            private WeekValues _weekPercentil;
+            private PercentilTableRow _weekPercentil;
             public bool IsNeedUpdate
             {
                 get { return !Value.Equals(ValueInSettings); }
@@ -47,7 +47,7 @@ namespace WomenConsulting
                 get { return _property.GetValue(_weekPercentil); }
             }
 
-            public ViewWeekPercentil(PropertyInfo _property, WeekValues _weekPercentil)
+            public ViewWeekPercentil(PropertyInfo _property, PercentilTableRow _weekPercentil)
             {
                 this._property = _property;
                 this._weekPercentil = _weekPercentil;
@@ -69,18 +69,18 @@ namespace WomenConsulting
             }
         }
 
-        public WeekValues week;
+        public PercentilTableRow week;
         public List<ViewWeekPercentil> WeekViews { get; set; }
-        public PercentilSettings(WeekValues week)
+        public PercentilSettings(PercentilTableRow week)
         {
             InitializeComponent();
             Init(week);
         }
 
-        private void Init(WeekValues week)
+        private void Init(PercentilTableRow week)
         {
             this.week = week;
-            var viewProterties = typeof(WeekValues).GetProperties().ToList();
+            var viewProterties = typeof(PercentilTableRow).GetProperties().ToList();
             WeekViews = viewProterties.Select(p => new ViewWeekPercentil(p, this.week)).ToList();
             DataContext = this;
         }

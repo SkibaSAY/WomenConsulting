@@ -32,9 +32,9 @@ namespace WomenConsulting
     /// </summary>
     public partial class SettingsWindow : Window,INotifyPropertyChanged
     {
-        public Dictionary<int, WeekValues> WeekValues
+        public List<PercentilTableRow> WeekValues
         {
-            get { return GlobalSettings.PercentilTbl.Weeks; }
+            get { return GlobalSettings.PercentilTbl.WeekRows; }
         }
 
         public List<TabItem> TablesWeekByMm
@@ -51,6 +51,13 @@ namespace WomenConsulting
                 ).ToList();
                 return tables;
             }
+        }
+
+        public PercentilTable PercentilTable { 
+            get 
+            { 
+                return GlobalSettings.PercentilTbl; 
+            } 
         }
 
 
@@ -145,7 +152,7 @@ namespace WomenConsulting
         {
             var listBox = (ListBox)sender;
             if (listBox.SelectedItem == null) return;
-            var selectedWeek = ((KeyValuePair<int, WeekValues>)listBox.SelectedItem).Value;
+            var selectedWeek = ((KeyValuePair<int, PercentilTableRow>)listBox.SelectedItem).Value;
             var weekPercentilWindow = new PercentilSettings(selectedWeek);
             weekPercentilWindow.Owner = this;
 

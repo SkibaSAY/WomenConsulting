@@ -32,7 +32,7 @@ namespace WomenConsulting
     /// </summary>
     public partial class SettingsWindow : Window,INotifyPropertyChanged
     {
-        public List<PercentilTableRow> WeekValues
+        public List<PercentilTableRow> PercentilTblRows
         {
             get { return GlobalSettings.PercentilTbl.WeekRows; }
         }
@@ -175,6 +175,11 @@ namespace WomenConsulting
         private void Window_Closed(object sender, EventArgs e)
         {
             GlobalSettings.Save();
+        }
+
+        private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            e.Column.Header = (e.PropertyDescriptor as PropertyDescriptor).DisplayName;
         }
     }
 }

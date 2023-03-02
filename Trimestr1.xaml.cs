@@ -89,7 +89,7 @@ namespace WomenConsulting
                 return;
             }
 
-            uterineArteriesWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("UterineArteries", double.Parse(uterineArteriesMM.Text)).ToString();
+            uterineArteriesWeek.Text = GlobalSettings.PercentilTbl.GetCorrespondingWeekByNameOfParameter("Uterine", double.Parse(uterineArteriesMM.Text)).ToString();
         }
     }
 }
